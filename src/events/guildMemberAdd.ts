@@ -2,12 +2,13 @@ import Canvas from 'canvas';
 import VenClient from '../interfaces/Client';
 import { GuildMember, TextChannel } from 'discord.js';
 import path from 'path';
+let background: Canvas.Image;
 
 export default async (_client: VenClient, member: GuildMember) => {
     const channel = member.guild.channels.cache.get('695793033442230362');
     if (!channel) return;
 
-    const background = await Canvas.loadImage(path.join(__dirname, '../../../assets/images/welcome.jpg'));
+    if (!background) background = await Canvas.loadImage(path.join(__dirname, '../../../assets/images/welcome.jpg'));
     const avatar = await Canvas.loadImage(member.user.displayAvatarURL({ size: 256, format: 'png' }));
     const guild = member.guild.name;
     const name = member.user.tag;
