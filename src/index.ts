@@ -4,7 +4,6 @@ import config from './utils/config';
 import Client from './interfaces/Client';
 import Command from './interfaces/Command';
 import { logError, logWarn } from './utils/winston';
-import { handleError } from './utils/Util';
 
 export const VenClient = new Client({
     disableMentions: 'everyone',
@@ -52,6 +51,3 @@ VenClient.login(config.token);
 
 process.on('uncaughtException', error => logError(error));
 process.on('warning', warn => logWarn(warn));
-process.on('unhandledRejection', async reason => {
-    if (reason) handleError(VenClient, reason);
-});
