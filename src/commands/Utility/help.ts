@@ -20,6 +20,7 @@ const callback = async (message: Message, args: string[]) => {
         };
         client.commands.forEach(command => {
             const category = commands[command.category];
+            if (!category) return;
             category.push(`\`${prefix}${command.name}\` - *${command.description}*`);
         });
         output
