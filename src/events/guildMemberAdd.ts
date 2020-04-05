@@ -53,7 +53,7 @@ const adjustSize = (canvas: Canvas.Canvas, text: string, width: number, height: 
 
     let fontSize = 70;
     do {
-        ctx.font = `${(fontSize -= 5)}px serif`;
+        ctx.font = `${(fontSize -= 5)}px arial`;
     } while (ctx.measureText(text).width > width || ctx.measureText(text).actualBoundingBoxAscent > height);
     return ctx.font;
 };
