@@ -47,7 +47,7 @@ const callback = async (message: Message, _args: string[]) => {
     const output = newEmbed(true)
         .setTitle(guild.name)
         .setThumbnail(guild.iconURL({ size: 2048, dynamic: true })!)
-        .setImage(guild.bannerURL({ size: 2048 })!)
+        .setImage((guild.splashURL({ size: 2048 }) || guild.bannerURL({ size: 2048 }))!)
         .setDescription(guildInfo.map(info => `${info.name} ${info.value}`))
         .addFields([
             {
