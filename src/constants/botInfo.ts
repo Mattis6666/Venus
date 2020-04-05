@@ -20,7 +20,7 @@ export const botInfo = {
             url: 'https://www.typescriptlang.org/'
         },
         {
-            type: 'Discord Library',
+            type: 'Discord Framework',
             name: 'discord.js',
             version: Discord.version,
             url: 'https://discord.js.org/'
