@@ -1,90 +1,54 @@
 import mongoose from 'mongoose';
-import { Message } from 'discord.js';
 
 export interface Guild extends mongoose.Document {
-    readonly guildId: string;
+    readonly guild: string;
     settings: {
         prefix: string;
-        welcomeChannel: string;
-        botChannel: string;
+        nsfw: boolean;
         blockedChannels: string[];
         disabledCommands: string[];
+        deleteCommandTriggers: boolean;
+        deleteFailedCommands: boolean;
     };
     roles: {
-        admin: string;
-        mod: string;
+        admin: string[];
+        mod: string[];
+        muted: string;
     };
-    modLog: [
-        {
-            readonly userId: string;
-            warns: [
-                {
-                    reason: string;
-                    moderator: {
-                        id: string;
-                        username: string;
-                    };
-                    date: Date;
-                }
-            ];
-        }
-    ];
-    createWarn(message: Message, userId: string, reason: string): CallableFunction;
+    channels: {
+        welcomeChannel: string;
+        modLogChannel: string;
+        messageLogChannel: string;
+        memberLogChannel: string;
+        automodLogChannel: string;
+        serverLogChannel: string;
+    };
 }
 
 const GuildSchema: mongoose.Schema = new mongoose.Schema({
-    guildId: String,
+    guild: String,
     settings: {
         prefix: String,
-        welcomeChannel: String,
-        botChannel: String,
+        nsfw: Boolean,
         blockedChannels: [String],
-        disabledCommands: [String]
+        disabledCommands: [String],
+        deleteCommandTriggers: Boolean,
+        deleteFailedCommands: Boolean
     },
     roles: {
-        admin: String,
-        mod: String
+        admin: [String],
+        mod: [String],
+        muted: String
     },
-    modLog: [
-        {
-            userId: String,
-            warns: [
-                {
-                    reason: String,
-                    moderator: {
-                        id: String,
-                        username: String
-                    },
-                    date: Date
-                }
-            ]
-        }
-    ]
+    channels: {
+        welcomeChannel: String,
+        modLogChannel: String,
+        messageLogChannel: String,
+        memberLogChannel: String,
+        automodLogChannel: String,
+        serverLogChannel: String
+    }
 });
 
-GuildSchema.methods.createWarn = async (message: Message, userId: string, reason: string) => {
-    if (!message.guild) throw new Error('Not a guild!');
-    const guildSettings = (await guild.findOne({ guildId: message.guild.id })) || (await guild.create({ guildId: message.guild.id }));
-    if (!guildSettings) throw new Error('No guild settings found!');
-    const modLog = guildSettings.modLog.filter(warn => warn.userId === userId)[0];
-    const warn = {
-        reason: reason,
-        moderator: {
-            id: message.author.id,
-            username: message.author.tag
-        },
-        date: message.createdAt
-    };
-    if (modLog) modLog.warns.push(warn);
-    else {
-        guildSettings.modLog.push({
-            userId: userId,
-            warns: [warn]
-        });
-    }
-    guildSettings.save();
-    return warn;
-};
-
-const guild = mongoose.model<Guild>('guilds', GuildSchema);
+const guild = mongoose.model<Guild>('Guilds', GuildSchema);
 export default guild;

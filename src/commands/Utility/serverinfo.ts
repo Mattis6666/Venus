@@ -9,35 +9,35 @@ const callback = async (message: Message, _args: string[]) => {
 
     const guildInfo = [
         {
-            name: `${emojis.crown}`,
+            name: emojis.crown,
             value: guild.members.cache.get(guild.ownerID) || (await guild.members.fetch(guild.ownerID))
         },
         {
-            name: `${emojis.hash}`,
+            name: emojis.hash,
             value: guild.id
         },
         {
-            name: `${emojis.globe}`,
+            name: emojis.globe,
             value: guild.region
         },
         {
-            name: `${emojis.date}`,
+            name: emojis.date,
             value: nicerDates(guild.createdAt)
         },
         {
-            name: `${emojis.info}`,
+            name: emojis.info,
             value: guild.description || 'No description provided'
         },
         {
-            name: `${emojis.member}`,
+            name: emojis.member,
             value: guild.memberCount
         },
         {
-            name: `${emojis.smiley}`,
+            name: emojis.smiley,
             value: guild.emojis.cache.size
         },
         {
-            name: `${emojis.nitroBoost}`,
+            name: emojis.nitroBoost,
             value: `${guild.premiumSubscriptionCount} (Level ${guild.premiumTier})`
         }
     ];
@@ -69,7 +69,7 @@ export const command: Command = {
     aliases: ['si', 'server', 'guildinfo', 'gi'],
     description: 'Display a lot of info about the server.',
     usage: '',
-    developerOnly: true,
+    developerOnly: false,
     guildOnly: true,
     dmOnly: false,
     requiresArgs: 0,

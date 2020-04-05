@@ -9,7 +9,7 @@ export default async (VenClient: Client, message: Message) => {
     if (message.author.bot || !message.author || (message.guild && !message.member) || !message.client || !message.channel) return;
 
     const guildSettings: Guild | null = message.guild
-        ? VenClient.guildSettings.get(message.guild.id) || (await db.findOne({ guildId: message.guild.id }))
+        ? VenClient.guildSettings.get(message.guild.id) || (await db.Guilds.findOne({ guildId: message.guild.id }))
         : null;
     if (message.guild && guildSettings && !VenClient.guildSettings.has(message.guild.id)) {
         VenClient.guildSettings.set(message.guild.id, guildSettings);

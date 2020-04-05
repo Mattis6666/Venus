@@ -19,7 +19,7 @@ const callback = async (message: Message, args: string[]) => {
     if (!commands.length) return wrongSyntax(message, 'You did not provide any valid commands to disable!');
 
     await guildSettings.save();
-    console.log(guildSettings);
+
     client.guildSettings.set(message.guild.id, guildSettings);
 
     return message.channel.send(`The following commands have been disabled on this server: \`${commands.join(', ')}\``);

@@ -2,23 +2,24 @@ import { Message } from 'discord.js';
 import Command from '../../interfaces/Command';
 import * as Util from '../../utils/Util';
 import * as Getters from '../../utils/getters';
-import DB, { getGuild } from '../../database/mongo';
+import { getGuild, getInfractions } from '../../database/mongo';
 import VenClient from '../../interfaces/Client';
 import { uploadHaste } from '../../utils/hastebin';
 
 const callback = async (message: Message, args: string[]) => {
     // @ts-ignore
-    const [client, commands, msg, guild, channel, db, getguild, util, getters, guildsettings] = [
+    const [client, commands, msg, guild, channel, getguild, getinfractions, util, getters, guildsettings, infractions] = [
         message.client as VenClient,
         (message.client as VenClient).commands,
         message,
         message.guild,
         message.channel,
-        DB,
         getGuild,
+        getInfractions,
         Util,
         Getters,
-        await getGuild(message.guild!.id)
+        await getGuild(message.guild!.id),
+        await getInfractions(message.guild!.id)
     ];
     try {
         let output =
