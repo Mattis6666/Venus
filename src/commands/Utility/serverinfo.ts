@@ -43,13 +43,22 @@ const callback = async (message: Message, _args: string[]) => {
     ];
     const roles = guild.roles.cache.filter(r => r.id !== guild.id).array(),
         channels = guild.channels.cache.filter(c => c.type === 'text').array();
+
     const output = newEmbed(true)
         .setTitle(guild.name)
         .setThumbnail(guild.iconURL({ size: 2048, dynamic: true })!)
-        .setImage(guild.splashURL({ size: 2048 })!)
-        .setDescription(guildInfo.map(info => `${info.name} ${info.value}`));
-    if (roles.join(' ').length < 1025) output.addField(`Roles (${roles.length})`, roles.join(' '));
-    if (channels.join(' ').length < 1025) output.addField(`Channels (${channels.length})`, channels.join(' '));
+        .setImage(guild.bannerURL({ size: 2048 })!)
+        .setDescription(guildInfo.map(info => `${info.name} ${info.value}`))
+        .addFields([
+            {
+                name: `Roles (${roles.length})`,
+                value: roles.join(' ').length < 1025 ? roles.join(' ') : 'Sorry, there are too many roles, so I cannot display them here'
+            },
+            {
+                name: `Channels (${channels.length})`,
+                value: channels.join(' ').length < 1025 ? channels.join(' ') : 'Sorry, there are too many channels, so I cannot display them here'
+            }
+        ]);
 
     return message.channel.send(output);
 };
