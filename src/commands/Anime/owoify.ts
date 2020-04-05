@@ -17,6 +17,7 @@ export const command: Command = {
     extended: '',
     usage: '<text>',
     developerOnly: false,
+    nsfw: false,
     guildOnly: false,
     dmOnly: false,
     requiresArgs: 1,

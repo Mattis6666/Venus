@@ -14,6 +14,7 @@ export const command: Command = {
     extended: 'To slap your friend, pass along their name or mention!',
     usage: '[user]',
     developerOnly: false,
+    nsfw: false,
     guildOnly: false,
     dmOnly: false,
     requiresArgs: 0,

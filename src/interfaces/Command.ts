@@ -6,9 +6,10 @@ export default interface Command {
     aliases: string[];
     category: CommandCategories;
     description: string;
-    extended?: string;
+    extended: string;
     usage: string;
     developerOnly: boolean;
+    nsfw: boolean;
     guildOnly: boolean;
     dmOnly: boolean;
     requiresArgs: number;

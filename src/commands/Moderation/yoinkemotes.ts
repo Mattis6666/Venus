@@ -42,6 +42,7 @@ export const command: Command = {
     extended: 'Their name will be the name the other server gave them.',
     usage: '<emote> (You can provide as many as you want)',
     developerOnly: false,
+    nsfw: false,
     guildOnly: true,
     dmOnly: false,
     requiresArgs: 1,

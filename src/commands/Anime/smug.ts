@@ -14,6 +14,7 @@ export const command: Command = {
     extended: 'To give your friend a smug look, pass along their name or mention!',
     usage: '[user]',
     developerOnly: false,
+    nsfw: false,
     guildOnly: false,
     dmOnly: false,
     requiresArgs: 0,

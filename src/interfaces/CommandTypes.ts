@@ -1,1 +1,1 @@
-export type CommandCategories = 'DEVELOPMENT' | 'MODERATION' | 'SETTINGS' | 'UTILITY' | 'MISC' | 'FUN' | 'ANIME';
+export type CommandCategories = 'DEVELOPMENT' | 'MODERATION' | 'SETTINGS' | 'UTILITY' | 'MISC' | 'FUN' | 'ANIME' | 'NSFW';

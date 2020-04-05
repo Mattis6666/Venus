@@ -14,6 +14,7 @@ export const command: Command = {
     extended: 'If your friend is baka, pass along their name or mention!',
     usage: '[user]',
     developerOnly: false,
+    nsfw: false,
     guildOnly: false,
     dmOnly: false,
     requiresArgs: 0,

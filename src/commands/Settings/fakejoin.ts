@@ -19,6 +19,7 @@ export const command: Command = {
     extended: 'Useful for testing your welcome setup',
     usage: '[member] (defaults to yourself)',
     developerOnly: false,
+    nsfw: false,
     guildOnly: true,
     dmOnly: false,
     requiresArgs: 0,

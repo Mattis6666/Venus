@@ -1,6 +1,6 @@
 import NekoClient from 'nekos.life';
 import { NekoSfwImageOptions, NekoNsfwImageOptions } from '../interfaces/NekoOptions';
-import { Message, MessageEmbed } from 'discord.js';
+import { Message, MessageEmbed, TextChannel } from 'discord.js';
 import { getMember } from './getters';
 const client = new NekoClient();
 
@@ -30,6 +30,8 @@ export const sendImage = async (message: Message, args: string[], type: NekoSfwI
     }
 
     const url = await getImage(type);
+    if (!url) return; // ERROR HERE
+
     const output = new MessageEmbed()
         .setTimestamp()
         .setColor('RANDOM')
@@ -38,5 +40,21 @@ export const sendImage = async (message: Message, args: string[], type: NekoSfwI
 
     if (!member) return message.channel.send(output);
     output.setDescription(description.replace('{{USER}}', message.author.toString()).replace('{{MEMBER}}', member.toString()));
+    return message.channel.send(output);
+};
+
+export const sendHentai = async (message: Message, type: NekoNsfwImageOptions) => {
+    return;
+    if (!message.guild || !(message.channel as TextChannel).nsfw) return;
+
+    const url = await getHentai(type);
+    if (!url) return; // ERROR HERE
+
+    const output = new MessageEmbed()
+        .setTimestamp()
+        .setColor('RANDOM')
+        .setImage(url)
+        .setAuthor(message.author.tag, message.author.displayAvatarURL({ size: 256, dynamic: true }));
+
     return message.channel.send(output);
 };
