@@ -6,7 +6,7 @@ import { wrongSyntax, handleError, nicerPermissions } from '../utils/Util';
 import Client from '../interfaces/Client';
 
 export default async (VenClient: Client, message: Message) => {
-    if (message.author.bot || !message.author || (message.guild && !message.member) || !message.client || !message.channel) return;
+    if (message.author.bot || (message.guild && !message.member) || !message.client || !message.channel) return;
 
     const guildSettings: Guild | null = message.guild
         ? VenClient.guildSettings.get(message.guild.id) || (await db.Guilds.findOne({ guildId: message.guild.id }))

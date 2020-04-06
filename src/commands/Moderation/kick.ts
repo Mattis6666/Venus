@@ -16,7 +16,7 @@ const callback = async (message: Message, args: string[]) => {
     const collector = message.channel.createMessageCollector(m => m.author.id === message.author.id, { time: 15 * 1000 });
 
     collector.on('collect', async (msg: Message) => {
-        if (msg.content.toLowerCase() === 'yes' || msg.content.toLowerCase() === 'y') {
+        if ('yes'.includes(msg.content.toLowerCase())) {
             const reason = args.slice(1).join(' ') || 'No reason provided.';
             const output = newEmbed(true)
                 .setTitle('Kick')
@@ -30,14 +30,14 @@ const callback = async (message: Message, args: string[]) => {
             await member.send(output).catch(() => null);
             member.kick(`Kicked by ${message.author.tag}: ${reason}}`);
 
+            m.edit(output.setDescription('User has been kicked! 👢'));
             msg.delete({ timeout: 10 * 1000 });
-            m.delete({ timeout: 10 * 1000 });
 
             confirmed = true;
-            collector.stop();
+            return collector.stop();
+        }
 
-            return message.channel.send(output.setDescription('User has been kicked! 👢'));
-        } else if (msg.content.toLowerCase() === 'no' || msg.content.toLowerCase() === 'n') {
+        if ('no'.includes(msg.content.toLowerCase())) {
             msg.delete({ timeout: 10 * 1000 });
             m.delete({ timeout: 10 * 1000 });
 
@@ -45,9 +45,9 @@ const callback = async (message: Message, args: string[]) => {
             collector.stop();
 
             return wrongSyntax(message, 'Kick has been cancelled!');
-        } else {
-            return wrongSyntax(msg, 'Invalid response! Please only respond with `yes` or `no`!');
         }
+
+        return wrongSyntax(msg, 'Invalid response! Please only respond with `yes` or `no`!', false);
     });
 
     collector.on('end', () => {

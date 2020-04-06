@@ -16,7 +16,8 @@ export const newEmbed = (timestamp: boolean = false) => {
 export const clean = (text: string) => {
     if (typeof text === 'string') {
         return text.replace(/`/g, '`' + String.fromCharCode(8203)).replace(/@/g, '@' + String.fromCharCode(8203));
-    } else return text;
+    }
+    return text;
 };
 
 export const handleError = async (client: Client, err: Error | Object) => {
@@ -41,11 +42,11 @@ export const fetch = async (RequestInfo: RequestInfo, requestOptions?: RequestIn
     return result;
 };
 
-export const wrongSyntax = async (message: Message, text: string) => {
+export const wrongSyntax = async (message: Message, text: string, del: boolean = true) => {
     const msg = await message.channel.send(text);
     if (!message.guild) return;
     msg.delete({ timeout: 1000 * 10 });
-    message.delete({ timeout: 1000 * 10 });
+    if (del) message.delete({ timeout: 1000 * 10 });
 };
 
 export const numToMonth = (num: number) => {
