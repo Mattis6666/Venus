@@ -1,9 +1,11 @@
 import mongoose from 'mongoose';
+import { Languages } from '../../interfaces/Languages';
 
 export interface Guild extends mongoose.Document {
     readonly guild: string; // The guild ID
     settings: {
         prefix: string;
+        language: Languages;
         nsfw: boolean; // Whether NSFW commands are enabled or not
         blockedChannels: string[]; // An array of IDs of blocked channels (No commands here)
         blockedUsers: string[]; // An array of IDs of blocked users (Unable to use commands)
@@ -51,6 +53,7 @@ const GuildSchema: mongoose.Schema = new mongoose.Schema({
     guild: String,
     settings: {
         prefix: String,
+        language: String,
         nsfw: Boolean,
         blockedChannels: [String],
         blockedUsers: [String],

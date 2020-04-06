@@ -7,7 +7,7 @@ import { getMember } from '../../utils/getters';
 
 const callback = async (message: Message, args: string[]) => {
     if (!message.guild) return;
-    const member = await getMember(message, args);
+    const member = await getMember(message, args, 0);
     if (!member) return;
     const reason = args.length > 1 ? args.splice(1).join(' ') : 'No reason provided';
     const infractions = await getInfractions(message.guild.id);

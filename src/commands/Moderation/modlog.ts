@@ -7,6 +7,7 @@ import { newEmbed, nicerDates, trimString } from '../../utils/Util';
 
 const callback = async (message: Message, args: string[]) => {
     if (!message.guild) return;
+
     const infractions = await getInfractions(message.guild.id);
     const output = newEmbed(true);
 

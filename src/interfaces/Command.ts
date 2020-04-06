@@ -1,5 +1,6 @@
 import { PermissionString, Message } from 'discord.js';
 import { CommandCategories } from './CommandTypes';
+import CommandStrings from './CommandStrings';
 
 export default interface Command {
     name: string;
@@ -17,5 +18,5 @@ export default interface Command {
     botPermissions: PermissionString | '';
     modOnly: boolean;
     adminOnly: boolean;
-    callback(message: Message, args?: string[]): Promise<Message | undefined | void> | void;
+    callback(message: Message, args: string[], language: CommandStrings): Promise<Message | undefined | void> | void;
 }

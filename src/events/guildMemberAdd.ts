@@ -1,10 +1,10 @@
 import Canvas from 'canvas';
-import VenClient from '../interfaces/Client';
+import VenusClient from '../interfaces/Client';
 import { GuildMember, TextChannel } from 'discord.js';
 import path from 'path';
 let background: Canvas.Image;
 
-export default async (_client: VenClient, member: GuildMember) => {
+export default async (_client: VenusClient, member: GuildMember) => {
     const channel = member.guild.channels.cache.get('695793033442230362');
     if (!channel) return;
 

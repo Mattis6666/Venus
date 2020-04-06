@@ -12,7 +12,7 @@ const callback = async (message: Message, _args: string[]) => {
     );
     const collector = message.channel.createMessageCollector(msg => msg.author === message.author, { time: 1000 * 60 * 5 });
     collector.on('collect', msg => {
-        if (['stop', 's', 'quit', 'q', 'cancel', 'c'].includes(msg.content.toLowerCase())) {
+        if ('cancel'.includes(msg.content.toLowerCase())) {
             collector.stop();
             msg.delete();
             board.delete();

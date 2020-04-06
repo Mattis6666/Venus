@@ -5,6 +5,13 @@ import ordinal from 'ordinal';
 import { logError } from './winston';
 import { inspect } from 'util';
 
+export const replace = (str: string, obj: { [prop: string]: string }) => {
+    for (const prop in obj) {
+        str = str.replace(new RegExp('{' + prop + '}', 'g'), obj[prop]);
+    }
+    return str;
+};
+
 export const trimString = (str: string, n: number) => {
     return str.length > n ? str.substring(0, n - 3) + '...' : str;
 };

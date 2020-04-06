@@ -2,8 +2,9 @@ import { Message } from 'discord.js';
 import Command from '../../interfaces/Command';
 import query from '../../constants/animeQuery';
 import { fetch, wrongSyntax, newEmbed, numToMonth, trimString, numToOrdinal } from '../../utils/Util';
+import CommandStrings from '../../interfaces/CommandStrings';
 
-const callback = async (message: Message, args: string[]) => {
+const callback = async (message: Message, args: string[], strings: CommandStrings) => {
     const data = await fetch('https://graphql.anilist.co', {
         method: 'POST',
         headers: {
@@ -21,8 +22,8 @@ const callback = async (message: Message, args: string[]) => {
     });
 
     const media = data.data.Page.media[0];
-    if (!media) return wrongSyntax(message, "Sorry, I wasn't able to find an anime matching your Search Term.");
-    if (media.isAdult) return wrongSyntax(message, "Sorry, this Anime can't be displayed, because it's NSFW!");
+    if (!media) return wrongSyntax(message, strings.nomatch);
+    if (media.isAdult) return wrongSyntax(message, strings.nsfw);
 
     const names = media.synonyms;
     if (media.title.english !== 'null' && media.title.english) names.push(media.title.english);

@@ -1,12 +1,13 @@
 import { Message } from 'discord.js';
 import Command from '../../interfaces/Command';
-import VenClient from '../../interfaces/Client';
+import VenusClient from '../../interfaces/Client';
 import config from '../../utils/config';
 import { wrongSyntax, newEmbed } from '../../utils/Util';
 import { getPrefix } from '../../utils/getters';
+import CommandStrings from '../../interfaces/CommandStrings';
 
-const callback = async (message: Message, args: string[]) => {
-    const client = message.client as VenClient;
+const callback = async (message: Message, args: string[], _language: CommandStrings) => {
+    const client = message.client as VenusClient;
     const prefix = message.guild ? await getPrefix(client, message.guild.id) : config.defaultPrefix;
     const output = newEmbed(true);
     if (!args.length) {

@@ -1,10 +1,10 @@
 import { Message } from 'discord.js';
 import Command from '../../interfaces/Command';
-import VenClient from '../../interfaces/Client';
+import VenusClient from '../../interfaces/Client';
 import { getGuild } from '../../database/mongo';
 
 const callback = async (message: Message, args: string[]) => {
-    const client = message.client as VenClient;
+    const client = message.client as VenusClient;
     if (!message.guild) return;
 
     const prefix = args[0];

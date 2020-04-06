@@ -6,7 +6,7 @@ import { wrongSyntax, newEmbed, trimString } from '../../utils/Util';
 
 const callback = async (message: Message, args: string[]) => {
     if (!message.guild || !message.member) return;
-    const member = await getMember(message, args);
+    const member = await getMember(message, args, 0);
     if (!member) return;
     if (!isMemberHigher(message.member, member)) return wrongSyntax(message, 'You cannot kick this user, because your highest role is not higher than theirs.');
     if (!member.kickable) return wrongSyntax(message, 'I am unable to kick this user. This is most likely because their role is higher than mine.');

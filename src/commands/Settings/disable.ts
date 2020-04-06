@@ -1,11 +1,11 @@
 import { Message } from 'discord.js';
 import Command from '../../interfaces/Command';
-import VenClient from '../../interfaces/Client';
+import VenusClient from '../../interfaces/Client';
 import { getGuild } from '../../database/mongo';
 import { wrongSyntax } from '../../utils/Util';
 
 const callback = async (message: Message, args: string[]) => {
-    const client = message.client as VenClient;
+    const client = message.client as VenusClient;
     if (!message.guild) return;
 
     const guildSettings = await getGuild(message.guild.id);

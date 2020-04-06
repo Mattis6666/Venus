@@ -3,7 +3,7 @@ import Command from '../../interfaces/Command';
 import { newEmbed } from '../../utils/Util';
 import { botInfo } from '../../constants/botInfo';
 
-const callback = async (message: Message, _args: string[]) => {
+const callback = async (message: Message) => {
     const output = newEmbed(true)
         .setAuthor(`About ${botInfo.name}`, message.client.user?.displayAvatarURL({ size: 256, dynamic: true }))
         .setDescription(`**Creator:** ${botInfo.developers.find(dev => dev.role.includes('Creator'))?.name}\n**Creation Date:** ${botInfo.creationDate}`)

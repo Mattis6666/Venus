@@ -1,9 +1,10 @@
 import { Collection, Client } from 'discord.js';
 import Command from './Command';
 import { Guild } from '../database/schemas/GuildSchema';
+import Strings from './StringsObj';
 
-export default class VenClient extends Client {
+export default class VenusClient extends Client {
     commands: Collection<string, Command> = new Collection();
     guildSettings: Collection<string, Guild> = new Collection();
-    languages: Collection<string, object> = new Collection();
+    languages: Collection<string, Strings[]> = new Collection();
 }

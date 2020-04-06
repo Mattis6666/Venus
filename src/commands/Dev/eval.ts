@@ -3,14 +3,14 @@ import Command from '../../interfaces/Command';
 import * as Util from '../../utils/Util';
 import * as Getters from '../../utils/getters';
 import { getGuild, getInfractions } from '../../database/mongo';
-import VenClient from '../../interfaces/Client';
+import VenusClient from '../../interfaces/Client';
 import { uploadHaste } from '../../utils/hastebin';
 
 const callback = async (message: Message, args: string[]) => {
     // @ts-ignore
     const [client, commands, msg, guild, channel, getguild, getinfractions, util, getters, guildsettings, infractions] = [
-        message.client as VenClient,
-        (message.client as VenClient).commands,
+        message.client,
+        (message.client as VenusClient).commands,
         message,
         message.guild,
         message.channel,

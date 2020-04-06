@@ -4,18 +4,19 @@ import { Guild } from '../database/schemas/GuildSchema';
 import db from '../database/mongo';
 import { wrongSyntax, handleError, nicerPermissions } from '../utils/Util';
 import Client from '../interfaces/Client';
+import { Languages } from '../interfaces/Languages';
 
-export default async (VenClient: Client, message: Message) => {
+export default async (VenusClient: Client, message: Message) => {
     if (message.author.bot || (message.guild && !message.member) || !message.client || !message.channel) return;
 
     const guildSettings: Guild | null = message.guild
-        ? VenClient.guildSettings.get(message.guild.id) || (await db.Guilds.findOne({ guildId: message.guild.id }))
+        ? VenusClient.guildSettings.get(message.guild.id) || (await db.Guilds.findOne({ guildId: message.guild.id }))
         : null;
-    if (message.guild && guildSettings && !VenClient.guildSettings.has(message.guild.id)) {
-        VenClient.guildSettings.set(message.guild.id, guildSettings);
+    if (message.guild && guildSettings && !VenusClient.guildSettings.has(message.guild.id)) {
+        VenusClient.guildSettings.set(message.guild.id, guildSettings);
     }
-    const guildPrefix = guildSettings?.settings.prefix;
-    const prefixRegex = new RegExp(`^(<@!?${VenClient.user?.id}>|${(guildPrefix || config.defaultPrefix).replace(/[.*+?^${}()|[\]\\]/g, '\\$&')})\\s*`);
+    const guildPrefix = guildSettings?.settings.prefix || config.defaultPrefix;
+    const prefixRegex = new RegExp(`^(<@!?${VenusClient.user?.id}>|${guildPrefix.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')})\\s*`);
     if (!prefixRegex.test(message.content)) return;
 
     const matched = message.content.match(prefixRegex);
@@ -24,10 +25,18 @@ export default async (VenClient: Client, message: Message) => {
 
     const args = message.content.slice(prefix.length).trim().split(' ');
     const commandName = args.shift()?.toLowerCase();
-    if (!commandName) return;
+    if (!commandName) {
+        if (message.mentions.users?.has(VenusClient.user!.id) && message.guild)
+            message.channel.send(`My prefix on this server is \`${guildPrefix}\`\nFor a list of commands, type \`${guildPrefix}help\``);
+        return;
+    }
 
-    const command = VenClient.commands.get(commandName) || VenClient.commands.find(command => command.aliases.includes(commandName));
+    const command = VenusClient.commands.get(commandName) || VenusClient.commands.find(command => command.aliases.includes(commandName));
     if (!command || !command.callback) return;
+
+    const language: Languages = guildSettings?.settings.language || 'en_GB';
+    const strings = VenusClient.languages.get(language)?.find(cmd => cmd.command === command.name)?.strings;
+    if (!strings) return;
 
     if (!config.developers.includes(message.author.id)) {
         if (command.developerOnly) return;
@@ -49,8 +58,8 @@ export default async (VenClient: Client, message: Message) => {
         );
 
     try {
-        command.callback(message, args);
+        command.callback(message, args, strings);
     } catch (err) {
-        handleError(VenClient, err);
+        handleError(VenusClient, err);
     }
 };
