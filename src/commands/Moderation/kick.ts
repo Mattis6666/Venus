@@ -2,25 +2,34 @@ import { Message } from 'discord.js';
 import Command from '../../interfaces/Command';
 import { getMember } from '../../utils/getters';
 import { isMemberHigher } from '../../utils/checks';
-import { wrongSyntax, newEmbed, trimString } from '../../utils/Util';
+import { wrongSyntax, newEmbed, trimString,  replace} from '../../utils/Util';
+import CommandStrings from '../../interfaces/CommandStrings';
 
-const callback = async (message: Message, args: string[]) => {
+const callback = async (message: Message, args: string[], strings: CommandStrings) => {
     if (!message.guild || !message.member) return;
     const member = await getMember(message, args, 0);
     if (!member) return;
-    if (!isMemberHigher(message.member, member)) return wrongSyntax(message, 'You cannot kick this user, because your highest role is not higher than theirs.');
-    if (!member.kickable) return wrongSyntax(message, 'I am unable to kick this user. This is most likely because their role is higher than mine.');
+    if (!isMemberHigher(message.member, member)) return wrongSyntax(message, strings.NOT_HIGHER);
+    if (!member.kickable) return wrongSyntax(message, strings.CANT_KICK);
 
-    const m = await message.channel.send(`Do you really want to kick ${member.user.tag}?\nPlease respond with \`yes\` or \`no\``);
+    const m = await message.channel.send(
+        replace(strings.CONFIRM, {
+            MEMBER: member.user.tag
+        })
+    );
     let confirmed = false;
     const collector = message.channel.createMessageCollector(m => m.author.id === message.author.id, { time: 15 * 1000 });
 
     collector.on('collect', async (msg: Message) => {
         if ('yes'.includes(msg.content.toLowerCase())) {
-            const reason = args.slice(1).join(' ') || 'No reason provided.';
+            const reason = args.slice(1).join(' ') || strings.NO_REASON;
             const output = newEmbed(true)
                 .setTitle('Kick')
-                .setDescription(`You have been kicked from ${message.guild!.name}! 👢`)
+                .setDescription(
+                  replace(strings.KICK_DM, {
+                      GUILD: message.guild!.name
+                  })
+                )
                 .addFields([
                     { name: 'User', value: member.user.tag },
                     { name: 'Moderator', value: message.author.tag },
@@ -30,7 +39,7 @@ const callback = async (message: Message, args: string[]) => {
             await member.send(output).catch(() => null);
             member.kick(`Kicked by ${message.author.tag}: ${reason}}`);
 
-            m.edit(output.setDescription('User has been kicked! 👢'));
+            m.edit(output.setDescription(strings.USER_KICKED));
             msg.delete({ timeout: 10 * 1000 });
 
             confirmed = true;
@@ -44,14 +53,14 @@ const callback = async (message: Message, args: string[]) => {
             confirmed = true;
             collector.stop();
 
-            return wrongSyntax(message, 'Kick has been cancelled!');
+            return wrongSyntax(message, strings.KICK_CANCEL);
         }
 
-        return wrongSyntax(msg, 'Invalid response! Please only respond with `yes` or `no`!', false);
+        return wrongSyntax(msg, strings.INVALID_RESPONSE, false);
     });
 
     collector.on('end', () => {
-        if (!confirmed) wrongSyntax(message, 'You did not respond in time. Please run the command again.');
+        if (!confirmed) wrongSyntax(message, strings.TOO_SLOW);
         return;
     });
 };
