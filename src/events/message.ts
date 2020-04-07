@@ -10,12 +10,13 @@ export default async (VenusClient: Client, message: Message) => {
     if (message.author.bot || (message.guild && !message.member) || !message.client || !message.channel) return;
 
     const guildSettings: Guild | null = message.guild
-        ? VenusClient.guildSettings.get(message.guild.id) || (await db.Guilds.findOne({ guildId: message.guild.id }))
+        ? VenusClient.guildSettings.get(message.guild.id) || (await db.Guilds.findOne({ guild: message.guild.id }))
         : null;
     if (message.guild && guildSettings && !VenusClient.guildSettings.has(message.guild.id)) {
         VenusClient.guildSettings.set(message.guild.id, guildSettings);
     }
     const guildPrefix = guildSettings?.settings.prefix || config.defaultPrefix;
+
     const prefixRegex = new RegExp(`^(<@!?${VenusClient.user?.id}>|${guildPrefix.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')})\\s*`);
     if (!prefixRegex.test(message.content)) return;
 

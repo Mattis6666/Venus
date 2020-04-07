@@ -3,6 +3,7 @@ import { Message } from 'discord.js';
 import VenusClient from '../interfaces/Client';
 import { getGuild } from '../database/mongo';
 import config from './config';
+import { Guild } from '../database/schemas/GuildSchema';
 
 export const getUser = async (message: Message, args: string[], spot?: number) => {
     const input = spot ? args[spot] : args.join(' ');
@@ -71,7 +72,7 @@ export const getRole = async (message: Message, args: string[], spot?: number) =
 };
 
 export const getPrefix = async (client: VenusClient, guildId: string) => {
-    const guildEntry: any = client.guildSettings.get(guildId) || (await getGuild(guildId));
+    const guildEntry: Guild = client.guildSettings.get(guildId) || (await getGuild(guildId));
     if (guildEntry && !client.guildSettings.get(guildId)) {
         client.guildSettings.set(guildId, guildEntry);
     }
