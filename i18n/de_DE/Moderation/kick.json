@@ -1,0 +1,15 @@
+{
+    "category": "Yönetim",
+    "description": "bir kullanıcıyı at",
+    "extended": "",
+    "usage": "<Kullanıcı (Etiket, ID ya da isim)> [sebep]",
+    "NOT_HIGHER": "Rolünüz bu kullanıcıdan yüksek olmadığı için bu kullanıcıyı atamazsınız.",
+    "CANT_KICK": "Bu kullanıcıyı atamıyorum. Muhtemelen rolü benden daha yüksek.",
+    "CONFIRM": "{MEMBER} adlı kullanıcı sunucudan atılsın mı?\nLütfen `yes` ya da `no` ile cevap verin.",
+    "NO_REASON": "Sebep belirtilmedi.",
+    "KICK_DM": "{GUILD} adlı sunucudan atıldın! 🔨",
+    "USER_KICKED": "Kullanıcı atıldı! 🔨",
+    "KICK_CANCEL": "Atma iptal edildi!",
+    "INVALID_RESPONSE": "Geçersiz yanıt!\nLütfen `yes` ya da `no` ile cevap verin!",
+    "TOO_SLOW": "Vaktinde cevap vermediniz, işlemi sizin için iptal ettim."
+}
