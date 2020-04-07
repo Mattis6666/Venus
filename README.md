@@ -1,20 +1,24 @@
-[![Codacy Badge](https://api.codacy.com/project/badge/Grade/164dd58eda3d4adb981095303f55362d)](https://www.codacy.com?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=Mattis6666/Venus&amp;utm_campaign=Badge_Grade)
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/164dd58eda3d4adb981095303f55362d)](https://www.codacy.com?utm_source=github.com&utm_medium=referral&utm_content=Mattis6666/Venus&utm_campaign=Badge_Grade)
 
 # Set up your own VenusTs Instance
-- Clone the repo
-- Run `yarn install` to install all dependencies
-- Create [a discord bot]("https://discordapp.com/developers/applications" "Create a Discord Bot!") and a [MongoDB database]("https://www.mongodb.com/" "Create a MongoDB database!")
-- Adjust config.ts to your needs.\nTemplate for the MongoString: ```mongodb+srv://USERNAME:PASSWORD.@YOURLINK/DATABASENAME?retryWrites=true&w=majority```
-- Run `yarn dev` to run the bot
+
+-   Clone the repo
+-   Run `yarn install` to install all dependencies
+-   Create [a discord bot]("https://discordapp.com/developers/applications" 'Create a Discord Bot!') and a [MongoDB database]("https://www.mongodb.com/" 'Create a MongoDB database!')
+-   Adjust config.ts to your needs.\nTemplate for the MongoString: `mongodb+srv://USERNAME:PASSWORD.@YOURLINK/DATABASENAME?retryWrites=true&w=majority`
+-   Run `yarn dev` to run the bot
 
 # Translate Venus
-- Clone the repo
-- Create a copy of `/i18n/en_GB` to `/i18n/yourlanguage_YOURCOUNTRY` and add your folder's name to `/src/interfaces/Languages.ts`
-- Simply change all the strings in all command files.\nDO NOT replace text inside {} or ``. You can move them around, but do not change or remove them.
-- Create a pull request with your changes.
+
+-   Clone the repo
+-   Create a copy of `/i18n/en_GB` to `/i18n/yourlanguage_YOURCOUNTRY` and add your folder's name to `/src/interfaces/Languages.ts`
+-   Simply change all the strings in all command files.
+    DO NOT replace text inside `{}` or `\`\``. You can move them around, but do not change or remove them.
+-   Create a pull request with your changes.
 
 # License
-```MIT License
+
+````MIT License
 
 Copyright (c) 2020 Mattis "VenNeptury" H
 
@@ -34,4 +38,5 @@ FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
 AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.```
+SOFTWARE.
+````
