@@ -1,4 +1,5 @@
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/164dd58eda3d4adb981095303f55362d)](https://www.codacy.com?utm_source=github.com&utm_medium=referral&utm_content=Mattis6666/Venus&utm_campaign=Badge_Grade)
+[![Build Status](https://travis-ci.com/Mattis6666/Venus.svg?token=zfRp6sQK95ixCpZjsWq9&branch=master)](https://travis-ci.com/Mattis6666/Venus)
 
 # VenusTs
 
@@ -9,7 +10,7 @@
 -   Create [a discord bot](https://discordapp.com/developers/applications 'Create a Discord Bot!') and a [MongoDB database](https://www.mongodb.com/ 'Create a MongoDB database!')
 -   Adjust config.ts to your needs.\
     Template for the MongoString:
-    ````
+    ````css
     mongodb+srv://USERNAME:PASSWORD.@YOURLINK/DATABASENAME?retryWrites=true&w=majority
     ````
 -   Run `yarn dev` to run the bot
@@ -24,7 +25,8 @@
 
 ## License
 
-````MIT License
+````
+MIT License
 
 Copyright (c) 2020 Mattis "VenNeptury" H
 
