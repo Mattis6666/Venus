@@ -36,7 +36,6 @@ export default async (VenusClient: Client, message: Message) => {
 
     const language: Languages = guildSettings?.settings.language || 'en_GB';
     const strings = VenusClient.languages.get(language)?.find(cmd => cmd.command === command.name)?.strings;
-    if (!strings) return;
 
     if (!config.developers.includes(message.author.id)) {
         if (command.developerOnly) return;
@@ -58,7 +57,7 @@ export default async (VenusClient: Client, message: Message) => {
         );
 
     try {
-        command.callback(message, args, strings);
+        command.callback(message, args, strings!);
     } catch (err) {
         handleError(VenusClient, err);
     }
