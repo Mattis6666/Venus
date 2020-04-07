@@ -4,6 +4,7 @@ import VenusClient from '../../interfaces/Client';
 import config from '../../utils/config';
 import { wrongSyntax, newEmbed } from '../../utils/Util';
 import { getPrefix } from '../../utils/getters';
+import { HelpCategories } from '../../interfaces/HelpCategories';
 import CommandStrings from '../../interfaces/CommandStrings';
 
 const callback = async (message: Message, args: string[], _language: CommandStrings) => {
@@ -11,13 +12,15 @@ const callback = async (message: Message, args: string[], _language: CommandStri
     const prefix = message.guild ? await getPrefix(client, message.guild.id) : config.defaultPrefix;
     const output = newEmbed(true);
     if (!args.length) {
-        const commands: any = {
+        const commands: HelpCategories = {
             DEVELOPMENT: [],
             MODERATION: [],
             SETTINGS: [],
             UTILITY: [],
             FUN: [],
-            ANIME: []
+            ANIME: [],
+            NSFW: [],
+            MISC: []
         };
         client.commands.forEach(command => {
             const category = commands[command.category];

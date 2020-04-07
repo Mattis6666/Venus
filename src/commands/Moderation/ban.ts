@@ -37,7 +37,7 @@ const callback = async (message: Message, args: string[], strings: CommandString
                 ]);
 
             await member.send(output).catch(() => null);
-            member.ban({ reason: `banned by ${message.author.tag}: ${reason}}` });
+            member.ban({ reason: `banned by ${message.author.tag}: ${reason}` });
 
             m.edit(output.setDescription(strings.USER_BANNED));
             msg.delete({ timeout: 10 * 1000 });

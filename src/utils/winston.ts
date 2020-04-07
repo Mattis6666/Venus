@@ -1,5 +1,6 @@
 import winston from 'winston';
 import chalk from 'chalk';
+import { TransformableInfo } from 'logform';
 
 export const logger = winston.createLogger({
     transports: [
@@ -22,7 +23,7 @@ const date = () => {
     }.${d.getFullYear()} ${d.getHours()}:${d.getMinutes()}:${d.getSeconds()}`;
 };
 
-const chalkifyWinston = (log: any) => {
+const chalkifyWinston = (log: TransformableInfo) => {
     let message = log.message;
     switch (log.level) {
         case 'error':

@@ -27,7 +27,7 @@ export const clean = (text: string) => {
     return text;
 };
 
-export const handleError = async (client: Client, err: Error | Record<string, any>) => {
+export const handleError = async (client: Client, err: Error) => {
     logError(err);
     const errorChannel = client.channels.cache.get(config.errorChannel) || (await client.channels.fetch(config.errorChannel));
     (errorChannel as TextChannel).send(
@@ -38,8 +38,8 @@ export const handleError = async (client: Client, err: Error | Record<string, an
     );
 };
 
-export const fetch = async (RequestInfo: RequestInfo, requestOptions?: RequestInit) => {
-    const result = await nodeFetch(RequestInfo, requestOptions)
+export const fetch = async (requestInfo: RequestInfo, requestOptions?: RequestInit) => {
+    const result = await nodeFetch(requestInfo, requestOptions)
         .then(response => {
             return response.json().then(json => {
                 return response.ok ? json : Promise.reject(json);

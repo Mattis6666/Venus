@@ -37,7 +37,7 @@ const callback = async (message: Message, args: string[], strings: CommandString
                 ]);
 
             await member.send(output).catch(() => null);
-            member.kick(`Kicked by ${message.author.tag}: ${reason}}`);
+            member.kick(`Kicked by ${message.author.tag}: ${reason}`);
 
             m.edit(output.setDescription(strings.USER_KICKED));
             msg.delete({ timeout: 10 * 1000 });
