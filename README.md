@@ -1,4 +1,5 @@
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/164dd58eda3d4adb981095303f55362d)](https://www.codacy.com?utm_source=github.com&utm_medium=referral&utm_content=Mattis6666/Venus&utm_campaign=Badge_Grade)
+[![Build Status](https://travis-ci.com/Mattis6666/Venus.svg?token=zfRp6sQK95ixCpZjsWq9&branch=master)](https://travis-ci.com/Mattis6666/Venus)
 
 # VenusTs
 
