@@ -16,7 +16,7 @@ export const trimString = (str: string, n: number) => {
     return str.length > n ? str.substring(0, n - 3) + '...' : str;
 };
 
-export const newEmbed = (timestamp: boolean = false) => {
+export const newEmbed = (timestamp = false) => {
     return timestamp ? new MessageEmbed().setColor('RANDOM').setTimestamp() : new MessageEmbed().setColor('RANDOM');
 };
 
@@ -27,7 +27,7 @@ export const clean = (text: string) => {
     return text;
 };
 
-export const handleError = async (client: Client, err: Error | Object) => {
+export const handleError = async (client: Client, err: Error | Record<string, any>) => {
     logError(err);
     const errorChannel = client.channels.cache.get(config.errorChannel) || (await client.channels.fetch(config.errorChannel));
     (errorChannel as TextChannel).send(
@@ -49,7 +49,7 @@ export const fetch = async (RequestInfo: RequestInfo, requestOptions?: RequestIn
     return result;
 };
 
-export const wrongSyntax = async (message: Message, text: string, del: boolean = true) => {
+export const wrongSyntax = async (message: Message, text: string, del = true) => {
     const msg = await message.channel.send(text);
     if (!message.guild) return;
     msg.delete({ timeout: 1000 * 10 });

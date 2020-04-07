@@ -2,7 +2,7 @@ import { Message } from 'discord.js';
 import Command from '../../interfaces/Command';
 import { getMember } from '../../utils/getters';
 import { isMemberHigher } from '../../utils/checks';
-import { wrongSyntax, newEmbed, trimString,  replace} from '../../utils/Util';
+import { wrongSyntax, newEmbed, trimString, replace } from '../../utils/Util';
 import CommandStrings from '../../interfaces/CommandStrings';
 
 const callback = async (message: Message, args: string[], strings: CommandStrings) => {
@@ -18,7 +18,7 @@ const callback = async (message: Message, args: string[], strings: CommandString
         })
     );
     let confirmed = false;
-    const collector = message.channel.createMessageCollector(m => m.author.id === message.author.id, { time: 15 * 1000 });
+    const collector = message.channel.createMessageCollector(m => m.author.id === message.author.id, { time: 1000 * 30 });
 
     collector.on('collect', async (msg: Message) => {
         if ('yes'.includes(msg.content.toLowerCase())) {
@@ -26,9 +26,9 @@ const callback = async (message: Message, args: string[], strings: CommandString
             const output = newEmbed(true)
                 .setTitle('Kick')
                 .setDescription(
-                  replace(strings.KICK_DM, {
-                      GUILD: message.guild!.name
-                  })
+                    replace(strings.KICK_DM, {
+                        GUILD: message.guild!.name
+                    })
                 )
                 .addFields([
                     { name: 'User', value: member.user.tag },

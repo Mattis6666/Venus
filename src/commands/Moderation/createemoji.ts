@@ -1,23 +1,31 @@
 import { Message } from 'discord.js';
 import Command from '../../interfaces/Command';
-import { wrongSyntax } from '../../utils/Util';
+import { wrongSyntax, replace } from '../../utils/Util';
+import CommandStrings from '../../interfaces/CommandStrings';
 
-const callback = (message: Message, args: string[]) => {
+const callback = (message: Message, args: string[], strings: CommandStrings) => {
     if (!message.guild) return;
 
     const name = args[0].replace(/\W/g, '');
-    if (!name) return wrongSyntax(message, 'You did not provide a valid emoji name.');
+    if (!name) return wrongSyntax(message, strings.INVALID_NAME);
     console.log(name);
     const url = message.attachments.first()?.url || args[1];
-    if (!url) return wrongSyntax(message, 'You did not provide an url or attachment!');
+    if (!url) return wrongSyntax(message, strings.NO_URL);
     return message.guild.emojis
-        .create(url, name, { reason: `Created by ${message.author.tag} via createemote command ` })
-        .then(emoji => message.channel.send(`Sucessfully created your emote ${name}: ${emoji}`))
-        .catch(() =>
+        .create(url, name, {
+            reason: replace(strings.REASON, {
+                MEMBER: message.author.tag
+            })
+        })
+        .then(emoji =>
             message.channel.send(
-                'Could not create your emote. This is either because this server does not have any free emote slots or because the provided image is bigger than 256kb.'
+                replace(strings.SUCCESS, {
+                    NAME: name,
+                    EMOJI: emoji.name
+                })
             )
-        );
+        )
+        .catch(() => message.channel.send(strings.FAILURE));
 };
 
 export const command: Command = {

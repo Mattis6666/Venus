@@ -1,35 +1,60 @@
 import { Message } from 'discord.js';
 import Command from '../../interfaces/Command';
-import { wrongSyntax } from '../../utils/Util';
+import { wrongSyntax, replace } from '../../utils/Util';
 import { emojis } from '../../constants/emojis';
+import CommandStrings from '../../interfaces/CommandStrings';
 
-const callback = async (message: Message, args: string[]) => {
+const callback = async (message: Message, args: string[], strings: CommandStrings) => {
     if (!message.guild) return;
     const regex = /<?(a)?:?(\w{2,32}):(\d{17,19})>?/g;
     const emotes = args.join(' ').match(regex);
-    if (!emotes) return wrongSyntax(message, 'You did not provide any emotes!');
+    if (!emotes) return wrongSyntax(message, strings.NO_EMOJIS);
 
     const guildEmotes = emotes.map(e => message.guild!.emojis.resolve(e.substring(e.lastIndexOf(':') + 1, e.lastIndexOf('>')))).filter(e => e);
-    if (!guildEmotes.length) return wrongSyntax(message, 'You did not provide any emotes that are from this server!');
+    if (!guildEmotes.length) return wrongSyntax(message, strings.NO_GUILD_EMOJIS);
 
     message.channel.startTyping();
 
     let i = 0;
-    const msg = await message.channel.send(`${emojis.loading} Successfully deleted 0/${guildEmotes.length} emojis!`);
+    const msg = await message.channel.send(
+        replace(strings.INITIAL, {
+            EMOJI: emojis.loading,
+            TOTAL: guildEmotes.length + ''
+        })
+    );
     await Promise.all(
         guildEmotes.map(e =>
-            e?.delete(`Deleted by ${message.author.tag} via deleteemoji command`).then(() => {
-                i++;
-                msg.edit(`${emojis.loading} I successfully deleted ${i}/${guildEmotes.length} emojis!`);
-            })
+            e
+                ?.delete(
+                    replace(strings.REASON, {
+                        member: message.author.tag
+                    })
+                )
+                .then(() => {
+                    i++;
+                    msg.edit(
+                        replace(strings.PROGRESS, {
+                            EMOJI: emojis.loading,
+                            COUNT: i + '',
+                            TOTAL: guildEmotes.length + ''
+                        })
+                    );
+                })
         )
     );
 
     message.channel.stopTyping();
     return msg.edit(
         i === guildEmotes.length
-            ? `${emojis.success} I successfully deleted ${i} emojis!`
-            : `${emojis.fail} I only managed to delete ${i}/${guildEmotes.length} emojis!`
+            ? replace(strings.SUCESS, {
+                  EMOJI: emojis.success,
+                  COUNT: i + ''
+              })
+            : replace(strings.FAILURE, {
+                  EMOJI: emojis.success,
+                  COUNT: i + '',
+                  TOTAL: guildEmotes.length + ''
+              })
     );
 };
 
