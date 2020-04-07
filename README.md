@@ -1,6 +1,8 @@
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/164dd58eda3d4adb981095303f55362d)](https://www.codacy.com?utm_source=github.com&utm_medium=referral&utm_content=Mattis6666/Venus&utm_campaign=Badge_Grade)
 
-# Set up your own VenusTs Instance
+# VenusTs
+
+## Set up your own Venus Instance
 
 -   Clone the repo
 -   Run `yarn install` to install all dependencies
@@ -12,7 +14,7 @@
     ````
 -   Run `yarn dev` to run the bot
 
-# Translate Venus
+## Translate Venus
 
 -   Clone the repo
 -   Create a copy of `/i18n/en_GB` to `/i18n/yourlanguage_YOURCOUNTRY` and add your folder's name to `/src/interfaces/Languages.ts`
@@ -20,7 +22,7 @@
     DO NOT replace `{TEXT}` or Text inside ``.You can move them around, but do not change or remove them.
 -   Create a pull request with your changes.
 
-# License
+## License
 
 ````MIT License
 
