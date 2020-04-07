@@ -5,15 +5,16 @@
 -   Clone the repo
 -   Run `yarn install` to install all dependencies
 -   Create [a discord bot]("https://discordapp.com/developers/applications" 'Create a Discord Bot!') and a [MongoDB database]("https://www.mongodb.com/" 'Create a MongoDB database!')
--   Adjust config.ts to your needs.\nTemplate for the MongoString: `mongodb+srv://USERNAME:PASSWORD.@YOURLINK/DATABASENAME?retryWrites=true&w=majority`
+-   Adjust config.ts to your needs.\
+    Template for the MongoString: ````mongodb+srv://USERNAME:PASSWORD.@YOURLINK/DATABASENAME?retryWrites=true&w=majority````
 -   Run `yarn dev` to run the bot
 
 # Translate Venus
 
 -   Clone the repo
 -   Create a copy of `/i18n/en_GB` to `/i18n/yourlanguage_YOURCOUNTRY` and add your folder's name to `/src/interfaces/Languages.ts`
--   Simply change all the strings in all command files.
-    DO NOT replace text inside `{}` or `\`\``. You can move them around, but do not change or remove them.
+-   Simply change all the strings in all command files.\
+    DO NOT replace text inside `{}` or ``````.You can move them around, but do not change or remove them.
 -   Create a pull request with your changes.
 
 # License
