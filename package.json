@@ -40,5 +40,15 @@
         "tictactoejs": "^1.0.3",
         "typescript": "^3.8.3",
         "winston": "^3.2.1"
+    },
+    "devDependencies": {
+        "husky": "^4.2.3",
+        "precise-commits": "^1.0.2",
+        "prettier": "^2.0.4"
+    },
+    "husky": {
+        "hooks": {
+            "pre-commit": "precise-commits"
+        }
     }
 }
