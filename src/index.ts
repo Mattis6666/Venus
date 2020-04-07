@@ -5,6 +5,7 @@ import Client from './interfaces/Client';
 import Command from './interfaces/Command';
 import { logError, logWarn } from './utils/winston';
 import CommandStrings from './interfaces/CommandStrings';
+import { ClientEvents } from './interfaces/ClientEvents';
 
 export const VenusClient = new Client({
     disableMentions: 'everyone',
@@ -23,7 +24,7 @@ const languagePath = path.join(__dirname, '../../i18n'),
 
 fs.readdirSync(listenerPath).forEach(file => {
     const event = require(`${listenerPath}/${file}`).default;
-    const eventName: any = file.replace('.js', '');
+    const eventName = file.replace('.js', '') as ClientEvents;
     VenusClient.on(eventName, event.bind(null, VenusClient));
 });
 
@@ -41,7 +42,7 @@ fs.readdirSync(languagePath).forEach(folder => {
         fs.readdirSync(`${languagePath}/${folder}/${subfolder}`)
             .filter(file => file.endsWith('.json'))
             .forEach(file => {
-                const str = require(`${languagePath}/${folder}/${subfolder}/${file}`);
+                const str: CommandStrings = require(`${languagePath}/${folder}/${subfolder}/${file}`);
                 languageFiles.push({ command: file.replace('.json', ''), strings: str });
             });
     });

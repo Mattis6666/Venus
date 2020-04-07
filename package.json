@@ -5,7 +5,8 @@
     "scripts": {
         "dev": "npm run build && export NODE_ENV=development && npm run start",
         "production": "npm run build && export NODE_ENV=production && npm run start",
-        "test": "tsc -p tsconfig.test.json",
+        "test": "tsc -p tsconfig.test.json && npm run lint",
+        "lint": "eslint ./src/**/*.ts --quiet",
         "push": "npm run gitAdd && npm run gitCommit && git push",
         "clean": "rm -rf out/*",
         "reinstall": "npm run cleanCache && npm run deleteModules && npm run deleteLock && npm run installModules",
@@ -43,6 +44,11 @@
         "winston": "^3.2.1"
     },
     "devDependencies": {
+        "@typescript-eslint/eslint-plugin": "^2.27.0",
+        "@typescript-eslint/parser": "^2.27.0",
+        "eslint": "^6.8.0",
+        "eslint-config-prettier": "^6.10.1",
+        "eslint-plugin-prettier": "^3.1.2",
         "husky": "^4.2.3",
         "precise-commits": "^1.0.2",
         "prettier": "^2.0.4"
