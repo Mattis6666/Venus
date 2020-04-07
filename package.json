@@ -5,6 +5,7 @@
     "scripts": {
         "dev": "npm run build && export NODE_ENV=development && npm run start",
         "production": "npm run build && export NODE_ENV=production && npm run start",
+        "test": "tsc -p tsconfig.test.json",
         "push": "npm run gitAdd && npm run gitCommit && git push",
         "clean": "rm -rf out/*",
         "reinstall": "npm run cleanCache && npm run deleteModules && npm run deleteLock && npm run installModules",
