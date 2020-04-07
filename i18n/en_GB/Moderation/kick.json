@@ -1,0 +1,15 @@
+{
+    "category": "MODERATION",
+    "description": "kick a user",
+    "extended": "",
+    "usage": "<User (Mention, ID or name)> [reason]",
+    "NOT_HIGHER": "You cannot kick this user, because your highest role is not higher than theirs.",
+    "CANT_KICK": "I am unable to kick this user. This is most likely because their role is higher than mine.",
+    "CONFIRM": "Do you really want to kick {MEMBER}?\nPlease respond with `yes` or `no`",
+    "NO_REASON": "No reason provided.",
+    "KICK_DM": "You have been kicked from {GUILD}! 🔨",
+    "USER_KICKED": "User has been kicked! 🔨",
+    "KICK_CANCEL": "Kick has been cancelled!",
+    "INVALID_RESPONSE": "Invalid response! Please only respond with `yes` or `no`!",
+    "TOO_SLOW": "You did not respond in time, so I closed the prompt for you."
+}
