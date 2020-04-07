@@ -4,7 +4,7 @@
 
 -   Clone the repo
 -   Run `yarn install` to install all dependencies
--   Create [a discord bot]("https://discordapp.com/developers/applications" 'Create a Discord Bot!') and a [MongoDB database]("https://www.mongodb.com/" 'Create a MongoDB database!')
+-   Create [a discord bot](https://discordapp.com/developers/applications 'Create a Discord Bot!') and a [MongoDB database](https://www.mongodb.com/ 'Create a MongoDB database!')
 -   Adjust config.ts to your needs.\
     Template for the MongoString:
     ````
