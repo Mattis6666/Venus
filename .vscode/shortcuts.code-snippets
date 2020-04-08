@@ -18,8 +18,7 @@
     "Basic command structure": {
         "prefix": ["commandstrucure", "cmdstruct"],
         "body": [
-            "import { Message } from 'discord.js'; \nimport Command from '../../interfaces/Command';\n\nconst callback = (message: Message, args: string[]) => {\n\n};\n\nexport const command: Command = {\nname: 'example',\ncategory: '',\naliases: [],\ndescription: '',\nusage: '',\ndeveloperOnly: false,\nnsfw: false;
-guildOnly: false,\ndmOnly: false,\nrequiresArgs: 0,\nuserPermissions: '',\nbotPermissions: '',\nmodOnly: false,\nadminOnly: false,\ncallback: callback\n};"
+            "import { Message } from 'discord.js'; \nimport Command from '../../interfaces/Command';\n\nconst callback = (message: Message, args: string[]) => {\n\n};\n\nexport const command: Command = {\nname: 'example',\ncategory: '',\naliases: [],\ndescription: '',\nusage: '',\ndeveloperOnly: false,\nnsfw: false,\nguildOnly: false,\ndmOnly: false,\nrequiresArgs: 0,\nuserPermissions: '',\nbotPermissions: '',\nmodOnly: false,\nadminOnly: false,\ncallback: callback\n};"
         ],
         "description": "Create the basic command structure for Venus Commands"
     }
