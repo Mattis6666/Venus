@@ -25,16 +25,17 @@ export const getUser = async (message: Message, args: string[], spot?: number) =
 };
 
 export const getMember = async (message: Message, args: string[], spot?: number) => {
-    const input = spot ? args[spot] : args.join(' ');
-    if (!args.length) return null;
+    const input = spot || spot === 0 ? args[spot].toLowerCase() : args.join(' ').toLowerCase();
+    if (!input) return null;
     if (!message.guild) {
         throw new SyntaxError('getMember was used in a DmChannel.');
     }
     const member = message.mentions.members?.first() || message.guild.members.cache.get(input);
     if (member) return member;
 
+    console.log(input);
     const memberSearch = message.guild.members.cache.filter(
-        member => member.user.username.toLowerCase().includes(input.toLowerCase()) || member.displayName.toLowerCase().includes(input.toLowerCase())
+        member => member.user.username.toLowerCase().includes(input) || member.displayName.toLowerCase().includes(input)
     );
     if (memberSearch.size === 1) return memberSearch.first();
     if (!memberSearch.size) {

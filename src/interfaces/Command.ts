@@ -16,7 +16,5 @@ export default interface Command {
     requiresArgs: number;
     userPermissions: PermissionString | '';
     botPermissions: PermissionString | '';
-    modOnly: boolean;
-    adminOnly: boolean;
     callback(message: Message, args: string[], language: CommandStrings): Promise<Message | undefined | void> | void;
 }

@@ -25,7 +25,5 @@ export const command: Command = {
     requiresArgs: 0,
     userPermissions: 'MANAGE_GUILD',
     botPermissions: '',
-    modOnly: false,
-    adminOnly: true,
     callback: callback
 };

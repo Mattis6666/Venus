@@ -24,7 +24,5 @@ export const command: Command = {
     requiresArgs: 1,
     userPermissions: '',
     botPermissions: '',
-    modOnly: false,
-    adminOnly: false,
     callback: callback
 };

@@ -42,7 +42,5 @@ export const command: Command = {
     requiresArgs: 1,
     userPermissions: 'MANAGE_EMOJIS',
     botPermissions: 'MANAGE_EMOJIS',
-    modOnly: false,
-    adminOnly: false,
     callback: callback
 };

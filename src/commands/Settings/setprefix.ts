@@ -33,7 +33,5 @@ export const command: Command = {
     dmOnly: false,
     userPermissions: 'ADMINISTRATOR',
     botPermissions: '',
-    modOnly: false,
-    adminOnly: true,
     callback: callback
 };

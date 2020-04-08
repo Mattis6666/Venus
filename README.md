@@ -10,7 +10,7 @@
 -   Create [a discord bot](https://discordapp.com/developers/applications 'Create a Discord Bot!') and a [MongoDB database](https://www.mongodb.com/ 'Create a MongoDB database!')
 -   Adjust config.ts to your needs.\
     Template for the MongoString:
-    ````css
+    ````
     mongodb+srv://USERNAME:PASSWORD.@YOURLINK/DATABASENAME?retryWrites=true&w=majority
     ````
 -   Run `yarn dev` to run the bot

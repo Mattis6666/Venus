@@ -23,6 +23,7 @@
     "license": "UNLICENSED",
     "description": "",
     "dependencies": {
+        "@types/bluebird": "^3.5.30",
         "@types/config": "^0.0.36",
         "@types/got": "^9.6.9",
         "@types/mongoose": "^5.7.7",
@@ -30,6 +31,7 @@
         "@types/node-fetch": "^2.5.5",
         "@types/tictactoejs": "^1.0.0",
         "@types/ws": "^7.2.3",
+        "bluebird": "^3.7.2",
         "canvas": "^2.6.1",
         "chalk": "^3.0.0",
         "config": "^3.3.0",
@@ -55,7 +57,7 @@
     },
     "husky": {
         "hooks": {
-            "pre-commit": "precise-commits"
+            "pre-commit": "precise-commits && npm run lint"
         }
     }
 }
