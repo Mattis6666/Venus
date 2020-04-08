@@ -27,6 +27,14 @@ export const clean = (text: string) => {
     return text;
 };
 
+export const runSerial = (tasks: CallableFunction[]) => {
+    let result = Promise.resolve();
+    tasks.forEach(task => {
+        result = result.then(() => task());
+    });
+    return result;
+};
+
 export const handleError = async (client: Client, err: Error) => {
     logError(err);
     const errorChannel = client.channels.cache.get(config.errorChannel) || (await client.channels.fetch(config.errorChannel));
