@@ -79,7 +79,5 @@ export const command: Command = {
     requiresArgs: 1,
     userPermissions: 'BAN_MEMBERS',
     botPermissions: 'BAN_MEMBERS',
-    modOnly: true,
-    adminOnly: false,
     callback: callback
 };

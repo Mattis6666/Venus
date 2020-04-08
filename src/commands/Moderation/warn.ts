@@ -42,9 +42,7 @@ export const command: Command = {
     nsfw: false,
     guildOnly: true,
     dmOnly: false,
-    userPermissions: '',
+    userPermissions: 'MANAGE_MESSAGES',
     botPermissions: '',
-    modOnly: true,
-    adminOnly: false,
     callback: callback
 };

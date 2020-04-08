@@ -66,7 +66,7 @@ const callback = async (message: Message, _args: string[]) => {
 
 export const command: Command = {
     name: 'register',
-    category: 'UTILITY',
+    category: 'DEVELOPMENT',
     aliases: [],
     description: '',
     extended: '',
@@ -78,7 +78,5 @@ export const command: Command = {
     requiresArgs: 0,
     userPermissions: '',
     botPermissions: '',
-    modOnly: false,
-    adminOnly: false,
     callback: callback
 };

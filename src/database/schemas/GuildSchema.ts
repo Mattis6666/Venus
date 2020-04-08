@@ -14,18 +14,6 @@ export interface Guild extends mongoose.Document {
         deleteFailedCommands: boolean; // Whether or not to delete triggers and response of failed commands
     };
     roles: {
-        admins: [
-            {
-                id: string; // The ID of the user or role that should be considered a bot admin
-                whatType: 'role' | 'member'; // Its type
-            }
-        ];
-        mods: [
-            {
-                id: string; // See above omegalul
-                whatType: 'role' | 'member';
-            }
-        ];
         muted: string; // The ID of the mute role
     };
     channels: {
@@ -62,18 +50,6 @@ const GuildSchema: mongoose.Schema = new mongoose.Schema({
         deleteFailedCommands: Boolean
     },
     roles: {
-        admins: [
-            {
-                id: String,
-                whatType: String
-            }
-        ],
-        mods: [
-            {
-                id: String,
-                whatType: String
-            }
-        ],
         muted: String
     },
     channels: {
