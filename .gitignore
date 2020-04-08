@@ -1,7 +1,6 @@
 # Project stuff
 out
 devconfig.ts
-winston.log
 .directory
 
 # Logs
