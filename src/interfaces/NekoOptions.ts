@@ -35,7 +35,6 @@ export type NekoNsfwImageOptions =
     | 'tits'
     | 'girlSoloGif'
     | 'girlSolo'
-    | 'smallBoobs'
     | 'pussyWankGif'
     | 'pussyArt'
     | 'kemonomimi'
@@ -55,5 +54,4 @@ export type NekoNsfwImageOptions =
     | 'eroNeko'
     | 'eroYuri'
     | 'cumArts'
-    | 'blowJob'
-    | 'pussyGif';
+    | 'blowJob';

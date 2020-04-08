@@ -37,7 +37,5 @@ export const command: Command = {
     requiresArgs: 0,
     userPermissions: '',
     botPermissions: '',
-    modOnly: false,
-    adminOnly: false,
     callback: callback
 };

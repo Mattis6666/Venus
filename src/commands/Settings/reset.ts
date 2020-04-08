@@ -13,20 +13,18 @@ const callback = async (message: Message, _args: string[]) => {
 };
 
 export const command: Command = {
-    name: 'reset',
-    category: 'DEVELOPMENT',
+    name: 'resetserver',
+    category: 'SETTINGS',
     aliases: [],
-    description: '',
-    extended: '',
+    description: `Resets all my settings`,
+    extended: 'THIS WILL RESET ALL MY SETTINGS! This includes prefix, disabled commands, blocked channels, the welcome channel...',
     usage: '',
-    developerOnly: true,
+    developerOnly: false,
     nsfw: false,
     guildOnly: false,
     dmOnly: false,
     requiresArgs: 0,
-    userPermissions: '',
+    userPermissions: 'ADMINISTRATOR',
     botPermissions: '',
-    modOnly: false,
-    adminOnly: false,
     callback: callback
 };

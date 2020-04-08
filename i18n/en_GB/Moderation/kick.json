@@ -10,6 +10,6 @@
     "KICK_DM": "You have been kicked from {GUILD}! 🔨",
     "USER_KICKED": "User has been kicked! 🔨",
     "KICK_CANCEL": "Kick has been cancelled!",
-    "INVALID_RESPONSE": "Invalid response! Please only respond with `yes` or `no`!",
+    "INVALID_RESPONSE": "Invalid response!\nPlease only respond with `yes` or `no`!",
     "TOO_SLOW": "You did not respond in time, so I closed the prompt for you."
 }

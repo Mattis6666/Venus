@@ -79,7 +79,5 @@ export const command: Command = {
     requiresArgs: 1,
     userPermissions: 'KICK_MEMBERS',
     botPermissions: 'KICK_MEMBERS',
-    modOnly: true,
-    adminOnly: false,
     callback: callback
 };

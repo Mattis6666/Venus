@@ -3,7 +3,7 @@ import Command from '../../interfaces/Command';
 
 import { getInfractions } from '../../database/mongo';
 import { getMember } from '../../utils/getters';
-import { newEmbed, nicerDates, trimString } from '../../utils/Util';
+import { newEmbed, nicerDates, trimString, wrongSyntax } from '../../utils/Util';
 
 const callback = async (message: Message, args: string[]) => {
     if (!message.guild) return;
@@ -26,6 +26,8 @@ const callback = async (message: Message, args: string[]) => {
         return message.channel.send(output);
     }
 
+    if (!message.member!.permissions.has('MANAGE_MESSAGES'))
+        return wrongSyntax(message, "You require the `Manage Messages` Permission to see another users' Infractions!");
     const member = await getMember(message, args);
     if (!member) return;
 
@@ -57,7 +59,5 @@ export const command: Command = {
     dmOnly: false,
     userPermissions: '',
     botPermissions: '',
-    modOnly: false,
-    adminOnly: false,
     callback: callback
 };
