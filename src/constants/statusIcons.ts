@@ -1,7 +1,7 @@
 export const statusIcons = {
-    online: 'https://i.imgur.com/h7bLTVE.png',
-    idle: 'https://i.imgur.com/WeXXktV.png', // REPLACE IF POSSIBLE
-    dnd: 'https://i.imgur.com/OI0T0WH.png',
-    offline: 'https://i.imgur.com/MsyF9z3.png',
-    streaming: 'https://i.imgur.com/yJnGEYd.png'
+    online: 'https://i.imgur.com/FS5nWDJ.png',
+    idle: 'https://i.imgur.com/7mC8AWy.png',
+    dnd: 'https://i.imgur.com/EdvCkvZ.png',
+    offline: 'https://i.imgur.com/YQNx8dT.png',
+    streaming: 'https://i.imgur.com/xutQKUO.png'
 };
