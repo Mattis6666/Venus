@@ -7,7 +7,7 @@ const callback = (message: Message, _args: string[]) => {
 };
 
 export const command: Command = {
-    name: 'erp',
+    name: 'ero',
     category: 'NSFW',
     aliases: ['ecchi', 'erotic'],
     description: 'ecchi - Only mildly NSFW',
