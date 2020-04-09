@@ -33,7 +33,6 @@ export const getMember = async (message: Message, args: string[], spot?: number)
     const member = message.mentions.members?.first() || message.guild.members.cache.get(input);
     if (member) return member;
 
-    console.log(input);
     const memberSearch = message.guild.members.cache.filter(
         member => member.user.username.toLowerCase().includes(input) || member.displayName.toLowerCase().includes(input)
     );

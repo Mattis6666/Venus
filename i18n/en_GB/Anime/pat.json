@@ -1,0 +1,7 @@
+{
+    "category": "ANIME",
+    "description": "Get a random pat image.",
+    "extended": "To pat your friend, pass along their name or mention!",
+    "usage": "[user]",
+    "MESSAGE": "{{USER}} pats {{MEMBER}}!"
+}

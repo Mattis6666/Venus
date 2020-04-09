@@ -1,0 +1,7 @@
+{
+    "category": "ANIME",
+    "description": "Get a random foxgirl image.",
+    "extended": "",
+    "usage": "[user]",
+    "MESSAGE": "{{USER}} shows you this cute foxgirl, {{MEMBER}}!"
+}

@@ -1,0 +1,7 @@
+{
+    "category": "ANIME",
+    "description": "Get a random slap image.",
+    "extended": "To slap your friend, pass along their name or mention!",
+    "usage": "[user]",
+    "MESSAGE": "{{USER}} slaps {{MEMBER}}!"
+}

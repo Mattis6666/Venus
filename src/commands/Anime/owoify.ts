@@ -1,12 +1,17 @@
 import { OwOify } from '../../utils/nekos';
 import Command from '../../interfaces/Command';
 import { Message } from 'discord.js';
-import { wrongSyntax } from '../../utils/Util';
+import CommandStrings from '../../interfaces/CommandStrings';
+import { wrongSyntax, replace } from '../../utils/Util';
 
-const callback = async (message: Message, args: string[]) => {
+const callback = async (message: Message, args: string[], strings: CommandStrings) => {
     const owo = await OwOify(args.join(' '));
-    if (!owo) return wrongSyntax(message, 'Sorry, I was unable to OwOify your input.');
-    return message.channel.send(`*${message.author.username}, your OwOified message:*\n>>> ${owo}`);
+    if (!owo) return wrongSyntax(message, strings.FAILURE);
+    return message.channel.send(
+        `*${replace(strings.SUCCESS, {
+            USER: message.author.username
+        })}:*\n>>> ${owo}`
+    );
 };
 
 export const command: Command = {

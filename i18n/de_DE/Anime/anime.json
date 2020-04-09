@@ -4,5 +4,5 @@
     "extended": "",
     "usage": "[Anime Name]",
     "nomatch": "Ich konnte leider keinen Anime mit diesem Namen finden!",
-    "nsfw": "Diesen Anime kann ich nicht anzeigen, da er NSFW ist!"
+    "nsfw": "Diesen Anime kann ich leider nicht anzeigen, da er NSFW ist!"
 }

@@ -1,0 +1,7 @@
+{
+    "category": "ANIME",
+    "description": "Get a random smug image.",
+    "extended": "To give your friend a smug look, pass along their name or mention!",
+    "usage": "[user]",
+    "MESSAGE": "{{USER}} gives you a smug look, {{MEMBER}}!"
+}

@@ -1,0 +1,7 @@
+{
+    "category": "ANIME",
+    "description": "Get a random tickle image.",
+    "extended": "To tickle your friend, pass along their name or mention!",
+    "usage": "[user]",
+    "MESSAGE": "{{USER}} tickles you, {{MEMBER}}!"
+}

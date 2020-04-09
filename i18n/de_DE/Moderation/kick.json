@@ -1,5 +1,5 @@
 {
-    "category": "Yönetim",
+    "category": "MODERATION",
     "description": "bir kullanıcıyı at",
     "extended": "",
     "usage": "<Kullanıcı (Etiket, ID ya da isim)> [sebep]",

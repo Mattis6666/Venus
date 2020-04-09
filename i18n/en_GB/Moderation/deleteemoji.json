@@ -1,8 +1,8 @@
 {
     "category": "MODERATION",
-    "description": "ban a user",
-    "extended": "",
-    "usage": "<User (Mention, ID or name)> [reason]",
+    "description": "delete an emoji",
+    "extended": "You can provide as many emojis as you want",
+    "usage": "<emojis>",
     "NO_EMOJIS": "You did not provide any emotes!",
     "NO_GUILD_EMOJIS": "You did not provide any emotes that are from this server!",
     "INITIAL": "{EMOJI} Successfully deleted 0/{TOTAL} emojis!",

@@ -1,9 +1,10 @@
 import { sendImage } from '../../utils/nekos';
 import Command from '../../interfaces/Command';
 import { Message } from 'discord.js';
+import CommandStrings from '../../interfaces/CommandStrings';
 
-const callback = (message: Message, args: string[]) => {
-    return sendImage(message, args, 'woof', '{{USER}} shows you this cute doggo, {{MEMBER}}!');
+const callback = async (message: Message, args: string[], strings: CommandStrings) => {
+    return sendImage(message, args, 'woof', strings.MESSAGE);
 };
 
 export const command: Command = {

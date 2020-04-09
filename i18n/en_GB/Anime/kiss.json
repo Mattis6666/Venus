@@ -1,0 +1,7 @@
+{
+    "category": "ANIME",
+    "description": "Get a random kiss image.",
+    "extended": "To kiss your friend, pass along their name or mention!",
+    "usage": "[user]",
+    "MESSAGE": "{{USER}} kisses {{MEMBER}}!"
+}
