@@ -1,0 +1,8 @@
+{
+    "category": "SETTINGS",
+    "description": "Enable/Disable NSFW commands",
+    "extended": "Even if enabled, NSFW commands can only be used in NSFW channels",
+    "usage": "",
+    "ENABLE": "NSFW commands have successfully been enabled on this server!",
+    "DISABLE": "NSFW commands have successfully been disabled on this server!"
+}

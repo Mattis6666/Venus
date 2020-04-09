@@ -51,6 +51,10 @@ export default async (VenusClient: Client, message: Message) => {
     }
     if (command.guildOnly && !message.guild) return wrongSyntax(message, 'This command can only be used on a server!');
     if (command.dmOnly && message.guild) return wrongSyntax(message, 'This command can only be used in my DMs!');
+    if (command.nsfw && (!message.guild || message.channel.type !== 'text' || !message.channel.nsfw))
+        return wrongSyntax(message, 'This command can only be used in a NSFW channel!');
+    if (command.nsfw && (!guildSettings || !guildSettings.settings.nsfw))
+        return wrongSyntax(message, 'This server does not have NSFW commands disabled! Message an Admin if you think this is wrong.');
     if (command.requiresArgs && args.length < command.requiresArgs)
         return wrongSyntax(
             message,

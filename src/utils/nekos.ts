@@ -44,17 +44,16 @@ export const sendImage = async (message: Message, args: string[], type: NekoSfwI
 };
 
 export const sendHentai = async (message: Message, type: NekoNsfwImageOptions) => {
-    return;
     if (!message.guild || !(message.channel as TextChannel).nsfw) return;
 
     const url = await getHentai(type);
-    if (!url) return; // ERROR HERE
+    if (!url) return;
 
     const output = new MessageEmbed()
         .setTimestamp()
         .setColor('RANDOM')
         .setImage(url)
-        .setAuthor(message.author.tag, message.author.displayAvatarURL({ size: 256, dynamic: true }));
+        .setAuthor(`So naughty, ${message.author.username}~`, message.author.displayAvatarURL({ size: 256, dynamic: true }));
 
     return message.channel.send(output);
 };
