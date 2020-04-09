@@ -2,50 +2,64 @@ import Canvas from 'canvas';
 import VenusClient from '../interfaces/Client';
 import { GuildMember, TextChannel } from 'discord.js';
 import path from 'path';
+import { getGuild } from '../database/mongo';
 let background: Canvas.Image;
 
 export default async (_client: VenusClient, member: GuildMember) => {
-    const channel = member.guild.channels.cache.get('695793033442230362');
-    if (!channel) return;
+    const guildSettings = await getGuild(member.guild.id);
+    if (guildSettings.welcome.autoRole) {
+        const role = member.guild.roles.cache.get(guildSettings.welcome.autoRole);
+        if (!role) return;
 
-    if (!background) background = await Canvas.loadImage(path.join(__dirname, '../../../assets/images/welcome.jpg'));
-    const avatar = await Canvas.loadImage(member.user.displayAvatarURL({ size: 256, format: 'png' }));
-    const guild = member.guild.name;
-    const name = member.user.tag;
+        member.roles.add(role).catch(() => null);
+    }
+    if (guildSettings.welcome.message) {
+        member.send(guildSettings.welcome.message).catch(() => null);
+    }
 
-    const canvas = Canvas.createCanvas(1150, 450);
-    const ctx = canvas.getContext('2d');
+    if (guildSettings.channels.welcomeChannel) {
+        const channel = member.guild.channels.cache.get(guildSettings.channels.welcomeChannel);
+        if (!channel) return;
 
-    ctx.drawImage(background, 0, 0, canvas.width, canvas.height);
+        if (!background) background = await Canvas.loadImage(path.join(__dirname, '../../../assets/images/welcome.jpg'));
+        const avatar = await Canvas.loadImage(member.user.displayAvatarURL({ size: 256, format: 'png' }));
+        const guild = member.guild.name;
+        const name = member.user.tag;
 
-    //Text Gradient
-    const gradient = ctx.createLinearGradient(0, 0, canvas.width, canvas.height);
-    gradient.addColorStop(0, 'magenta');
-    gradient.addColorStop(0.5, 'blue');
-    gradient.addColorStop(1, 'red');
-    ctx.fillStyle = gradient;
+        const canvas = Canvas.createCanvas(1150, 450);
+        const ctx = canvas.getContext('2d');
 
-    // Member Name
-    ctx.font = adjustSize(canvas, name, 330, 20);
-    const center = 330 - ctx.measureText(name).width > 0 ? (330 - ctx.measureText(name).width) / 2 : 0;
+        ctx.drawImage(background, 0, 0, canvas.width, canvas.height);
 
-    ctx.fillText(name, 660 + center, 304);
+        //Text Gradient
+        const gradient = ctx.createLinearGradient(0, 0, canvas.width, canvas.height);
+        gradient.addColorStop(0, 'magenta');
+        gradient.addColorStop(0.5, 'blue');
+        gradient.addColorStop(1, 'red');
+        ctx.fillStyle = gradient;
 
-    // Guild Name
-    ctx.font = adjustSize(canvas, guild, 600, 30);
+        // Member Name
+        ctx.font = adjustSize(canvas, name, 330, 20);
+        const center = 330 - ctx.measureText(name).width > 0 ? (330 - ctx.measureText(name).width) / 2 : 0;
 
-    const center2 = 500 - ctx.measureText(guild).width > 0 ? (500 - ctx.measureText(guild).width) / 2 : 0;
+        ctx.fillText(name, 660 + center, 304);
 
-    ctx.fillText(guild, 565 + center2, 390);
+        // Guild Name
+        ctx.font = adjustSize(canvas, guild, 600, 30);
 
-    // Member Avatar
-    ctx.beginPath();
-    ctx.arc(795, 136, 95, 0, Math.PI * 2, true);
-    ctx.closePath();
-    ctx.clip();
-    ctx.drawImage(avatar, 695, 36, 200, 200);
+        const center2 = 500 - ctx.measureText(guild).width > 0 ? (500 - ctx.measureText(guild).width) / 2 : 0;
 
-    return (channel as TextChannel).send(`Welcome to ${guild}, ${member}!`, { files: [canvas.toBuffer()] });
+        ctx.fillText(guild, 565 + center2, 390);
+
+        // Member Avatar
+        ctx.beginPath();
+        ctx.arc(795, 136, 95, 0, Math.PI * 2, true);
+        ctx.closePath();
+        ctx.clip();
+        ctx.drawImage(avatar, 695, 36, 200, 200);
+
+        (channel as TextChannel).send(`Welcome to ${guild}, ${member}!`, { files: [canvas.toBuffer()] });
+    }
 };
 
 const adjustSize = (canvas: Canvas.Canvas, text: string, width: number, height: number) => {

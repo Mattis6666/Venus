@@ -50,8 +50,8 @@ export const getMember = async (message: Message, args: string[], spot?: number)
     return null;
 };
 
-export const getRole = async (message: Message, args: string[], spot?: number) => {
-    const input = spot ? args[spot] : args.join(' ');
+export const getRole = (message: Message, args: string[], spot?: number) => {
+    const input = spot ? args[spot]?.toLowerCase() : args.join(' ').toLowerCase();
     if (!message.guild) {
         throw new SyntaxError('getRole was used in a DmChannel.');
     }

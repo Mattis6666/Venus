@@ -17,6 +17,7 @@ export const VenusClient = new Client({
         }
     }
 });
+VenusClient.config = config;
 
 const languagePath = path.join(__dirname, '../../i18n'),
     listenerPath = path.join(__dirname, './events'),

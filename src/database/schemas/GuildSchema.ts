@@ -35,6 +35,10 @@ export interface Guild extends mongoose.Document {
         whitelist: string[]; // An array of IDs of whitelisted users
         words: string[]; // An array of blacklisted words
     };
+    welcome: {
+        message: string;
+        autoRole: string;
+    };
 }
 
 const GuildSchema: mongoose.Schema = new mongoose.Schema({
@@ -70,6 +74,10 @@ const GuildSchema: mongoose.Schema = new mongoose.Schema({
     blacklist: {
         whitelist: [String],
         words: [String]
+    },
+    welcome: {
+        message: String,
+        autoRole: String
     }
 });
 
