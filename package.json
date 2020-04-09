@@ -59,5 +59,9 @@
         "hooks": {
             "pre-commit": "precise-commits && npm run lint"
         }
-    }
+    },
+    "eslintIgnore": [
+        "out",
+        ".vscode"
+    ]
 }

@@ -27,7 +27,7 @@ export const command: Command = {
     usage: '<word to look up>',
     developerOnly: false,
     requiresArgs: 1,
-    nsfw: false,
+    nsfw: true,
     guildOnly: false,
     dmOnly: false,
     userPermissions: '',
