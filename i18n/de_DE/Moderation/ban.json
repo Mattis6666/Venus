@@ -1,6 +1,6 @@
 {
     "category": "Moderation",
-    "description": "Einen Mitglied verbannen",
+    "description": "Ein Mitglied verbannen",
     "extended": "",
     "usage": "<Mitglied (Erwähnung, ID oder Mitgliedname)> [Grund]",
     "YES": "ja",
