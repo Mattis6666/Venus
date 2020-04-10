@@ -1,25 +1,22 @@
 import { Message } from 'discord.js';
 import Command from '../../interfaces/Command';
 import ttt from 'tictactoejs';
-import { wrongSyntax } from '../../utils/Util';
+import { wrongSyntax, replace } from '../../utils/Util';
+import CommandStrings from '../../interfaces/CommandStrings';
 
-const callback = async (message: Message, _args: string[]) => {
+const callback = async (message: Message, _args: string[], strings: CommandStrings) => {
     const game = new ttt.TicTacToe();
-    const board = await message.channel.send(
-        '```' +
-            game.ascii() +
-            '\n\nX is the Player, O the bot.\nTo make a move, simply type [rowNumber] [lineNumber] counting from the bottom left corner.\nThe bottom-right corner would be "3 1", the top right one "3 3".\nSend [q]uit, [c]ancel or [s]top to end the game.```'
-    );
+    const board = await message.channel.send(`\`\`\`${game.ascii()}\n\n${replace(strings.RULES, { CANCEL_WORD: strings.CANCEL_WORD })}\`\`\``);
     const collector = message.channel.createMessageCollector(msg => msg.author === message.author, { time: 1000 * 60 * 5 });
     collector.on('collect', msg => {
-        if ('cancel'.includes(msg.content.toLowerCase())) {
+        if (strings.CANCEL_WORD.toLowerCase().includes(msg.content.toLowerCase())) {
             collector.stop();
             msg.delete();
             board.delete();
-            return wrongSyntax(message, 'Cancelled the game!');
+            return wrongSyntax(message, strings.QUIT);
         }
         const [x, y] = msg.content.split(' ');
-        if (!game.legalMoves().some(ele => ele.x === (x | 0) && ele.y === (y | 0))) return wrongSyntax(msg, 'Invalid move!');
+        if (!game.legalMoves().some(ele => ele.x === (x | 0) && ele.y === (y | 0))) return wrongSyntax(msg, strings.INVALID_MOVE);
 
         if (game.status() === 'in progress') {
             game.turn();
@@ -32,14 +29,23 @@ const callback = async (message: Message, _args: string[]) => {
         }
         msg.delete();
         if (game.status() === 'in progress')
-            return board.edit(
-                '```' +
-                    game.ascii() +
-                    '\n\nX is the Player, O the bot.\nTo make a move, simply type [rowNumber] [lineNumber] counting from the bottom left corner.\nThe bottom-right corner would be "3 1", the top right one "3 3".\nSend [q]uit, [c]ancel or [s]top to end the game.```'
+            return board.edit(`\`\`\`${game.ascii()}\n\n${replace(strings.RULES, { CANCEL_WORD: strings.CANCEL_WORD })}\`\`\``);
+
+        if (game.status() === 'draw') board.edit(`\`\`\`${game.ascii()}\n\n${strings.DRAW}\`\`\``);
+
+        if (game.status() === 'X')
+            board.edit(
+                `\`\`\`${game.ascii()}\n\n${replace(strings.WIN, {
+                    PLAYER: message.member?.displayName || message.client.user!.username
+                })}\`\`\``
             );
-        if (game.status() === 'draw') board.edit('```' + game.ascii() + '\n\nDRAW!```');
-        if (game.status() === 'X') board.edit('```' + game.ascii() + '\n\nPLAYER WINS!```');
-        if (game.status() === 'O') board.edit('```' + game.ascii() + '\n\nBOT WINS!```');
+
+        if (game.status() === 'O')
+            board.edit(
+                `\`\`\`${game.ascii()}\n\n${replace(strings.LOSS, {
+                    BOT: message.guild?.me?.displayName || message.client.user!.username
+                })}\`\`\``
+            );
         return collector.stop();
     });
 };
