@@ -1,8 +1,0 @@
-{
-    "category": "SETTINGS",
-    "description": "Send new members a welcome message",
-    "extended": "Running the command without providing a message will disable welcome messages!",
-    "usage": "<message>",
-    "RESET": "Successfully disabled the welcome message!",
-    "SUCCESS": "Successfully updated the welcome message!"
-}

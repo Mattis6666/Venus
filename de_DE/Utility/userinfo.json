@@ -1,8 +1,0 @@
-{
-    "category": "UTILITY",
-    "description": "Display a lot of info about a user.",
-    "extended": "",
-    "usage": "[User] (defaults to yourself)",
-    "PERMISSIONS": "Permissions",
-    "SINCE": "Since {DATE}"
-}

@@ -1,7 +1,0 @@
-{
-    "category": "ANIME",
-    "description": "Get a random baka image.",
-    "extended": "If your friend is baka, pass along their name or mention!",
-    "usage": "[user]",
-    "MESSAGE": "{{USER}} finds you baka, {{MEMBER}}!"
-}

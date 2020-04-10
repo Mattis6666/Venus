@@ -29,7 +29,7 @@ export const command: Command = {
     usage: '',
     developerOnly: false,
     nsfw: false,
-    guildOnly: false,
+    guildOnly: true,
     dmOnly: false,
     requiresArgs: 0,
     userPermissions: 'MANAGE_GUILD',

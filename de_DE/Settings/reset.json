@@ -1,8 +1,0 @@
-{
-    "category": "SETTINGS",
-    "description": "Resets all my settings",
-    "extended": "THIS WILL RESET ALL MY SETTINGS! This includes prefix, disabled commands, blocked channels, the welcome channel...",
-    "usage": "",
-    "NO_DB": "I was unable to find a database entry for {GUILD}.",
-    "SUCCESS": "Successfully reset this guild's settings!"
-}

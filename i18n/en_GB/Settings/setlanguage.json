@@ -1,0 +1,8 @@
+{
+    "category": "Settings",
+    "description": "Set the serverwide language for me",
+    "extended": "",
+    "usage": "<language>",
+    "NO_LANGUAGE": "You did not provide a valid language. The current options are `{LANGUAGES}`",
+    "SUCCESS": "Successfully set the language to {LANGUAGE}!"
+}

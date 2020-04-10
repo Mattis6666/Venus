@@ -1,7 +1,0 @@
-{
-    "category": "ANIME",
-    "description": "Get a random woof image.",
-    "extended": "",
-    "usage": "[user]",
-    "MESSAGE": "{{USER}} shows you this cute doggo, {{MEMBER}}!"
-}

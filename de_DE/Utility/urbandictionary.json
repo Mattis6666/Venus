@@ -1,8 +1,0 @@
-{
-    "category": "UTILITY",
-    "description": "Get a definition from urbandictionary.com",
-    "extended": "",
-    "usage": "<word to look up>",
-    "NSFW": "This command is only usable in NSFW channels, because definitions might be NSFW!",
-    "NO_MATCH": "Sorry, I wasn't able to find a definition matching your Search Term."
-}

@@ -1,5 +1,5 @@
 {
-    "category": "SETTINGS",
+    "category": "Settings",
     "description": "Creates a fake join event.",
     "extended": "Useful for testing your welcome setup",
     "usage": "[member] (defaults to yourself)",

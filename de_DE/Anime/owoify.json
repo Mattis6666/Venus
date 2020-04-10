@@ -1,8 +1,0 @@
-{
-    "category": "ANIME",
-    "description": "OwOify your text.",
-    "extended": "",
-    "usage": "<text>",
-    "FAILURE": "Sorry, I was unable to OwOify your input.",
-    "SUCCESS": "{USER}, your OwOified message"
-}

@@ -1,8 +1,8 @@
 {
-    "category": "ANIME",
+    "category": "Anime",
     "description": "Look up your favourite Anime or Manga!",
     "extended": "",
     "usage": "[Anime Name]",
-    "nomatch": "Ich konnte leider keinen Anime mit diesem Namen finden!",
-    "nsfw": "Diesen Anime kann ich leider nicht anzeigen, da er NSFW ist!"
+    "NO_MATCH": "Ich konnte leider keinen Anime mit diesem Namen finden!",
+    "NSFW": "Diesen Anime kann ich leider nicht anzeigen, da er NSFW ist!"
 }

@@ -23,7 +23,7 @@ const callback = async (message: Message, args: string[], strings: CommandString
 
     const media = data.data.Page.media[0];
     if (!media) return wrongSyntax(message, strings.NO_MATCH);
-    if (media.isAdult) return wrongSyntax(message, strings.NO_NSFW);
+    if (media.isAdult) return wrongSyntax(message, strings.NSFW);
 
     const names = media.synonyms;
     if (media.title.english !== 'null' && media.title.english) names.push(media.title.english);

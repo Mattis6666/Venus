@@ -1,8 +1,0 @@
-{
-    "category": "SETTINGS",
-    "description": "Sets the role members get upon joining.",
-    "extended": "Running the command without providing a role will disable autorole!",
-    "usage": "<Role (mention, Id, or name)>",
-    "RESET": "Successfully disabled auto role! New members will no longer get a role upon joining.",
-    "SUCCESS": "Successfully set the autorole to `{AUTOROLE}`! This role will be given to members upon joining."
-}

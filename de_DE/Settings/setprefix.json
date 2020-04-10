@@ -1,7 +1,0 @@
-{
-    "category": "SETTINGS",
-    "description": "Set the serverwide prefix for me",
-    "extended": "",
-    "usage": "<new prefix>",
-    "SUCCESS": "This guild's prefix has successfully been changed to `{PREFIX}`"
-}

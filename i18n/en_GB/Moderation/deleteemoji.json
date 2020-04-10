@@ -1,5 +1,5 @@
 {
-    "category": "MODERATION",
+    "category": "Moderation",
     "description": "delete an emoji",
     "extended": "You can provide as many emojis as you want",
     "usage": "<emojis>",

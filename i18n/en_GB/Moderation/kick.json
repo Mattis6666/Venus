@@ -1,5 +1,5 @@
 {
-    "category": "MODERATION",
+    "category": "Moderation",
     "description": "kick a user",
     "extended": "",
     "usage": "<User (Mention, ID or name)> [reason]",

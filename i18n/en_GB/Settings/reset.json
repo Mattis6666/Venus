@@ -1,5 +1,5 @@
 {
-    "category": "SETTINGS",
+    "category": "Settings",
     "description": "Resets all my settings",
     "extended": "THIS WILL RESET ALL MY SETTINGS! This includes prefix, disabled commands, blocked channels, the welcome channel...",
     "usage": "",

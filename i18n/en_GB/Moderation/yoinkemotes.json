@@ -1,5 +1,5 @@
 {
-    "category": "MODERATION",
+    "category": "Moderation",
     "description": "Uploads emotes from other servers to your own server.",
     "extended": "Their name will be the name the other server gave them.",
     "usage": "<emote> (You can provide as many as you want)",

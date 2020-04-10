@@ -1,7 +1,0 @@
-{
-    "category": "ANIME",
-    "description": "Get a random neko gif.",
-    "extended": "",
-    "usage": "[user]",
-    "MESSAGE": "{{USER}} shows you this cute neko, {{MEMBER}}!"
-}

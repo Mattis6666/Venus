@@ -1,7 +1,0 @@
-{
-    "category": "ANIME",
-    "description": "Get a random poke image.",
-    "extended": "To poke your friend, pass along their name or mention!",
-    "usage": "[user]",
-    "MESSAGE": "{{USER}} pokes {{MEMBER}}!"
-}

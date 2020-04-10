@@ -1,5 +1,5 @@
 {
-    "category": "SETTINGS",
+    "category": "Settings",
     "description": "Sets the channel to send a intros in.",
     "extended": "Running the command without providing a channel will disable intros!",
     "usage": "<Channel>",

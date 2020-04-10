@@ -1,5 +1,5 @@
 {
-    "category": "MODERATION",
+    "category": "Moderation",
     "description": "Check a member's mod-log or your own.",
     "extended": "",
     "usage": "[user (mention, username or ID)]",

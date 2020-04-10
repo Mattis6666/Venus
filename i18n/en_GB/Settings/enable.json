@@ -1,6 +1,5 @@
 {
-    "name": "enable",
-    "category": "SETTINGS",
+    "category": "Settings",
     "description": "Enable one or multiple commands",
     "extended": "",
     "usage": "<command name | command alias>",

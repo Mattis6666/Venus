@@ -1,7 +1,0 @@
-{
-    "category": "Fun",
-    "description": "Play a round of minesweeper",
-    "extended": "The purpose of the game is to open all the cells of the board which do not contain a bomb. You lose if you set off a bomb cell. \nEvery non-bomb cell you open will tell you the total number of bombs in the eight neighboring cells..",
-    "usage": "[columns] [rows] [mines] (Defaults to 10x10 with 10 bombs)",
-    "TOO_LONG": "This board is over 2000 Characters, so I am not able to send it! Choose smaller numbers."
-}

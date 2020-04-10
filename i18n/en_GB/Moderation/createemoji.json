@@ -1,5 +1,5 @@
 {
-    "category": "MODERATION",
+    "category": "Moderation",
     "description": "Create an emoji",
     "extended": "You can also upload an image rather than passing along an url!",
     "usage": "<name> <url>",
