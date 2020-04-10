@@ -1,0 +1,7 @@
+{
+    "category": "SETTINGS",
+    "description": "Creates a fake join event.",
+    "extended": "Useful for testing your welcome setup",
+    "usage": "[member] (defaults to yourself)",
+    "SUCCESS": "Successfully created a fake join for `{MEMBER}`"
+}

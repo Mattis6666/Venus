@@ -1,0 +1,9 @@
+{
+    "name": "disable",
+    "category": "SETTINGS",
+    "description": "Disable one or multiple commands",
+    "extended": "",
+    "usage": "<command name | command alias>",
+    "NO_COMMAND": "You did not provide any valid commands to disable!",
+    "SUCCESS": "The following commands have been disabled on this server: `{COMMANDS}``"
+}

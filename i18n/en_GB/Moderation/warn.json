@@ -1,0 +1,13 @@
+{
+    "category": "MODERATION",
+    "description": "Warn a user",
+    "extended": "",
+    "usage": "<user (mention, username or ID)> [reason]",
+    "NOT_HIGHER": "You cannot warn this user, because your highest role is not higher than theirs!",
+    "NO_REASON": "No reason provided",
+    "WARN_DM": "You have been warned on {GUILD}!",
+    "MEMBER_WARNED": "{MEMBER} has been warned.",
+    "MEMBER": "Member",
+    "MOD": "Moderator",
+    "REASON": "Reason"
+}

@@ -2,9 +2,10 @@ import { Message } from 'discord.js';
 import Command from '../../interfaces/Command';
 import VenusClient from '../../interfaces/Client';
 import { getGuild } from '../../database/mongo';
-import { wrongSyntax } from '../../utils/Util';
+import { wrongSyntax, replace } from '../../utils/Util';
+import CommandStrings from '../../interfaces/CommandStrings';
 
-const callback = async (message: Message, args: string[]) => {
+const callback = async (message: Message, args: string[], strings: CommandStrings) => {
     const client = message.client as VenusClient;
     if (!message.guild) return;
 
@@ -14,10 +15,10 @@ const callback = async (message: Message, args: string[]) => {
     if (args.length === 1 && ['*', 'all', 'everything'].includes(args[0])) {
         guildSettings.settings.disabledCommands = [];
         await guildSettings.save();
-        return message.channel.send('All commands have been enabled!');
+        return message.channel.send(strings.ENABLE_ALL);
     }
     const commands = args.map(cmd => client.commands.find(command => command.name === cmd || command.aliases.includes(cmd))?.name).filter(cmd => cmd);
-    if (!commands.length) return wrongSyntax(message, 'You did not provide any valid commands to enable!');
+    if (!commands.length) return wrongSyntax(message, strings.NO_COMMAND);
 
     commands.forEach(command => {
         if (command && guildSettings.settings.disabledCommands.includes(command))
@@ -27,7 +28,11 @@ const callback = async (message: Message, args: string[]) => {
 
     client.guildSettings.set(message.guild.id, guildSettings);
 
-    return message.channel.send(`The following commands have been enabled on this server: \`${commands.join(', ')}\``);
+    return message.channel.send(
+        replace(strings.SUCCESS, {
+            COMMANDS: commands.join(', ')
+        })
+    );
 };
 
 export const command: Command = {

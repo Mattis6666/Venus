@@ -2,9 +2,10 @@ import { Message } from 'discord.js';
 import Command from '../../interfaces/Command';
 import VenusClient from '../../interfaces/Client';
 import { getGuild } from '../../database/mongo';
-import { wrongSyntax } from '../../utils/Util';
+import { wrongSyntax, replace } from '../../utils/Util';
+import CommandStrings from '../../interfaces/CommandStrings';
 
-const callback = async (message: Message, args: string[]) => {
+const callback = async (message: Message, args: string[], strings: CommandStrings) => {
     const client = message.client as VenusClient;
     if (!message.guild) return;
 
@@ -16,13 +17,17 @@ const callback = async (message: Message, args: string[]) => {
     commands.forEach(command => {
         if (command && !guildSettings.settings.disabledCommands.includes(command)) guildSettings.settings.disabledCommands.push(command);
     });
-    if (!commands.length) return wrongSyntax(message, 'You did not provide any valid commands to disable!');
+    if (!commands.length) return wrongSyntax(message, strings.NO_COMMAND);
 
     await guildSettings.save();
 
     client.guildSettings.set(message.guild.id, guildSettings);
 
-    return message.channel.send(`The following commands have been disabled on this server: \`${commands.join(', ')}\``);
+    return message.channel.send(
+        replace(strings.SUCCESS, {
+            COMMANDS: commands.join(', ')
+        })
+    );
 };
 
 export const command: Command = {

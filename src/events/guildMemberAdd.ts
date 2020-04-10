@@ -8,10 +8,10 @@ let background: Canvas.Image;
 export default async (_client: VenusClient, member: GuildMember) => {
     const guildSettings = await getGuild(member.guild.id);
     if (guildSettings.welcome.autoRole) {
-        const role = member.guild.roles.cache.get(guildSettings.welcome.autoRole);
+        const role = member.guild.roles.cache.get(guildSettings.welcome.autoRole) || (await member.guild.roles.fetch(guildSettings.welcome.autoRole));
         if (!role) return;
 
-        member.roles.add(role).catch(() => null);
+        member.roles.add(role, 'auto role. You can change this behaviour via setautorole').catch(() => null);
     }
     if (guildSettings.welcome.message) {
         member.send(guildSettings.welcome.message).catch(() => null);

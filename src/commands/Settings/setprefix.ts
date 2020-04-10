@@ -2,8 +2,10 @@ import { Message } from 'discord.js';
 import Command from '../../interfaces/Command';
 import VenusClient from '../../interfaces/Client';
 import { getGuild } from '../../database/mongo';
+import { replace } from '../../utils/Util';
+import CommandStrings from '../../interfaces/CommandStrings';
 
-const callback = async (message: Message, args: string[]) => {
+const callback = async (message: Message, args: string[], strings: CommandStrings) => {
     const client = message.client as VenusClient;
     if (!message.guild) return;
 
@@ -16,7 +18,11 @@ const callback = async (message: Message, args: string[]) => {
 
     client.guildSettings.set(message.guild.id, guildSettings);
 
-    return message.channel.send(`This guild's prefix has successfully been changed to \`${prefix}\``);
+    return message.channel.send(
+        replace(strings.SUCCESS, {
+            PREFIX: prefix
+        })
+    );
 };
 
 export const command: Command = {

@@ -4,6 +4,7 @@
     "main": "out/src/index.js",
     "scripts": {
         "dev": "npm run build && export NODE_ENV=development && npm run start",
+        "pm2": "pm2 start --name Neptune npm -- run dev --watch --ignore-watch out/*",
         "production": "npm run build && export NODE_ENV=production && npm run start",
         "test": "tsc -p tsconfig.test.json && npm run lint",
         "lint": "eslint ./src/**/*.ts",

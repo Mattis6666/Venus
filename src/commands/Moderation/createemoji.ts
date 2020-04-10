@@ -21,7 +21,7 @@ const callback = (message: Message, args: string[], strings: CommandStrings) => 
             message.channel.send(
                 replace(strings.SUCCESS, {
                     NAME: name,
-                    EMOJI: emoji.name
+                    EMOJI: emoji.toString()
                 })
             )
         )

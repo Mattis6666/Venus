@@ -1,0 +1,8 @@
+{
+    "category": "Ayarlar",
+    "description": "Üyelerin sunucuya katıldığında alacağı rolü ayarlar.",
+    "extended": "Komutu herhangi bir rol belirtmeden kullanmak oto-rol ayarını kapatır!",
+    "usage": "<Rol (etiket, ID veya isim)>",
+    "RESET": "Oto-rol başarıyla kapatıldı! Sunucuya yeni katılan üyelere herhangi bir rol verilmeyecek.",
+    "SUCCESS": "Oto-rol başarıyla `{AUTOROLE}` olarak ayarlandı! Yeni katılan üyelere bu rol verilecek."
+}

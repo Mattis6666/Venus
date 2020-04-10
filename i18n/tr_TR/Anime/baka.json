@@ -1,0 +1,7 @@
+{
+    "category": "Anime",
+    "description": "Rastgele bir baka resmi al.",
+    "extended": "Eğer arkadaşınız salaksa, hemen adını girin!",
+    "usage": "[user]",
+    "MESSAGE": "{{MEMBER}}, {{USER}} seni salak buluyor!"
+}

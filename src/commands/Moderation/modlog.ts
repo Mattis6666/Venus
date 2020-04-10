@@ -1,11 +1,11 @@
 import { Message } from 'discord.js';
 import Command from '../../interfaces/Command';
-
 import { getInfractions } from '../../database/mongo';
 import { getMember } from '../../utils/getters';
-import { newEmbed, nicerDates, trimString, wrongSyntax } from '../../utils/Util';
+import { newEmbed, nicerDates, trimString, wrongSyntax, replace } from '../../utils/Util';
+import CommandStrings from '../../interfaces/CommandStrings';
 
-const callback = async (message: Message, args: string[]) => {
+const callback = async (message: Message, args: string[], strings: CommandStrings) => {
     if (!message.guild) return;
 
     const infractions = await getInfractions(message.guild.id);
@@ -13,33 +13,54 @@ const callback = async (message: Message, args: string[]) => {
 
     if (!args.length) {
         const modLog = infractions.members.find(ele => ele.userId === message.author.id);
-        if (!modLog || !modLog.infractions.length) return message.channel.send(`You do not have any infractions, ${message.author.username}.`);
+        if (!modLog || !modLog.infractions.length)
+            return message.channel.send(
+                replace(strings.USER_NO_INFRACTIONS, {
+                    USER: message.member!.displayName
+                })
+            );
 
         output
-            .setTitle('ModLog for ' + message.author.tag)
+            .setTitle(
+                replace(strings.MODLOG, {
+                    MEMBER: message.member!.displayName
+                })
+            )
             .setThumbnail(message.author.displayAvatarURL({ size: 256, dynamic: true }))
             .addFields(
                 modLog.infractions.map(infraction => {
-                    return { name: `Moderator: ${infraction.moderator.username} ~ ${nicerDates(infraction.date)}`, value: trimString(infraction.reason, 1024) };
+                    return {
+                        name: `${strings.MODERATOR}: ${infraction.moderator.username} ~ ${nicerDates(infraction.date)}`,
+                        value: trimString(infraction.reason, 1024)
+                    };
                 })
             );
         return message.channel.send(output);
     }
 
-    if (!message.member!.permissions.has('MANAGE_MESSAGES'))
-        return wrongSyntax(message, "You require the `Manage Messages` Permission to see another users' Infractions!");
+    if (!message.member!.permissions.has('MANAGE_MESSAGES')) return wrongSyntax(message, strings.NO_PERMS);
     const member = await getMember(message, args);
     if (!member) return;
 
     const modLog = infractions.members.find(ele => ele.userId === member.id);
-    if (!modLog || !modLog.infractions.length) return message.channel.send(`This user does not have any infractions, ${message.author.username}.`);
+    if (!modLog || !modLog.infractions.length)
+        return message.channel.send(
+            replace(strings.MEMBER_NO_INFRACTIONS, {
+                MEMBER: member.displayName,
+                AUTHOR: message.member!.displayName
+            })
+        );
 
     output
-        .setTitle('ModLog for ' + member.user.tag)
+        .setTitle(
+            replace(strings.MODLOG, {
+                MEMBER: member.displayName
+            })
+        )
         .setThumbnail(member.user.displayAvatarURL({ size: 256, dynamic: true }))
         .addFields(
             modLog.infractions.map(infraction => {
-                return { name: `Moderator: ${infraction.moderator.username} ~ ${nicerDates(infraction.date)}`, value: infraction.reason };
+                return { name: `${strings.MODERATOR}: ${infraction.moderator.username} ~ ${nicerDates(infraction.date)}`, value: infraction.reason };
             })
         );
     return message.channel.send(output);

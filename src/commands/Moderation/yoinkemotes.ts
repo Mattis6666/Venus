@@ -1,14 +1,15 @@
 import { Message } from 'discord.js';
 import Command from '../../interfaces/Command';
-import { wrongSyntax } from '../../utils/Util';
+import { wrongSyntax, replace } from '../../utils/Util';
 import { emojis } from '../../constants/emojis';
+import CommandStrings from '../../interfaces/CommandStrings';
 
-const callback = async (message: Message, args: string[]) => {
+const callback = async (message: Message, args: string[], strings: CommandStrings) => {
     if (!message.guild) return;
 
     const regex = /<?(a)?:?(\w{2,32}):(\d{17,19})>?/g;
     const emotes = args.join(' ').match(regex);
-    if (!emotes) return wrongSyntax(message, 'You did not provide any emotes!');
+    if (!emotes) return wrongSyntax(message, '');
 
     const yoinkedEmotes = emotes.map(e => {
         return {
@@ -20,18 +21,26 @@ const callback = async (message: Message, args: string[]) => {
     const output = (
         await Promise.all(
             yoinkedEmotes.map(e =>
-                message.guild!.emojis.create(e.url, e.name, { reason: 'Created via yoinkemotes command by' + message.author.username }).catch(() => null)
+                message
+                    .guild!.emojis.create(e.url, e.name, {
+                        reason: replace(strings.REASON, {
+                            COMMAND: command.name,
+                            USER: message.author.tag
+                        })
+                    })
+                    .catch(() => null)
             )
         )
     ).filter(e => e);
 
     message.channel.stopTyping();
-    if (!output.length)
-        return wrongSyntax(
-            message,
-            emojis.fail + ' I was unable to yoink those emotes. This is most likely caused by this server not having any free emoji slots!'
-        );
-    return message.channel.send(`${emojis.success} I successfully yoinked ${output.length} emotes: ${output.join(' ')}`);
+    if (!output.length) return wrongSyntax(message, emojis.fail + strings.FAILURE);
+    return message.channel.send(
+        `${emojis.success} ${replace(strings.SUCCESS, {
+            AMOUNT: output.length.toString(),
+            EMOJIS: output.join(', ')
+        })}`
+    );
 };
 
 export const command: Command = {

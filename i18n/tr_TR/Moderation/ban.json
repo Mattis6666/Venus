@@ -1,0 +1,15 @@
+{
+    "category": "Yönetim",
+    "description": "bir kullanıcıyı yasakla",
+    "extended": "",
+    "usage": "<Kullanıcı (Etiket, ID ya da isim)> [sebep]",
+    "NOT_HIGHER": "Rolünüz bu kullanıcıdan yüksek olmadığı için bu kullanıcıyı yasaklayamazsınız.",
+    "CANT_BAN": "Bu kullanıcıyı yasaklayamıyorum. Muhtemelen rolü benden daha yüksek.",
+    "CONFIRM": "{MEMBER} adlı kullanıcıyı gerçekten yasaklamak istiyor musun?\nLütfen `yes` ya da `no` ile cevap verin.",
+    "NO_REASON": "Sebep belirtilmedi.",
+    "BAN_DM": "{GUILD} adlı sunucudan yasaklandın! 🔨",
+    "USER_BANNED": "Kullanıcı yasaklandı! 🔨",
+    "BAN_CANCEL": "Yasaklama iptal edildi",
+    "INVALID_RESPONSE": "Geçeriz yanıt! Lütfen `yes` ya da `no` ile cevap verin!",
+    "TOO_SLOW": "Vaktinde cevap vermediniz, işlemi sizin için iptal ettim."
+}
