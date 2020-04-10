@@ -16,7 +16,7 @@ const callback = async (message: Message, args: string[], strings: CommandString
         await guildSettings.save();
         return message.channel.send(strings.RESET);
     }
-    const role = getRole(message, args);
+    const role = await getRole(message, args);
     if (!role) return;
 
     guildSettings.welcome.autoRole = role.id;

@@ -3,7 +3,7 @@
     "description": "Mitglied warnen",
     "extended": "",
     "usage": "<Mitglied (Erwähnung, Mitgliedname oder ID)> [Grund]",
-    "NOT_HIGHER": "Du kannst diesen Mitglied nicht warnen, da Deine höchste Rolle nicht höher ist als die Rolle des Mitglieds!",
+    "NOT_HIGHER": "Du kannst dieses Mitglied nicht warnen, da deinen höchste Rolle nicht höher ist als die Rolle des Mitglieds!",
     "NO_REASON": "Kein Grund angegeben",
     "WARN_DM": "Du wurdest auf {GUILD} verwarnt!",
     "MEMBER_WARNED": "{MEMBER} wurde verwarnt.",

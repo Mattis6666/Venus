@@ -2,7 +2,7 @@ import { Message } from 'discord.js';
 import config from '../utils/config';
 import { Guild } from '../database/schemas/GuildSchema';
 import db from '../database/mongo';
-import { wrongSyntax, handleError, nicerPermissions } from '../utils/Util';
+import { wrongSyntax, handleError, nicerPermissions, replace } from '../utils/Util';
 import Client from '../interfaces/Client';
 import { Languages } from '../interfaces/Languages';
 
@@ -27,8 +27,15 @@ export default async (VenusClient: Client, message: Message) => {
     const args = message.content.slice(prefix.length).trim().split(' ');
     const commandName = args.shift()?.toLowerCase();
     if (!commandName) {
-        if (message.mentions.users?.has(VenusClient.user!.id) && message.guild)
-            message.channel.send(`My prefix on this server is \`${guildPrefix}\`\nFor a list of commands, type \`${guildPrefix}help\``);
+        if (message.mentions.users?.has(VenusClient.user!.id) && message.guild) {
+            const misc = VenusClient.languages.get(guildSettings?.settings.language || 'en_GB')?.find(str => str.command === 'misc')?.strings;
+            if (misc)
+                message.channel.send(
+                    replace(misc.PREFIX, {
+                        PREFIX: guildPrefix
+                    })
+                );
+        }
         return;
     }
 
@@ -36,33 +43,51 @@ export default async (VenusClient: Client, message: Message) => {
     if (!command || !command.callback) return;
 
     const language: Languages = guildSettings?.settings.language || 'en_GB';
-    const strings = VenusClient.languages.get(language)?.find(cmd => cmd.command === command.name)?.strings;
+    const strings = VenusClient.languages.get(language) || VenusClient.languages.get('en_GB');
+    if (!strings) throw new Error('NO STRINGS - INDEX - ' + language);
+
+    const errors = strings.find(str => str.command === 'errors')?.strings || VenusClient.languages.get('en_GB')?.find(str => str.command === 'errors')?.strings;
+    if (!errors) throw new Error('NO ERROR STRINGS - INDEX - ' + language);
+
+    const commandStrings =
+        strings.find(str => str.command === command.name)?.strings || VenusClient.languages.get('en_GB')?.find(str => str.command === command.name)?.strings;
+    if (!commandStrings && !['DEVELOPMENT', 'NSFW'].includes(command.category)) throw new Error('NO COMMAND STRINGS - INDEX - ' + language);
 
     if (!config.developers.includes(message.author.id)) {
         if (command.developerOnly) return;
         if (message.guild && message.guild.me && message.channel.type === 'text') {
             if (guildSettings && guildSettings.settings.disabledCommands.includes(command.name)) return;
             if (command.userPermissions && message.member && !message.channel.permissionsFor(message.member)!.has(command.userPermissions))
-                return wrongSyntax(message, `This command requires you to have the \`${nicerPermissions(command.userPermissions)}\` permission!`);
+                return wrongSyntax(
+                    message,
+                    replace(errors.USER_MISSING_PERMISSION, {
+                        PERMISSION: nicerPermissions(command.userPermissions)
+                    })
+                );
             if (command.botPermissions && !message.channel.permissionsFor(message.guild.me)!.has(command.botPermissions)) {
-                return wrongSyntax(message, `I need the the \`${nicerPermissions(command.userPermissions)}\` permission to use this command!`);
+                return wrongSyntax(
+                    message,
+                    replace(errors.BOT_MISSING_PERMISSION, {
+                        PERMISSION: nicerPermissions(command.botPermissions)
+                    })
+                );
             }
         }
     }
-    if (command.guildOnly && !message.guild) return wrongSyntax(message, 'This command can only be used on a server!');
-    if (command.dmOnly && message.guild) return wrongSyntax(message, 'This command can only be used in my DMs!');
-    if (command.nsfw && (!message.guild || message.channel.type !== 'text' || !message.channel.nsfw))
-        return wrongSyntax(message, 'This command can only be used in a NSFW channel!');
-    if (command.nsfw && (!guildSettings || !guildSettings.settings.nsfw))
-        return wrongSyntax(message, 'This server does not have NSFW commands disabled! Message an Admin if you think this is wrong.');
+    if (command.guildOnly && !message.guild) return wrongSyntax(message, errors.SERVER_ONLY);
+    if (command.dmOnly && message.guild) return wrongSyntax(message, errors.DM_ONLY);
+    if (command.nsfw && (!message.guild || message.channel.type !== 'text' || !message.channel.nsfw)) return wrongSyntax(message, errors.NSFW_CHANNEL_ONLY);
+    if (command.nsfw && (!guildSettings || !guildSettings.settings.nsfw)) return wrongSyntax(message, errors.NSFW_DISABLED);
     if (command.requiresArgs && args.length < command.requiresArgs)
         return wrongSyntax(
             message,
-            `This command requires ${command.requiresArgs} arguments, but you ${args.length ? 'only provided ' + args.length : "didn't provide any"}!`
+            replace(errors.WRONG_USAGE, {
+                USAGE: `${prefix}${command.name} ${commandStrings!.usage}`
+            })
         );
 
     try {
-        command.callback(message, args, strings!);
+        command.callback(message, args, commandStrings!);
     } catch (err) {
         handleError(VenusClient, err);
     }

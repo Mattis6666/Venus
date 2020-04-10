@@ -6,6 +6,9 @@ import config from './config';
 import { Guild } from '../database/schemas/GuildSchema';
 
 export const getUser = async (message: Message, args: string[], spot?: number) => {
+    const errors = (await getStrings(message))?.find(str => str.command === 'errors')?.strings;
+    if (!errors) throw new Error('NO ERROR STRINGS - GETUSER');
+
     const input = spot ? args[spot] : args.join(' ');
     if (!args.length) return null;
     if (!message.guild) {
@@ -13,18 +16,26 @@ export const getUser = async (message: Message, args: string[], spot?: number) =
         if (user) return user;
 
         const userSearch = message.client.users.cache.filter(u => u.username.toLowerCase().includes(input.toLowerCase()));
+        if (userSearch.size === 1) return userSearch.first();
+        if (!userSearch.size) {
+            wrongSyntax(message, errors.NO_USER_FOUND);
+        }
         if (userSearch.size > 1) {
             wrongSyntax(
                 message,
-                `I found multiple members matching your input: ${
-                    userSearch.size > 3 ? userSearch.size : userSearch.map(r => '`' + r.username + '`').join(', ')
-                }`
+                `${errors.MULTIPLE_USERS_FOUND}: ${userSearch.size > 3 ? userSearch.size.toString() : userSearch.map(u => '`' + u.username + '`').join(', ')}`,
+                false
             );
-        } else return wrongSyntax(message, 'Sorry, something went wrong (>_<)');
-    } else return (await getMember(message, args))?.user;
+        }
+        return;
+    }
+    return (await getMember(message, args))?.user;
 };
 
 export const getMember = async (message: Message, args: string[], spot?: number) => {
+    const errors = (await getStrings(message))?.find(str => str.command === 'errors')?.strings;
+    if (!errors) throw new Error('NO ERROR STRINGS - GETMEMBER');
+
     const input = spot || spot === 0 ? args[spot].toLowerCase() : args.join(' ').toLowerCase();
     if (!input) return null;
     if (!message.guild) {
@@ -38,19 +49,24 @@ export const getMember = async (message: Message, args: string[], spot?: number)
     );
     if (memberSearch.size === 1) return memberSearch.first();
     if (!memberSearch.size) {
-        wrongSyntax(message, 'You did not provide a valid member. Please run the command again and provide one.');
-    } else if (memberSearch.size > 1) {
+        wrongSyntax(message, errors.NO_MEMBER_FOUND);
+    }
+    if (memberSearch.size > 1) {
         wrongSyntax(
             message,
-            `I found multiple members matching your input: ${
-                memberSearch.size > 3 ? memberSearch.size : memberSearch.map(r => '`' + r.displayName + '`').join(', ')
-            }`
+            `${errors.MULTIPLE_MEMBERS_FOUND}: ${
+                memberSearch.size > 3 ? memberSearch.size.toString() : memberSearch.map(m => '`' + m.displayName || m.user.username + '`').join(', ')
+            }`,
+            false
         );
-    } else wrongSyntax(message, 'Sorry, something went wrong (>_<)');
+    }
     return null;
 };
 
-export const getRole = (message: Message, args: string[], spot?: number) => {
+export const getRole = async (message: Message, args: string[], spot?: number) => {
+    const errors = (await getStrings(message))?.find(str => str.command === 'errors')?.strings;
+    if (!errors) throw new Error('NO ERROR STRINGS - GETROLE');
+
     const input = spot ? args[spot]?.toLowerCase() : args.join(' ').toLowerCase();
     if (!message.guild) {
         throw new SyntaxError('getRole was used in a DmChannel.');
@@ -61,13 +77,15 @@ export const getRole = (message: Message, args: string[], spot?: number) => {
     const roleSearch = message.guild?.roles.cache.filter(role => role.name.toLowerCase().includes(input));
     if (roleSearch.size === 1) return roleSearch.first();
     if (!roleSearch.size) {
-        wrongSyntax(message, 'You did not provide a valid role. Please run the command again and provide one.');
-    } else if (roleSearch.size > 1) {
+        wrongSyntax(message, errors.NO_ROLE_FOUND);
+    }
+    if (roleSearch.size > 1) {
         wrongSyntax(
             message,
-            `I found multiple roles matching your input: ${roleSearch.size > 3 ? roleSearch.size : roleSearch.map(r => '`' + r.name + '`').join(', ')}`
+            `${errors.MULTIPLE_ROLES_FOUND}: ${roleSearch.size > 3 ? roleSearch.size.toString() : roleSearch.map(r => '`' + r.name + '`').join(', ')}`,
+            false
         );
-    } else wrongSyntax(message, 'Sorry, something went wrong (>_<)');
+    }
     return null;
 };
 
@@ -77,4 +95,11 @@ export const getPrefix = async (client: VenusClient, guildId: string) => {
         client.guildSettings.set(guildId, guildEntry);
     }
     return guildEntry.settings.prefix || config.defaultPrefix;
+};
+
+export const getStrings = async (message: Message) => {
+    const client = message.client as VenusClient;
+    const guildSettings = message.guild ? await getGuild(message.guild.id) : null;
+    const strings = client.languages.get(guildSettings?.settings.language || 'en_GB');
+    return strings;
 };

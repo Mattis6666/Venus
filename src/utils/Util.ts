@@ -64,8 +64,8 @@ export const wrongSyntax = async (message: Message, text: string, del = true) =>
     if (del) message.delete({ timeout: 1000 * 10 });
 };
 
-export const numToMonth = (num: number) => {
-    if (num > 11 || num < 0) throw new RangeError('Invalid month, baka.');
+export const numToMonth = async (num: number) => {
+    if (num > 11 || num < 0) throw new RangeError('Invalid month, retard.');
     return ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'][num];
 };
 

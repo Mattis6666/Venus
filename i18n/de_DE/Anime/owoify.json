@@ -3,6 +3,6 @@
     "description": "OwOe deinen Text.",
     "extended": "",
     "usage": "\u003cText\u003e",
-    "FAILURE": "Entschuldung, ich konnte Deine Eingabe nicht OwOen.",
-    "SUCCESS": "{USER}, Deine OwOte-Nachricht"
+    "FAILURE": "Entschuldung, ich konnte deinen Eingabe nicht OwOen.",
+    "SUCCESS": "{USER}, deinen OwOte-Nachricht"
 }

@@ -1,0 +1,6 @@
+{
+    "PREFIX": "Mein Präfix auf diesem Server ist `{PREFIX}`\nFür eine Liste aller Befehle, sende `{PREFIX}help`",
+    "WELCOME": "",
+    "AUTO_ROLE_REASON": "Auto-Rolle. Du kannst dies mit dem setautorole Befehl ändern.",
+    "WELCOME_MESSAGE": "Willkommen in {GUILD}, {MEMBER}!"
+}

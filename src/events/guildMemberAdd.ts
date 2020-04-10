@@ -3,15 +3,19 @@ import VenusClient from '../interfaces/Client';
 import { GuildMember, TextChannel } from 'discord.js';
 import path from 'path';
 import { getGuild } from '../database/mongo';
+import { replace } from '../utils/Util';
 let background: Canvas.Image;
 
-export default async (_client: VenusClient, member: GuildMember) => {
+export default async (client: VenusClient, member: GuildMember) => {
     const guildSettings = await getGuild(member.guild.id);
+    const strings = client.languages.get(guildSettings.settings.language || 'en_GB')?.find(str => str.command === 'misc')?.strings;
+    if (!strings) throw new Error('NO STRINGS - GUILDMEMBERADD');
+
     if (guildSettings.welcome.autoRole) {
         const role = member.guild.roles.cache.get(guildSettings.welcome.autoRole) || (await member.guild.roles.fetch(guildSettings.welcome.autoRole));
         if (!role) return;
 
-        member.roles.add(role, 'auto role. You can change this behaviour via setautorole').catch(() => null);
+        member.roles.add(role, strings.AUTO_ROLE_REASON).catch(() => null);
     }
     if (guildSettings.welcome.message) {
         member.send(guildSettings.welcome.message).catch(() => null);
@@ -58,7 +62,13 @@ export default async (_client: VenusClient, member: GuildMember) => {
         ctx.clip();
         ctx.drawImage(avatar, 695, 36, 200, 200);
 
-        (channel as TextChannel).send(`Welcome to ${guild}, ${member}!`, { files: [canvas.toBuffer()] });
+        (channel as TextChannel).send(
+            replace(strings.WELCOME_MESSAGE, {
+                GUILD: guild,
+                MEMBER: member.toString()
+            }),
+            { files: [canvas.toBuffer()] }
+        );
     }
 };
 

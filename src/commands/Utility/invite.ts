@@ -12,7 +12,7 @@ const callback = (message: Message, _args: string[], strings: CommandStrings) =>
             `[${strings.CLICK_HERE}](${botInfo.botInvite})\n\n` +
                 `${replace(strings.SET_PREFIX, {
                     PREFIX: config.defaultPrefix
-                })}\`\n\n` +
+                })}\n\n` +
                 `[${strings.SUPPORT_SERVER}](${botInfo.supportServer})`
         );
     return message.channel.send(output);

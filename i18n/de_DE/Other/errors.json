@@ -1,0 +1,15 @@
+{
+    "SERVER_ONLY": "Dieser Befehl kann nur auf Servern benutzt werden!",
+    "DM_ONLY": "Dieser Befehl kann nur in meinen Privatnachrichten benutzt werden!",
+    "NSFW_CHANNEL_ONLY": "Dieser Befehl kann nur in meinen NSFW-Kanal benutzt werden!",
+    "NSFW_DISABLED": "Dieser Server hat NSFW-Befehle nicht aktiviert!",
+    "USER_MISSING_PERMISSION": "Für diesen Befehl benötigst du die `{PERMISSION}` Berechtigung!",
+    "BOT_MISSING_PERMISSION": "Für diesen Befehl benötige ich die `{PERMISSION}` Berechtigung!",
+    "WRONG_USAGE": "Du hast den Befehl falsch benutzt. Man benutzt ihn wie folgend: `{USAGE}`.",
+    "NO_USER_FOUND": "Du hast keinen validen Nutzer angegeben. Bitte benutze den Befehl erneut und gebe einen Nutzer an.",
+    "NO_MEMBER_FOUND": "Du hast kein valides Mitglied angegeben. Bitte benutze den Befehl erneut und gebe ein Mitglied an.",
+    "NO_ROLE_FOUND": "Du hast keine valide Rolle angegeben. Bitte benutze den Befehl erneut und gebe eine Rolle an.",
+    "MULTIPLE_USERS_FOUND": "Ich habe mehrere Nutzer gefunden",
+    "MULTIPLE_MEMBERS_FOUND": "Ich habe mehrere Mitglieder gefunden",
+    "MULTIPLE_ROLES_FOUND": "Ich habe mehrere Rollen gefunden"
+}
