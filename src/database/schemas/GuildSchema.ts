@@ -18,6 +18,7 @@ export interface Guild extends mongoose.Document {
     };
     channels: {
         welcomeChannel: string; // The IDs of the respective channels
+        introChannel: string;
         modLogChannel: string;
         messageLogChannel: string;
         memberLogChannel: string;
@@ -58,6 +59,7 @@ const GuildSchema: mongoose.Schema = new mongoose.Schema({
     },
     channels: {
         welcomeChannel: String,
+        introChannel: String,
         modLogChannel: String,
         messageLogChannel: String,
         memberLogChannel: String,

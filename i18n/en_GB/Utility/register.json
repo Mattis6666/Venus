@@ -1,0 +1,6 @@
+{
+    "category": "UTILITY",
+    "description": "Introduce yourself",
+    "extended": "The bot will ask you a couple of questions in dms. They will then be sent to a channel on the server. You can set this channel via the setregister commands",
+    "usage": ""
+}

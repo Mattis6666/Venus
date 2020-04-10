@@ -1,11 +1,19 @@
-import { Message } from 'discord.js';
+import { Message, TextChannel } from 'discord.js';
 import Command from '../../interfaces/Command';
 import { registerQuestions } from '../../constants/registerQuestions';
-import { newEmbed } from '../../utils/Util';
+import { newEmbed, wrongSyntax } from '../../utils/Util';
 import { Promise } from 'bluebird';
+import { getGuild } from '../../database/mongo';
+import CommandStrings from '../../interfaces/CommandStrings';
 
-const callback = async (message: Message, _args: string[]) => {
-    return;
+const callback = async (message: Message, _args: string[], _strings: CommandStrings) => {
+    if (!message.guild) return;
+
+    const guildSettings = await getGuild(message.guild.id);
+
+    const introChannel = message.guild.channels.cache.get(guildSettings.channels.introChannel);
+    if (!introChannel) return wrongSyntax(message, 'Intros are not enabled on this server.');
+
     message.reply('I will send you a private message to collect your info. Please make sure your private messages are open!');
     const channel = await message.author.createDM();
     let fail = false;
@@ -61,19 +69,20 @@ const callback = async (message: Message, _args: string[]) => {
         .setDescription(registerQuestions.map(quest => `${quest.keyword}: \`${quest.response}\``))
         .setTitle(message.author.tag)
         .setThumbnail(message.author.displayAvatarURL({ size: 256, dynamic: true }));
-    channel.send(message.author, output);
+    (introChannel as TextChannel).send(message.author, output).catch(() => null);
 };
 
 export const command: Command = {
     name: 'register',
-    category: 'DEVELOPMENT',
-    aliases: [],
-    description: '',
-    extended: '',
+    category: 'UTILITY',
+    aliases: ['introduction'],
+    description: 'Introduce yourself',
+    extended:
+        'The bot will ask you a couple of questions in dms. They will then be sent to a channel on the server. You can set this channel via the setregister commands',
     usage: '',
-    developerOnly: true,
+    developerOnly: false,
     nsfw: false,
-    guildOnly: false,
+    guildOnly: true,
     dmOnly: false,
     requiresArgs: 0,
     userPermissions: '',

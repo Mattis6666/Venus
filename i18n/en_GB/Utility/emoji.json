@@ -1,0 +1,7 @@
+{
+    "category": "UTILITY",
+    "description": "Get the link of any emote",
+    "extended": "",
+    "usage": "<emoji> (you can add as many as you wish)",
+    "NO_EMOJIS": "You did not provide any emojis!"
+}

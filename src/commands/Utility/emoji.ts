@@ -1,11 +1,12 @@
 import { Message } from 'discord.js';
 import Command from '../../interfaces/Command';
 import { wrongSyntax } from '../../utils/Util';
+import CommandStrings from '../../interfaces/CommandStrings';
 
-const callback = (message: Message, args: string[]) => {
+const callback = (message: Message, args: string[], strings: CommandStrings) => {
     const regex = /<?(a)?:?(\w{2,32}):(\d{17,19})>?/g;
     const emotes = args.join(' ').match(regex);
-    if (!emotes) return wrongSyntax(message, 'You did not provide any emotes!');
+    if (!emotes) return wrongSyntax(message, strings.NO_EMOJIS);
 
     const emoteLinks = emotes.map(
         e => `<https://cdn.discordapp.com/emojis/${e.slice(e.lastIndexOf(':') + 1, e.lastIndexOf('>'))}${e.startsWith('<a') ? '.gif' : '.png'}>`
@@ -14,10 +15,10 @@ const callback = (message: Message, args: string[]) => {
 };
 
 export const command: Command = {
-    name: 'emote',
+    name: 'emoji',
     category: 'UTILITY',
-    aliases: ['emoji'],
-    description: 'Get the link of any emote',
+    aliases: ['emote', 'e'],
+    description: 'Get the link of any emoji',
     extended: '',
     usage: '<emoji> (you can add as many as you wish)',
     developerOnly: false,

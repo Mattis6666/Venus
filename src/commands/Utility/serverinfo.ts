@@ -1,9 +1,10 @@
 import { Message } from 'discord.js';
 import Command from '../../interfaces/Command';
-import { newEmbed, nicerDates } from '../../utils/Util';
+import { newEmbed, nicerDates, replace } from '../../utils/Util';
 import { emojis } from '../../constants/emojis';
+import CommandStrings from '../../interfaces/CommandStrings';
 
-const callback = async (message: Message, _args: string[]) => {
+const callback = async (message: Message, _args: string[], strings: CommandStrings) => {
     const guild = message.guild;
     if (!guild) return;
 
@@ -26,7 +27,7 @@ const callback = async (message: Message, _args: string[]) => {
         },
         {
             name: emojis.info,
-            value: guild.description || 'No description provided'
+            value: guild.description || strings.NO_DESCRIPTION
         },
         {
             name: emojis.member,
@@ -38,7 +39,9 @@ const callback = async (message: Message, _args: string[]) => {
         },
         {
             name: emojis.nitroBoost,
-            value: `${guild.premiumSubscriptionCount} (Level ${guild.premiumTier})`
+            value: `${guild.premiumSubscriptionCount} (${replace(strings.BOOST_LEVEL, {
+                LEVEL: guild.premiumTier.toString()
+            })})`
         }
     ];
     const roles = guild.roles.cache.filter(r => r.id !== guild.id).array(),
@@ -51,12 +54,12 @@ const callback = async (message: Message, _args: string[]) => {
         .setDescription(guildInfo.map(info => `${info.name} ${info.value}`))
         .addFields([
             {
-                name: `Roles (${roles.length})`,
-                value: roles.join(' ').length < 1025 ? roles.join(' ') : 'Sorry, there are too many roles, so I cannot display them here'
+                name: `${strings.ROLES} (${roles.length})`,
+                value: roles.join(' ').length < 1025 ? roles.join(' ') : strings.TOO_MANY_ROLES
             },
             {
-                name: `Channels (${channels.length})`,
-                value: channels.join(' ').length < 1025 ? channels.join(' ') : 'Sorry, there are too many channels, so I cannot display them here'
+                name: `${strings.CHANNELS} (${channels.length})`,
+                value: channels.join(' ').length < 1025 ? channels.join(' ') : strings.TOO_MANY_CHANNELS
             }
         ]);
 

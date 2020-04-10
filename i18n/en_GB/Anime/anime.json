@@ -3,6 +3,6 @@
     "description": "Look up your favourite Anime or Manga!",
     "extended": "",
     "usage": "[Anime Name]",
-    "nomatch": "Sorry, I wasn't able to find an anime matching your Search Term.",
-    "nsfw": "Sorry, this Anime can't be displayed, because it's NSFW!"
+    "NO_MATCH": "Sorry, I wasn't able to find an anime matching your Search Term.",
+    "NSFW": "Sorry, this Anime can't be displayed, because it's NSFW!"
 }

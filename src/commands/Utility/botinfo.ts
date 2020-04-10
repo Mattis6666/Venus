@@ -2,20 +2,22 @@ import { Message } from 'discord.js';
 import Command from '../../interfaces/Command';
 import { newEmbed } from '../../utils/Util';
 import { botInfo } from '../../constants/botInfo';
+import { emojis } from '../../constants/emojis';
+import CommandStrings from '../../interfaces/CommandStrings';
 
-const callback = async (message: Message) => {
+const callback = async (message: Message, _args: string[], strings: CommandStrings) => {
     const output = newEmbed(true)
         .setAuthor(`About ${botInfo.name}`, message.client.user?.displayAvatarURL({ size: 256, dynamic: true }))
-        .setDescription(`**Creator:** ${botInfo.developers.find(dev => dev.role.includes('Creator'))?.name}\n**Creation Date:** ${botInfo.creationDate}`)
+        .setDescription(`${emojis.crown} ${botInfo.developers.find(dev => dev.role.includes('Creator'))?.name}\n${emojis.date} ${botInfo.creationDate}`)
         .addFields([
             {
-                name: 'Made with',
+                name: strings.MADE_WITH,
                 value: botInfo.dependencies.map(dep => `[${dep.name}](${dep.url} '${dep.version}') (${dep.type})`).join('\n'),
                 inline: true
             },
             {
-                name: 'Developers',
-                value: botInfo.developers.map(dev => `[${dev.name}](${dev.github} 'Check out ${dev.name} on GitHub!') - ${dev.role}`),
+                name: strings.DEVELOPERS,
+                value: botInfo.developers.map(dev => `[${dev.name}](${dev.github}) - ${dev.role}`),
                 inline: true
             }
         ]);

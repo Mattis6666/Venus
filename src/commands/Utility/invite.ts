@@ -1,16 +1,19 @@
 import { Message } from 'discord.js';
 import Command from '../../interfaces/Command';
-import { newEmbed } from '../../utils/Util';
+import { newEmbed, replace } from '../../utils/Util';
 import { botInfo } from '../../constants/botInfo';
 import config from '../../utils/config';
+import CommandStrings from '../../interfaces/CommandStrings';
 
-const callback = (message: Message, _args: string[]) => {
+const callback = (message: Message, _args: string[], strings: CommandStrings) => {
     const output = newEmbed(true)
-        .setAuthor('Invite me', message.client.user?.displayAvatarURL({ size: 256, dynamic: true }))
+        .setAuthor(strings.INVITE_ME, message.client.user?.displayAvatarURL({ size: 256, dynamic: true }))
         .setDescription(
-            `[Click here to invite me to your server!](${botInfo.botInvite} 'Invite ${botInfo.name}!')\n\n` +
-                `To set my prefix once I joined, use \`${config.defaultPrefix}setprefix\`\n\n` +
-                `Need help? [Join the support server!](${botInfo.supportServer} 'Join ${botInfo.name}\' Support server!')`
+            `[${strings.CLICK_HERE}](${botInfo.botInvite})\n\n` +
+                `${replace(strings.SET_PREFIX, {
+                    PREFIX: config.defaultPrefix
+                })}\`\n\n` +
+                `[${strings.SUPPORT_SERVER}](${botInfo.supportServer})`
         );
     return message.channel.send(output);
 };
@@ -18,7 +21,7 @@ const callback = (message: Message, _args: string[]) => {
 export const command: Command = {
     name: 'botinvite',
     category: 'UTILITY',
-    aliases: ['invite', 'inviteme'],
+    aliases: ['invite', 'inv'],
     description: 'Invite Venus to your server!',
     extended: '',
     usage: '',

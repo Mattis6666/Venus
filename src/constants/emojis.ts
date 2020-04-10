@@ -3,17 +3,20 @@ export const emojis = {
     success: '<:check:695724701510664242>',
     fail: '<:cross:695724707487678654>',
     nitroBoost: '<:NitroBoost:696191790017019954>',
+    birthday: '🎂',
     date: '🗓️',
     info: 'ℹ️',
     hash: '#️⃣',
     crown: '👑',
     member: '👤',
-    channel: '💬',
+    speechbubble: '💬',
     globe: '🌐',
     smiley: '😃',
     PLAYING: '🎮',
     LISTENING: '🎧',
     WATCHING: '🍿',
     STREAMING: '🎬',
-    CUSTOM_STATUS: ''
+    CUSTOM_STATUS: '',
+    art: '🎨',
+    diamond: '🔹'
 };

@@ -10,7 +10,7 @@ const callback = async (message: Message, args: string[], strings: CommandString
 
     const guildSettings = await getGuild(message.guild!.id);
     if (!args.length) {
-        guildSettings.channels.welcomeChannel = '';
+        guildSettings.channels.introChannel = '';
         client.guildSettings.set(message.guild!.id, guildSettings);
         await guildSettings.save();
         return message.channel.send(strings.RESET);
@@ -19,7 +19,7 @@ const callback = async (message: Message, args: string[], strings: CommandString
     if (!channel) return wrongSyntax(message, strings.NO_CHANNEL);
     if (channel.type !== 'text') return wrongSyntax(message, strings.VERY_FUNNY);
 
-    guildSettings.channels.welcomeChannel = channel.id;
+    guildSettings.channels.introChannel = channel.id;
     client.guildSettings.set(message.guild!.id, guildSettings);
     await guildSettings.save();
 
@@ -31,11 +31,11 @@ const callback = async (message: Message, args: string[], strings: CommandString
 };
 
 export const command: Command = {
-    name: 'setwelcomechannel',
+    name: 'setintrochannel',
     category: 'SETTINGS',
-    aliases: ['welcomechannel'],
-    description: 'Sets the channel to send a welcome card in.',
-    extended: 'Running the command without providing a channel will disable welcome cards!',
+    aliases: ['introchannel'],
+    description: 'Sets the channel to send new intros in.',
+    extended: 'Running the command without providing a channel will disable intros!',
     usage: '<Channel>',
     developerOnly: false,
     nsfw: false,
