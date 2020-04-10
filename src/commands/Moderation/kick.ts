@@ -14,26 +14,28 @@ const callback = async (message: Message, args: string[], strings: CommandString
 
     const m = await message.channel.send(
         replace(strings.CONFIRM, {
-            MEMBER: member.user.tag
+            MEMBER: member.user.tag,
+            YES: strings.YES,
+            NO: strings.NO
         })
     );
     let confirmed = false;
     const collector = message.channel.createMessageCollector(m => m.author.id === message.author.id, { time: 1000 * 30 });
 
     collector.on('collect', async (msg: Message) => {
-        if ('yes'.includes(msg.content.toLowerCase())) {
+        if (strings.YES.toLowerCase().includes(msg.content.toLowerCase())) {
             const reason = args.slice(1).join(' ') || strings.NO_REASON;
             const output = newEmbed(true)
-                .setTitle('Kick')
+                .setTitle(strings.KICK)
                 .setDescription(
                     replace(strings.KICK_DM, {
                         GUILD: message.guild!.name
                     })
                 )
                 .addFields([
-                    { name: 'User', value: member.user.tag },
-                    { name: 'Moderator', value: message.author.tag },
-                    { name: 'Reason', value: trimString(reason, 1024) }
+                    { name: strings.MEMBER, value: member.user.tag },
+                    { name: strings.MOD, value: message.author.tag },
+                    { name: strings.REASON, value: trimString(reason, 1024) }
                 ]);
 
             await member.send(output).catch(() => null);
@@ -46,7 +48,7 @@ const callback = async (message: Message, args: string[], strings: CommandString
             return collector.stop();
         }
 
-        if ('no'.includes(msg.content.toLowerCase())) {
+        if (strings.NO.toLowerCase().includes(msg.content.toLowerCase())) {
             msg.delete({ timeout: 10 * 1000 });
             m.delete({ timeout: 10 * 1000 });
 
