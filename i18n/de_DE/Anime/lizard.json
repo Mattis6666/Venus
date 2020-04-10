@@ -2,6 +2,6 @@
     "category": "Anime",
     "description": "Erhalte ein zufälliges Eidechsenbild.",
     "extended": "",
-    "usage": "[Benutzer]",
-    "message": "{{USER}} zeigt Dir diese süße Eidechse, {{MEMBER}}!"
+    "usage": "[Mitglied]",
+    "message": "{{USER}} zeigt dir diese süße Eidechse, {{MEMBER}}!"
 }

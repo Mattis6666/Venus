@@ -1,8 +1,8 @@
 {
     "category": "Moderation",
-    "description": "Lädt Emojis von anderen Servern auf Deinen eigenen Server hoch.",
+    "description": "Lädt Emojis von anderen Servern auf deinen eigenen Server hoch.",
     "extended": "Ihr Name ist der Name, den der andere Server ihnen gegeben hat.",
-    "usage": "<Emoji> (Du kannst so viele angeben, wie Du möchtest)",
+    "usage": "<Emoji> (Du kannst so viele angeben, wie du möchtest)",
     "NO_EMOJIS": "Du hast keine Emojis angegeben!",
     "FAILURE": "Ich konnte diese Emojis nicht stibitzen. Dies liegt höchstwahrscheinlich daran, dass dieser Server keine freien Emojiplätze hat!",
     "SUCCESS": "Ich habe erfolgreich {AMOUNT} Emojis stibitzst: {EMOJIS}",

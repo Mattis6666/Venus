@@ -1,7 +1,7 @@
 {
     "category": "Einstellungen",
     "description": "Legt die Rolle fest, die Mitglieder beim Betritt erhalten.",
-    "extended": "Wenn Du den Befehl ausführst, ohne eine Rolle anzugeben, wird die Autorole deaktiviert!",
+    "extended": "Wenn du den Befehl ausführst, ohne eine Rolle anzugeben, wird die Autorole deaktiviert!",
     "usage": "<Rolle (Erwähnung, ID oder Name)>",
     "RESET": "Autorolle erfolgreich deaktiviert! Neue Mitglieder erhalten beim Betritt keine Rolle mehr.",
     "SUCCESS": "Diie Autorole wurde erfolgreich zu `{AUTOROLE}` festgelegt! Diese Rolle wird den Mitgliedern beim Betritt hinzugefügt."

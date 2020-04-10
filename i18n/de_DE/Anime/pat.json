@@ -1,7 +1,7 @@
 {
     "category": "Anime",
     "description": "Erhalte ein zufälliges Tätschelbild.",
-    "extended": "Um Deinen Freund zu tätscheln, tippe den Benutzernamen oder erwähne ihn!",
-    "usage": "[Benutzer]",
+    "extended": "Um deinen Freund zu tätscheln,  oder erwähne ihn!",
+    "usage": "[Mitglied]",
     "MESSAGE": "{{USER}} tätschelt {{MEMBER}}!"
 }

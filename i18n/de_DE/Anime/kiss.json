@@ -1,7 +1,7 @@
 {
     "category": "Anime",
     "description": "Erhalte ein zufälliges Kussbild.",
-    "extended": "Um Deinen Freund zu küssen, tippe den Benutzernamen oder erwähne ihn!",
-    "usage": "[Benutzer]",
+    "extended": "Um deinen Freund zu küssen,  oder erwähne ihn!",
+    "usage": "[Mitglied]",
     "MESSAGE": "{{USER}} küsst {{MEMBER}}!"
 }

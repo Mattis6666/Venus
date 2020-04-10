@@ -1,7 +1,7 @@
 {
     "category": "Moderation",
     "description": "entferne ein Emoji",
-    "extended": "Du kannst so viele Emojis angeben, wie Du möchtest",
+    "extended": "Du kannst so viele Emojis angeben, wie du möchtest",
     "usage": "<emojis>",
     "NO_EMOJIS": "Du hast kein Emoji angegeben!",
     "NO_GUILD_EMOJIS": "Du hast keine Emojis von diesem Server angegeben!",

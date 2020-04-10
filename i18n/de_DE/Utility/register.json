@@ -1,6 +1,6 @@
 {
     "category": "Nützliches",
     "description": "Stelle Dich vor",
-    "extended": "Der Bot wird Dir ein paar Fragen per Direktnachricht stellen. Sie werden dann an einen Kanal auf dem Server gesendet. Du kannst diesen Kanal über den setintrochannel-Befehl setzen.",
+    "extended": "Der Bot wird dir ein paar Fragen per Direktnachricht stellen. Sie werden dann an einen Kanal auf dem Server gesendet. Du kannst diesen Kanal über den setintrochannel-Befehl setzen.",
     "usage": ""
 }

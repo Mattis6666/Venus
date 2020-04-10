@@ -1,7 +1,7 @@
 {
     "category": "Moderation",
     "description": "Erstelle ein Emoji",
-    "extended": "Du kannst auch ein Bild Direkthochladen, anstelle eine URL anzugeben!",
+    "extended": "Du kannst auch ein Bild direkthochladen, anstelle eine URL anzugeben!",
     "usage": "<Name> <URL>",
     "INVALID_NAME": "Du hast keinen gültigen Emoji-Namen angegeben.",
     "NO_URL": "Du kast keine URL oder Anhang angegeben!",

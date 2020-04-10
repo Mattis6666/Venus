@@ -2,6 +2,6 @@
     "category": "Anime",
     "description": "Erhalte ein zufälliges Nekobild.",
     "extended": "",
-    "usage": "[Benutzer]",
-    "MESSAGE": "{{USER}} zeigt Dir diese süße Neko, {{MEMBER}}!"
+    "usage": "[Mitglied]",
+    "MESSAGE": "{{USER}} zeigt dir diese süße Neko, {{MEMBER}}!"
 }

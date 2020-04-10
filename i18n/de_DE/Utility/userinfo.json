@@ -1,8 +1,8 @@
 {
     "category": "Nützliches",
-    "description": "Zeigt diverse Informationen über einen Benutzer an.",
+    "description": "Zeigt diverse Informationen über einen Mitglied an.",
     "extended": "",
-    "usage": "[Benutzer] (Der Standardwert ist man selbst)",
+    "usage": "[Mitglied] (Der Standardwert ist man selbst)",
     "PERMISSIONS": "Berechtigungen",
     "SINCE": "Seit {DATE}"
 }

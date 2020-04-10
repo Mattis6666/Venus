@@ -2,6 +2,6 @@
     "category": "Anime",
     "description": "Erhalte ein zufälliges Hundebild.",
     "extended": "",
-    "usage": "[Benutzer]",
-    "MESSAGE": "{{USER}} zeigt Dir diesen süßen Hund, {{MEMBER}}!"
+    "usage": "[Mitglied]",
+    "MESSAGE": "{{USER}} zeigt dir diesen süßen Hund, {{MEMBER}}!"
 }

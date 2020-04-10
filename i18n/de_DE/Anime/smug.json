@@ -1,7 +1,7 @@
 {
     "category": "Anime",
     "description": "Erhalte ein zufälliges Selbstgefällig Bild.",
-    "extended": "Um Deinen Freund Selbstgefällig anzusehen, tippe den Benutzernamen oder erwähne ihn!",
-    "usage": "[Benutzer]",
+    "extended": "Um deinen Freund Selbstgefällig anzusehen,  oder erwähne ihn!",
+    "usage": "[Mitglied]",
     "MESSAGE": "{{USER}} sieht Dich Selbstgefällig an, {{MEMBER}}!"
 }

@@ -1,7 +1,7 @@
 {
     "category": "Anime",
     "description": "Erhalte ein zufälliges Bakabild.",
-    "extended": "Wenn Dein Freund ein Baka ist, tippe den Benutzernamen oder erwähne ihn!",
-    "usage": "[Benutzer]",
+    "extended": "Wenn Dein Freund ein Baka ist,  oder erwähne ihn!",
+    "usage": "[Mitglied]",
     "MESSAGE": "{{USER}} findet Dich Baka, {{MEMBER}}!"
 }

@@ -1,7 +1,7 @@
 {
     "category": "Einstellungen",
     "description": "Legt den Kanal fest, an den eine Willkommenskarte gesendet werden soll.",
-    "extended": "Wenn Du den Befehl ausführst, ohne einen Kanal anzugeben, werden Willkommenskarten deaktiviert!",
+    "extended": "Wenn du den Befehl ausführst, ohne einen Kanal anzugeben, werden Willkommenskarten deaktiviert!",
     "usage": "<Textkanal>",
     "RESET": "Die Willkommenskarten wurden erfolgreich deaktiviert! Neue Mitglieder lösen beim Betritt keine Willkommenskarte mehr aus.",
     "NO_CHANNEL": "Du hast keinen gültigen Kanal angegeben!",
