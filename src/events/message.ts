@@ -8,6 +8,11 @@ import { Languages } from '../interfaces/Languages';
 
 export default async (VenusClient: Client, message: Message) => {
     if (message.author.bot || (message.guild && !message.member) || !message.client || !message.channel) return;
+    if (
+        message.channel.type === 'text' &&
+        (!message.channel.permissionsFor(message.guild!.me!)?.has('VIEW_CHANNEL') || !message.channel.permissionsFor(message.guild!.me!)?.has('SEND_MESSAGES'))
+    )
+        return;
 
     const guildSettings: Guild | null = message.guild
         ? VenusClient.guildSettings.get(message.guild.id) || (await db.Guilds.findOne({ guild: message.guild.id }))
