@@ -1,0 +1,10 @@
+{
+    "category": "Einstellungen",
+    "description": "Legt den Kanal fest, an den Intros gesendet werden.",
+    "extended": "Intros sind Steckbriefe, die Mitglieder mit dem register Befehl erstellen könne.\nWenn Du den Befehl ausführst, ohne einen Kanal anzugeben, werden Intros deaktiviert!",
+    "usage": "<Textkanal>",
+    "RESET": "Intros wurden erfolgreich deaktiviert! Mitglieder können sich nicht mehr registrieren.",
+    "NO_CHANNEL": "Du hast keinen gültigen Textkanal angegeben!",
+    "SUCCESS": "Der Introkanal wurde erfolgreich auf `{CHANNEL}` festgelegt! Intros werden dorthin geschickt.",
+    "VERY_FUNNY": "Sehr lustig ... Gib einen Text-kanal an 😉"
+}

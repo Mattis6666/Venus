@@ -18,11 +18,11 @@ const callback = async (message: Message, args: string[], strings: CommandString
         {
             code: 'de_DE',
             aliases: ['german', 'de', 'deutsch']
-        },
-        {
+        }
+        /*{
             code: 'tr_TR',
             aliases: ['turkish', 'tr', 'türkçe']
-        }
+        }*/
     ];
 
     const input = args.join(' ').toLowerCase();

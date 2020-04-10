@@ -1,0 +1,11 @@
+{
+    "category": "Moderation",
+    "description": "Erstelle ein Emoji",
+    "extended": "Du kannst auch ein Bild Direkthochladen, anstelle eine URL anzugeben!",
+    "usage": "<Name> <URL>",
+    "INVALID_NAME": "Du hast keinen gültigen Emoji-Namen angegeben.",
+    "NO_URL": "Du kast keine URL oder Anhang angegeben!",
+    "REASON": "Erstellt von {MEMBER} per createemote-Befehl.",
+    "SUCCESS": "Dein Emoji wurde erfolgreich erstellt {NAME}: {EMOJI}",
+    "FAILURE": "Dein Emoji konnte nicht erstellt werden. Dies liegt entweder daran, dass dieser Server keine freien Emojiplätze hat, oder daran, dass das bereitgestellte Bild größer als 256 KB ist."
+}

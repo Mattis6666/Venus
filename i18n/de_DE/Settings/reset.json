@@ -1,0 +1,8 @@
+{
+    "category": "Einstellungen",
+    "description": "Setzt alle meine Einstellungen zurück",
+    "extended": "Dadurch werden alle meine Einstellungen zurückgesetzt! Dies beinhaltet Präfix, deaktivierte Befehle, blockierte Kanäle, den Willkommenskanal, etc",
+    "usage": "",
+    "NO_DB": "Ich konnte keinen Datenbankeintrag für {GUILD} finden.",
+    "SUCCESS": "Die Einstellungen dieser Gilde wurde erfolgreich zurückgesetzt!"
+}

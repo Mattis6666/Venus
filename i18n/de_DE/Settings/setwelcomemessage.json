@@ -1,0 +1,8 @@
+{
+    "category": "Einstellungen",
+    "description": "Sende neuen Mitgliedern eine Willkommensnachricht",
+    "extended": "Wenn Du den Befehl ausführst, ohne eine Nachricht anzugeben, werden Willkommensnachrichten deaktiviert!",
+    "usage": "<Nachricht>",
+    "RESET": "Die Willkommensnachricht wurde erfolgreich deaktiviert!",
+    "SUCCESS": "Die Willkommensnachricht wurde erfolgreich aktualisiert!"
+}

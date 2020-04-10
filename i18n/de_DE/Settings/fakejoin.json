@@ -1,0 +1,7 @@
+{
+    "category": "Einstellungen",
+    "description": "Fälscht einen Beitritt.",
+    "extended": "Nützlich zum Testen Deines Willkommens-Setups",
+    "usage": "[Mitglied] (Der Standardwert ist man selbst)",
+    "SUCCESS": "Erfolgreich einen Beitritt für `{MEMBER}` erstellt."
+}

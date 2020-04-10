@@ -1,0 +1,8 @@
+{
+    "category": "Anime",
+    "aliases": [],
+    "description": "Erhalte ein zufälliges Umarmung-Bild.",
+    "extended": "Um Deinen Freund zu umarmen, tippe den Benutzernamen oder erwähne ihn!",
+    "usage": "[Benutzer]",
+    "MESSAGE": "{{USER}} umarmt {{MEMBER}}!"
+}

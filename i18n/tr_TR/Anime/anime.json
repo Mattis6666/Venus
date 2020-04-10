@@ -1,8 +1,0 @@
-{
-    "category": "Anime",
-    "description": "Favori Anime veya Manga'nı arat!",
-    "extended": "",
-    "usage": "[Anime Adı]",
-    "nomatch": "Maalesef aradığınız terimde bir anime bulamadım.",
-    "nsfw": "Maalesef bu animeyi NSFW olduğu için gösteremem."
-}

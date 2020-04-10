@@ -1,0 +1,13 @@
+{
+    "category": "Ein bisschen Spaß muss sein",
+    "description": "Spielen eine Partie Tic Tac Toe gegen den Bot!",
+    "extended": "In Zukunft wirst Du in der Lage sein jemanden zu eine Partie herausfordern, dies ist jedoch noch nicht implementiert.",
+    "usage": "",
+    "RULES": "X ist der Spieler, O der Bot.\nUm einen Zug anzugehen, tippe einfach [Zeile] [Spalte] gezählt von der unteren linken Ecke aus.\nDie untere rechte Ecke wäre 3 1, die obere rechte 3 3.\nTippe {CANCEL_WORD}, um jederzeit aufzuhören.",
+    "CANCEL_WORD": "Beenden",
+    "QUIT": "Das Spiel erfolgreich beendet!",
+    "INVALID_MOVE": "Ungültiger Zug",
+    "DRAW": "Es ist ein Unentschieden!",
+    "WIN": "{PLAYER} siegt!",
+    "LOSS": "{BOT} verliert!"
+}

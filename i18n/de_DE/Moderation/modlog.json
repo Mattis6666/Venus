@@ -1,0 +1,11 @@
+{
+    "category": "Moderation",
+    "description": "Überprüfe das Mod-Log eines Mitglieds oder Dein eigenes.",
+    "extended": "",
+    "usage": "[Benutzer (Erwähnung, Benutzername oder ID)]",
+    "USER_NO_INFRACTIONS": "Du hast keine Einträge, {USER}.",
+    "MEMBER_NO_INFRACTIONS": "{MEMBER} hat keine Einträge, {AUTHOR}.",
+    "MODLOG": "Mod-Log von {MEMBER}",
+    "MODERATOR": "Moderator",
+    "NO_PERMS": "Du benötigst die Berechtigung `Nachrichten verwalten`, um die Einträge anderer Benutzer abzufragen!"
+}

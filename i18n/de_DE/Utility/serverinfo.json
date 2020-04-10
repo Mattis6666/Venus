@@ -1,0 +1,12 @@
+{
+    "category": "Nützliches",
+    "description": "Zeigt diverse Informationen über den Server an.",
+    "extended": "",
+    "usage": "",
+    "NO_DESCRIPTION": "Keine Beschreibung angegeben.",
+    "BOOST_LEVEL": "Level {LEVEL}",
+    "ROLES": "Rollen",
+    "CHANNELS": "Kanäle",
+    "TOO_MANY_ROLES": "Es gibt leider zu viele Rollen, daher kann ich sie hier nicht anzeigen.",
+    "TOO_MANY_CHANNELS": "Es gibt leider zu viele Kanäle, daher kann ich sie hier nicht anzeigen."
+}

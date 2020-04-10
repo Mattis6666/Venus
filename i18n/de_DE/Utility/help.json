@@ -1,0 +1,15 @@
+{
+    "category": "Nützliches",
+    "description": "Du bist bereits hier d-(O.O)-b",
+    "extended": "",
+    "usage": "[Befehlsname | Befehlsalias]",
+    "INVALID": "Das ist kein gültiger Befehl!",
+    "HEADER": "Hilfemenü",
+    "COMMAND_LIST": "Hier ist eine Liste aller verfügbaren Befehle!",
+    "FOOTER": "Sende {PREFIX}help [Befehlsname], um Informationen zu einem bestimmten Befehl zu erhalten.",
+    "VIEW_NSFW_COMMAND": "Um dies anzuzeigen, stelle sicher, dass auf dem Server „NSFW“ aktiviert ist, und führe den Befehl in einem NSFW-Kanal aus!",
+    "VIEW_NSFW_MENU": "Um dies anzuzeigen, führe `{PREFIX}help nsfw` in einem NSFW-Kanal aus!",
+    "DESCRIPTION": "Beschreibung",
+    "USAGE": "Gebrauch",
+    "ALIASES": "Alias"
+}

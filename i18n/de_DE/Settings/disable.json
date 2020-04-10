@@ -1,0 +1,8 @@
+{
+    "category": "Einstellungen",
+    "description": "Deaktiviere einen oder mehrere Befehl(e)",
+    "extended": "",
+    "usage": "<Befehlsname | Befehlsalias>",
+    "NO_COMMAND": "Du hast keine gültigen Befehle zum deaktivieren angegeben!",
+    "SUCCESS": "Die folgenden Befehle wurden auf diesem Server deaktiviert: `{COMMANDS}`"
+}

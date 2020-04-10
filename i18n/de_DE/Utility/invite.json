@@ -1,0 +1,10 @@
+{
+    "category": "Nützliches",
+    "description": "Lade Venus auf Deinen Server ein!",
+    "extended": "",
+    "usage": "",
+    "INVITE_ME": "Lade mich ein!",
+    "CLICK_HERE": "Klicke hier, um mich auf Deinen Server einzuladen!",
+    "SET_PREFIX": "Um mein Präfix festzulegen, verwende `{PREFIX}setprefix`",
+    "SUPPORT_SERVER": "Brauchst Du Hilfe? Trete hier dem Support-Server bei!"
+}

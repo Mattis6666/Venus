@@ -1,0 +1,7 @@
+{
+    "category": "Anime",
+    "description": "Erhalte ein zufälliges Ohrfeige Bild.",
+    "extended": "Um Deinen Freund ohrzupfeigen, tippe den Benutzernamen oder erwähne ihn!",
+    "usage": "[Benutzer]",
+    "MESSAGE": "{{USER}} ohrfeigt {{MEMBER}}!"
+}

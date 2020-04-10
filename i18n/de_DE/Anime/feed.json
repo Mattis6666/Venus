@@ -1,0 +1,7 @@
+{
+    "category": "Anime",
+    "description": "Erhalte ein zufälliges Fütter Bild.",
+    "extended": "Um Deinen Freund zu füttern, tippe den Benutzernamen oder erwähne ihn!",
+    "usage": "[Benutzer]",
+    "MESSAGE": "{{USER}} füttert {{MEMBER}}!"
+}

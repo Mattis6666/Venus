@@ -1,0 +1,8 @@
+{
+    "category": "Einstellungen",
+    "description": "Lege die serverweite Sprache für mich fest.",
+    "extended": "",
+    "usage": "<Sprache>",
+    "NO_LANGUAGE": "Du hast keine gültige Sprache angegeben. Die derzeitigen Optionen sind `{LANGUAGES}`",
+    "SUCCESS": "Die Sprache wurde erfolgreich auf {LANGUAGE} gesetzt!"
+}

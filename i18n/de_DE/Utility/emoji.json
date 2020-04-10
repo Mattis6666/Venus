@@ -1,0 +1,7 @@
+{
+    "category": "Nützliches",
+    "description": "Erhalte den Link eines Emojis",
+    "extended": "",
+    "usage": "<Emoji> (Du kannst beliebig viele hinzufügen)",
+    "NO_EMOJIS": "Du hast keine Emojis angegeben!"
+}

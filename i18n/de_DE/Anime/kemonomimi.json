@@ -1,0 +1,7 @@
+{
+    "category": "Anime",
+    "description": "Erhalte ein zufälliges Kemonomimi Bild.",
+    "extended": "",
+    "usage": "[Benutzer]",
+    "MESSAGE": "{{USER}} zeigt Dir eine süße Kemonomimi, {{MEMBER}}!"
+}

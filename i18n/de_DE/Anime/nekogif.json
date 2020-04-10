@@ -1,0 +1,7 @@
+{
+    "category": "Anime",
+    "description": "Erhalte ein zufälliges Neko Gif.",
+    "extended": "",
+    "usage": "[Benutzer]",
+    "MESSAGE": "{{USER}} zeigt Dir diese süße Neko, {{MEMBER}}!"
+}

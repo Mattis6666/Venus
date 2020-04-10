@@ -1,0 +1,7 @@
+{
+    "category": "Ein bisschen Spaß muss sein",
+    "description": "Spiele eine Runde Minesweeper.",
+    "extended": "Der Zweck des Spiels ist es, alle Zellen des Bretts zu öffnen, die keine Bombe enthalten. Du verlierst, wenn Du eine Bombenzelle auslöst. Jede Nicht-Bombenzelle, die Du öffnest, zeigt Dir die Gesamtzahl der Bomben in den acht benachbarten Zellen an.",
+    "usage": "[Spalte] [Reihen] [Minen] (Der Standardwert ist 10x10 mit 10 Bomben)",
+    "TOO_LONG": "Dieses Board hat über 2000 Zeichen, daher kann ich es nicht senden! Wähle eine kleinere Zahl."
+}

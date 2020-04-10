@@ -20,7 +20,7 @@ const callback = async (message: Message, _args: string[], strings: CommandStrin
 };
 
 export const command: Command = {
-    name: 'resetserver',
+    name: 'reset',
     category: 'SETTINGS',
     aliases: [],
     description: 'Resets all my settings',

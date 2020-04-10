@@ -1,0 +1,7 @@
+{
+    "category": "Anime",
+    "description": "Erhalte ein zufälliges Anstupser Bild.",
+    "extended": "Um Deinen Freund anzustupsen, tippe den Benutzernamen oder erwähne ihn!",
+    "usage": "[Benutzer]",
+    "MESSAGE": "{{USER}} anstupst {{MEMBER}}!"
+}

@@ -19,9 +19,9 @@ const callback = (message: Message, _args: string[], strings: CommandStrings) =>
 };
 
 export const command: Command = {
-    name: 'botinvite',
+    name: 'invite',
     category: 'UTILITY',
-    aliases: ['invite', 'inv'],
+    aliases: ['botinvite', 'inv'],
     description: 'Invite Venus to your server!',
     extended: '',
     usage: '',

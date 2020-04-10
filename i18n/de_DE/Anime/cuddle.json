@@ -1,0 +1,7 @@
+{
+    "category": "Anime",
+    "description": "Erhalte ein zufälliges Kuschelbild.",
+    "extended": "Um Deinen Freund zu kuscheln, tippe den Benutzernamen oder erwähne ihn!",
+    "usage": "[Benutzer]",
+    "MESSAGE": "{{USER}} kuschelt {{MEMBER}}!"
+}
