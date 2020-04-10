@@ -1,0 +1,13 @@
+{
+    "category": "MODERATION",
+    "description": "delete an emoji",
+    "extended": "You can provide as many emojis as you want",
+    "usage": "<emojis>",
+    "NO_EMOJIS": "You did not provide any emotes!",
+    "NO_GUILD_EMOJIS": "You did not provide any emotes that are from this server!",
+    "INITIAL": "{EMOJI} Successfully deleted 0/{TOTAL} emojis!",
+    "PROGRESS": "{EMOJI} Successfully deleted {COUNT}/{TOTAL} emojis!",
+    "REASON": "Deleted by {MEMBER} via deleteemoji command",
+    "SUCCESS": "{EMOJI} I successfully deleted {COUNT} emojis!",
+    "FAILURE": "{EMOJI} I only managed to delete {COUNT}/{TOTAL} emojis!"
+}

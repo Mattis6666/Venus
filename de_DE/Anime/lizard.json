@@ -1,0 +1,7 @@
+{
+    "category": "ANIME",
+    "description": "Get a random lizard image.",
+    "extended": "",
+    "usage": "[user]",
+    "message": "{{USER}} shows you this cute lizard, {{MEMBER}}!"
+}

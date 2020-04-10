@@ -58,7 +58,14 @@ const callback = async (message: Message, args: string[], strings: CommandString
             return wrongSyntax(message, strings.BAN_CANCEL);
         }
 
-        return wrongSyntax(msg, strings.INVALID_RESPONSE, false);
+        return wrongSyntax(
+            msg,
+            replace(strings.INVALID_RESPONSE, {
+                YES: strings.YES,
+                NO: strings.NO
+            }),
+            false
+        );
     });
 
     collector.on('end', () => {

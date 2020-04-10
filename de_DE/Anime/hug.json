@@ -1,0 +1,8 @@
+{
+    "category": "ANIME",
+    "aliases": [],
+    "description": "Get a random hug image.",
+    "extended": "To hug your friend, pass along their name or mention!",
+    "usage": "[user]",
+    "MESSAGE": "{{USER}} hugs {{MEMBER}}!"
+}

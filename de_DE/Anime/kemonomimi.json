@@ -1,0 +1,7 @@
+{
+    "category": "ANIME",
+    "description": "Get a random kemonomimi image.",
+    "extended": "",
+    "usage": "[user]",
+    "MESSAGE": "{{USER}} shows you this cute kemonomimi, {{MEMBER}}!"
+}
