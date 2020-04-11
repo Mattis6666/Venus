@@ -18,16 +18,15 @@ export const getUser = async (message: Message, args: string[], spot?: number) =
         const userSearch = message.client.users.cache.filter(u => u.username.toLowerCase().includes(input.toLowerCase()));
         if (userSearch.size === 1) return userSearch.first();
         if (!userSearch.size) {
-            wrongSyntax(message, errors.NO_USER_FOUND);
+            return wrongSyntax(message, errors.NO_USER_FOUND);
         }
         if (userSearch.size > 1) {
-            wrongSyntax(
+            return wrongSyntax(
                 message,
                 `${errors.MULTIPLE_USERS_FOUND}: ${userSearch.size > 3 ? userSearch.size.toString() : userSearch.map(u => '`' + u.username + '`').join(', ')}`,
                 false
             );
         }
-        return;
     }
     return (await getMember(message, args))?.user;
 };
@@ -55,7 +54,7 @@ export const getMember = async (message: Message, args: string[], spot?: number)
         wrongSyntax(
             message,
             `${errors.MULTIPLE_MEMBERS_FOUND}: ${
-                memberSearch.size > 3 ? memberSearch.size.toString() : memberSearch.map(m => '`' + m.displayName || m.user.username + '`').join(', ')
+                memberSearch.size > 3 ? memberSearch.size.toString() : memberSearch.map(m => '`' + (m.displayName || m.user.username) + '`').join(', ')
             }`,
             false
         );

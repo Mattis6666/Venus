@@ -1,0 +1,7 @@
+{
+    "category": "Anime",
+    "description": "Krijg een willekeurige klap afbeelding.",
+    "extended": "Om je vriend een klap te geven, geef dan zijn naam op!",
+    "usage": "[gebruiker]",
+    "MESSAGE": "{{USER}} slaat {{MEMBER}}!"
+}

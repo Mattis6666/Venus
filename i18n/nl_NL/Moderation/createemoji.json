@@ -1,0 +1,11 @@
+{
+    "category": "Moderation",
+    "description": "Maak een emoji",
+    "extended": "U kunt ook een afbeelding uploaden in plaats van een link op te geven!",
+    "usage": "<naam> <link>",
+    "INVALID_NAME": "Je hebt geen geldige emoji naam opgegeven.",
+    "NO_URL": "Je hebt geen link of afbeelding opgegeven!",
+    "REASON": "Gemaakt door {MEMBER} via de opdracht createemote.",
+    "SUCCESS": "Je emoji is aangemaakt {NAME}: {EMOJI}",
+    "FAILURE": "Kan uw emoji niet aanmaken. Dit komt omdat deze server geen vrije emoji slots meer heeft of omdat de afbeelding groter is dan 256kb."
+}

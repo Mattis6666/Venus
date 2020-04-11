@@ -1,0 +1,7 @@
+{
+    "category": "Anime",
+    "description": "Krijg een willekeurige pat afbeelding.",
+    "extended": "Om je vriend te aaien, geef dan zijn naam op!",
+    "usage": "[gebruiker]",
+    "MESSAGE": "{{USER}} aait {{MEMBER}}!"
+}

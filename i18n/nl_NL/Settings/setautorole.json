@@ -1,0 +1,8 @@
+{
+    "category": "Settings",
+    "description": "Stelt de rol in die leden krijgen bij de deelname.",
+    "extended": "Door de opdracht uit te voeren zonder een rol te geven, wordt de autorole uitgeschakeld!",
+    "usage": "<Rol (tag, Id, of naam)>",
+    "RESET": "Automatische rol succesvol uitgeschakeld! Nieuwe leden krijgen geen rol meer als ze lid worden.",
+    "SUCCESS": "Succesvol de autorole aangepast naar `{AUTOROLE}`! Deze rol zal aan de leden worden toegekend bij de deelnamen."
+}

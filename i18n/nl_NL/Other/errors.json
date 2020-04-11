@@ -1,0 +1,15 @@
+{
+    "SERVER_ONLY": "Deze opdracht kan alleen op de server worden gebruikt!",
+    "DM_ONLY": "Deze opdracht kan alleen worden gebruikt in mijn PMs!",
+    "NSFW_CHANNEL_ONLY": "Deze opdracht kan alleen worden uitgevoerd in een NSFW kanaal!",
+    "NSFW_DISABLED": "Deze server heeft geen NSFW opdrachten ingeschakeld! Stuur een bericht naar de beheerder als u denkt dat dit niet klopt.",
+    "USER_MISSING_PERMISSION": "Deze opdracht vereist dat je de `{PERMISSION}` rechten hebt!",
+    "BOT_MISSING_PERMISSION": "Ik heb de `{PERMISSION}` rechten nodig voor deze opdracht!",
+    "WRONG_USAGE": "Je hebt deze opdracht niet correct uitgevoerd. De juiste wijze is`{USAGE}`.",
+    "NO_USER_FOUND": "Je hebt geen geldige gebruiker opgegeven. Voer de opdracht opnieuw uit en geef er een op.",
+    "NO_MEMBER_FOUND": "Je hebt geen geldige gebruiker opgegeven. Voer de opdracht opnieuw uit en geef er een op.",
+    "NO_ROLE_FOUND": "Je hebt geen geldige rol opgegeven. Voer de opdracht opnieuw uit en geef er een op.",
+    "MULTIPLE_USERS_FOUND": "Ik heb meerdere gebruikers gevonden die overeenkomen met uw invoer",
+    "MULTIPLE_MEMBERS_FOUND": "Ik heb meerdere leden gevonden die overeenkomen met uw invoer",
+    "MULTIPLE_ROLES_FOUND": "Ik heb meerdere rollen gevonden die overeenkomen met uw invoer"
+}

@@ -1,0 +1,7 @@
+{
+    "category": "Anime",
+    "description": "Krijg een willekeurige voeding afbeelding.",
+    "extended": "Om je vriend te voeden, geef dan zijn naam op!",
+    "usage": "[gebruiker]",
+    "MESSAGE": "{{USER}} voedt {{MEMBER}}!"
+}

@@ -18,6 +18,10 @@ const callback = async (message: Message, args: string[], strings: CommandString
         {
             code: 'de_DE',
             aliases: ['german', 'de', 'deutsch']
+        },
+        {
+            code: 'nl_NL',
+            aliases: ['dutch', 'nederlands', 'nl']
         }
         /*{
             code: 'tr_TR',

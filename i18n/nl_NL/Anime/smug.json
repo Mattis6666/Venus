@@ -1,0 +1,7 @@
+{
+    "category": "Anime",
+    "description": "Krijg een willekeurige zelfvoldane afbeelding.",
+    "extended": "Om je vriend een zelfvoldane blik te geven, geef dan zijn naam op!",
+    "usage": "[gebruiker]",
+    "MESSAGE": "{{USER}} geeft je een zelfvoldane uitstraling, {{MEMBER}}!"
+}

@@ -1,0 +1,8 @@
+{
+    "category": "Utility",
+    "description": "Krijg een definitie van urbandictionary.com",
+    "extended": "",
+    "usage": "<woord om op te zoeken>",
+    "NSFW": "Deze opdracht is alleen bruikbaar in NSFW kanalen, omdat definities mogelijk NSFW zijn!",
+    "NO_MATCH": "Sorry, ik kan geen definitie vinden die overeenkomt met je zoekterm."
+}

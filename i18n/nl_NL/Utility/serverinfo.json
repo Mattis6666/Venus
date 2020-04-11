@@ -1,0 +1,12 @@
+{
+    "category": "Utility",
+    "description": "Toon de informatie van deze server.",
+    "extended": "",
+    "usage": "",
+    "NO_DESCRIPTION": "Geen beschrijving gegeven.",
+    "BOOST_LEVEL": "Level {LEVEL}",
+    "ROLES": "Rollen",
+    "CHANNELS": "Kanalen",
+    "TOO_MANY_ROLES": "Sorry, er zijn te veel rollen, dus ik kan ze hier niet weergeven.",
+    "TOO_MANY_CHANNELS": "Sorry, er zijn te veel kanalen, dus ik kan ze hier niet weergeven."
+}

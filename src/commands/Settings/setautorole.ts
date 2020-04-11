@@ -43,6 +43,6 @@ export const command: Command = {
     dmOnly: false,
     requiresArgs: 0,
     userPermissions: 'MANAGE_GUILD',
-    botPermissions: '',
+    botPermissions: 'MANAGE_ROLES',
     callback: callback
 };

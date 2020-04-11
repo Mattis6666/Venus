@@ -5,5 +5,5 @@
     "usage": "<command name | command alias>",
     "NO_COMMAND": "You did not provide any valid commands to enable!",
     "ENABLE_ALL": "All commands have been enabled!",
-    "SUCCESS": "The following commands have been enabled on this server: `{COMMANDS}``"
+    "SUCCESS": "The following commands have been enabled on this server: `{COMMANDS}`"
 }

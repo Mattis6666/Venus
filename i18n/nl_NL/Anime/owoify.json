@@ -1,0 +1,8 @@
+{
+    "category": "Anime",
+    "description": "OwOify je tekst.",
+    "extended": "",
+    "usage": "<tekst>",
+    "FAILURE": "Sorry, Ik kon uw input niet OwOify.",
+    "SUCCESS": "{USER}, jouw OwOified bericht"
+}

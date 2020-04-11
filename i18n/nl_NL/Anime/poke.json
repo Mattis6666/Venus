@@ -1,0 +1,7 @@
+{
+    "category": "Anime",
+    "description": "Krijg een willekeurige por afbeelding.",
+    "extended": "Om je vriend te porren, geef dan zijn naam op!",
+    "usage": "[gebruiker]",
+    "MESSAGE": "{{USER}} port {{MEMBER}}!"
+}

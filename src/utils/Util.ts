@@ -60,11 +60,11 @@ export const fetch = async (requestInfo: RequestInfo, requestOptions?: RequestIn
 export const wrongSyntax = async (message: Message, text: string, del = true) => {
     const msg = await message.channel.send(text);
     if (!message.guild) return;
-    msg.delete({ timeout: 1000 * 10 });
-    if (del) message.delete({ timeout: 1000 * 10 });
+    msg.delete({ timeout: 1000 * 10 }).catch(() => null);
+    if (del) message.delete({ timeout: 1000 * 10 }).catch(() => null);
 };
 
-export const numToMonth = async (num: number) => {
+export const numToMonth = (num: number) => {
     if (num > 11 || num < 0) throw new RangeError('Invalid month, retard.');
     return ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'][num];
 };

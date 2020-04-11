@@ -10,7 +10,8 @@ export default async (VenusClient: Client, message: Message) => {
     if (message.author.bot || (message.guild && !message.member) || !message.client || !message.channel) return;
     if (
         message.channel.type === 'text' &&
-        (!message.channel.permissionsFor(message.guild!.me!)?.has('VIEW_CHANNEL') || !message.channel.permissionsFor(message.guild!.me!)?.has('SEND_MESSAGES'))
+        message.guild &&
+        (!message.channel.permissionsFor(message.guild.me!)?.has('VIEW_CHANNEL') || !message.channel.permissionsFor(message.guild.me!)?.has('SEND_MESSAGES'))
     )
         return;
 
@@ -69,14 +70,13 @@ export default async (VenusClient: Client, message: Message) => {
                         PERMISSION: nicerPermissions(command.userPermissions)
                     })
                 );
-            if (command.botPermissions && !message.channel.permissionsFor(message.guild.me)!.has(command.botPermissions)) {
+            if (command.botPermissions && !message.channel.permissionsFor(message.guild.me)!.has(command.botPermissions))
                 return wrongSyntax(
                     message,
                     replace(errors.BOT_MISSING_PERMISSION, {
                         PERMISSION: nicerPermissions(command.botPermissions)
                     })
                 );
-            }
         }
     }
     if (command.guildOnly && !message.guild) return wrongSyntax(message, errors.SERVER_ONLY);

@@ -1,0 +1,15 @@
+{
+    "category": "Utility",
+    "description": "Je bevindt je hier d-(O.O)-b",
+    "extended": "",
+    "usage": "[opdracht naam | opdracht alias]",
+    "INVALID": "Dat is geen geldige opdracht!",
+    "HEADER": "Help menu",
+    "COMMAND_LIST": "Hier is een lijst met alle beschikbare opdrachten!",
+    "FOOTER": "Type {PREFIX}help [opdracht naam] om informatie te krijgen over een specifieke opdracht",
+    "VIEW_NSFW_COMMAND": "Om dit te bekijken, zorg ervoor dat NSFW op de server is ingeschakeld en voer de opdracht uit in een NSFW kanaal!",
+    "VIEW_NSFW_MENU": "Om deze te bekijken, voer je `{PREFIX}help nsfw` uit in een NSFW kanaal!",
+    "DESCRIPTION": "Beschrijving",
+    "USAGE": "Gebruik",
+    "ALIASES": "Aliassen"
+}

@@ -1,0 +1,7 @@
+{
+    "category": "Settings",
+    "description": "Creëert een neppe deelname evenement.",
+    "extended": "Handig om uw welkomst instellingen te testen",
+    "usage": "[gebruiker] (standaard voor uwzelf)",
+    "SUCCESS": "Succesvol een nep join evenement aangemaakt voor `{MEMBER}`"
+}

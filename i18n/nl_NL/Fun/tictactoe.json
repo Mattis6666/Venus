@@ -1,0 +1,13 @@
+{
+    "category": "Fun",
+    "description": "Speel een spelletje TicTacToe tegen de bot!",
+    "extended": "In de toekomst kun je iemand uitdagen voor een wedstrijd, maar dit is nog niet geïmplementeerd.",
+    "usage": "",
+    "RULES": "X is de speler, O de bot.\nOm een zet uit te voeren, typt u eenvoudig [rij nummer] [lijn nummer] vanaf links onder.\nRechts onder is 3 1, rechtsboven 3 3.\nStuur {CANCEL_WORD} om op elk moment te stoppen met spelen.",
+    "CANCEL_WORD": "annuleren",
+    "QUIT": "Het spel is gestopt!",
+    "INVALID_MOVE": "Ongeldige zet!",
+    "DRAW": "Het is een tekening!",
+    "WIN": "{PLAYER} wint!",
+    "LOSS": "{BOT} wint!"
+}

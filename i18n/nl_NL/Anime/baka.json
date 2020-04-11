@@ -1,0 +1,7 @@
+{
+    "category": "Anime",
+    "description": "Krijg een willekeurige baka afbeelding.",
+    "extended": "Als je vriend een baka is, geef dan zijn naam op!",
+    "usage": "[gebruiker]",
+    "MESSAGE": "{{USER}} vindt je een baka, {{MEMBER}}!"
+}

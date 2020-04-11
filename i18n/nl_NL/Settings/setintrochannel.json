@@ -1,0 +1,10 @@
+{
+    "category": "Settings",
+    "description": "Stelt het kanaal in om een intro te sturen.",
+    "extended": "Door de opdracht uit te voeren zonder een kanaal op te geven, worden intro's uitgeschakeld!",
+    "usage": "<Kanaal>",
+    "RESET": "Intro's zijn uitgeschakeld! Leden kunnen zich niet meer registreren.",
+    "NO_CHANNEL": "Je hebt geen geldig kanaal opgegeven!",
+    "SUCCESS": "Succesvol het intro kanaal aangepast naar `{CHANNEL}`! Inleidingen worden daar naartoe gestuurd.",
+    "VERY_FUNNY": "Heel grappig... Voer een tekstkanaal in 😉"
+}

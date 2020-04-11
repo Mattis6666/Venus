@@ -1,0 +1,10 @@
+{
+    "category": "Moderation",
+    "description": "Uploadt emoji's van andere servers naar uw eigen server.",
+    "extended": "De emoji naam is de naam die de andere server heeft gegeven.",
+    "usage": "<emoji> (U kunt er zoveel opgeven als u wilt)",
+    "NO_EMOJIS": "U hebt geen emoji's opgegeven!",
+    "FAILURE": "Ik kon die emoji's niet volgen. Dit wordt waarschijnlijk veroorzaakt doordat deze server geen gratis emoji slots heeft!",
+    "SUCCESS": "Ik heb succsevol {AMOUNT} emoji's toegevoegd, emoji's: {EMOJIS}",
+    "REASON": "Gemaakt via {COMMAND} opdracht door {USER}"
+}

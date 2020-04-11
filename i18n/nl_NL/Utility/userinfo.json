@@ -1,0 +1,8 @@
+{
+    "category": "Utility",
+    "description": "Toon informatie over een gebruiker.",
+    "extended": "",
+    "usage": "[Gebruiker] (standaard voor uwzelf)",
+    "PERMISSIONS": "Rechten",
+    "SINCE": "Sinds {DATE}"
+}

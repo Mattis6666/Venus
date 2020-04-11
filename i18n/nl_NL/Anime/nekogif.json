@@ -1,0 +1,7 @@
+{
+    "category": "Anime",
+    "description": "Ontvang een willekeurige neko gif.",
+    "extended": "",
+    "usage": "[gebruiker]",
+    "MESSAGE": "{{USER}} laat je deze schattige neko zien, {{MEMBER}}!"
+}

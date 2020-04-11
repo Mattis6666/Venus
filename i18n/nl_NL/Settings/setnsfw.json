@@ -1,0 +1,8 @@
+{
+    "category": "Settings",
+    "description": "NSFW opdrachten in-/uitschakelen",
+    "extended": "Zelfs indien ingeschakeld, kunnen NSFW opdrachten alleen worden gebruikt in NSFW kanalen",
+    "usage": "",
+    "ENABLE": "NSFW opdrachten zijn met succes ingeschakeld op deze server!",
+    "DISABLE": "NSFW opdrachten zijn met succes uitgeschakeld op deze server!"
+}

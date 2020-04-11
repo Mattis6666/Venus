@@ -1,0 +1,11 @@
+{
+    "category": "Moderation",
+    "description": "Controleer de geschiedenis van een lid of dat van uzelf.",
+    "extended": "",
+    "usage": "[gebruiker (tag, gebruikersnaam of ID)]",
+    "USER_NO_INFRACTIONS": "Je hebt geen overtredingen, {USER}.",
+    "MEMBER_NO_INFRACTIONS": "{MEMBER} heeft geen overtredingen, {AUTHOR}.",
+    "MODLOG": "Geschiedenis van {MEMBER}",
+    "MODERATOR": "Moderator",
+    "NO_PERMS": "U heeft de machtiging `Berichten beheren` nodig om de geschiedenis van andere gebruikers te zien!"
+}

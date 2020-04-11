@@ -1,0 +1,7 @@
+{
+    "category": "Anime",
+    "description": "Ontvang een willekeurige kus afbeelding.",
+    "extended": "Om je vriend te kussen, geef dan zijn naam op!",
+    "usage": "[user]",
+    "MESSAGE": "{{USER}} zoent {{MEMBER}}!"
+}

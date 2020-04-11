@@ -1,0 +1,6 @@
+{
+    "PREFIX": "Mijn prefix op deze server is `{PREFIX}`\nTyp voor een lijst met opdrachten `{PREFIX}help`",
+    "WELCOME": "",
+    "AUTO_ROLE_REASON": "Automatische rol. Je kunt dit veranderen via setautorole",
+    "WELCOME_MESSAGE": "Welkom bij {GUILD}, {MEMBER}!"
+}

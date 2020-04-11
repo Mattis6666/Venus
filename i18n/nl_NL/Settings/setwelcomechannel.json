@@ -1,0 +1,10 @@
+{
+    "category": "Settings",
+    "description": "Stelt het kanaal in om een welkomstkaart in te sturen.",
+    "extended": "Het uitvoeren van de opdracht zonder een kanaal op te geven, zal welkomstkaarten uitschakelen!",
+    "usage": "<Kanaal>",
+    "RESET": "Welkomstkaarten met succes uitgeschakeld! Nieuwe leden zullen bij de deelname geen welkomstkaart meer ontvangen.",
+    "NO_CHANNEL": "Je hebt geen geldig kanaal opgegeven!",
+    "SUCCESS": "Succesvol de welkomstkaarten kanaal veranderd naar `{CHANNEL}`! Welkomstkaarten worden nu daar naartoe gestuurd.",
+    "VERY_FUNNY": "Heel grappig... Voer een tekstkanaal in 😉"
+}

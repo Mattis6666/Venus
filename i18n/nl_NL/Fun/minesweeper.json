@@ -1,0 +1,7 @@
+{
+    "category": "Fun",
+    "description": "Speel een ronde mijnenveger",
+    "extended": "Het doel van het spel is om alle cellen van het bord te openen die geen bommen bevatten. Je verliest als je een bomcel laat afgaan.\nElke niet-bomcel die je opent, zal je het totale aantal bommen in de acht naburige cellen vertellen.",
+    "usage": "[kolommen] [rijen] [mijnen] (standaard ingesteld op 10x10 met 10 bommen)",
+    "TOO_LONG": "Dit bord heeft meer dan 2000 karakters, dus ik kan het niet verzenden! Kies kleinere aantallen."
+}

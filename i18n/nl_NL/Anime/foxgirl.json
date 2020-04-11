@@ -1,0 +1,7 @@
+{
+    "category": "Anime",
+    "description": "Krijg een willekeurige vossenmeisje afbeelding.",
+    "extended": "",
+    "usage": "[gebruiker]",
+    "MESSAGE": "{{USER}} laat je deze schattige vossenmeisje zien, {{MEMBER}}!"
+}

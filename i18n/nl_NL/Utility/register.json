@@ -1,0 +1,6 @@
+{
+    "category": "Utility",
+    "description": "Stel jezelf voor",
+    "extended": "De bot zal je een paar vragen stellen in pm. Ze worden dan naar een kanaal op de server gestuurd. Je kunt dit kanaal instellen via de setregister opdrachten",
+    "usage": ""
+}

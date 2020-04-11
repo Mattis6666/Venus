@@ -1,0 +1,21 @@
+{
+    "category": "Moderation",
+    "description": "verban een gebruiker",
+    "extended": "",
+    "usage": "<Gebruiker (Tag, ID of naam)> [reden]",
+    "YES": "ja",
+    "NO": "nee",
+    "NOT_HIGHER": "U kunt deze gebruiker niet verbannen, omdat uw hoogste rol niet hoger is dan die van hem.",
+    "CANT_BAN": "Ik kan deze gebruiker niet verbannen. Dit komt waarschijnlijk omdat zijn rol hoger is dan de bot.",
+    "CONFIRM": "Weet je zeker dat je {MEMBER} wilt verbannen??\nReageer met `{YES}` of `{NO}`.",
+    "NO_REASON": "Geen reden opgegeven.",
+    "BAN_DM": "Je bent verbannen van {GUILD}! 🔨",
+    "USER_BANNED": "De gebruiker is succesvol verbannen! 🔨",
+    "BAN_CANCEL": "Opdracht geannuleerd!",
+    "INVALID_RESPONSE": "Ongeldig antwoord! Reageer alleen met `{YES}` of `{NO}`!",
+    "TOO_SLOW": "Je reageerde niet op tijd, dus heb ik de opdracht voor je geannuleerd.",
+    "BAN": "Ban",
+    "MEMBER": "Gebruiker",
+    "MOD": "Medewerker",
+    "REASON": "Reden"
+}

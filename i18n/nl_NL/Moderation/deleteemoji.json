@@ -1,0 +1,13 @@
+{
+    "category": "Moderation",
+    "description": "verwijder een emoji",
+    "extended": "U kunt zoveel emoji's uploaden als je wilt",
+    "usage": "<emojis>",
+    "NO_EMOJIS": "Je hebt geen emoji's opgegeven!",
+    "NO_GUILD_EMOJIS": "Je hebt geen emoji's opgegeven die van deze server afkomstig zijn!",
+    "INITIAL": "{EMOJI} Succesvol 0/{TOTAL} emojis verwijderd!",
+    "PROGRESS": "{EMOJI} Succesvol {COUNT}/{TOTAL} emojis verwijderd!",
+    "REASON": "Verwijderd door {MEMBER} via de deleteemoji opdracht",
+    "SUCCESS": "{EMOJI} Ik heb succesvol {COUNT} emojis verwijderd!",
+    "FAILURE": "{EMOJI} Ik heb alleen {COUNT}/{TOTAL} emojis kunnen verwijderen!"
+}

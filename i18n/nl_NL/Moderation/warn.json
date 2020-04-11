@@ -1,0 +1,13 @@
+{
+    "category": "Moderation",
+    "description": "Waarschuw a user",
+    "extended": "",
+    "usage": "<gebruiker (tag, gebruikersnaam of ID)> [reden]",
+    "NOT_HIGHER": "U kunt deze gebruiker niet waarschuwen, omdat uw hoogste rol niet hoger is dan die van hem!",
+    "NO_REASON": "Geen reden opgegeven",
+    "WARN_DM": "U bent gewaarschuwd op {GUILD}!",
+    "MEMBER_WARNED": "{MEMBER} is gewaarschuwd.",
+    "MEMBER": "Member",
+    "MOD": "Medewerker",
+    "REASON": "Reden"
+}

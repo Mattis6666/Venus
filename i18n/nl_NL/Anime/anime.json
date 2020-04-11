@@ -1,0 +1,8 @@
+{
+    "category": "Anime",
+    "description": "Zoek je favoriete Anime of Managa op!",
+    "extended": "",
+    "usage": "[Anime Naam]",
+    "NO_MATCH": "Sorry, ik kan geen Anime vinden die overeenkomt met je zoekterm.",
+    "NSFW": "Sorry, deze Anime kan niet worden weergeven, omdat het NSFW is!"
+}

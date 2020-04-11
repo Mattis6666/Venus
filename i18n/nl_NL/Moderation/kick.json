@@ -1,0 +1,21 @@
+{
+    "category": "Moderation",
+    "description": "Verwijder een gebruiker",
+    "extended": "",
+    "usage": "<Gebruiker (Tag, ID of naam)> [reden]",
+    "YES": "ja",
+    "NO": "nee",
+    "NOT_HIGHER": "U kunt deze gebruiker niet verwijderen, omdat je hoogste rol niet hoger is dan die van hem.",
+    "CANT_KICK": "Ik kan deze gebruiker niet verwijderen. Dit komt waarschijnlijk omdat zijn rol hoger is dan de bot.",
+    "CONFIRM": "Weet je zeker dat je {MEMBER} wilt verwijderen?\nReageer met `{YES}` of `{NO}`.",
+    "NO_REASON": "Geen reden opgegeven.",
+    "KICK_DM": "Je bent verwijderd van {GUILD}! 🔨",
+    "USER_KICKED": "Gebruiker is succesvol verwijderd! 🔨",
+    "KICK_CANCEL": "Opdracht geannuleerd!",
+    "INVALID_RESPONSE": "Ongeldig antwoord!\nReageer alleen met `{YES}` of `{NO}`!",
+    "TOO_SLOW": "Je reageerde niet op tijd, dus heb ik de opdracht voor je geannuleerd.",
+    "KICK": "Kick",
+    "MEMBER": "Gebruiker",
+    "MOD": "Medewerker",
+    "REASON": "Reden"
+}

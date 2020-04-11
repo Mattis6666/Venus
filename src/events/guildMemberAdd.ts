@@ -62,13 +62,15 @@ export default async (client: VenusClient, member: GuildMember) => {
         ctx.clip();
         ctx.drawImage(avatar, 695, 36, 200, 200);
 
-        (channel as TextChannel).send(
-            replace(strings.WELCOME_MESSAGE, {
-                GUILD: guild,
-                MEMBER: member.toString()
-            }),
-            { files: [canvas.toBuffer()] }
-        );
+        (channel as TextChannel)
+            .send(
+                replace(strings.WELCOME_MESSAGE, {
+                    GUILD: guild,
+                    MEMBER: member.toString()
+                }),
+                { files: [canvas.toBuffer()] }
+            )
+            .catch(() => null);
     }
 };
 

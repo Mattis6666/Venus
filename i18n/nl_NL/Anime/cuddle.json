@@ -1,0 +1,7 @@
+{
+    "category": "Anime",
+    "description": "Krijg een willekeurige knuffel afbeelding.",
+    "extended": "Om je vriend te knuffelen, geef dan zijn naam op!",
+    "usage": "[gebruiker]",
+    "MESSAGE": "{{USER}} cuddles {{MEMBER}}!"
+}

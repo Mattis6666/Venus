@@ -1,0 +1,8 @@
+{
+    "category": "Settings",
+    "description": "Stuur nieuwe leden een welkomstbericht",
+    "extended": "Als u de opdracht uitvoert zonder een bericht te geven, worden welkomstberichten uitgeschakeld!",
+    "usage": "<bericht>",
+    "RESET": "Het welkomstbericht is uitgeschakeld!",
+    "SUCCESS": "Het welkomstbericht is bijgewerkt!"
+}
