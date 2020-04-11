@@ -3,5 +3,5 @@
     "description": "Rastgele bir yemek yedirme resmi al.",
     "extended": "Arkadaşına yemek yedirmek istiyorsan, hemen adını gir!",
     "usage": "[kullanıcı]",
-    "MESSAGE": "{{USER}}, {{MEMBER}} sana yemek yediriyor!"
+    "MESSAGE": "{{MEMBER}}, {{USER}} sana yemek yediriyor!"
 }

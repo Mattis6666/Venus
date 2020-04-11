@@ -3,5 +3,5 @@
     "description": "Rastgele bir neko resmi al.",
     "extended": "",
     "usage": "[kullanıcı]",
-    "MESSAGE": "{{USER}}, {{MEMBER}} sana bu şirin neko\u0027yu gösteriyor!"
+    "MESSAGE": "{{MEMBER}}, {{USER}} sana bu şirin neko\u0027yu gösteriyor!"
 }

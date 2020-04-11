@@ -3,5 +3,5 @@
     "description": "Rastgele bir sırnaşma resmi al.",
     "extended": "Arkadaşına sırnaşmak istiyorsan, hemen adını gir!",
     "usage": "[kullanıcı]",
-    "MESSAGE": "{{USER}}, {{MEMBER}} sana sırnaşıyor!"
+    "MESSAGE": "{{MEMBER}}, {{USER}} sana sırnaşıyor!"
 }

@@ -3,5 +3,5 @@
     "description": "Rastgele bir dürtme resmi al.",
     "extended": "Arkadaşını dürtmek istiyorsan, hemen adını gir!",
     "usage": "[kullanıcı]",
-    "MESSAGE": "{{USER}}, {{MEMBER}} seni dürtüyor!"
+    "MESSAGE": "{{MEMBER}}, {{USER}} seni dürtüyor!"
 }

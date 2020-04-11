@@ -3,5 +3,5 @@
     "description": "Rastgele bir öpüşme resmi al.",
     "extended": "Arkadaşını öpmek istiyorsan, hemen adını gir!",
     "usage": "[kullanıcı]",
-    "MESSAGE": "{{USER}}, {{MEMBER}} seni öpüyor!"
+    "MESSAGE": "{{MEMBER}}, {{USER}} seni öpüyor!"
 }

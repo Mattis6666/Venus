@@ -3,5 +3,5 @@
     "description": "Rastgele bir kendini beğenmişlik resmi al.",
     "extended": "Arkadaşına kendini beğendini göstermek istiyorsan, hemen adını gir!",
     "usage": "[kullanıcı]",
-    "MESSAGE": "{{USER}}, {{MEMBER}} sana kendini beğendini gösteriyor!"
+    "MESSAGE": "{{MEMBER}}, {{USER}} sana kendini beğendini gösteriyor!"
 }

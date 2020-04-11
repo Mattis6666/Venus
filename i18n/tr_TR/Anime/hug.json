@@ -3,5 +3,5 @@
     "description": "Rastgele bir sarılma resmi al.",
     "extended": "Arkadaşına sarılmak istiyorsan, hemen adını gir!",
     "usage": "[kullanıcı]",
-    "MESSAGE": "{{USER}}, {{MEMBER}} sana sarılıyor!"
+    "MESSAGE": "{{MEMBER}}, {{USER}} sana sarılıyor!"
 }

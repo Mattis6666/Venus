@@ -3,5 +3,5 @@
     "description": "Rastgele bir tokatlama resmi al.",
     "extended": "Arkadaşını tokatlamak istiyorsan, hemen adını gir!",
     "usage": "[kullanıcı]",
-    "MESSAGE": "{{USER}}, {{MEMBER}} sana tokat attı!"
+    "MESSAGE": "{{MEMBER}}, {{USER}} sana tokat attı!"
 }
