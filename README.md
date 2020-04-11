@@ -10,24 +10,23 @@ Venus aims to be a bot that combines the features of all big bots into one singl
 
 This means however, that she will receive many many updates adding more and more features.
 You can find the current features below
-
 <center> <h2> Features </h2> </center>
 
 |            |                                                                                                                                        |
 | ---------- | -------------------------------------------------------------------------------------------------------------------------------------- |
 | Anime      | Anime lookup, hug, cuddle and co                                                                                                       |
-| Moderation | Fletched out Moderation system with warns, mutes and co                                                                                |
-| Fun        | Little mini games like TicTacToe, random trivia, 8ball                                                                                 |
+| Moderation | Fletched out Moderation system with Modlog featuring warns, mutes and co                                                               |
+| Fun        | Little mini games like TicTacToe, Minesweeper, random trivia, 8ball                                                                    |
 | Utility    | And of course utility! Venus will look up words for you, yoink emotes (reupload emotes from another server to your own), and many more |
-| NSFW       | And yes, there's also NSFW for those who don't fear the horny jail ;) Only usable if an Admin enables it                               |
+| Tags       | Create custom commands that output either regular text or an embed                                                                     |
+| Welcome    | Welcome messages, neat welcome cards and auto-role                                                                                     |
 
 You can customise many of her settings:
-
--   Prefix
--   NSFW or SFW
--   Disabled commands
--   Disabled channels
--   Language ~ She will be available in German and Turkish soon, more languages will be added once I find translators
+- Prefix
+- Disabled commands
+- Disabled channels
+- Language ~ Current options are English, German, Turkish and Dutch. More languages soon to be added!
+- And many more
 
 ## Set up your own Venus Instance
 
