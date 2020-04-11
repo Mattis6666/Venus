@@ -2,5 +2,14 @@
     "category": "Utility",
     "description": "Introduce yourself",
     "extended": "The bot will ask you a couple of questions in dms. They will then be sent to a channel on the server. You can set this channel via the setregister commands",
-    "usage": ""
+    "usage": "",
+    "INTROS_DISABLED": "Intros are not enabled on this server.",
+    "ALREADY_REGISTERED": "You are already registered! Use `{PREFIX}unregister` first!",
+    "PRIVATE_MESSAGE": "I will send you a private message to collect your info. Please make sure your private messages are open!",
+    "START": "I will now be asking you a couple of questions. Please only respond with the provided options or if none are provided, you can type anything. Please keep your answers below 300 characters.",
+    "DM_FAILED": "I was unable to send you a private message, {USER}. Please make sure they are open. You can close them again after registration is done!",
+    "INVALID_RESPONSE": "That was not a valid response!",
+    "TOO_LONG": "Your response exceeded 300 characters!",
+    "FAILURE": "You responded with invalid answers too often or the prompt timed out. Please run the command again to register.",
+    "SUCCESS": "Thank you, your registration is now complete!"
 }

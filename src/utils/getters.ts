@@ -2,7 +2,6 @@ import { wrongSyntax } from './Util';
 import { Message } from 'discord.js';
 import VenusClient from '../interfaces/Client';
 import { getGuild } from '../database/mongo';
-import config from './config';
 import { Guild } from '../database/schemas/GuildSchema';
 
 export const getUser = async (message: Message, args: string[], spot?: number) => {
@@ -93,7 +92,7 @@ export const getPrefix = async (client: VenusClient, guildId: string) => {
     if (guildEntry && !client.guildSettings.get(guildId)) {
         client.guildSettings.set(guildId, guildEntry);
     }
-    return guildEntry.settings.prefix || config.defaultPrefix;
+    return guildEntry.settings.prefix || client.config.defaultPrefix;
 };
 
 export const getStrings = async (message: Message) => {

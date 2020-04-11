@@ -1,0 +1,9 @@
+{
+    "category": "Utility",
+    "description": "Unregister from this guild",
+    "extended": "This will delete your intro from the intros channel and allow you to re-register!",
+    "usage": "",
+    "NOT_REGISTERED": "You are not registered on this server!",
+    "SUCCESS": "Successfully unregistered! You can now register again.",
+    "REASON": "User removed their intro via the unregister command!"
+}

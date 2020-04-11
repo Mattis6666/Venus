@@ -6,6 +6,7 @@
     "INVALID": "Dat is geen geldige opdracht!",
     "HEADER": "Help menu",
     "COMMAND_LIST": "Hier is een lijst met alle beschikbare opdrachten!",
+    "MENU_DESCRIPTION": "Gebruik voor meer informatie over een categorie of opdracht `{PREFIX}help categorie` of `{PREFIX}help opdracht`",
     "FOOTER": "Type {PREFIX}help [opdracht naam] om informatie te krijgen over een specifieke opdracht",
     "VIEW_NSFW_COMMAND": "Om dit te bekijken, zorg ervoor dat NSFW op de server is ingeschakeld en voer de opdracht uit in een NSFW kanaal!",
     "VIEW_NSFW_MENU": "Om deze te bekijken, voer je `{PREFIX}help nsfw` uit in een NSFW kanaal!",
