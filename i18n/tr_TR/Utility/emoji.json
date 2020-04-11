@@ -1,0 +1,7 @@
+{
+    "category": "Hizmet",
+    "description": "Herhangi bir emojinin adresini alın.",
+    "extended": "",
+    "usage": "<emoji> (Dilediğiniz kadar ekleyebilirsiniz)",
+    "NO_EMOJIS": "Herhangi bir emoji belirtmediniz!"
+}

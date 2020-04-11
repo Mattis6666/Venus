@@ -1,0 +1,15 @@
+{
+    "SERVER_ONLY": "Bu komut sadece sunucu içinde kullanılabilir!",
+    "DM_ONLY": "Bu komut sadece özel mesaj kısmında kullanılabilir!",
+    "NSFW_CHANNEL_ONLY": "Bu komut sadece NSFW kanallarında kullanılabilir!",
+    "NSFW_DISABLED": "Bu sunucuda NSFW komutları aktif değil! Hatalı olduğu düşünüyorsanız yetkiliye başvurun.",
+    "USER_MISSING_PERMISSION": "Bu komutu kullanmak için `{PERMISSION}` yetkiniz olmalı!",
+    "BOT_MISSING_PERMISSION": "Bu komutu kullanmak için `{PERMISSION}` yetkim olmalı!",
+    "WRONG_USAGE": "Komutu doğru kullanmadınız. Doğru kullanım: `{USAGE}`.",
+    "NO_USER_FOUND": "Hiç kullanıcı belirtmediniz. Lütfen komutu bir kullanıcı belirterek tekrar kullanın.",
+    "NO_MEMBER_FOUND": "Hiç üye belirtmediniz. Lütfen komutu bir üye belirterek tekrar kullanın.",
+    "NO_ROLE_FOUND": "Geçerli bir rol belirtmediniz. Lütfen komutu geçerli bir rol belirterek tekrar kullanın.",
+    "MULTIPLE_USERS_FOUND": "Girdiğiniz değerde birden fazla kullanıcı buldum",
+    "MULTIPLE_MEMBERS_FOUND": "Girdiğiniz değerde birden fazla üye buldum",
+    "MULTIPLE_ROLES_FOUND": "Girdiğiniz değerde birden fazla rol buldum"
+}

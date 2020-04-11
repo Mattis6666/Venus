@@ -1,0 +1,10 @@
+{
+    "category": "Ayarlar",
+    "description": "Karşılama kartının gönderileceği kanalı belirler.",
+    "extended": "Herhangi bir kanal belirtmeden komutu kullanmak karşılama kartı sistemini kapatacaktır!",
+    "usage": "<Kanal>",
+    "RESET": "Karşılama kartları başarıyla kapatıldı! Yeni üyeler için karşılama kartı gönderilmeyecek.",
+    "NO_CHANNEL": "Geçerli bir kanal belirtmediniz.",
+    "SUCCESS": "Karşılama kanalı başarıyla `{CHANNEL}` olarak ayarlandı! Karşılama kartları o kanala gönderilecek.",
+    "VERY_FUNNY": "Turkish cem yılmaz... Lütfen bir yazı kanalı belirt 😉"
+}

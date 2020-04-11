@@ -1,0 +1,9 @@
+{
+    "category": "Ayarlar",
+    "description": "Bir etiket oluştur (özel komut)",
+    "extended": "JSON Embed kodu da girebilirsiniz!",
+    "usage": "<Etiket Tetikleyicisi> <Etiket Yanıtı>",
+    "NAME_TAKEN": "Bu tetikleyiciyi kullanamazsınız çünkü bu {COMMAND} komutuna ait!",
+    "TAG_TAKEN": "Bu etiket tetikleyicisi zaten alınmış!",
+    "SUCCESS": "Etiket oluşturuldu! `{NAME}`"
+}

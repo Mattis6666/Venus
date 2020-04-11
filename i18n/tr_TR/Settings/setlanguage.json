@@ -1,0 +1,8 @@
+{
+    "category": "Ayarlar",
+    "description": "Bot için sunucu içinde kullanılacak dili belirler.",
+    "extended": "",
+    "usage": "<cdil>",
+    "NO_LANGUAGE": "Geçerli bir dil girmediniz. Mevcut seçenekler: `{LANGUAGES}`",
+    "SUCCESS": "Dil başarıyla {LANGUAGE} olarak değiştirildi!"
+}

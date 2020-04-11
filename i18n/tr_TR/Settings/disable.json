@@ -1,0 +1,8 @@
+{
+    "category": "Ayarlar",
+    "description": "Bir veya daha çok komutu kapatın.",
+    "extended": "",
+    "usage": "<komut adı/takma adı>",
+    "NO_COMMAND": "Kapatmak için geçerli komut adı girmediniz!",
+    "SUCCESS": "Belirtilen komutlar bu sunucuda kapatıldı: `{COMMANDS}`"
+}

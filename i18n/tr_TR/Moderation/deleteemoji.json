@@ -1,0 +1,13 @@
+{
+    "category": "Yönetim",
+    "description": "Emoji sil",
+    "extended": "İstediğiniz kadar emoji ekleyebilirsiniz",
+    "usage": "\u003cemojiler\u003e",
+    "NO_EMOJIS": "Hiç emoji belirtmediniz!",
+    "NO_GUILD_EMOJIS": "Bu sunucuda bulunan bir emoji belirtmediniz!",
+    "INITIAL": "{EMOJI} Başarıyla 0/{TOTAL} emoji silindi!",
+    "PROGRESS": "{EMOJI} Başarıyla {COUNT}/{TOTAL} emoji silindi!",
+    "REASON": "{MEMBER} tarafından deleteemoji komutuyla silindi",
+    "SUCCESS": "{EMOJI} {COUNT} emojiyi başarıyla sildim!",
+    "FAILURE": "{EMOJI} Ancak {COUNT}/{TOTAL} emoji silebildim!"
+}

@@ -1,0 +1,7 @@
+{
+    "category": "Ayarlar",
+    "description": "Sunucuya sahte katılma olayı oluşturur.",
+    "extended": "Karşılama sisteminizi kurmanızda yardımcı olur.",
+    "usage": "[üye] (default olarak kendiniz)",
+    "SUCCESS": "Başarıyla `{MEMBER}` için sahte katılma olayı oluşturuldu!"
+}

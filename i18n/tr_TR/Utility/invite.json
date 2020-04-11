@@ -1,0 +1,10 @@
+{
+    "category": "Hizmet",
+    "description": "Venus sunucunuza gelsin!",
+    "extended": "",
+    "usage": "",
+    "INVITE_ME": "Beni davet et",
+    "CLICK_HERE": "Sunucuna davet etmek için tıkla!",
+    "SET_PREFIX": "Katıldığımda prefiximi ayarlamak için `{PREFIX}setprefix` komutunu kullan!",
+    "SUPPORT_SERVER": "Yardım mı lazım? Destek sunucusuna katılın!"
+}

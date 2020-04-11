@@ -1,0 +1,10 @@
+{
+    "category": "Ayarlar",
+    "description": "Tanıtımların gönderileceği kanalı belirler.",
+    "extended": "Herhangi bir kanal belirtmeden komutu kullanmak tanıtım sistemini kapatacaktır.",
+    "usage": "<Kanal>",
+    "RESET": "Tanıtımlar başarıyla kapatıldı! Üyeler artık kayıt yaptırmayacak.",
+    "NO_CHANNEL": "Geçerli bir kanal girmediniz!",
+    "SUCCESS": "Tanıtım kanalı başarıyla `{CHANNEL}` olarak ayarlandı! Tanıtımlar oraya gönderilecek.",
+    "VERY_FUNNY": "Turkish cem yılmaz... Lütfen yazı kanalı belirt. 😉"
+}

@@ -1,0 +1,7 @@
+{
+    "category": "Anime",
+    "description": "Rastgele bir kemonomimi resmi al.",
+    "extended": "",
+    "usage": "[kullanıcı]",
+    "MESSAGE": "{{USER}}, {{MEMBER}} sana bu şirin kemonomimi\u0027yi gösteriyor!"
+}

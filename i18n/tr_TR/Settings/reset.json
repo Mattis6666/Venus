@@ -1,0 +1,8 @@
+{
+    "category": "Ayarlar",
+    "description": "Resets all my settings",
+    "extended": "BU TÜM AYARLARIMI SIFIRLAYACAKTIR! Buna prefix, kapatılmış komutlar, yasaklı kanallar ve karşılama kanalı dahildir...",
+    "usage": "",
+    "NO_DB": "{GUILD} sunucusu için herhangi bir veritabanı girişi bulamadım.",
+    "SUCCESS": "Bu sunucu için ayarlarım sıfırlandı!"
+}

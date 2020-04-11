@@ -1,0 +1,13 @@
+{
+    "category": "Yönetim",
+    "description": "Bir kullanıcıyı uyar",
+    "extended": "",
+    "usage": "\u003cKullanıcı (Etiket, ID veya isim)\u003e [sebep]",
+    "NOT_HIGHER": "En yüksek rolünüz bu kullanıcıdan yüksek olmadığı için bu kullanıcıyı uyaramazsınız.",
+    "NO_REASON": "Sebep belirtilmedi.",
+    "WARN_DM": "{GUILD} adlı sunucuda uyarıldın!",
+    "MEMBER_WARNED": "{MEMBER} uyarıldı.",
+    "MEMBER": "Üye",
+    "MOD": "Moderatör",
+    "REASON": "Sebep"
+}

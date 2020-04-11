@@ -1,0 +1,7 @@
+{
+    "category": "Eğlence",
+    "description": "Bir tur mayın tarlası oyna",
+    "extended": "Bu oyunun amacı hiçbir mayına denk gelmeden tarladaki tüm hücreleri açmak.\n\\nMayına denk gelirseniz oyunu kaybedersiniz.\n\\nMayın olmayan her hücre etrafındaki sekiz hücrede bulunan toplam mayın sayısını verir.",
+    "usage": "[sütun] [satır] [mayın] (Default olarak 10x10 tarlada 10 mayın.)",
+    "TOO_LONG": "Bu tarlayı 2000 karakterden büyük olduğu için göstermem mümkün değil! Daha küçük sayılar seçin."
+}

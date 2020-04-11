@@ -1,0 +1,7 @@
+{
+    "category": "Anime",
+    "description": "Rastgele bir kertenkele resmi al.",
+    "extended": "",
+    "usage": "[kullanıcı]",
+    "MESSAGE": "{{USER}}, {{MEMBER}} sana bu şirin kertenkeleyi gösteriyor!"
+}

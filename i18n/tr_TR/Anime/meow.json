@@ -1,0 +1,7 @@
+{
+    "category": "Anime",
+    "description": "Rastgele bir kedi resmi al.",
+    "extended": "",
+    "usage": "[kullanıcı]",
+    "MESSAGE": "{{USER}}, {{MEMBER}} sana bu şirin kediyi gösteriyor!"
+}

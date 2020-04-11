@@ -1,0 +1,13 @@
+{
+    "category": "Eğlence",
+    "description": "Bot\u0027a karşı XOX oyna!",
+    "extended": "Gelecekte, gerçek oyunculara karşı oynayabileceksiniz, fakat bu sistem henüz eklenmedi.",
+    "usage": "",
+    "RULES": "X oyuncu, O ise bot.\nHamle yapmak için sol alttan saymaya başlayarak basitçe [satırNo] [sıraNo] yazın.\nAlt sağ köşe 3 1, üst sağ köşe 3 3 olacaktır.\nOyunu iptal etmek için {CANCEL_WORD} yazabilirsiniz.",
+    "CANCEL_WORD": "iptal",
+    "QUIT": "Oyun başarıyla iptal edildi!",
+    "INVALID_MOVE": "Geçersiz hamle!",
+    "DRAW": "Berabere!",
+    "WIN": "{PLAYER} kazandı!",
+    "LOSS": "{BOT} kazandı!"
+}

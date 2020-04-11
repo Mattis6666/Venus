@@ -1,0 +1,11 @@
+{
+    "category": "Yönetim",
+    "description": "Emoji oluştur",
+    "extended": "URL dışında ayrıca resim ekleyebilirsin!",
+    "usage": "\u003cisim\u003e \u003curl\u003e",
+    "INVALID_NAME": "Geçerli bir emoji adı girmediniz.",
+    "NO_URL": "Bir ek veya url girmediniz!",
+    "REASON": "{MEMBER} tarafından createemote komutuyla oluşturuldu",
+    "SUCCESS": "Emojiniz başarıyla oluşturuldu! {NAME}: {EMOJI}",
+    "FAILURE": "Emojinizi oluşturamadım. Ya sunucuda boş emoji slotu bulunmuyor ya da görsel 256kb\u0027dan büyük."
+}

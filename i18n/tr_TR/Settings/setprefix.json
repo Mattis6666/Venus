@@ -1,0 +1,7 @@
+{
+    "category": "Ayarlar",
+    "description": "Bot için sunucu içinde kullanılacak prefixi belirler.",
+    "extended": "",
+    "usage": "<yeni prefix>",
+    "SUCCESS": "Bu sunucu için prefixim `{PREFIX}` olarak ayarlandı!"
+}

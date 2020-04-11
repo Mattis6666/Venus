@@ -1,0 +1,7 @@
+{
+    "category": "Anime",
+    "description": "Rastgele bir sırnaşma resmi al.",
+    "extended": "Arkadaşına sırnaşmak istiyorsan, hemen adını gir!",
+    "usage": "[kullanıcı]",
+    "MESSAGE": "{{USER}}, {{MEMBER}} sana sırnaşıyor!"
+}

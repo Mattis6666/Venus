@@ -1,0 +1,11 @@
+{
+    "category": "Yönetim",
+    "description": "Kendinin veya başka birisinin mod geçmişine bak.",
+    "extended": "",
+    "usage": "[Kullanıcı (Etiket, ID veya isim)]",
+    "USER_NO_INFRACTIONS": "{USER}, herhangi bir uyarın bulunmuyor.",
+    "MEMBER_NO_INFRACTIONS": "{AUTHOR}, {MEMBER} adlı kullanıcının herhangi bir uyarısı bulunmuyor.",
+    "MODLOG": "{MEMBER} için Mod Geçmişi",
+    "MODERATOR": "Moderatör",
+    "NO_PERMS": "Diğer kullanıcıların mod geçmişine bakmak için `Mesajları Yönet` yetkinizin olması gerekiyor!"
+}

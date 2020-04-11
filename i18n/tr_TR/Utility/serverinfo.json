@@ -1,0 +1,12 @@
+{
+    "category": "Hizmet",
+    "description": "Sunucu ile ilgili pek çok bilgi göster.",
+    "extended": "",
+    "usage": "",
+    "NO_DESCRIPTION": "Açıklama belirtilmedi.",
+    "BOOST_LEVEL": "Seviye {LEVEL}",
+    "ROLES": "Roller",
+    "CHANNELS": "Kanallar",
+    "TOO_MANY_ROLES": "Üzgünüm, çok fazla rol var, onları burada gösteremem.",
+    "TOO_MANY_CHANNELS": "Üzgünüm, çok fazla kanal var, onları burada gösteremem."
+}

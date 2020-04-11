@@ -1,0 +1,8 @@
+{
+    "category": "Ayarlar",
+    "description": "Bir etiketi kaldır (özel komut)",
+    "extended": "",
+    "usage": "<Etiket Tetikleyicisi>",
+    "NOT_A_TAG": "Geçerli bir etiket girmediniz!",
+    "SUCCESS": "`{NAME}` adlı `{AUTHOR}` tarafından oluşturulan etiket başarıyla kaldırıldı!"
+}

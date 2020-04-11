@@ -1,0 +1,10 @@
+{
+    "category": "Yönetim",
+    "description": "Diğer sunuculardan kendi sunucunuza emoji ekleyin.",
+    "extended": "Diğer sunucunun verdiği isimle aynı isim verilecek.",
+    "usage": "<emoji> (Dilediğiniz kadar ekleyebilirsiniz)",
+    "NO_EMOJIS": "Hiç emoji belirtmediniz!",
+    "FAILURE": "Emojiyi yükleyemedim! Muhtemelen sunucuda boş emoji slotu bulunmuyor.",
+    "SUCCESS": "Başarıyla {AMOUNT} emoji yükledim: {EMOJIS}",
+    "REASON": "{COMMAND} komutu ile {USER} tarafından eklendi"
+}

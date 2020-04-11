@@ -1,0 +1,15 @@
+{
+    "category": "Hizmet",
+    "description": "Buradasınız d-(O.O)-b",
+    "extended": "",
+    "usage": "[komut adı/takma adı]",
+    "INVALID": "Böyle bir komut yok!",
+    "HEADER": "Yardım menüsü",
+    "COMMAND_LIST": "Kullanılabilir bütün komutlarımın listesi",
+    "FOOTER": "{PREFIX}help [komut adı] yazarak komut ile ilgili detaylı bilgi alın.",
+    "VIEW_NSFW_COMMAND": "Bunu görüntülemek için sunucuda NSFW\u0027nin aktif olduğundan emin olup bir NSFW kanalında komutu kullanın!",
+    "VIEW_NSFW_MENU": "Bunları görüntülemek için bir NSFW kanalında `{PREFIX}help nsfw` komutunu kullanın.",
+    "DESCRIPTION": "Açıklama",
+    "USAGE": "Kullanım",
+    "ALIASES": "Takma adlar"
+}

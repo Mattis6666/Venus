@@ -1,0 +1,9 @@
+{
+    "category": "Ayarlar",
+    "description": "Bir etiketi görüntüle (özel komut)",
+    "extended": "Bir etiket adı belirtmezseniz, Venus tüm etiketleri listeleyecektir.",
+    "usage": "<Etiket Tetikleyicisi>",
+    "TAGS": "Etiketler / Özel Komutlar",
+    "NOT_A_TAG": "Gösterilecek geçerli bir etiket adı girmediniz!",
+    "CREATED_BY": "Etiket {AUTHOR} tarafından oluşturuldu"
+}

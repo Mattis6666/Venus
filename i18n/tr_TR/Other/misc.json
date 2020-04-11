@@ -1,0 +1,6 @@
+{
+    "PREFIX": "Bu sunucudaki prefixim `{PREFIX}`\nKomut listesi için `{PREFIX}help` yazın.",
+    "WELCOME": "",
+    "AUTO_ROLE_REASON": "Oto-rol. setautorole komutu ile değiştirebilirsiniz",
+    "WELCOME_MESSAGE": "{GUILD} sunucusuna hoşgeldin, {MEMBER}!"
+}

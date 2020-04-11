@@ -1,0 +1,6 @@
+{
+    "category": "Hizmet",
+    "description": "Kendini tanıt",
+    "extended": "Bot, özel mesajlarınızda size birkaç soru soracak. Daha sonrasında cevaplarınız bu sunucuda bir kanala gönderilecek. Bu kanalı `setintrochannel` komutu ile belirleyebilirsiniz.",
+    "usage": ""
+}

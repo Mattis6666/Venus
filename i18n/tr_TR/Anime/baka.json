@@ -1,0 +1,7 @@
+{
+    "category": "Anime",
+    "description": "Rastgele bir baka resmi al.",
+    "extended": "Arkadaşın saykoysa, hemen adını gir!",
+    "usage": "[kullanıcı]",
+    "MESSAGE": "{{USER}}, {{MEMBER}} senin sayko olduğunu düşünüyor! "
+}

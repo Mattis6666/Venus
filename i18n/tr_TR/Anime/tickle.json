@@ -1,0 +1,7 @@
+{
+    "category": "Anime",
+    "description": "Rastgele bir gıdıklama resmi al.",
+    "extended": "Arkadaşını gıdıklamak istiyorsan, hemen adını gir!",
+    "usage": "[kullanıcı]",
+    "MESSAGE": "{{USER}}, {{MEMBER}} seni gıdıklıyor!"
+}

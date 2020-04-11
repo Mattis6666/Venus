@@ -1,0 +1,8 @@
+{
+    "category": "Anime",
+    "description": "Mesajınızı OwOlaştırın.",
+    "extended": "",
+    "usage": "\u003cyazı\u003e",
+    "FAILURE": "Üzgünüm, girdiğiniz mesajı OwOlaştıramadım.",
+    "SUCCESS": "{USER}, OwOlaşmış mesajınız"
+}

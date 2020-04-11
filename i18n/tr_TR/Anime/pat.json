@@ -1,0 +1,7 @@
+{
+    "category": "Anime",
+    "description": "Rastgele bir okşama resmi al.",
+    "extended": "Arkadaşını okşamak istiyorsan, hemen adını gir!",
+    "usage": "[kullanıcı]",
+    "MESSAGE": "{{USER}}, {{MEMBER}} seni okşuyor!"
+}

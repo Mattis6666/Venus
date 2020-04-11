@@ -1,0 +1,8 @@
+{
+    "category": "Ayarlar",
+    "description": "Yeni üyelere hoşgeldin mesajı gönder.",
+    "extended": "Herhangi bir mesaj belirtmeden komutu kullanmak hoşgeldin mesajını kapatır!",
+    "usage": "<cmesaj>",
+    "RESET": "Hoşgeldin mesajı başarıyla kapatıldı!",
+    "SUCCESS": "Hoşgeldin mesajı başarıyla ayarlandı!"
+}
