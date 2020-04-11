@@ -20,7 +20,8 @@ export const registerQuestions = [
             { num: '4', option: 'Non-Binary' },
             { num: '5', option: 'MtF' },
             { num: '6', option: 'FtM' },
-            { num: '7', option: 'Other' }
+            { num: '7', option: 'Other' },
+            { num: '8', option: "I'd rather not say" }
         ],
         response: ''
     },
@@ -34,7 +35,8 @@ export const registerQuestions = [
             { num: '4', option: 'Bisexual' },
             { num: '5', option: 'Pansexual' },
             { num: '6', option: 'Asexual' },
-            { num: '7', option: 'Other' }
+            { num: '7', option: 'Other' },
+            { num: '8', option: "I'd rather not say" }
         ],
         response: ''
     },
