@@ -1,10 +1,9 @@
-export interface HelpCategories {
-    DEVELOPMENT: string[];
-    MODERATION: string[];
-    SETTINGS: string[];
-    UTILITY: string[];
-    FUN: string[];
-    ANIME: string[];
-    NSFW: string[];
-    MISC: string[];
-}
+import { CommandCategories } from './CommandTypes';
+
+export type HelpCategories = {
+    [key in CommandCategories]: string;
+};
+
+export type HelpCommands = {
+    [key in CommandCategories]: string[];
+};

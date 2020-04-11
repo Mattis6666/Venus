@@ -19,10 +19,6 @@ export const command: Command = {
     name: 'minesweeper',
     category: 'FUN',
     aliases: ['mines'],
-    description: 'Play a round of minesweeper',
-    extended:
-        'The purpose of the game is to open all the cells of the board which do not contain a bomb. You lose if you set off a bomb cell. \nEvery non-bomb cell you open will tell you the total number of bombs in the eight neighboring cells..',
-    usage: '[columns] [rows] [mines]',
     developerOnly: false,
     nsfw: false,
     guildOnly: false,

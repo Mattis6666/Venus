@@ -76,10 +76,6 @@ export const command: Command = {
     name: 'register',
     category: 'UTILITY',
     aliases: ['introduction'],
-    description: 'Introduce yourself',
-    extended:
-        'The bot will ask you a couple of questions in dms. They will then be sent to a channel on the server. You can set this channel via the setregister commands',
-    usage: '',
     developerOnly: false,
     nsfw: false,
     guildOnly: true,

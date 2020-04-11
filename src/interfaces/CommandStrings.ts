@@ -1,7 +1,7 @@
 export default interface CommandStrings {
+    category: string;
     description: string;
     extended: string;
     usage: string;
-    requiresPermissions: string;
     [prop: string]: string;
 }
