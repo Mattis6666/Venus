@@ -1,8 +1,8 @@
 {
     "category": "Yönetim",
-    "description": "bir kullanıcıyı yasakla",
+    "description": "Bir kullanıcıyı yasakla",
     "extended": "",
-    "usage": "\u003cKullanıcı (Etiket, ID veya isim)\u003e [sebep]",
+    "usage": "<Kullanıcı (Etiket, ID veya isim)> [sebep]",
     "YES": "evet",
     "NO": "hayır",
     "NOT_HIGHER": "En yüksek rolünüz bu kullanıcıdan yüksek olmadığı için bu kullanıcıyı yasaklayamazsınız.",
