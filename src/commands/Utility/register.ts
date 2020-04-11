@@ -36,6 +36,8 @@ const callback = async (message: Message, _args: string[], strings: CommandStrin
     });
     if (fail) return;
 
+    await new Promise(resolve => setTimeout(resolve, 1000 * 10));
+
     await Promise.mapSeries(registerQuestions, function (quest) {
         return new Promise(async (resolve, reject) => {
             if (fail) reject('Failed');
@@ -69,20 +71,19 @@ const callback = async (message: Message, _args: string[], strings: CommandStrin
 
     if (fail) return;
 
-    channel.send(strings.SUCCESS);
-
     const output = newEmbed(true)
         .setDescription(registerQuestions.map(quest => `${quest.keyword}: \`${quest.response}\``))
         .setTitle(message.author.tag)
         .setThumbnail(message.author.displayAvatarURL({ size: 256, dynamic: true }));
     const msg = await (introChannel as TextChannel).send(message.author, output).catch(() => null);
-    if (!msg) return;
+    if (!msg) return channel.send(strings.ERROR);
     introEntry.intros.push({
         message: msg.id,
         guild: msg.guild!.id,
         channel: msg.channel.id
     });
     introEntry.save();
+    return channel.send(replace(strings.SUCCESS, { PREFIX: prefix }));
 };
 
 export const command: Command = {

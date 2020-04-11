@@ -11,5 +11,6 @@
     "INVALID_RESPONSE": "That was not a valid response!",
     "TOO_LONG": "Your response exceeded 300 characters!",
     "FAILURE": "You responded with invalid answers too often or the prompt timed out. Please run the command again to register.",
-    "SUCCESS": "Thank you, your registration is now complete!"
+    "SUCCESS": "Thank you, your registration is now complete! You can delete your intro anytime by using `{PREFIX}unregister`",
+    "ERROR": "I'm sorry, something went wrong. Please contact an Administrator of your server."
 }

@@ -57,7 +57,7 @@ export const registerQuestions = [
         response: ''
     },
     {
-        question: 'What things do you dislike? This can be anything, hobbies, food, etc.',
+        question: 'What things do you dislike?',
         keyword: 'Dislikes',
         options: [],
         response: ''
