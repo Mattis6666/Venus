@@ -2,7 +2,7 @@
     "SERVER_ONLY": "This command can only be used on a server!",
     "DM_ONLY": "This command can only be used in my DMs!",
     "NSFW_CHANNEL_ONLY": "This command can only be used in a NSFW channel!",
-    "NSFW_DISABLED": "This server does not have NSFW commands disabled! Message an Admin if you think this is wrong.",
+    "NSFW_DISABLED": "This server does not have NSFW commands enabled! Message an Admin if you think this is wrong.",
     "USER_MISSING_PERMISSION": "This command requires you to have the `{PERMISSION}` permission!",
     "BOT_MISSING_PERMISSION": "I need the the `{PERMISSION}` permission to use this command!",
     "WRONG_USAGE": "You did not use this command correctly. The correct usage is `{USAGE}`.",

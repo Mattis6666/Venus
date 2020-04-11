@@ -30,7 +30,7 @@ const callback = async (message: Message, args: string[], strings: CommandString
                     })
                     .catch(() => null)
             )
-        )
+        ).catch(() => [])
     ).filter(e => e);
 
     message.channel.stopTyping();
