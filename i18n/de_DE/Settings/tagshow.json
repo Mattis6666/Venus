@@ -1,5 +1,5 @@
 {
-    "category": "Einstellung",
+    "category": "Einstellungen",
     "description": "Kürzel anzeigen (benutzerdefinierter Befehl)",
     "extended": "Wenn Du kein Kürzel angibst, sendet Venus stattdessen eine Liste aller Kürzel.",
     "usage": "<Kürzel-Auslöser>",

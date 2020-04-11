@@ -15,6 +15,7 @@ const callback = async (message: Message, args: string[], strings: CommandString
     const output = newEmbed(true);
     const guildSettings = message.guild ? await getGuild(message.guild.id) : null;
     const helpStrings = client.languages.get(guildSettings?.settings.language || 'en_GB');
+    const input = args[0]?.toLowerCase();
     if (!helpStrings) return;
 
     const commands: HelpCommands = {
@@ -45,8 +46,16 @@ const callback = async (message: Message, args: string[], strings: CommandString
         categories[key as CommandCategories] = info.category;
     });
 
-    if (Object.keys(categories).includes(args[0]?.toUpperCase())) {
-        let category = args[0]?.toUpperCase();
+    if (
+        Object.keys(categories).includes(args[0]?.toUpperCase()) ||
+        Object.values(categories)
+            .map(v => v.toLowerCase())
+            .includes(input)
+    ) {
+        let category =
+            Object.keys(categories)
+                .find(c => categories[c as CommandCategories]?.toLowerCase() === input)
+                ?.toUpperCase() || args[0].toUpperCase();
         if (category === 'NSFW' && (!message.guild || !guildSettings || !guildSettings.settings.nsfw || !(message.channel as TextChannel).nsfw))
             return wrongSyntax(message, strings.VIEW_NSFW_COMMAND);
 
