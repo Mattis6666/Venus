@@ -46,7 +46,16 @@ export default async (VenusClient: Client, message: Message) => {
     }
 
     const command = VenusClient.commands.get(commandName) || VenusClient.commands.find(command => command.aliases.includes(commandName));
-    if (!command || !command.callback) return;
+    if (!command) {
+        if (!message.guild) return;
+
+        const tags = VenusClient.tags.get(message.guild.id) || (await db.Tags.findOne({ guild: message.guild.id }));
+        if (!tags) return;
+        VenusClient.tags.set(message.guild.id, tags);
+        const tag = tags.tags.find(tag => tag.trigger === commandName);
+        if (!tag) return;
+        return message.channel.send(tag.embed ? { embed: tag.response } : tag.response);
+    }
 
     const language: Languages = guildSettings?.settings.language || 'en_GB';
     const strings = VenusClient.languages.get(language) || VenusClient.languages.get('en_GB');
@@ -61,8 +70,10 @@ export default async (VenusClient: Client, message: Message) => {
 
     if (!config.developers.includes(message.author.id)) {
         if (command.developerOnly) return;
+
         if (message.guild && message.guild.me && message.channel.type === 'text') {
             if (guildSettings && guildSettings.settings.disabledCommands.includes(command.name)) return;
+
             if (command.userPermissions && message.member && !message.channel.permissionsFor(message.member)!.has(command.userPermissions))
                 return wrongSyntax(
                     message,
@@ -70,6 +81,7 @@ export default async (VenusClient: Client, message: Message) => {
                         PERMISSION: nicerPermissions(command.userPermissions)
                     })
                 );
+
             if (command.botPermissions && !message.channel.permissionsFor(message.guild.me)!.has(command.botPermissions))
                 return wrongSyntax(
                     message,

@@ -1,0 +1,9 @@
+{
+    "category": "Einstellung",
+    "description": "Kürzel anzeigen (benutzerdefinierter Befehl)",
+    "extended": "Wenn Du kein Kürzel angibst, sendet Venus stattdessen eine Liste aller Kürzel.",
+    "usage": "<Kürzel-Auslöser>",
+    "TAGS": "Kürzel / Benutzerdefinierte Befehle",
+    "NOT_A_TAG": "Du haet kein gültiges Kürzel zum Anzeigen angegeben!",
+    "CREATED_BY": "Kürzel erstellt von {AUTHOR}"
+}

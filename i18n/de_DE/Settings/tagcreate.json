@@ -1,0 +1,10 @@
+{
+    "category": "Einstellungen",
+    "description": "Erstelle ein Kürzel (benutzerdefinierter Befehl)",
+    "extended": "Du kannst auch ein JSON-Einbettungscode angeben!",
+    "usage": "<Kürzel-Auslöser> <Kürzel-Text / Kürzel-Embed>",
+    "NAME_TAKEN": "Du kannst diesen Kürzel Auslöser nicht verwenden, da er ein Auslöser für {COMMAND} ist!",
+    "TAG_TAKEN": "Dieses Kürzel ist bereits vergeben!",
+    "SUCCESS": "Dein Kürzel {NAME} wurde erfolgreich erstellt!",
+    "FAILURE": "Das war kein gültiges Embed!"
+}

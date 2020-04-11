@@ -1,0 +1,9 @@
+{
+    "category": "Settings",
+    "description": "View a tag (custom command)",
+    "extended": "If you don't provide a tag, Venus will send a list of all tags instead.",
+    "usage": "<Tag Trigger>",
+    "TAGS": "Tags / Custom Commands",
+    "NOT_A_TAG": "You did not provide a valid tag to show!",
+    "CREATED_BY": "Tag created by {AUTHOR}"
+}

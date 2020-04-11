@@ -1,0 +1,9 @@
+{
+    "category": "Einstellungen",
+    "description": "Entferne ein Kürzel (benutzerdefinierter Befehl)",
+    "extended": "",
+    "usage": "<Kürzel Auslöser>",
+    "NOT_A_TAG": "Du hast kein gültiges Kürzel zum Entfernen angegeben!",
+    "SUCCESS": "Das Kürzel `{NAME}` erstellt von `{AUTHOR}` wurde erfolgreich entfernt!",
+    "DELETE_ALL": "Alle Kürzel auf diesem Server wurden erfolgreich entfernt!"
+}

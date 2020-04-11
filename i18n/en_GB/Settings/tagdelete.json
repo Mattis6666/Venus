@@ -1,0 +1,9 @@
+{
+    "category": "Settings",
+    "description": "Remove a tag (custom command)",
+    "extended": "",
+    "usage": "<Tag Trigger>",
+    "NOT_A_TAG": "You did not provide a valid tag to delete!",
+    "SUCCESS": "Successfully deleted the tag `{NAME}` created by `{AUTHOR}`!",
+    "DELETE_ALL": "Successfully deleted all tags on this server!"
+}

@@ -1,8 +1,9 @@
 import mongoose from 'mongoose';
 import config from '../utils/config';
-import Guilds from './schemas/GuildSchema';
 import { logError, logInfo } from '../utils/winston';
+import Guilds from './schemas/GuildSchema';
 import Infractions from './schemas/InfractionSchema';
+import Tags from './schemas/TagSchema';
 
 mongoose.connect(config.mongoString, {
     useCreateIndex: true,
@@ -18,7 +19,8 @@ db.once('open', () => logInfo(`Connected to MongoDB Atlas at ${db.name}!`));
 
 export default {
     Guilds,
-    Infractions
+    Infractions,
+    Tags
 };
 
 export const getGuild = async (guildId: string) => {
@@ -31,4 +33,8 @@ export const resetGuild = async (guildId: string) => {
 
 export const getInfractions = async (guildId: string) => {
     return (await Infractions.findOne({ guild: guildId })) || (await Infractions.create({ guild: guildId }));
+};
+
+export const getTags = async (guildId: string) => {
+    return (await Tags.findOne({ guild: guildId })) || (await Tags.create({ guild: guildId }));
 };
