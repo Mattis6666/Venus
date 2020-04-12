@@ -1,7 +1,6 @@
 {
     "category": "Anime",
     "description": "Ontvang een willekeurige hagedis afbeelding.",
-    "extended": "",
     "usage": "[gebruiker]",
     "message": "{{USER}} laat je deze schattige hagedis zien, {{MEMBER}}!"
 }
