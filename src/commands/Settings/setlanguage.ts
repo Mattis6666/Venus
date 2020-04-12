@@ -57,7 +57,7 @@ const callback = async (message: Message, args: string[], strings: CommandString
 export const command: Command = {
     name: 'setlanguage',
     category: 'SETTINGS',
-    aliases: ['language'],
+    aliases: ['language', 'setlang', 'lang'],
     developerOnly: false,
     requiresArgs: 1,
     nsfw: false,

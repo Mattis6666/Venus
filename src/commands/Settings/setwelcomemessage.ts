@@ -25,7 +25,7 @@ const callback = async (message: Message, args: string[], strings: CommandString
 export const command: Command = {
     name: 'setwelcomemessage',
     category: 'SETTINGS',
-    aliases: ['setwelcome', 'welcomemessage'],
+    aliases: ['setwelcome', 'welcomemessage', 'wmessage', 'welcome'],
     developerOnly: false,
     nsfw: false,
     guildOnly: true,

@@ -33,7 +33,7 @@ const callback = async (message: Message, args: string[], strings: CommandString
 export const command: Command = {
     name: 'setintrochannel',
     category: 'SETTINGS',
-    aliases: ['introchannel'],
+    aliases: ['introchannel', 'setintros', 'intros'],
     developerOnly: false,
     nsfw: false,
     guildOnly: true,

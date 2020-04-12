@@ -1,6 +1,16 @@
 {
     "category": "Utility",
     "description": "Stel jezelf voor",
-    "extended": "De bot zal je een paar vragen stellen in pm. Ze worden dan naar een kanaal op de server gestuurd. Je kunt dit kanaal instellen via de setregister opdrachten",
-    "usage": ""
+    "extended": "De bot zal je een paar vragen stellen in pm. Ze worden dan naar een kanaal op de server gestuurd. Je kunt dit kanaal instellen via de setregister opdracht",
+    "usage": "",
+    "INTROS_DISABLED": "Intro's zijn niet ingeschakeld op deze server.",
+    "ALREADY_REGISTERED": "Je bent al geregistreerd! Gebruik `{PREFIX}unregister` eerst!",
+    "PRIVATE_MESSAGE": "Ik stuur je een privébericht om je gegevens te verzamelen. Zorg ervoor dat uw pm's open staan!",
+    "START": "Ik zal u nu een paar vragen stellen. Reageer alleen met de geboden opties of als er geen zijn, kunt u iets typen. Houd uw antwoorden onder de 300 karakters.",
+    "DM_FAILED": "Ik kan u geen privébericht sturen, {USER}. Zorg ervoor dat ze open zijn. U kunt ze weer sluiten nadat de registratie is voltooid!",
+    "INVALID_RESPONSE": "Dat was geen geldig antwoord!",
+    "TOO_LONG": "Uw antwoord was meer dan 300 tekens!",
+    "FAILURE": "Je hebt te vaak gereageerd met ongeldige antwoorden of er is een time-out opgetreden bij de opdracht. Voer de opdracht opnieuw uit om te registreren.",
+    "SUCCESS": "Bedankt, uw registratie is nu voltooid! U kunt uw intro op elk moment verwijderen met `{PREFIX}unregister`",
+    "ERROR": "Sorry, er is iets misgegaan. Neem contact op met de beheerder van uw server."
 }

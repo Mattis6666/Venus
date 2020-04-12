@@ -1,0 +1,22 @@
+{
+    "category": "Settings",
+    "description": "",
+    "extended": "",
+    "usage": "",
+    "TITLE": "Serverinstellingen",
+    "SETTINGS": "Instellingen",
+    "CHANNELS": "Kanalen",
+    "PREFIX": "Prefix",
+    "LANGUAGE": "Taal",
+    "NSFW": "NSFW",
+    "DISABLED_COMMANDS": "Uitgeschakelde Opdrachten",
+    "WELCOME_MESSAGE": "Welkomstbericht",
+    "AUTO_ROLE": "Automatische rol",
+    "welcomeChannel": "Welkomst-Kanaal",
+    "introChannel": "Intro-Kanaal",
+    "modLogChannel": "Moderatie-Log",
+    "messageLogChannel": "Berichten-Log",
+    "memberLogChannel": "Leden-Log",
+    "automodLogChannel": "Automod-Log",
+    "serverLogChannel": "Server-Log"
+}

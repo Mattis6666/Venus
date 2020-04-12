@@ -1,6 +1,24 @@
 import mongoose from 'mongoose';
 import { Languages } from '../../interfaces/Languages';
 
+export type GuildChannelSettings =
+    | 'welcomeChannel'
+    | 'introChannel'
+    | 'modLogChannel'
+    | 'messageLogChannel'
+    | 'memberLogChannel'
+    | 'automodLogChannel'
+    | 'serverLogChannel';
+export type GuildSettings =
+    | 'prefix'
+    | 'language'
+    | 'nsfw'
+    | 'blockedChannels'
+    | 'blockedUsers'
+    | 'disabledCommands'
+    | 'deleteCommandTriggers'
+    | 'deleteFailedCommands';
+
 export interface Guild extends mongoose.Document {
     readonly guild: string; // The guild ID
     settings: {
@@ -17,13 +35,7 @@ export interface Guild extends mongoose.Document {
         muted: string; // The ID of the mute role
     };
     channels: {
-        welcomeChannel: string; // The IDs of the respective channels
-        introChannel: string;
-        modLogChannel: string;
-        messageLogChannel: string;
-        memberLogChannel: string;
-        automodLogChannel: string;
-        serverLogChannel: string;
+        [key in GuildChannelSettings]: string;
     };
     permissions: [
         {

@@ -1,6 +1,16 @@
 {
-    "category": "Nützliches",
-    "description": "Stelle Dich vor",
-    "extended": "Der Bot wird dir ein paar Fragen per Direktnachricht stellen. Sie werden dann an einen Kanal auf dem Server gesendet. Du kannst diesen Kanal über den setintrochannel-Befehl setzen.",
-    "usage": ""
+    "category": "Utility",
+    "description": "Stelle dich vor",
+    "extended": "Der Bot wird dir ein paar Fragen in Direktnachrichten stellen. Deine Antowrten werden dann an einen Kanal auf dem Server gesendet. Du kannst diesen Kanal über den setregister-Befehl festlegen.",
+    "usage": "",
+    "INTROS_DISABLED": "Intros sind auf diesem Server nicht aktiviert.",
+    "ALREADY_REGISTERED": "Du bist bereits registriert! Benutze zuerst `{PREFIX}unregister`!",
+    "PRIVATE_MESSAGE": "Ich werde dir einige Direktnachrichten senden, um deine Daten zu erfassen. Bitte stelle sicher, dass deine Direktnachrichten offen sind!",
+    "START": "Ich werde Dir jetzt ein paar Fragen stellen. Bitte antworten nur mit den angegebenen Optionen. Wenn keine verfügbar sind, kannst Du alles angeben. Bitte begrenze deine Antworten auf unter 300 Zeichen.",
+    "DM_FAILED": "Ich konnte dir keine Direktnachricht senden, {USER}. Bitte stelle sicher, dass sie offen sind. Du kannst sie nach erfolgter Registrierung wieder schließen!",
+    "INVALID_RESPONSE": "Das war keine gültige Antwort!",
+    "TOO_LONG": "Deine Antwort hat dreihundert Zeichen überschritten!",
+    "FAILURE": "Du hast zu oft ungültige Antworten angegeben, oder die Eingabeaufforderung ist abgelaufen. Bitte führe den Befehl erneut aus, um dich zu registrieren.",
+    "SUCCESS": "Vielen Dank, deine Registrierung ist jetzt abgeschlossen! Du kannst dein Intro jederzeit mit `{PREFIX}unregister` entfernen.",
+    "ERROR": "Leider ist etwas schief gelaufen. Bitte wende dich an einen Administrator Deines Servers."
 }

@@ -1,0 +1,9 @@
+{
+    "category": "Utility",
+    "description": "Afmelden bij deze server",
+    "extended": "Hiermee wordt uw intro van het intro-kanaal verwijderd en kunt u uw opnieuw registreren!",
+    "usage": "",
+    "NOT_REGISTERED": "YU bent niet geregistreerd op deze server!",
+    "SUCCESS": "Succesvol afgemeld! U kunt zich nu opnieuw registreren.",
+    "REASON": "De gebruiker heeft zijn intro verwijderd via de opdracht unregister!"
+}
