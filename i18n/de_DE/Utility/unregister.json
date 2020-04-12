@@ -2,7 +2,6 @@
     "category": "Utility",
     "description": "Lösche dein Intro",
     "extended": "Dadurch wird dein Intro aus dem Intros-Kanal gelöscht und du kannst dich erneut registrieren!",
-    "usage": "",
     "NOT_REGISTERED": "Du bist auf diesem Server nicht registriert!",
     "SUCCESS": "Erfolgreich abgemeldet! Du kannst dich jetzt erneut registrieren.",
     "REASON": "Der Benutzer hat sein Intro über den unregister-Befehl entfernt!"
