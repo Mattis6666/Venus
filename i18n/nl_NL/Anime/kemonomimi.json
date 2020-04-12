@@ -1,7 +1,6 @@
 {
     "category": "Anime",
     "description": "Ontvang een willekeurige kemonomimi afbeelding.",
-    "extended": "",
     "usage": "[gebruiker]",
     "MESSAGE": "{{USER}} laat je deze schattige kemonomimi zien, {{MEMBER}}!"
 }
