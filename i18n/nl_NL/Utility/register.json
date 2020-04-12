@@ -2,7 +2,6 @@
     "category": "Utility",
     "description": "Stel jezelf voor",
     "extended": "De bot zal je een paar vragen stellen in pm. Ze worden dan naar een kanaal op de server gestuurd. Je kunt dit kanaal instellen via de setregister opdracht",
-    "usage": "",
     "INTROS_DISABLED": "Intro's zijn niet ingeschakeld op deze server.",
     "ALREADY_REGISTERED": "Je bent al geregistreerd! Gebruik `{PREFIX}unregister` eerst!",
     "PRIVATE_MESSAGE": "Ik stuur je een privébericht om je gegevens te verzamelen. Zorg ervoor dat uw pm's open staan!",
