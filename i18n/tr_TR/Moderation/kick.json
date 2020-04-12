@@ -1,7 +1,6 @@
 {
     "category": "Yönetim",
     "description": "Bir kullanıcıyı at",
-    "extended": "",
     "usage": "\u003cKullanıcı (Etiket, ID veya isim)\u003e [sebep]",
     "YES": "evet",
     "NO": "hayır",
