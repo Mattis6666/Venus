@@ -1,7 +1,6 @@
 {
     "category": "Moderation",
     "description": "Ein Mitglied kicken",
-    "extended": "",
     "usage": "<Mitglied (Erwähnung, ID oder Mitgliedname)> [Grund]",
     "YES": "ja",
     "NO": "nein",
