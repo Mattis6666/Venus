@@ -1,8 +1,6 @@
 {
     "category": "Nützliches",
     "description": "Lad Venus auf deinen Server ein!",
-    "extended": "",
-    "usage": "",
     "INVITE_ME": "Lad mich ein!",
     "CLICK_HERE": "Klicke hier, um mich zu deinem Server einzuladen!",
     "SET_PREFIX": "Um mein Präfix festzulegen, verwende `{PREFIX}setprefix`",
