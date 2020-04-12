@@ -1,7 +1,6 @@
 {
     "category": "Moderation",
     "description": "Controleer de geschiedenis van een lid of dat van uzelf.",
-    "extended": "",
     "usage": "[gebruiker (tag, gebruikersnaam of ID)]",
     "USER_NO_INFRACTIONS": "Je hebt geen overtredingen, {USER}.",
     "MEMBER_NO_INFRACTIONS": "{MEMBER} heeft geen overtredingen, {AUTHOR}.",
