@@ -1,7 +1,6 @@
 {
     "category": "Yönetim",
     "description": "Bir kullanıcıyı uyar",
-    "extended": "",
     "usage": "\u003cKullanıcı (Etiket, ID veya isim)\u003e [sebep]",
     "NOT_HIGHER": "En yüksek rolünüz bu kullanıcıdan yüksek olmadığı için bu kullanıcıyı uyaramazsınız.",
     "NO_REASON": "Sebep belirtilmedi.",
