@@ -1,7 +1,6 @@
 {
     "category": "Moderation",
     "description": "Waarschuw a user",
-    "extended": "",
     "usage": "<gebruiker (tag, gebruikersnaam of ID)> [reden]",
     "NOT_HIGHER": "U kunt deze gebruiker niet waarschuwen, omdat uw hoogste rol niet hoger is dan die van hem!",
     "NO_REASON": "Geen reden opgegeven",
