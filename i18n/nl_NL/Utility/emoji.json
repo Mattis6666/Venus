@@ -1,7 +1,6 @@
 {
     "category": "Utility",
     "description": "Krijg de link van elke emoji",
-    "extended": "",
     "usage": "<emoji> (u kunt er zoveel toevoegen als u wilt)",
     "NO_EMOJIS": "Je hebt geen emoji's ingevoerd!"
 }
