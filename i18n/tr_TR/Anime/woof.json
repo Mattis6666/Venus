@@ -1,7 +1,6 @@
 {
     "category": "Anime",
     "description": "Rastgele bir köpek resmi al.",
-    "extended": "",
     "usage": "[kullanıcı]",
     "MESSAGE": "{{MEMBER}}, {{USER}} sana bu şirin köpeği gösteriyor!"
 }
