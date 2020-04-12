@@ -1,7 +1,6 @@
 {
     "category": "Einstellungen",
     "description": "Lege das Präfix für mich fest",
-    "extended": "",
     "usage": "<neues Präfix>",
     "SUCCESS": "Das Präfix dieser Gilde wurde erfolgreich zu `{PREFIX}` geändert."
 }
