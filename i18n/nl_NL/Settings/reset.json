@@ -2,7 +2,6 @@
     "category": "Settings",
     "description": "Reset al mijn instellingen",
     "extended": "DIT ZAL AL MIJN INSTELLINGEN RESETTEN! Dit omvat de prefix, uitgeschakelde opdrachten, geblokkeerde kanalen, het welkomstkanaal...",
-    "usage": "",
     "NO_DB": "Ik kon geen database item vinden voor {GUILD}.",
     "SUCCESS": "Succesvol de instellingen van deze server gereset."
 }
