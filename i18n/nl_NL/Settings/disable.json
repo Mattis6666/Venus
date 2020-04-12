@@ -1,7 +1,6 @@
 {
     "category": "Settings",
     "description": "Schakel een of meer opdrachten uit",
-    "extended": "",
     "usage": "<opdracht naam | opdracht alias>",
     "NO_COMMAND": "U heeft geen geldige opdrachten gegeven om uit te schakelen!",
     "SUCCESS": "De volgende opdrachten zijn op deze server uitgeschakeld: `{COMMANDS}`"
