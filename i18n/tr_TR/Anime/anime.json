@@ -1,7 +1,6 @@
 {
     "category": "Anime",
     "description": "Favori Anime ve Manga'nı arat!",
-    "extended": "",
     "usage": "[Anime Adı]",
     "NO_MATCH": "Üzgünüm, aradığınız terimde bir anime bulamadım.",
     "NSFW": "Üzgünüm, NSFW içerdiği için bu animeyi gösteremem!"
