@@ -1,7 +1,6 @@
 {
     "category": "Settings",
     "description": "Pas de taal aan naar iets anders",
-    "extended": "",
     "usage": "<taal>",
     "NO_LANGUAGE": "Je hebt geen geldige taal opgegeven. De huidige opties zijn `{LANGUAGES}`",
     "SUCCESS": "Succesvol de taal aangepast naar {LANGUAGE}!"
