@@ -1,0 +1,8 @@
+{
+    "category": "Hizmet",
+    "description": "Sunucudan kaydını sil",
+    "extended": "Bu işlem tanıtım kanalındaki tanıtım mesajını silecek ve tekrar kayıt yapmana izin verecek!",
+    "NOT_REGISTERED": "Bu sunucuda kayıtlı değilsiniz!",
+    "SUCCESS": "Kayıt başarıyla silindi! Tekrar kayıt olabilirsiniz.",
+    "REASON": "Kullanıcı unregister komutu ile kaydını sildi."
+}
