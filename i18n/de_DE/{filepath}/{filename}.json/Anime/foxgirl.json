@@ -1,0 +1,6 @@
+{
+    "category": "Anime",
+    "description": "Erhalte ein zufälliges Fuchs Mädchen-Bild.",
+    "usage": "[Mitglied]",
+    "MESSAGE": "{{USER}} zeigt dir dieses süße Fuchs Mädchen, {{MEMBER}}!"
+}
