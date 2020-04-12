@@ -1,8 +1,6 @@
 {
     "category": "Utility",
     "description": "Nodig Venus uit op uw eigen server!",
-    "extended": "",
-    "usage": "",
     "INVITE_ME": "Nodig me uit",
     "CLICK_HERE": "Klik hier om mij uit te nodigen op uw server!",
     "SET_PREFIX": "Om mijn prefix te veranderen wanneer ik deelneem `{PREFIX}setprefix`",
