@@ -1,7 +1,6 @@
 {
     "category": "Ayarlar",
     "description": "Bir veya daha çok komutu aktif et.",
-    "extended": "",
     "usage": "<komut adı/takma adı>",
     "NO_COMMAND": "Aktif etmek için geçerli komut adı girmediniz!",
     "ENABLE_ALL": "Tüm komutlar aktif edildi!",
