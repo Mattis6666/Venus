@@ -1,7 +1,6 @@
 {
     "category": "Moderation",
     "description": "verban een gebruiker",
-    "extended": "",
     "usage": "<Gebruiker (Tag, ID of naam)> [reden]",
     "YES": "ja",
     "NO": "nee",
