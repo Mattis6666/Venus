@@ -1,7 +1,6 @@
 {
     "category": "Anime",
     "description": "Krijg een willekeurig katten afbeelding.",
-    "extended": "",
     "usage": "[gebruiker]",
     "MESSAGE": "{{USER}} laat je deze schattige kat zien, {{MEMBER}}!"
 }
