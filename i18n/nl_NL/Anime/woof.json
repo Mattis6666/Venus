@@ -1,7 +1,6 @@
 {
     "category": "Anime",
     "description": "Krijg een willekeurige honden afbeelding.",
-    "extended": "",
     "usage": "[gebruiker]",
     "MESSAGE": "{{USER}} laat je deze schattige hond zien, {{MEMBER}}!"
 }
