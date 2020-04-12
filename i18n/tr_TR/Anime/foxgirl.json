@@ -1,7 +1,6 @@
 {
     "category": "Anime",
     "description": "Rastgele bir foxgirl resmi al.",
-    "extended": "",
     "usage": "[kullanıcı]",
     "MESSAGE": "{{MEMBER}}, {{USER}} sana bu şirin foxgirl\u0027i gösteriyor!"
 }
