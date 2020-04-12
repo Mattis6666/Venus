@@ -2,7 +2,6 @@
     "category": "Utility",
     "description": "Stelle dich vor",
     "extended": "Der Bot wird dir ein paar Fragen in Direktnachrichten stellen. Deine Antowrten werden dann an einen Kanal auf dem Server gesendet. Du kannst diesen Kanal über den setregister-Befehl festlegen.",
-    "usage": "",
     "INTROS_DISABLED": "Intros sind auf diesem Server nicht aktiviert.",
     "ALREADY_REGISTERED": "Du bist bereits registriert! Benutze zuerst `{PREFIX}unregister`!",
     "PRIVATE_MESSAGE": "Ich werde dir einige Direktnachrichten senden, um deine Daten zu erfassen. Bitte stelle sicher, dass deine Direktnachrichten offen sind!",
