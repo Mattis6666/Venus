@@ -1,7 +1,6 @@
 {
     "category": "Hizmet",
     "description": "Bir kullanıcı hakkında pek çok bilgi göster.",
-    "extended": "",
     "usage": "[Kullanıcı] (default olarak kendiniz)",
     "PERMISSIONS": "Yetkiler",
     "SINCE": "{DATE} tarihinden beri"
