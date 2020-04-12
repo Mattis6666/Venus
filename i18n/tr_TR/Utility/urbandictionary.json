@@ -1,7 +1,6 @@
 {
     "category": "Hizmet",
     "description": "urbandictionary.com sitesinden bir tanım alın.",
-    "extended": "",
     "usage": "<aranacak kelime>",
     "NSFW": "Tanımlar NSFW olabileceği için bu komut sadece NSFW kanallarında kullanılabilir!",
     "NO_MATCH": "Üzgünüm, aradığınız terimde bir tanım bulamadım."
