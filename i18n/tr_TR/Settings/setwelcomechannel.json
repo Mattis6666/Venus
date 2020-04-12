@@ -1,10 +1,10 @@
 {
-    "category": "Ayarlar",
-    "description": "Karşılama kartının gönderileceği kanalı belirler.",
-    "extended": "Herhangi bir kanal belirtmeden komutu kullanmak karşılama kartı sistemini kapatacaktır!",
-    "usage": "<Kanal>",
-    "RESET": "Karşılama kartları başarıyla kapatıldı! Yeni üyeler için karşılama kartı gönderilmeyecek.",
-    "NO_CHANNEL": "Geçerli bir kanal belirtmediniz.",
-    "SUCCESS": "Karşılama kanalı başarıyla `{CHANNEL}` olarak ayarlandı! Karşılama kartları o kanala gönderilecek.",
-    "VERY_FUNNY": "Turkish cem yılmaz... Lütfen bir yazı kanalı belirt 😉"
+    "category": "Settings",
+    "description": "Stelt het kanaal in om een welkomstkaart in te sturen.",
+    "extended": "Het uitvoeren van de opdracht zonder een kanaal op te geven, zal welkomstkaarten uitschakelen!",
+    "usage": "<Kanaal>",
+    "RESET": "Welkomstkaarten met succes uitgeschakeld! Nieuwe leden zullen bij de deelname geen welkomstkaart meer ontvangen.",
+    "NO_CHANNEL": "Je hebt geen geldig kanaal opgegeven!",
+    "SUCCESS": "Succesvol de welkomstkaarten kanaal veranderd naar `{CHANNEL}`! Welkomstkaarten worden nu daar naartoe gestuurd.",
+    "VERY_FUNNY": "Heel grappig... Voer een tekstkanaal in 😉"
 }
