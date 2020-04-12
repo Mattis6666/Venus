@@ -1,7 +1,6 @@
 {
     "category": "Anime",
     "description": "Rastgele bir neko gifi al.",
-    "extended": "",
     "usage": "[kullanıcı]",
     "MESSAGE": "{{MEMBER}}, {{USER}} sana bu şirin neko\u0027yu gösteriyor!"
 }
