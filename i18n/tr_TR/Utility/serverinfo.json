@@ -1,8 +1,6 @@
 {
     "category": "Hizmet",
     "description": "Sunucu ile ilgili pek çok bilgi göster.",
-    "extended": "",
-    "usage": "",
     "NO_DESCRIPTION": "Açıklama belirtilmedi.",
     "BOOST_LEVEL": "Seviye {LEVEL}",
     "ROLES": "Roller",
