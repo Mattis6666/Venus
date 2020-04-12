@@ -1,7 +1,6 @@
 {
     "category": "Settings",
     "description": "Schakel een of meerdere opdrachten in",
-    "extended": "",
     "usage": "<opdracht naam | opdracht alias>",
     "NO_COMMAND": "U heeft geen geldige opdrachten gegeven om in te schakelen!",
     "ENABLE_ALL": "Alle opdrachten zijn ingeschakeld!",
