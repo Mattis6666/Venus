@@ -1,7 +1,6 @@
 {
     "category": "Anime",
     "description": "OwOe deinen Text.",
-    "extended": "",
     "usage": "\u003cText\u003e",
     "FAILURE": "Entschuldung, ich konnte deinen Eingabe nicht OwOen.",
     "SUCCESS": "{USER}, deinen OwOte-Nachricht"
