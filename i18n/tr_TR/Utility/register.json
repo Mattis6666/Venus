@@ -1,6 +1,15 @@
 {
     "category": "Hizmet",
     "description": "Kendini tanıt",
-    "extended": "Bot, özel mesajlarınızda size birkaç soru soracak. Daha sonrasında cevaplarınız bu sunucuda bir kanala gönderilecek. Bu kanalı `setintrochannel` komutu ile belirleyebilirsiniz.",
-    "usage": ""
+    "extended": "Bot özel mesajlarınızda size birkaç soru soracak. Cevaplar bu sunucuda bir kanala gönderilecek. O kanalı setregister komutları ile belirleyebilirsiniz.",
+    "INTROS_DISABLED": "Tanıtımlar bu sunucuda kapalı.",
+    "ALREADY_REGISTERED": "Zaten kayıt olmuşsunuz! Önce `{PREFIX}unregister` kullanın!",
+    "PRIVATE_MESSAGE": "Bilgilerini toplamak için sana birkaç soru soracağım. Özel mesaj kutunun aktif olduğundan emin ol!",
+    "START": "Şimdi sana birkaç soru soracağım. Lütfen sadece belirtilen seçenekler ile cevapla, hiç seçenek yoksw istediğini yazabilirsin. Lütfen cevaplarınızı 300 karakterin altında tutun.",
+    "DM_FAILED": "{USER}, sana özel mesaj gönderemedim. Lütfen aktif olduğundan emin ol! Kayıt işlemi bittikten sonra tekrar kapatabilirsin.",
+    "INVALID_RESPONSE": "Bu geçerli bir cevap değildi!",
+    "TOO_LONG": "Cevabınız 300 karakterin geçti!",
+    "FAILURE": "Çok fazla geçersiz cevap girdiniz veya işlemin süresi doldu. Kayıt olmak için lütfen komutu tekrar kullanın.",
+    "SUCCESS": "Kayıt tamamlandı, teşekkürler! Tanıtımını istediğin zaman `{PREFIX}unregister` komutuyla silebilirsin.",
+    "ERROR": "Üzgünüm, bir şeyler yanlış gitti. Lütfen sunucu yetkilileriyle görüşün."
 }
