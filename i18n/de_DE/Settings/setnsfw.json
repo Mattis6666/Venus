@@ -2,7 +2,6 @@
     "category": "Einstellungen",
     "description": "Aktiviere/Deaktiviere NSFW-Befehle",
     "extended": "Selbst wenn aktiviert, können NSFW-Befehle nur in NSFW-Kanälen ausgeführt werden",
-    "usage": "",
     "ENABLE": "NSFW-Befehle wurden auf diesem Server erfolgreich aktiviert!",
     "DISABLE": "NSFW-Befehle wurden auf diesem Server erfolgreich deaktiviert!"
 }
