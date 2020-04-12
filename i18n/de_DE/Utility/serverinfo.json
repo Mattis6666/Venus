@@ -1,8 +1,6 @@
 {
     "category": "Nützliches",
     "description": "Zeigt diverse Informationen über den Server an.",
-    "extended": "",
-    "usage": "",
     "NO_DESCRIPTION": "Keine Beschreibung angegeben.",
     "BOOST_LEVEL": "Level {LEVEL}",
     "ROLES": "Rollen",
