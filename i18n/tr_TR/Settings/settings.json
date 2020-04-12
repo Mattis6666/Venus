@@ -1,0 +1,19 @@
+{
+    "category": "Ayarlar",
+    "TITLE": "Sunucu Ayarları",
+    "SETTINGS": "Ayarlar",
+    "CHANNELS": "Kanallar",
+    "PREFIX": "Prefix",
+    "LANGUAGE": "Dil",
+    "NSFW": "NSFW",
+    "DISABLED_COMMANDS": "Kapalı Komutlar",
+    "WELCOME_MESSAGE": "Hoşgeldin Mesajı",
+    "AUTO_ROLE": "Oto-Rol",
+    "welcomeChannel": "Karşılama Kanalı",
+    "introChannel": "Tanıtım Kanalı",
+    "modLogChannel": "Yönetim Kaydı",
+    "messageLogChannel": "Mesaj Kaydı",
+    "memberLogChannel": "Üye Kaydı",
+    "automodLogChannel": "Otomod Kaydı",
+    "serverLogChannel": "Sunucu Kaydı"
+}
