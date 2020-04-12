@@ -1,7 +1,6 @@
 {
     "category": "Einstellungen",
     "description": "Aktiviere ein oder mehrere Befehle",
-    "extended": "",
     "usage": "<Befehlsname | Befehlsalias>",
     "NO_COMMAND": "Du hast keine gültigen Befehle zum aktivieren angegeben!",
     "ENABLE_ALL": "Alle Befehle wurden aktiviert!",
