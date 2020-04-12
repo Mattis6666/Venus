@@ -1,7 +1,6 @@
 {
     "category": "Settings",
     "description": "Verander de bot prefix",
-    "extended": "",
     "usage": "<nieuwe prefix>",
     "SUCCESS": "De prefix van deze server is met succes gewijzigd naar `{PREFIX}`"
 }
