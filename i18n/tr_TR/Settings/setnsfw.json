@@ -2,7 +2,6 @@
     "category": "Ayarlar",
     "description": "NSFW komutlarını kapat veya aktifleştir.",
     "extended": "Aktif olsa bile NSFW komutları sadece NSFW kanallarında kullanılabilir.",
-    "usage": "",
     "ENABLE": "NSFW komutları başarıyla aktifleştirildi!",
     "DISABLE": "NSFW komutları başarıyla kapatıldı!"
 }
