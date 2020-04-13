@@ -32,6 +32,7 @@ const callback = async (message: Message, args: string[], strings: CommandString
         .forEach(key => (messages = messages!.filter(filters[key])));
 
     if (author) messages = messages.filter(m => m.author.id === author.id);
+    messages = messages.filter(m => !m.pinned);
 
     await message.channel.bulkDelete(messages, true).then(m => {
         return message.channel

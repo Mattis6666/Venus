@@ -39,6 +39,7 @@ const callback = async (message: Message, args: string[], strings: CommandString
         NSFW: '',
         MISC: ''
     };
+
     Object.keys(commands).forEach(key => {
         const command = client.commands.find(cmd => cmd.category === key);
         if (!command) return;
@@ -123,7 +124,6 @@ const callback = async (message: Message, args: string[], strings: CommandString
     if (command.nsfw && (!message.guild || !guildSettings || !guildSettings.settings.nsfw || !(message.channel as TextChannel).nsfw))
         return wrongSyntax(message, strings.VIEW_NSFW_COMMAND);
 
-    const emoji = (bool: boolean) => (bool ? emojis.success : emojis.fail);
     output
         .setAuthor(prefix + command.name)
         .setDescription(
@@ -152,3 +152,5 @@ export const command: Command = {
     botPermissions: '',
     callback: callback
 };
+
+const emoji = (bool: boolean) => (bool ? emojis.success : emojis.fail);
