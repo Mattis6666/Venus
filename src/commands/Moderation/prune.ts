@@ -5,6 +5,8 @@ import { linkRegex, inviteRegex, emoteRegex, emojiRegex } from '../../constants/
 import { wrongSyntax, replace } from '../../utils/Util';
 
 const callback = async (message: Message, args: string[], strings: CommandStrings) => {
+    if (!message.guild) return;
+
     const filters: { [key: string]: (m: Message) => boolean } = {
         LINKS: (m: Message) => m.content.match(linkRegex) !== null,
         ATTACHMENTS: (m: Message) => m.attachments.size !== 0,
@@ -17,12 +19,19 @@ const callback = async (message: Message, args: string[], strings: CommandString
     const amount = args.map(arg => parseInt(arg)).filter(arg => arg && arg > 0 && arg < 101)[0];
     if (!amount) return wrongSyntax(message, strings.NO_AMOUNT);
 
+    const userId = args.filter(arg => arg.match(/^\d{17,19}$/))[0];
+    const author = userId ? message.guild.members.cache.get(userId)?.user || message.mentions.users.first() : message.mentions.users.first();
+
+    await message.delete();
+
     let messages = await message.channel.messages.fetch({ limit: amount > 100 ? 100 : amount }).catch(() => null);
     if (!messages || !messages.size) return;
 
     Object.keys(filters)
         .filter(key => message.content.toLowerCase().includes(strings[key].toLowerCase()))
         .forEach(key => (messages = messages!.filter(filters[key])));
+
+    if (author) messages = messages.filter(m => m.author.id === author.id);
 
     await message.channel.bulkDelete(messages, true).then(m => {
         return message.channel
