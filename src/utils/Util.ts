@@ -12,6 +12,12 @@ export const replace = (str: string, obj: { [prop: string]: string }) => {
     return str;
 };
 
+export const chunkArray = (array: any[], n: number) => {
+    const R = [];
+    for (let i = 0; i < array.length; i += n) R.push(array.slice(i, i + n));
+    return R;
+};
+
 export const trimString = (str: string, n: number) => {
     return str.length > n ? str.substring(0, n - 3) + '...' : str;
 };

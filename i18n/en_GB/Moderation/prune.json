@@ -1,0 +1,15 @@
+{
+    "category": "MODERATION",
+    "description": "Prune messages. Check this command's extended help for a list of filters!",
+    "extended": "",
+    "usage": "<Amount (1-1000)> [Filters (Links | Attachments | Bots | Invites | Emojis | Mentions)]",
+    "LINKS": "Links",
+    "ATTACHMENTS": "Attachments",
+    "BOTS": "Bots",
+    "INVITES": "Invites",
+    "EMOJIS": "Emojis",
+    "MENTIONS": "Mentions",
+    "NO_AMOUNT": "Please provide an amount between 1 and 100",
+    "NO_MESSAGES": "I was not able to fetch any messages. Make sure I have permission to read message history!",
+    "SUCCESS": "I successfully deleted {AMOUNT} messages matching your filter!"
+}
