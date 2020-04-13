@@ -11,5 +11,9 @@
     "VIEW_NSFW_MENU": "To view these, run `{PREFIX}help nsfw` in a NSFW channel!",
     "DESCRIPTION": "Description",
     "USAGE": "Usage",
-    "ALIASES": "Aliases"
+    "ALIASES": "Aliases",
+    "GUILD_ONLY": "Guild only",
+    "NSFW": "NSFW",
+    "REQUIRES_ARGS": "Requires arguments",
+    "REQUIRES_PERMISSION": "Requires Permission"
 }

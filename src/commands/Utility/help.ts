@@ -2,12 +2,13 @@ import { Message, TextChannel } from 'discord.js';
 import Command from '../../interfaces/Command';
 import VenusClient from '../../interfaces/Client';
 import config from '../../utils/config';
-import { wrongSyntax, newEmbed, replace } from '../../utils/Util';
+import { wrongSyntax, newEmbed, replace, nicerPermissions } from '../../utils/Util';
 import { getPrefix } from '../../utils/getters';
 import { HelpCategories, HelpCommands } from '../../interfaces/HelpCategories';
 import CommandStrings from '../../interfaces/CommandStrings';
 import { getGuild } from '../../database/mongo';
 import { CommandCategories } from '../../interfaces/CommandTypes';
+import { emojis } from '../../constants/emojis';
 
 const callback = async (message: Message, args: string[], strings: CommandStrings) => {
     const client = message.client as VenusClient;
@@ -122,11 +123,19 @@ const callback = async (message: Message, args: string[], strings: CommandString
     if (command.nsfw && (!message.guild || !guildSettings || !guildSettings.settings.nsfw || !(message.channel as TextChannel).nsfw))
         return wrongSyntax(message, strings.VIEW_NSFW_COMMAND);
 
-    output.setAuthor(command.name.toUpperCase()).addFields([
-        { name: strings.DESCRIPTION, value: info.description || '-' },
-        { name: strings.USAGE, value: `\`${prefix + command.name} ${info.usage || ''}\``, inline: true },
-        { name: strings.ALIASES, value: command.aliases.join(', ') || '-', inline: true }
-    ]);
+    const emoji = (bool: boolean) => (bool ? emojis.success : emojis.fail);
+    output
+        .setAuthor(prefix + command.name)
+        .setDescription(
+            `${strings.GUILD_ONLY}: ${emoji(command.guildOnly)}\n${strings.NSFW}: ${emoji(command.nsfw)}\n${strings.REQUIRES_ARGS}: ${
+                command.requiresArgs || emojis.fail
+            }\n${strings.REQUIRES_PERMISSION}: ${command.userPermissions ? '`' + nicerPermissions(command.userPermissions) + '`' : emojis.fail}`
+        )
+        .addFields([
+            { name: strings.DESCRIPTION, value: info.description + (info.extended ? '\n\n' + info.extended : '') || '-' },
+            { name: strings.USAGE, value: '```' + `${prefix + command.name} ${info.usage || ''}` + '```' },
+            { name: strings.ALIASES, value: command.aliases.join(', ') || '-' }
+        ]);
     return message.channel.send(output);
 };
 
