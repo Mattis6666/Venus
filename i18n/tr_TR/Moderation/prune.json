@@ -1,0 +1,15 @@
+{
+    "category": "Yönetim",
+    "description": "1-100 arası mesaj silin, filtre kullanabilirsiniz",
+    "extended": "Filtre kullanabilirsiniz. Mevcut filtreler:\n`@Etiket/Kullanıcı ID` - Sadece bu üyenin mesajları siler\n`Adres` - Sadece adresleri siler\n`Ek` - Sadece ekleri siler\n`Bot` - Sadece bot mesajlarını siler\n`Davet` - Sadece davet adreslerinin siler\n`Emoji` - Sadece emojileri siler\n`Etiketler` - Sadece etiketeri siler",
+    "usage": "[@Etiket | Kullanıcı-ID | Adres | Ek | Bot | Davet | Emoji | Etiket]",
+    "LINKS": "Adres",
+    "ATTACHMENTS": "Ek",
+    "BOTS": "Bot",
+    "INVITES": "Davet",
+    "EMOJIS": "Emoji",
+    "MENTIONS": "Etiket",
+    "NO_AMOUNT": "Lütfen 1 ile 100 arasında bir miktar girin",
+    "NO_MESSAGES": "Mesajları silemedim. Mesaj geçmişini okuma yetkim olduğumdan emin olun!",
+    "SUCCESS": "Filtrenizle uyuşan {AMOUNT} mesajı başarıyla sildim!"
+}
