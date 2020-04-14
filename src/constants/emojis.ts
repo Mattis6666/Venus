@@ -1,8 +1,8 @@
 export const emojis = {
-    loading: '<a:loading:679334829359366165>',
-    success: '<:check:695724701510664242>',
-    fail: '<:cross:695724707487678654>',
-    nitroBoost: '<:NitroBoost:696191790017019954>',
+    loading: '<a:loading:699715156371832960>',
+    success: '<:check:699715117473988748>',
+    fail: '<:cross:699715122716737538>',
+    nitroBoost: '<:NitroBoost:699715144862662666>',
     birthday: '🎂',
     date: '🗓️',
     info: 'ℹ️',
