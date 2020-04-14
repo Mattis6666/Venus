@@ -46,7 +46,7 @@ const callback = async (message: Message, args: string[], strings: CommandString
     message.channel.stopTyping();
     return msg.edit(
         i === guildEmotes.length
-            ? replace(strings.SUCESS, {
+            ? replace(strings.SUCCESS, {
                   EMOJI: emojis.success,
                   COUNT: i + ''
               })
