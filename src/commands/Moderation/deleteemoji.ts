@@ -41,7 +41,7 @@ const callback = async (message: Message, args: string[], strings: CommandString
                     );
                 })
         )
-    );
+    ).catch(() => message.channel.stopTyping());
 
     message.channel.stopTyping();
     return msg.edit(
