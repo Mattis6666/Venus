@@ -4,6 +4,7 @@ import nodeFetch, { RequestInfo, RequestInit } from 'node-fetch';
 import ordinal from 'ordinal';
 import { logError } from './winston';
 import { inspect } from 'util';
+import { milliseconds } from '../constants/milliseconds';
 
 export const replace = (str: string, obj: { [prop: string]: string }) => {
     for (const prop in obj) {
@@ -95,4 +96,18 @@ export const nicerPermissions = (permission: string) => {
         .split('_')
         .map(e => e.replace(/\w/, e.charAt(0).toUpperCase()))
         .join(' ');
+};
+
+export const stringToMs = (str: string) => {
+    const times = str.match(/\d+(w|d|h|m|s){1}/gi);
+    if (!times) return;
+
+    let total = 0;
+    times.forEach(time => {
+        const amount = parseInt(time.replace(/[^\d]/gi, ''));
+        const type = Object.keys(milliseconds).find(key => key.startsWith(time.replace(/\d/gi, '')));
+        if (!amount || !type) return;
+        total += amount * (milliseconds as any)[type];
+    });
+    return total;
 };

@@ -8,7 +8,7 @@ import { uploadHaste } from '../../utils/hastebin';
 
 const callback = async (message: Message, args: string[]) => {
     // @ts-ignore
-    const [client, commands, msg, guild, channel, getguild, getinfractions, util, getters, guildsettings, infractions, strings] = [
+    const [client, commands, msg, guild, channel, getguild, getinfractions, util, getters] = [
         message.client,
         (message.client as VenusClient).commands,
         message,
@@ -17,11 +17,13 @@ const callback = async (message: Message, args: string[]) => {
         getGuild,
         getInfractions,
         Util,
-        Getters,
-        await getGuild(message.guild!.id),
-        await getInfractions(message.guild!.id),
-        await Getters.getStrings(message)
+        Getters
     ];
+    // @ts-ignore
+    const [guildsettings, infractions, strings] = message.guild
+        ? [await getGuild(message.guild.id), await getInfractions(message.guild.id), await Getters.getStrings(message)]
+        : null;
+
     try {
         let output =
             (await eval(`( async () => {
