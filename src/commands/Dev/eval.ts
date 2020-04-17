@@ -22,7 +22,7 @@ const callback = async (message: Message, args: string[]) => {
     // @ts-ignore
     const [guildsettings, infractions, strings] = message.guild
         ? [await getGuild(message.guild.id), await getInfractions(message.guild.id), await Getters.getStrings(message)]
-        : null;
+        : [null, null, null];
 
     try {
         let output =
