@@ -4,7 +4,9 @@ import CommandStrings from '../../interfaces/CommandStrings';
 import { fetch, wrongSyntax, newEmbed } from '../../utils/Util';
 
 const callback = async (message: Message, args: string[], strings: CommandStrings) => {
-    const result = await fetch('https://yande.re/post.json?limit=50&tags=' + args.join('%20'));
+    const result = (await fetch('https://yande.re/post.json?limit=100&tags=' + args.join('%20')))?.filter(
+        (item: { [key: string]: string }) => !item.tags.includes('loli') && !item.tags.includes('shota')
+    );
     if (!result || !result.length) return wrongSyntax(message, strings.NO_RESULT);
 
     const url = result[Math.floor(Math.random() * result.length)].jpeg_url;
