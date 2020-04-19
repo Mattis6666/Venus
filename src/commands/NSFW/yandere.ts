@@ -5,7 +5,7 @@ import { fetch, wrongSyntax, newEmbed } from '../../utils/Util';
 
 const callback = async (message: Message, args: string[], strings: CommandStrings) => {
     const result = await fetch('https://yande.re/post.json?limit=50&tags=' + args.join('%20'));
-    if (result || !result.length) return wrongSyntax(message, strings.NO_RESULT);
+    if (!result || !result.length) return wrongSyntax(message, strings.NO_RESULT);
 
     const url = result[Math.floor(Math.random() * result.length)].jpeg_url;
     if (!url) return wrongSyntax(message, strings.NO_RESULT);
