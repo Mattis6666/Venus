@@ -10,9 +10,7 @@ const callback = async (message: Message, args: string[], strings: CommandString
     const url = result[Math.floor(Math.random() * result.length)].jpeg_url;
     if (!url) return wrongSyntax(message, strings.NO_RESULT);
 
-    const output = newEmbed(true)
-        .setImage(url)
-        .setAuthor(`So naughty, ${message.author.username}~`, message.author.displayAvatarURL({ size: 256, dynamic: true }));
+    const output = newEmbed(true).setImage(url).setDescription(`[Click me if the image doesn't show.](${url})`);
 
     return message.channel.send(output);
 };
