@@ -9,6 +9,7 @@
     "CASE": "Case",
     "warn": "Warn",
     "mute": "Mute",
+    "unmute": "Unmute",
     "kick": "Kick",
     "ban": "Ban"
 }

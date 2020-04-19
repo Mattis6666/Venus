@@ -35,11 +35,11 @@ const callback = async (message: Message, args: string[], strings: CommandString
 
     let action: 'unmute' | 'mute';
     if (member.roles.cache.has(role.id)) {
-        const success = await member.roles.remove(role).catch(() => null);
+        const success = await member.roles.remove(role, 'Unmuted by ' + message.author.tag).catch(() => null);
         if (!success) return wrongSyntax(message, strings.UNMUTE_FAILURE);
         action = 'unmute';
     } else {
-        const success = await member.roles.add(role).catch(() => null);
+        const success = await member.roles.add(role, 'Muted by ' + message.author.tag).catch(() => null);
         if (!success) return wrongSyntax(message, strings.MUTE_FAILURE);
         action = 'mute';
     }
