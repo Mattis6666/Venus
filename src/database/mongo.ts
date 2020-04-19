@@ -33,8 +33,8 @@ export const resetGuild = async (guildId: string) => {
     return await Guilds.findOneAndDelete({ guild: guildId });
 };
 
-export const getInfractions = async (guildId: string) => {
-    return (await Infractions.findOne({ guild: guildId })) || (await Infractions.create({ guild: guildId }));
+export const getInfractions = async (guildId: string, userId: string) => {
+    return await Infractions.find({ guild: guildId, user: userId });
 };
 
 export const getTags = async (guildId: string) => {

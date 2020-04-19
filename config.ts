@@ -12,6 +12,7 @@ export const config: Config = {
         imgur: {
             id: process.env.IMGUR_ID!,
             secret: process.env.IMGUR_SECRET!
-        }
+        },
+        bitly: process.env.BITLY_TOKEN!
     }
 };

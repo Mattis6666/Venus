@@ -7,5 +7,12 @@
     "MEMBER_NO_INFRACTIONS": "{MEMBER} does not have any infractions, {AUTHOR}.",
     "MODLOG": "ModLog for {MEMBER}",
     "MODERATOR": "Moderator",
-    "NO_PERMS": "You require the `Manage Messages` Permission to see another users' Infractions!"
+    "DATE": "Date",
+    "REASON": "Reason",
+    "CASE": "Case",
+    "NO_PERMS": "You require the `Manage Messages` Permission to see another users' Infractions!",
+    "warn": "Warn",
+    "mute": "Mute",
+    "kick": "Kick",
+    "ban": "Ban"
 }

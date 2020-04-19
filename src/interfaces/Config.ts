@@ -11,5 +11,6 @@ export default interface Config {
             id: string;
             secret: string;
         };
+        bitly: string;
     };
 }
