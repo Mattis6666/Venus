@@ -1,0 +1,7 @@
+{
+    "category": "NSFW",
+    "description": "Get a random image from yande.re",
+    "extended": "",
+    "usage": "<search term>",
+    "NO_RESULT": "I was not able to find an image matching your terms."
+}
