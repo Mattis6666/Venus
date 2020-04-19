@@ -15,7 +15,8 @@ export const VenusClient = new Client({
             type: 'LISTENING',
             url: 'https://www.twitch.tv/.'
         }
-    }
+    },
+    partials: ['MESSAGE', 'REACTION']
 });
 VenusClient.config = config;
 

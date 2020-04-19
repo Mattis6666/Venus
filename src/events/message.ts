@@ -7,6 +7,7 @@ import Client from '../interfaces/Client';
 import { Languages } from '../interfaces/Languages';
 
 export default async (VenusClient: Client, message: Message) => {
+    if (message.partial) message = await message.fetch();
     if (message.author.bot || (message.guild && !message.member) || !message.client || !message.channel) return;
     if (
         message.channel.type === 'text' &&
