@@ -14,7 +14,7 @@ export const logInfraction = async (message: Message, member: GuildMember, infra
     const channel = settings.channels.modLogChannel ? message.guild.channels.cache.get(settings.channels.modLogChannel) : null;
     const output = newEmbed()
         .setTitle(miscStrings[infraction.infractionType])
-        .setDescription(replace(strings.DM_MESSAGE, { GUILD: message.guild.name, ACTION: infraction.infractionType }))
+        .setDescription(replace(strings.DM_MESSAGE, { GUILD: message.guild.name, ACTION: strings[infraction.infractionType] }))
         .addFields([
             { name: miscStrings.MEMBER, value: `${member} (${member.user.tag})` },
             { name: miscStrings.MODERATOR, value: `${message.author} (${message.author.tag})` },
@@ -24,7 +24,7 @@ export const logInfraction = async (message: Message, member: GuildMember, infra
         .setFooter(`${miscStrings.CASE} ${infraction.case}`);
 
     await member.user.send(output).catch(() => null);
-    output.setDescription(replace(strings.GUILD_MESSAGE, { MEMBER: member.displayName, ACTION: infraction.infractionType }));
+    output.setDescription(replace(strings.GUILD_MESSAGE, { MEMBER: member.displayName, ACTION: strings[infraction.infractionType] }));
     if (channel) (channel as TextChannel).send(output).catch(() => null);
     message.channel.send(output);
     return;
