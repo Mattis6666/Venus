@@ -2,7 +2,7 @@ import { Message } from 'discord.js';
 import Command from '../../interfaces/Command';
 import * as Util from '../../utils/Util';
 import * as Getters from '../../utils/getters';
-import { getGuild, getInfractions } from '../../database/mongo';
+import { getGuild, getInfractions, getTags } from '../../database/mongo';
 import VenusClient from '../../interfaces/Client';
 import { uploadHaste } from '../../utils/hastebin';
 
@@ -20,7 +20,9 @@ const callback = async (message: Message, args: string[]) => {
         Getters
     ];
     // @ts-ignore
-    const [guildsettings, strings] = message.guild ? [await getGuild(message.guild.id), await Getters.getStrings(message)] : [null, null, null];
+    const [guildsettings, strings, tags] = message.guild
+        ? [await getGuild(message.guild.id), await Getters.getStrings(message), await getTags(message.guild.id)]
+        : [null, null, null];
 
     try {
         let output =

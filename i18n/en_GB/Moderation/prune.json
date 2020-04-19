@@ -1,5 +1,5 @@
 {
-    "category": "MODERATION",
+    "category": "Moderation",
     "description": "Prune 1-100 messages. You can use filters",
     "extended": "You can apply filters. Possible filters are:\n`@Mention/User ID` - Only delete messages by this member\n`Links` - Only delete links\n`Attachments` - Only delete attachments\n`Bots` - Only delete messages by bots\n`Invites` - Only delete instant invites\n`Emojis` - Only delete emojis\n`Mentions` - Only delete mentions",
     "usage": "<Amount> [@Mention | User-ID | Links | Attachments | Bots | Invites | Emojis | Mentions]",

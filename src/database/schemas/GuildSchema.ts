@@ -9,28 +9,21 @@ export type GuildChannelSettings =
     | 'memberLogChannel'
     | 'automodLogChannel'
     | 'serverLogChannel';
-export type GuildSettings =
-    | 'prefix'
-    | 'language'
-    | 'nsfw'
-    | 'blockedChannels'
-    | 'blockedUsers'
-    | 'disabledCommands'
-    | 'deleteCommandTriggers'
-    | 'deleteFailedCommands';
+
+export interface GuildSettings {
+    prefix: string;
+    language: Languages;
+    nsfw: boolean; // Whether NSFW commands are enabled or not
+    blockedChannels: string[]; // An array of IDs of blocked channels (No commands here)
+    blockedUsers: string[]; // An array of IDs of blocked users (Unable to use commands)
+    disabledCommands: string[]; // An array of blocked commands
+    deleteCommandTriggers: boolean; // Whether or not to delete command triggers after success
+    deleteFailedCommands: boolean; // Whether or not to delete triggers and response of failed commands
+}
 
 export interface Guild extends mongoose.Document {
     readonly guild: string; // The guild ID
-    settings: {
-        prefix: string;
-        language: Languages;
-        nsfw: boolean; // Whether NSFW commands are enabled or not
-        blockedChannels: string[]; // An array of IDs of blocked channels (No commands here)
-        blockedUsers: string[]; // An array of IDs of blocked users (Unable to use commands)
-        disabledCommands: string[]; // An array of blocked commands
-        deleteCommandTriggers: boolean; // Whether or not to delete command triggers after success
-        deleteFailedCommands: boolean; // Whether or not to delete triggers and response of failed commands
-    };
+    settings: GuildSettings;
     roles: {
         muted: string; // The ID of the mute role
     };

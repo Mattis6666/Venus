@@ -1,6 +1,7 @@
 import mongoose from 'mongoose';
 import { Message } from 'discord.js';
-import { InfractionTypes } from '../../interfaces/InfractionTypes';
+
+export type InfractionTypes = 'warn' | 'mute' | 'unmute' | 'kick' | 'ban';
 
 export interface Infraction extends mongoose.Document {
     guild: string;
@@ -8,6 +9,7 @@ export interface Infraction extends mongoose.Document {
     infractionType: string;
     timestamp: number;
     endTimestamp?: number;
+    needsTiming?: boolean;
     reason: string;
     moderator: {
         id: string;
@@ -22,6 +24,7 @@ const InfractionSchema: mongoose.Schema = new mongoose.Schema({
     infractionType: String,
     timestamp: Number,
     endTimestamp: Number,
+    needsTiming: Boolean,
     reason: String,
     moderator: {
         id: String,
@@ -43,6 +46,7 @@ export const createInfraction = async (message: Message, userId: string, infract
         infractionType: infractionType,
         timestamp: message.createdTimestamp,
         endTimestamp: end,
+        needsTiming: duration !== undefined,
         reason: reason,
         moderator: {
             id: message.author.id,

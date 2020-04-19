@@ -1,0 +1,15 @@
+{
+    "category": "Moderation",
+    "description": "Mute or unmute a member",
+    "extended": "Upon first use, Venus will automatically create a mute role. Feel free to edit it, but do not delete it. Use the tempmute command for a temporary mute!",
+    "usage": "<Member> [Reason]",
+    "ROLE_CREATE": "I will now create a role which will be used for future mutes. Please be patient as this might take a bit. I need to create overrides on every single channel!",
+    "ROLE_CREATE_FAILURE": "I was unable to create the mute role.",
+    "ROLE_CREATE_SUCCESS": "I successfully set up the mute role! You can now edit its properties, but please do not delete it.",
+    "INVALID_ROLE": "I was unable to find the old mute role. The next time you run this command, I will set up a new one. Please do not delete the role!",
+    "UNMUTE_FAILURE": "I was not able to unmute this user. Please make sure my role is above the muted role!",
+    "MUTE_FAILURE": "I was not able to mute this user. Please make sure my role is above the muted role!",
+    "NO_REASON": "No reason provided.",
+    "DM_MESSAGE": "You have been muted on {GUILD}",
+    "GUILD_MESSAGE": "{MEMBER} has been muted."
+}
