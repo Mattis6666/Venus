@@ -1,0 +1,10 @@
+{
+    "category": "Settings",
+    "description": "Sets the channel to send a mod-log in.",
+    "extended": "Running the command without providing a channel will disable the mog-log!",
+    "usage": "<Channel>",
+    "RESET": "Successfully disabled the mod-log!",
+    "NO_CHANNEL": "You did not provide a valid channel!",
+    "SUCCESS": "Successfully set the mod-log channel to `{CHANNEL}`! Mod-log will be sent there.",
+    "VERY_FUNNY": "Very funny... Provide a text channel 😉"
+}
