@@ -1,12 +1,10 @@
 import { Message } from 'discord.js';
-import config from '../utils/config';
 import { Guild } from '../database/schemas/GuildSchema';
-import db from '../database/mongo';
 import { wrongSyntax, handleError, nicerPermissions, replace } from '../utils/Util';
-import Client from '../interfaces/Client';
-import { Languages } from '../interfaces/Languages';
+import { VenusClient, VenusLanguages } from '../interfaces/Client';
 
-export default async (VenusClient: Client, message: Message) => {
+export default async (VenusClient: VenusClient, message: Message) => {
+    if (message.partial) message = await message.fetch();
     if (message.author.bot || (message.guild && !message.member) || !message.client || !message.channel) return;
     if (
         message.channel.type === 'text' &&
@@ -16,12 +14,12 @@ export default async (VenusClient: Client, message: Message) => {
         return;
 
     const guildSettings: Guild | null = message.guild
-        ? VenusClient.guildSettings.get(message.guild.id) || (await db.Guilds.findOne({ guild: message.guild.id }))
+        ? VenusClient.guildSettings.get(message.guild.id) || (await VenusClient.database.guildSettings.findOne({ guild: message.guild.id }))
         : null;
     if (message.guild && guildSettings && !VenusClient.guildSettings.has(message.guild.id)) {
         VenusClient.guildSettings.set(message.guild.id, guildSettings);
     }
-    const guildPrefix = guildSettings?.settings.prefix || config.defaultPrefix;
+    const guildPrefix = guildSettings?.settings.prefix || VenusClient.config.defaultPrefix;
 
     const prefixRegex = new RegExp(`^(<@!?${VenusClient.user?.id}>|${guildPrefix.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')})\\s*`);
     if (!prefixRegex.test(message.content)) return;
@@ -49,7 +47,7 @@ export default async (VenusClient: Client, message: Message) => {
     if (!command) {
         if (!message.guild) return;
 
-        const tags = VenusClient.tags.get(message.guild.id) || (await db.Tags.findOne({ guild: message.guild.id }));
+        const tags = VenusClient.tags.get(message.guild.id) || (await VenusClient.database.tags.findOne({ guild: message.guild.id }));
         if (!tags) return;
         VenusClient.tags.set(message.guild.id, tags);
         const tag = tags.tags.find(tag => tag.trigger === commandName);
@@ -57,7 +55,7 @@ export default async (VenusClient: Client, message: Message) => {
         return message.channel.send(tag.embed ? { embed: tag.response } : tag.response);
     }
 
-    const language: Languages = guildSettings?.settings.language || 'en_GB';
+    const language: VenusLanguages = guildSettings?.settings.language || 'en_GB';
     const strings = VenusClient.languages.get(language) || VenusClient.languages.get('en_GB');
     if (!strings) throw new Error('NO STRINGS - INDEX - ' + language);
 
@@ -68,7 +66,7 @@ export default async (VenusClient: Client, message: Message) => {
         strings.find(str => str.command === command.name)?.strings || VenusClient.languages.get('en_GB')?.find(str => str.command === command.name)?.strings;
     if (!commandStrings && !['DEVELOPMENT', 'NSFW'].includes(command.category)) throw new Error('NO COMMAND STRINGS - INDEX - ' + language);
 
-    if (!config.developers.includes(message.author.id)) {
+    if (!VenusClient.config.developers.includes(message.author.id)) {
         if (command.developerOnly) return;
 
         if (message.guild && message.guild.me && message.channel.type === 'text') {

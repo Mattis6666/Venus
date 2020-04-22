@@ -1,7 +1,7 @@
 import { wrongSyntax } from './Util';
 import { Message } from 'discord.js';
-import VenusClient from '../interfaces/Client';
-import { getGuild } from '../database/mongo';
+import { VenusClient } from '../interfaces/Client';
+import { getGuild } from '../database';
 import { Guild } from '../database/schemas/GuildSchema';
 
 export const getUser = async (message: Message, args: string[], spot?: number) => {

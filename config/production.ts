@@ -1,6 +1,4 @@
-import Config from './src/interfaces/Config';
-
-export const config: Config = {
+export default {
     token: process.env.TOKEN!,
     mongoString: process.env.MONGO!,
     defaultPrefix: 'v!',

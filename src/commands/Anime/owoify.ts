@@ -1,10 +1,9 @@
 import { OwOify } from '../../utils/nekos';
-import Command from '../../interfaces/Command';
+import { VenusCommand, VenusCommandStrings } from '../../interfaces/Client';
 import { Message } from 'discord.js';
-import CommandStrings from '../../interfaces/CommandStrings';
 import { wrongSyntax, replace } from '../../utils/Util';
 
-const callback = async (message: Message, args: string[], strings: CommandStrings) => {
+const callback = async (message: Message, args: string[], strings: VenusCommandStrings) => {
     const owo = await OwOify(args.join(' '));
     if (!owo) return wrongSyntax(message, strings.FAILURE);
     return message.channel.send(
@@ -14,7 +13,7 @@ const callback = async (message: Message, args: string[], strings: CommandString
     );
 };
 
-export const command: Command = {
+export const command: VenusCommand = {
     name: 'owoify',
     category: 'ANIME',
     aliases: ['owo', 'uwuify', 'uwu'],

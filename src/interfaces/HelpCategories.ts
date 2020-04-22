@@ -1,9 +1,9 @@
-import { CommandCategories } from './CommandTypes';
+import { VenusCommandCategories } from './Client';
 
 export type HelpCategories = {
-    [key in CommandCategories]: string;
+    [key in VenusCommandCategories]: string;
 };
 
 export type HelpCommands = {
-    [key in CommandCategories]: string[];
+    [key in VenusCommandCategories]: string[];
 };

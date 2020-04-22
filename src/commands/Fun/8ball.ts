@@ -1,5 +1,5 @@
 import { Message } from 'discord.js';
-import Command from '../../interfaces/Command';
+import { VenusCommand } from '../../interfaces/Client';
 import { eightball } from '../../utils/nekos';
 import { newEmbed } from '../../utils/Util';
 
@@ -10,7 +10,7 @@ const callback = async (message: Message, _args: string[]) => {
     });
 };
 
-export const command: Command = {
+export const command: VenusCommand = {
     name: '8ball',
     category: 'FUN',
     aliases: ['8b', 'fortune', 'eightball'],

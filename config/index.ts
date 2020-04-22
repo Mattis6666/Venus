@@ -1,4 +1,6 @@
-export default interface Config {
+export const config: Config = require(`./${process.env.NODE_ENV}`).default;
+
+export interface Config {
     token: string;
     mongoString: string;
     defaultPrefix: string;

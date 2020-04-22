@@ -1,10 +1,9 @@
 import { Message, TextChannel } from 'discord.js';
-import Command from '../../interfaces/Command';
-import CommandStrings from '../../interfaces/CommandStrings';
-import { getIntros } from '../../database/mongo';
+import { VenusCommand, VenusCommandStrings } from '../../interfaces/Client';
+import { getIntros } from '../../database';
 import { wrongSyntax } from '../../utils/Util';
 
-const callback = async (message: Message, _args: string[], strings: CommandStrings) => {
+const callback = async (message: Message, _args: string[], strings: VenusCommandStrings) => {
     if (!message.guild) return;
     const introEntry = await getIntros(message.author.id);
     const intro = introEntry.intros.find(intro => intro.guild === message.guild!.id);
@@ -19,7 +18,7 @@ const callback = async (message: Message, _args: string[], strings: CommandStrin
     return message.channel.send(strings.SUCCESS);
 };
 
-export const command: Command = {
+export const command: VenusCommand = {
     name: 'unregister',
     category: 'UTILITY',
     aliases: ['deleteintro', 'deregister'],

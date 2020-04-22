@@ -1,9 +1,8 @@
 import { Message } from 'discord.js';
-import Command from '../../interfaces/Command';
+import { VenusCommand, VenusCommandStrings } from '../../interfaces/Client';
 import { wrongSyntax, replace } from '../../utils/Util';
-import CommandStrings from '../../interfaces/CommandStrings';
 
-const callback = (message: Message, args: string[], strings: CommandStrings) => {
+const callback = (message: Message, args: string[], strings: VenusCommandStrings) => {
     if (!message.guild) return;
 
     const name = args[0].replace(/\W/g, '');
@@ -28,7 +27,7 @@ const callback = (message: Message, args: string[], strings: CommandStrings) => 
         .catch(() => message.channel.send(strings.FAILURE));
 };
 
-export const command: Command = {
+export const command: VenusCommand = {
     name: 'createemoji',
     category: 'MODERATION',
     aliases: ['createemote', 'ce'],

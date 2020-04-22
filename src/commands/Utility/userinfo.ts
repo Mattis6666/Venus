@@ -1,12 +1,11 @@
 import { Message } from 'discord.js';
-import Command from '../../interfaces/Command';
+import { VenusCommand, VenusCommandStrings } from '../../interfaces/Client';
 import { getUser } from '../../utils/getters';
 import { newEmbed, nicerDates, nicerPermissions, replace } from '../../utils/Util';
 import { statusIcons } from '../../constants/statusIcons';
 import { emojis } from '../../constants/emojis';
-import CommandStrings from '../../interfaces/CommandStrings';
 
-const callback = async (message: Message, args: string[], strings: CommandStrings) => {
+const callback = async (message: Message, args: string[], strings: VenusCommandStrings) => {
     const user = args.length ? await getUser(message, args) : message.author;
     if (!user) return;
 
@@ -73,7 +72,7 @@ const callback = async (message: Message, args: string[], strings: CommandString
     return message.channel.send(output);
 };
 
-export const command: Command = {
+export const command: VenusCommand = {
     name: 'userinfo',
     category: 'UTILITY',
     aliases: ['ui', 'user'],

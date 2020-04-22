@@ -1,9 +1,8 @@
 import { Message } from 'discord.js';
-import Command from '../../interfaces/Command';
-import CommandStrings from '../../interfaces/CommandStrings';
+import { VenusCommand, VenusCommandStrings } from '../../interfaces/Client';
 import { fetch, wrongSyntax, newEmbed } from '../../utils/Util';
 
-const callback = async (message: Message, args: string[], strings: CommandStrings) => {
+const callback = async (message: Message, args: string[], strings: VenusCommandStrings) => {
     const result = (await fetch('https://yande.re/post.json?limit=100&tags=' + args.join('%20')))?.filter(
         (item: { [key: string]: string }) => !item.tags.includes('loli') && !item.tags.includes('shota')
     );
@@ -17,7 +16,7 @@ const callback = async (message: Message, args: string[], strings: CommandString
     return message.channel.send(output);
 };
 
-export const command: Command = {
+export const command: VenusCommand = {
     name: 'yandere',
     category: 'NSFW',
     aliases: ['yande.re'],

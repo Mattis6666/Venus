@@ -1,13 +1,12 @@
 import { sendImage } from '../../utils/nekos';
-import Command from '../../interfaces/Command';
+import { VenusCommand, VenusCommandStrings } from '../../interfaces/Client';
 import { Message } from 'discord.js';
-import CommandStrings from '../../interfaces/CommandStrings';
 
-const callback = async (message: Message, args: string[], strings: CommandStrings) => {
+const callback = async (message: Message, args: string[], strings: VenusCommandStrings) => {
     return sendImage(message, args, 'nekoGif', strings.MESSAGE);
 };
 
-export const command: Command = {
+export const command: VenusCommand = {
     name: 'nekogif',
     category: 'ANIME',
     aliases: ['ngif', 'nekog'],

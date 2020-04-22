@@ -1,13 +1,12 @@
 import { Message } from 'discord.js';
-import Command from '../../interfaces/Command';
+import { VenusCommand, VenusCommandStrings } from '../../interfaces/Client';
 import { getMember } from '../../utils/getters';
 import { isMemberHigher } from '../../utils/checks';
 import { wrongSyntax, replace } from '../../utils/Util';
-import CommandStrings from '../../interfaces/CommandStrings';
 import { createInfraction } from '../../database/schemas/InfractionSchema';
 import { logInfraction } from '../../utils/moderation';
 
-const callback = async (message: Message, args: string[], strings: CommandStrings) => {
+const callback = async (message: Message, args: string[], strings: VenusCommandStrings) => {
     if (!message.guild || !message.member) return;
     const member = await getMember(message, args, 0);
     if (!member) return;
@@ -66,7 +65,7 @@ const callback = async (message: Message, args: string[], strings: CommandString
     });
 };
 
-export const command: Command = {
+export const command: VenusCommand = {
     name: 'kick',
     category: 'MODERATION',
     aliases: ['boot', 'k'],

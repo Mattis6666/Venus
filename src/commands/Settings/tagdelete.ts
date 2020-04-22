@@ -1,11 +1,9 @@
 import { Message } from 'discord.js';
-import Command from '../../interfaces/Command';
-import CommandStrings from '../../interfaces/CommandStrings';
-import { getTags } from '../../database/mongo';
-import VenusClient from '../../interfaces/Client';
+import { VenusCommand, VenusCommandStrings, VenusClient } from '../../interfaces/Client';
+import { getTags } from '../../database';
 import { wrongSyntax, replace } from '../../utils/Util';
 
-const callback = async (message: Message, args: string[], strings: CommandStrings) => {
+const callback = async (message: Message, args: string[], strings: VenusCommandStrings) => {
     if (!message.guild) return;
     const client = message.client as VenusClient;
     const trigger = args[0].toLowerCase();
@@ -32,7 +30,7 @@ const callback = async (message: Message, args: string[], strings: CommandString
     );
 };
 
-export const command: Command = {
+export const command: VenusCommand = {
     name: 'tagdelete',
     category: 'SETTINGS',
     aliases: ['deletetag', 'tagremove', 'removetag'],

@@ -1,4 +1,4 @@
-import VenusClient from '../interfaces/Client';
+import { VenusClient } from '../interfaces/Client';
 import { Guild } from 'discord.js';
 
 export default async (client: VenusClient, guild: Guild) => {

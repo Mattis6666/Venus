@@ -1,14 +1,12 @@
 import { Message, TextChannel } from 'discord.js';
-import Command from '../../interfaces/Command';
+import { VenusClient, VenusCommand, VenusCommandStrings } from '../../interfaces/Client';
 import { registerQuestions } from '../../constants/registerQuestions';
 import { newEmbed, wrongSyntax, replace } from '../../utils/Util';
 import { Promise } from 'bluebird';
-import { getGuild, getIntros } from '../../database/mongo';
-import CommandStrings from '../../interfaces/CommandStrings';
+import { getGuild, getIntros } from '../../database';
 import { getPrefix } from '../../utils/getters';
-import VenusClient from '../../interfaces/Client';
 
-const callback = async (message: Message, _args: string[], strings: CommandStrings) => {
+const callback = async (message: Message, _args: string[], strings: VenusCommandStrings) => {
     if (!message.guild) return;
 
     const guildSettings = await getGuild(message.guild.id);
@@ -86,7 +84,7 @@ const callback = async (message: Message, _args: string[], strings: CommandStrin
     return channel.send(replace(strings.SUCCESS, { PREFIX: prefix }));
 };
 
-export const command: Command = {
+export const command: VenusCommand = {
     name: 'register',
     category: 'UTILITY',
     aliases: ['intro', 'introduction'],

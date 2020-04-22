@@ -1,8 +1,8 @@
 import Canvas from 'canvas';
-import VenusClient from '../interfaces/Client';
+import { VenusClient } from '../interfaces/Client';
 import { GuildMember, TextChannel } from 'discord.js';
 import path from 'path';
-import { getGuild } from '../database/mongo';
+import { getGuild } from '../database';
 import { replace } from '../utils/Util';
 let background: Canvas.Image;
 

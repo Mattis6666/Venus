@@ -1,10 +1,10 @@
-import { Message, TextChannel, MessageEmbed, Client } from 'discord.js';
-import config from './config';
+import { Message, TextChannel, MessageEmbed } from 'discord.js';
 import nodeFetch, { RequestInfo, RequestInit } from 'node-fetch';
 import ordinal from 'ordinal';
 import { logError } from './winston';
 import { inspect } from 'util';
 import { milliseconds } from '../constants/milliseconds';
+import { VenusClient } from '../interfaces/Client';
 
 export const replace = (str: string, obj: { [prop: string]: string }) => {
     for (const prop in obj) {
@@ -42,11 +42,11 @@ export const runSerial = (tasks: CallableFunction[]) => {
     return result;
 };
 
-export const handleError = async (client: Client, err: Error) => {
+export const handleError = async (client: VenusClient, err: Error) => {
     logError(err);
-    const errorChannel = client.channels.cache.get(config.errorChannel) || (await client.channels.fetch(config.errorChannel));
+    const errorChannel = client.channels.cache.get(client.config.errorChannel) || (await client.channels.fetch(client.config.errorChannel));
     (errorChannel as TextChannel).send(
-        (await Promise.all(config.developers.map(dev => client.users.cache.get(dev) || client.users.fetch(dev)))).join(' ') +
+        (await Promise.all(client.config.developers.map(dev => client.users.cache.get(dev) || client.users.fetch(dev)))).join(' ') +
             '\n```' +
             (err instanceof Error ? err.stack : inspect(err)) +
             '```'

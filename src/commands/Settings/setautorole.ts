@@ -1,12 +1,10 @@
 import { Message } from 'discord.js';
-import Command from '../../interfaces/Command';
-import CommandStrings from '../../interfaces/CommandStrings';
+import { VenusCommand, VenusCommandStrings, VenusClient } from '../../interfaces/Client';
 import { getRole } from '../../utils/getters';
-import { getGuild } from '../../database/mongo';
+import { getGuild } from '../../database';
 import { replace } from '../../utils/Util';
-import VenusClient from '../../interfaces/Client';
 
-const callback = async (message: Message, args: string[], strings: CommandStrings) => {
+const callback = async (message: Message, args: string[], strings: VenusCommandStrings) => {
     const client = message.client as VenusClient;
 
     const guildSettings = await getGuild(message.guild!.id);
@@ -30,7 +28,7 @@ const callback = async (message: Message, args: string[], strings: CommandString
     );
 };
 
-export const command: Command = {
+export const command: VenusCommand = {
     name: 'setautorole',
     category: 'SETTINGS',
     aliases: ['autorole', 'joinrole'],

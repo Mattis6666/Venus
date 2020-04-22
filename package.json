@@ -1,18 +1,18 @@
 {
     "name": "venus-ts",
     "version": "1.0.0",
-    "main": "out/src/index.js",
+    "main": "dist/src/index.js",
     "scripts": {
         "dev": "npm run build && export NODE_ENV=development && npm run start",
-        "pm2": "pm2 start --name Neptune npm -- run dev --watch --ignore-watch out/*",
+        "pm2": "pm2 start --name Neptune npm -- run dev --watch --ignore-watch dist/*",
         "production": "npm run build && export NODE_ENV=production && npm run start",
         "test": "tsc -p tsconfig.test.json && npm run lint",
         "lint": "eslint ./src/**/*.ts",
         "push": "npm run gitAdd && npm run gitCommit && git push",
-        "clean": "rm -rf out/*",
+        "clean": "rm -rf dist/*",
         "reinstall": "npm run cleanCache && npm run deleteModules && npm run deleteLock && npm run installModules",
         "build": "tsc",
-        "start": "node out/src/index",
+        "start": "node dist/src/index",
         "cleanCache": "npm cache clean --force",
         "deleteModules": "rm -rf node_modules/*",
         "deleteLock": "rm yarn.lock",
@@ -28,7 +28,7 @@
         }
     },
     "eslintIgnore": [
-        "out",
+        "dist",
         ".vscode"
     ],
     "dependencies": {

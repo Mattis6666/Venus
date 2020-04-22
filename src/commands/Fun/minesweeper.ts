@@ -1,10 +1,9 @@
 import { Message } from 'discord.js';
-import Command from '../../interfaces/Command';
-import CommandStrings from '../../interfaces/CommandStrings';
+import { VenusCommand, VenusCommandStrings } from '../../interfaces/Client';
 import Minesweeper from 'discord.js-minesweeper';
 import { wrongSyntax } from '../../utils/Util';
 
-const callback = (message: Message, args: string[], strings: CommandStrings) => {
+const callback = (message: Message, args: string[], strings: VenusCommandStrings) => {
     const [cols, rows, mines] = args.map(x => parseInt(x));
 
     let game = new Minesweeper({ columns: cols || 10, rows: rows || 10, mines: mines || 10, revealFirstCell: true }).start();
@@ -15,7 +14,7 @@ const callback = (message: Message, args: string[], strings: CommandStrings) => 
     return message.channel.send(game);
 };
 
-export const command: Command = {
+export const command: VenusCommand = {
     name: 'minesweeper',
     category: 'FUN',
     aliases: ['mines'],

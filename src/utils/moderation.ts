@@ -1,11 +1,11 @@
 import { GuildMember, Message, TextChannel } from 'discord.js';
 import { Infraction } from '../database/schemas/InfractionSchema';
 import { newEmbed, replace } from './Util';
-import CommandStrings from '../interfaces/CommandStrings';
-import { getGuild } from '../database/mongo';
+import { VenusCommandStrings } from '../interfaces/Client';
+import { getGuild } from '../database';
 import { getStrings } from './getters';
 
-export const logInfraction = async (message: Message, member: GuildMember, infraction: Infraction, strings: CommandStrings) => {
+export const logInfraction = async (message: Message, member: GuildMember, infraction: Infraction, strings: VenusCommandStrings) => {
     const miscStrings = (await getStrings(message))?.find(strings => strings.command === 'misc')?.strings;
     if (!miscStrings) throw new Error('NO MISC STRINGS');
 

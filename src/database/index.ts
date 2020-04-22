@@ -1,5 +1,5 @@
 import mongoose from 'mongoose';
-import config from '../utils/config';
+import { config } from '../../config';
 import { logError, logInfo } from '../utils/winston';
 import Guilds from './schemas/GuildSchema';
 import Infractions from './schemas/InfractionSchema';
@@ -18,11 +18,11 @@ db.on('error', err => logError(err));
 
 db.once('open', () => logInfo(`Connected to MongoDB Atlas at ${db.name}!`));
 
-export default {
-    Guilds,
-    Infractions,
-    Tags,
-    Intros
+export const database = {
+    guildSettings: Guilds,
+    infractions: Infractions,
+    tags: Tags,
+    intros: Intros
 };
 
 export const getGuild = async (guildId: string) => {
