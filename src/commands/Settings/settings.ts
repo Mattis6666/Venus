@@ -1,13 +1,11 @@
 import { Message } from 'discord.js';
-import Command from '../../interfaces/Command';
-import CommandStrings from '../../interfaces/CommandStrings';
-import { getGuild } from '../../database/mongo';
+import { VenusCommand, VenusCommandStrings, VenusClient } from '../../interfaces/Client';
+import { getGuild } from '../../database';
 import { newEmbed } from '../../utils/Util';
-import VenusClient from '../../interfaces/Client';
 import { emojis } from '../../constants/emojis';
 import { GuildChannelSettings } from '../../database/schemas/GuildSchema';
 
-const callback = async (message: Message, _args: string[], strings: CommandStrings) => {
+const callback = async (message: Message, _args: string[], strings: VenusCommandStrings) => {
     if (!message.guild) return;
     const client = message.client as VenusClient;
     const guildSettings = await getGuild(message.guild.id);
@@ -46,7 +44,7 @@ const callback = async (message: Message, _args: string[], strings: CommandStrin
     return message.channel.send(settingsEmbed);
 };
 
-export const command: Command = {
+export const command: VenusCommand = {
     name: 'settings',
     category: 'SETTINGS',
     aliases: ['viewsettings', 'showsettings', 's'],

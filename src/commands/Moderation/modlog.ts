@@ -1,11 +1,10 @@
 import { Message } from 'discord.js';
-import Command from '../../interfaces/Command';
-import { getInfractions } from '../../database/mongo';
+import { VenusCommand, VenusCommandStrings } from '../../interfaces/Client';
+import { getInfractions } from '../../database';
 import { getUser } from '../../utils/getters';
 import { newEmbed, nicerDates, trimString, wrongSyntax, replace } from '../../utils/Util';
-import CommandStrings from '../../interfaces/CommandStrings';
 
-const callback = async (message: Message, args: string[], strings: CommandStrings) => {
+const callback = async (message: Message, args: string[], strings: VenusCommandStrings) => {
     if (!message.guild) return;
     if (args.length && !message.member!.permissions.has('MANAGE_MESSAGES')) return wrongSyntax(message, strings.NO_PERMS);
 
@@ -48,7 +47,7 @@ const callback = async (message: Message, args: string[], strings: CommandString
     return message.channel.send(output);
 };
 
-export const command: Command = {
+export const command: VenusCommand = {
     name: 'modlog',
     category: 'MODERATION',
     aliases: ['ml', 'warns', 'infractions'],

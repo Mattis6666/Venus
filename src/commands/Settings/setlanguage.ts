@@ -1,12 +1,9 @@
 import { Message } from 'discord.js';
-import Command from '../../interfaces/Command';
-import VenusClient from '../../interfaces/Client';
-import { getGuild } from '../../database/mongo';
+import { VenusCommand, VenusCommandStrings, VenusClient, VenusLanguages } from '../../interfaces/Client';
+import { getGuild } from '../../database';
 import { replace, wrongSyntax } from '../../utils/Util';
-import CommandStrings from '../../interfaces/CommandStrings';
-import { Languages } from '../../interfaces/Languages';
 
-const callback = async (message: Message, args: string[], strings: CommandStrings) => {
+const callback = async (message: Message, args: string[], strings: VenusCommandStrings) => {
     const client = message.client as VenusClient;
     if (!message.guild) return;
 
@@ -42,7 +39,7 @@ const callback = async (message: Message, args: string[], strings: CommandString
     const guildSettings = await getGuild(message.guild.id);
     if (!guildSettings) return;
 
-    guildSettings.settings.language = language.code as Languages;
+    guildSettings.settings.language = language.code as VenusLanguages;
     await guildSettings.save();
 
     client.guildSettings.set(message.guild.id, guildSettings);
@@ -54,7 +51,7 @@ const callback = async (message: Message, args: string[], strings: CommandString
     );
 };
 
-export const command: Command = {
+export const command: VenusCommand = {
     name: 'setlanguage',
     category: 'SETTINGS',
     aliases: ['language', 'setlang', 'lang'],

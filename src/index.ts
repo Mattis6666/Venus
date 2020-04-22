@@ -1,11 +1,8 @@
 import fs from 'fs';
 import path from 'path';
-import config from './utils/config';
-import Client from './interfaces/Client';
-import Command from './interfaces/Command';
+import { config } from '../config';
+import { VenusClient as Client, ClientEventTypes, VenusCommand, VenusCommandStrings } from './interfaces/Client';
 import { logError, logWarn } from './utils/winston';
-import CommandStrings from './interfaces/CommandStrings';
-import { ClientEvents } from './interfaces/ClientEvents';
 
 export const VenusClient = new Client({
     disableMentions: 'everyone',
@@ -18,7 +15,6 @@ export const VenusClient = new Client({
     },
     partials: ['MESSAGE', 'REACTION']
 });
-VenusClient.config = config;
 
 const languagePath = path.join(__dirname, '../../i18n'),
     listenerPath = path.join(__dirname, './events'),
@@ -26,32 +22,32 @@ const languagePath = path.join(__dirname, '../../i18n'),
 
 fs.readdirSync(listenerPath).forEach(file => {
     const event = require(`${listenerPath}/${file}`).default;
-    const eventName = file.replace('.js', '') as ClientEvents;
+    const eventName = file.replace('.js', '') as ClientEventTypes;
     VenusClient.on(eventName, event.bind(null, VenusClient));
 });
 
 fs.readdirSync(commandPath).forEach(async folder => {
     const commandFiles = fs.readdirSync(`${commandPath}/${folder}`).filter(file => file.endsWith('.js'));
     for (const file of commandFiles) {
-        const command: Command = require(`${commandPath}/${folder}/${file}`).command;
+        const command: VenusCommand = require(`${commandPath}/${folder}/${file}`).command;
         VenusClient.commands.set(command.name, command);
     }
 });
 
 fs.readdirSync(languagePath).forEach(folder => {
-    const languageFiles: { command: string; strings: CommandStrings }[] = [];
+    const languageFiles: { command: string; strings: VenusCommandStrings }[] = [];
     fs.readdirSync(`${languagePath}/${folder}`).forEach(subfolder => {
         fs.readdirSync(`${languagePath}/${folder}/${subfolder}`)
             .filter(file => file.endsWith('.json'))
             .forEach(file => {
-                const str: CommandStrings = require(`${languagePath}/${folder}/${subfolder}/${file}`);
+                const str: VenusCommandStrings = require(`${languagePath}/${folder}/${subfolder}/${file}`);
                 languageFiles.push({ command: file.replace('.json', ''), strings: str });
             });
     });
     VenusClient.languages.set(folder, languageFiles);
 });
 
-VenusClient.login(config.token);
+VenusClient.login(VenusClient.config.token);
 
 process.on('uncaughtException', error => logError(error));
 process.on('warning', warn => logWarn(warn));

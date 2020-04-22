@@ -1,11 +1,10 @@
 import { Message } from 'discord.js';
-import Command from '../../interfaces/Command';
+import { VenusCommand, VenusCommandStrings } from '../../interfaces/Client';
 import { newEmbed } from '../../utils/Util';
 import { botInfo } from '../../constants/botInfo';
 import { emojis } from '../../constants/emojis';
-import CommandStrings from '../../interfaces/CommandStrings';
 
-const callback = async (message: Message, _args: string[], strings: CommandStrings) => {
+const callback = async (message: Message, _args: string[], strings: VenusCommandStrings) => {
     const output = newEmbed(true)
         .setAuthor(`About ${botInfo.name}`, message.client.user?.displayAvatarURL({ size: 256, dynamic: true }))
         .setDescription(`${emojis.crown} ${botInfo.developers.find(dev => dev.role.includes('Creator'))?.name}\n${emojis.date} ${botInfo.creationDate}`)
@@ -25,7 +24,7 @@ const callback = async (message: Message, _args: string[], strings: CommandStrin
     return message.channel.send(output);
 };
 
-export const command: Command = {
+export const command: VenusCommand = {
     name: 'botinfo',
     category: 'UTILITY',
     aliases: ['about', 'info'],

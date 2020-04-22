@@ -1,9 +1,8 @@
 import { Message } from 'discord.js';
-import Command from '../../interfaces/Command';
+import { VenusCommand, VenusClient } from '../../interfaces/Client';
 import * as Util from '../../utils/Util';
 import * as Getters from '../../utils/getters';
-import { getGuild, getInfractions, getTags } from '../../database/mongo';
-import VenusClient from '../../interfaces/Client';
+import { getGuild, getInfractions, getTags } from '../../database';
 import { uploadHaste } from '../../utils/hastebin';
 
 const callback = async (message: Message, args: string[]) => {
@@ -45,7 +44,7 @@ const callback = async (message: Message, args: string[]) => {
     return;
 };
 
-export const command: Command = {
+export const command: VenusCommand = {
     name: 'eval',
     category: 'DEVELOPMENT',
     aliases: [],

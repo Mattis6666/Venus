@@ -1,10 +1,9 @@
 import { Message } from 'discord.js';
-import Command from '../../interfaces/Command';
+import { VenusCommand, VenusCommandStrings } from '../../interfaces/Client';
 import { getMember } from '../../utils/getters';
 import { replace } from '../../utils/Util';
-import CommandStrings from '../../interfaces/CommandStrings';
 
-const callback = async (message: Message, args: string[], strings: CommandStrings) => {
+const callback = async (message: Message, args: string[], strings: VenusCommandStrings) => {
     const member = args.length ? await getMember(message, args) : message.member;
     if (!member) return;
 
@@ -17,7 +16,7 @@ const callback = async (message: Message, args: string[], strings: CommandString
     );
 };
 
-export const command: Command = {
+export const command: VenusCommand = {
     name: 'fakejoin',
     category: 'SETTINGS',
     aliases: [],

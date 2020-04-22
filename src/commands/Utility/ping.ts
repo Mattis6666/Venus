@@ -1,12 +1,12 @@
 import { Message } from 'discord.js';
-import Command from '../../interfaces/Command';
+import { VenusCommand } from '../../interfaces/Client';
 
 const callback = async (message: Message, _args: string[]) => {
     const msg = await message.channel.send('Pinging...');
     return msg.edit(`🏓 Pong! \`${msg.createdTimestamp - message.createdTimestamp}ms\``);
 };
 
-export const command: Command = {
+export const command: VenusCommand = {
     name: 'ping',
     category: 'UTILITY',
     aliases: [],

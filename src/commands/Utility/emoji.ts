@@ -1,9 +1,8 @@
 import { Message } from 'discord.js';
-import Command from '../../interfaces/Command';
+import { VenusCommand, VenusCommandStrings } from '../../interfaces/Client';
 import { wrongSyntax } from '../../utils/Util';
-import CommandStrings from '../../interfaces/CommandStrings';
 
-const callback = (message: Message, args: string[], strings: CommandStrings) => {
+const callback = (message: Message, args: string[], strings: VenusCommandStrings) => {
     const regex = /<?(a)?:?(\w{2,32}):(\d{17,19})>?/g;
     const emotes = args.join(' ').match(regex);
     if (!emotes) return wrongSyntax(message, strings.NO_EMOJIS);
@@ -14,7 +13,7 @@ const callback = (message: Message, args: string[], strings: CommandStrings) => 
     return message.channel.send(emoteLinks.join('\n'));
 };
 
-export const command: Command = {
+export const command: VenusCommand = {
     name: 'emoji',
     category: 'UTILITY',
     aliases: ['emote', 'e'],

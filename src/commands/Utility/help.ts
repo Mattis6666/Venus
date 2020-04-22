@@ -1,18 +1,14 @@
 import { Message, TextChannel } from 'discord.js';
-import Command from '../../interfaces/Command';
-import VenusClient from '../../interfaces/Client';
-import config from '../../utils/config';
+import { VenusClient, VenusCommand, VenusCommandStrings, VenusCommandCategories } from '../../interfaces/Client';
 import { wrongSyntax, newEmbed, replace, nicerPermissions } from '../../utils/Util';
 import { getPrefix } from '../../utils/getters';
 import { HelpCategories, HelpCommands } from '../../interfaces/HelpCategories';
-import CommandStrings from '../../interfaces/CommandStrings';
-import { getGuild } from '../../database/mongo';
-import { CommandCategories } from '../../interfaces/CommandTypes';
+import { getGuild } from '../../database';
 import { emojis } from '../../constants/emojis';
 
-const callback = async (message: Message, args: string[], strings: CommandStrings) => {
+const callback = async (message: Message, args: string[], strings: VenusCommandStrings) => {
     const client = message.client as VenusClient;
-    const prefix = message.guild ? await getPrefix(client, message.guild.id) : config.defaultPrefix;
+    const prefix = message.guild ? await getPrefix(client, message.guild.id) : client.config.defaultPrefix;
     const output = newEmbed(true);
     const guildSettings = message.guild ? await getGuild(message.guild.id) : null;
     const helpStrings = client.languages.get(guildSettings?.settings.language || 'en_GB');
@@ -45,7 +41,7 @@ const callback = async (message: Message, args: string[], strings: CommandString
         if (!command) return;
         const info = helpStrings.find(cmd => cmd.command === command.name)?.strings;
         if (!info) return;
-        categories[key as CommandCategories] = info.category;
+        categories[key as VenusCommandCategories] = info.category;
     });
 
     if (
@@ -56,7 +52,7 @@ const callback = async (message: Message, args: string[], strings: CommandString
     ) {
         let category =
             Object.keys(categories)
-                .find(c => categories[c as CommandCategories]?.toLowerCase() === input)
+                .find(c => categories[c as VenusCommandCategories]?.toLowerCase() === input)
                 ?.toUpperCase() || args[0].toUpperCase();
         if (category === 'NSFW' && (!message.guild || !guildSettings || !guildSettings.settings.nsfw || !(message.channel as TextChannel).nsfw))
             return wrongSyntax(message, strings.VIEW_NSFW_COMMAND);
@@ -120,7 +116,7 @@ const callback = async (message: Message, args: string[], strings: CommandString
     const info = helpStrings.find(cmd => cmd.command === command.name)?.strings;
     if (!info) return;
 
-    if (command.developerOnly && !config.developers.includes(message.author.id)) return;
+    if (command.developerOnly && !client.config.developers.includes(message.author.id)) return;
     if (command.nsfw && (!message.guild || !guildSettings || !guildSettings.settings.nsfw || !(message.channel as TextChannel).nsfw))
         return wrongSyntax(message, strings.VIEW_NSFW_COMMAND);
 
@@ -139,7 +135,7 @@ const callback = async (message: Message, args: string[], strings: CommandString
     return message.channel.send(output);
 };
 
-export const command: Command = {
+export const command: VenusCommand = {
     name: 'help',
     category: 'UTILITY',
     aliases: ['h', 'commands', 'getstarted'],

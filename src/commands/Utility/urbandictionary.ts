@@ -1,9 +1,8 @@
 import { Message } from 'discord.js';
-import Command from '../../interfaces/Command';
+import { VenusCommand, VenusCommandStrings } from '../../interfaces/Client';
 import { newEmbed, fetch, trimString, nicerDates, wrongSyntax } from '../../utils/Util';
-import CommandStrings from '../../interfaces/CommandStrings';
 
-const callback = (message: Message, args: string[], strings: CommandStrings) => {
+const callback = (message: Message, args: string[], strings: VenusCommandStrings) => {
     if (message.channel.type === 'text' && !message.channel.nsfw) return wrongSyntax(message, strings.NSFW);
 
     return fetch('http://api.urbandictionary.com/v0/define?term=' + args.join('%20'))
@@ -23,7 +22,7 @@ const callback = (message: Message, args: string[], strings: CommandStrings) => 
         .catch(() => wrongSyntax(message, strings.NO_MATCH));
 };
 
-export const command: Command = {
+export const command: VenusCommand = {
     name: 'urbandictionary',
     category: 'UTILITY',
     aliases: ['urban', 'ud'],

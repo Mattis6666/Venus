@@ -1,10 +1,9 @@
 import { Message } from 'discord.js';
-import Command from '../../interfaces/Command';
+import { VenusCommand, VenusCommandStrings } from '../../interfaces/Client';
 import { wrongSyntax, replace } from '../../utils/Util';
 import { emojis } from '../../constants/emojis';
-import CommandStrings from '../../interfaces/CommandStrings';
 
-const callback = async (message: Message, args: string[], strings: CommandStrings) => {
+const callback = async (message: Message, args: string[], strings: VenusCommandStrings) => {
     if (!message.guild) return;
     const regex = /<?(a)?:?(\w{2,32}):(\d{17,19})>?/g;
     const emotes = args.join(' ').match(regex);
@@ -58,7 +57,7 @@ const callback = async (message: Message, args: string[], strings: CommandString
     );
 };
 
-export const command: Command = {
+export const command: VenusCommand = {
     name: 'deleteemoji',
     category: 'MODERATION',
     aliases: ['deleteemote', 'de'],

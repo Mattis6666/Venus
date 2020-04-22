@@ -1,10 +1,8 @@
 import { Message } from 'discord.js';
-import Command from '../../interfaces/Command';
-import VenusClient from '../../interfaces/Client';
-import { getGuild } from '../../database/mongo';
-import CommandStrings from '../../interfaces/CommandStrings';
+import { VenusCommand, VenusCommandStrings, VenusClient } from '../../interfaces/Client';
+import { getGuild } from '../../database';
 
-const callback = async (message: Message, _args: string[], strings: CommandStrings) => {
+const callback = async (message: Message, _args: string[], strings: VenusCommandStrings) => {
     const client = message.client as VenusClient;
     if (!message.guild) return;
 
@@ -20,7 +18,7 @@ const callback = async (message: Message, _args: string[], strings: CommandStrin
     return message.channel.send(action ? strings.ENABLE : strings.DISABLE);
 };
 
-export const command: Command = {
+export const command: VenusCommand = {
     name: 'setnsfw',
     category: 'SETTINGS',
     aliases: ['nsfw', 'togglensfw'],

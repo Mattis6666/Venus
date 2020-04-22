@@ -1,10 +1,9 @@
 import { Message } from 'discord.js';
-import Command from '../../interfaces/Command';
+import { VenusCommand, VenusCommandStrings } from '../../interfaces/Client';
 import query from '../../constants/animeQuery';
 import { fetch, wrongSyntax, newEmbed, numToMonth, trimString, numToOrdinal } from '../../utils/Util';
-import CommandStrings from '../../interfaces/CommandStrings';
 
-const callback = async (message: Message, args: string[], strings: CommandStrings) => {
+const callback = async (message: Message, args: string[], strings: VenusCommandStrings) => {
     const data = await fetch('https://graphql.anilist.co', {
         method: 'POST',
         headers: {
@@ -56,7 +55,7 @@ const callback = async (message: Message, args: string[], strings: CommandString
     return message.channel.send(output);
 };
 
-export const command: Command = {
+export const command: VenusCommand = {
     name: 'anime',
     category: 'ANIME',
     aliases: ['manga', 'ani'],

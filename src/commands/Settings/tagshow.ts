@@ -1,12 +1,10 @@
 import { Message } from 'discord.js';
-import Command from '../../interfaces/Command';
-import CommandStrings from '../../interfaces/CommandStrings';
-import { getTags } from '../../database/mongo';
-import VenusClient from '../../interfaces/Client';
+import { VenusCommand, VenusCommandStrings, VenusClient } from '../../interfaces/Client';
+import { getTags } from '../../database';
 import { wrongSyntax, newEmbed, replace } from '../../utils/Util';
 import util from 'util';
 
-const callback = async (message: Message, args: string[], strings: CommandStrings) => {
+const callback = async (message: Message, args: string[], strings: VenusCommandStrings) => {
     if (!message.guild) return;
     const client = message.client as VenusClient;
     const tagEntry = client.tags.get(message.guild.id) || (await getTags(message.guild.id));
@@ -33,7 +31,7 @@ const callback = async (message: Message, args: string[], strings: CommandString
     return message.channel.send(embed);
 };
 
-export const command: Command = {
+export const command: VenusCommand = {
     name: 'tagshow',
     category: 'SETTINGS',
     aliases: ['showtag', 'tagview', 'viewtag', 'tags'],

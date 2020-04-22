@@ -1,5 +1,5 @@
 import { Message } from 'discord.js';
-import Command from '../../interfaces/Command';
+import { VenusCommand } from '../../interfaces/Client';
 import { fact } from '../../utils/nekos';
 
 const callback = async (message: Message, _args: string[]) => {
@@ -7,7 +7,7 @@ const callback = async (message: Message, _args: string[]) => {
     return message.channel.send(`${result}, ${message.author.username}`);
 };
 
-export const command: Command = {
+export const command: VenusCommand = {
     name: 'fact',
     category: 'FUN',
     aliases: ['randomfact', 'trivia', 'randomtrivia'],

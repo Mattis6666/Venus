@@ -1,14 +1,13 @@
 import { Message } from 'discord.js';
-import Command from '../../interfaces/Command';
-import CommandStrings from '../../interfaces/CommandStrings';
-import { getGuild } from '../../database/mongo';
+import { VenusCommand, VenusCommandStrings } from '../../interfaces/Client';
+import { getGuild } from '../../database';
 import { emojis } from '../../constants/emojis';
 import { getMember } from '../../utils/getters';
 import { wrongSyntax } from '../../utils/Util';
 import { createInfraction } from '../../database/schemas/InfractionSchema';
 import { logInfraction } from '../../utils/moderation';
 
-const callback = async (message: Message, args: string[], strings: CommandStrings) => {
+const callback = async (message: Message, args: string[], strings: VenusCommandStrings) => {
     if (!message.guild) return;
 
     const member = await getMember(message, args, 0);
@@ -49,7 +48,7 @@ const callback = async (message: Message, args: string[], strings: CommandString
     return logInfraction(message, member, infraction, strings);
 };
 
-export const command: Command = {
+export const command: VenusCommand = {
     name: 'mute',
     category: 'MODERATION',
     aliases: [''],

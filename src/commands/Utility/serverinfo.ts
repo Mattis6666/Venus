@@ -1,10 +1,9 @@
 import { Message } from 'discord.js';
-import Command from '../../interfaces/Command';
+import { VenusCommand, VenusCommandStrings } from '../../interfaces/Client';
 import { newEmbed, nicerDates, replace } from '../../utils/Util';
 import { emojis } from '../../constants/emojis';
-import CommandStrings from '../../interfaces/CommandStrings';
 
-const callback = async (message: Message, _args: string[], strings: CommandStrings) => {
+const callback = async (message: Message, _args: string[], strings: VenusCommandStrings) => {
     const guild = message.guild;
     if (!guild) return;
 
@@ -66,7 +65,7 @@ const callback = async (message: Message, _args: string[], strings: CommandStrin
     return message.channel.send(output);
 };
 
-export const command: Command = {
+export const command: VenusCommand = {
     name: 'serverinfo',
     category: 'UTILITY',
     aliases: ['si', 'server', 'guildinfo', 'gi'],

@@ -1,11 +1,9 @@
 import { Message } from 'discord.js';
-import Command from '../../interfaces/Command';
-import CommandStrings from '../../interfaces/CommandStrings';
-import { getGuild } from '../../database/mongo';
-import VenusClient from '../../interfaces/Client';
+import { VenusCommand, VenusCommandStrings, VenusClient } from '../../interfaces/Client';
+import { getGuild } from '../../database';
 import { replace, wrongSyntax } from '../../utils/Util';
 
-const callback = async (message: Message, args: string[], strings: CommandStrings) => {
+const callback = async (message: Message, args: string[], strings: VenusCommandStrings) => {
     const client = message.client as VenusClient;
 
     const guildSettings = await getGuild(message.guild!.id);
@@ -30,7 +28,7 @@ const callback = async (message: Message, args: string[], strings: CommandString
     );
 };
 
-export const command: Command = {
+export const command: VenusCommand = {
     name: 'setintrochannel',
     category: 'SETTINGS',
     aliases: ['introchannel', 'setintros', 'intros'],

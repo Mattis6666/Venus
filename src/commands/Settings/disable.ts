@@ -1,11 +1,9 @@
 import { Message } from 'discord.js';
-import Command from '../../interfaces/Command';
-import VenusClient from '../../interfaces/Client';
-import { getGuild } from '../../database/mongo';
+import { VenusCommand, VenusCommandStrings, VenusClient } from '../../interfaces/Client';
+import { getGuild } from '../../database';
 import { wrongSyntax, replace } from '../../utils/Util';
-import CommandStrings from '../../interfaces/CommandStrings';
 
-const callback = async (message: Message, args: string[], strings: CommandStrings) => {
+const callback = async (message: Message, args: string[], strings: VenusCommandStrings) => {
     const client = message.client as VenusClient;
     if (!message.guild) return;
 
@@ -30,7 +28,7 @@ const callback = async (message: Message, args: string[], strings: CommandString
     );
 };
 
-export const command: Command = {
+export const command: VenusCommand = {
     name: 'disable',
     category: 'SETTINGS',
     aliases: ['disablecommand', 'deactivate'],

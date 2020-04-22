@@ -1,5 +1,5 @@
 import mongoose from 'mongoose';
-import { Languages } from '../../interfaces/Languages';
+import { VenusLanguages } from '../../interfaces/Client';
 
 export type GuildChannelSettings =
     | 'welcomeChannel'
@@ -12,7 +12,7 @@ export type GuildChannelSettings =
 
 export interface GuildSettings {
     prefix: string;
-    language: Languages;
+    language: VenusLanguages;
     nsfw: boolean; // Whether NSFW commands are enabled or not
     blockedChannels: string[]; // An array of IDs of blocked channels (No commands here)
     blockedUsers: string[]; // An array of IDs of blocked users (Unable to use commands)
