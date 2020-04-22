@@ -2,7 +2,7 @@ import { Collection, Client, PermissionString, Message } from 'discord.js';
 import { Guild } from '../database/schemas/GuildSchema';
 import { database } from '../database';
 import { Tags } from '../database/schemas/TagSchema';
-import { config } from '../../config';
+import { config } from '../config';
 
 export class VenusClient extends Client {
     commands: Collection<string, VenusCommand> = new Collection();

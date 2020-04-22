@@ -1,6 +1,6 @@
 import fs from 'fs';
 import path from 'path';
-import { config } from '../config';
+import { config } from './config';
 import { VenusClient as Client, ClientEventTypes, VenusCommand, VenusCommandStrings } from './interfaces/Client';
 import { logError, logWarn } from './utils/winston';
 
@@ -16,7 +16,7 @@ export const VenusClient = new Client({
     partials: ['MESSAGE', 'REACTION']
 });
 
-const languagePath = path.join(__dirname, '../../i18n'),
+const languagePath = path.join(__dirname, '../i18n'),
     listenerPath = path.join(__dirname, './events'),
     commandPath = path.join(__dirname, './commands');
 

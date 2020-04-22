@@ -1,5 +1,5 @@
 import mongoose from 'mongoose';
-import { config } from '../../config';
+import { config } from '../config';
 import { logError, logInfo } from '../utils/winston';
 import Guilds from './schemas/GuildSchema';
 import Infractions from './schemas/InfractionSchema';

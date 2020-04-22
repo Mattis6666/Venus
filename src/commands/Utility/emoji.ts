@@ -1,10 +1,10 @@
 import { Message } from 'discord.js';
 import { VenusCommand, VenusCommandStrings } from '../../interfaces/Client';
 import { wrongSyntax } from '../../utils/Util';
+import { emoteRegex } from '../../constants/regex';
 
 const callback = (message: Message, args: string[], strings: VenusCommandStrings) => {
-    const regex = /<?(a)?:?(\w{2,32}):(\d{17,19})>?/g;
-    const emotes = args.join(' ').match(regex);
+    const emotes = args.join(' ').match(emoteRegex);
     if (!emotes) return wrongSyntax(message, strings.NO_EMOJIS);
 
     const emoteLinks = emotes.map(

@@ -19,5 +19,5 @@
         "esModuleInterop": true
     },
     "compileOnSave": true,
-    "include": ["src/**/*.ts", "config/*.ts"]
+    "include": ["src/**/*.ts"]
 }

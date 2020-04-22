@@ -12,7 +12,7 @@
         "clean": "rm -rf dist/*",
         "reinstall": "npm run cleanCache && npm run deleteModules && npm run deleteLock && npm run installModules",
         "build": "tsc",
-        "start": "node dist/src/index",
+        "start": "node dist/index",
         "cleanCache": "npm cache clean --force",
         "deleteModules": "rm -rf node_modules/*",
         "deleteLock": "rm yarn.lock",
