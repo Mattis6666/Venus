@@ -20,4 +20,4 @@ const IntroSchema = new mongoose.Schema({
     ]
 });
 
-export const intros = mongoose.model<Intro>('Intros', IntroSchema);
+export const intros = mongoose.model<Intro>('intros', IntroSchema);

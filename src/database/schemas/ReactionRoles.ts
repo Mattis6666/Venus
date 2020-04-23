@@ -19,4 +19,4 @@ const ReactionRoleSchema = new Schema({
     ]
 });
 
-export const reactionRoles = model<ReactionRole>('ReactionRoles', ReactionRoleSchema);
+export const reactionRoles = model<ReactionRole>('reactionRoles', ReactionRoleSchema);

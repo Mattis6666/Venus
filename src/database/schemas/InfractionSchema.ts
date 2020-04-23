@@ -55,4 +55,4 @@ export const createInfraction = async (message: Message, userId: string, infract
     return infraction;
 };
 
-export const infractions = mongoose.model<Infraction>('Infractions', InfractionSchema);
+export const infractions = mongoose.model<Infraction>('infractions', InfractionSchema);
