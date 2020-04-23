@@ -39,3 +39,32 @@
 [05.03.2020 00:31] Connected to Discord as NeptuneTs#6220 - 695795584442957857
 [05.03.2020 00:31] Serving 1 guilds and 34 channels.
 [05.03.2020 00:31] Default prefix: n!
+[05.03.2020 00:43] Connected to MongoDB Atlas at neptune!
+[05.03.2020 00:43] Connected to Discord as NeptuneTs#6220 - 695795584442957857
+[05.03.2020 00:43] Serving 1 guilds and 34 channels.
+[05.03.2020 00:43] Default prefix: n!
+[05.03.2020 00:43] UnhandledPromiseRejectionWarning: DiscordAPIError: Cannot send an empty message
+    at RequestHandler.execute (/run/media/mahruan/Storage/Projects/VenusTs/Bot/node_modules/discord.js/src/rest/RequestHandler.js:170:25)
+    at processTicksAndRejections (internal/process/task_queues.js:97:5)
+[05.03.2020 00:43] UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). To terminate the node process on unhandled promise rejection, use the CLI flag `--unhandled-rejections=strict` (see https://nodejs.org/api/cli.html#cli_unhandled_rejections_mode). (rejection id: 1)
+[05.03.2020 00:43] DeprecationWarning: Unhandled promise rejections are deprecated. In the future, promise rejections that are not handled will terminate the Node.js process with a non-zero exit code.
+[05.03.2020 00:45] Connected to MongoDB Atlas at neptune!
+[05.03.2020 00:45] Connected to Discord as NeptuneTs#6220 - 695795584442957857
+[05.03.2020 00:45] Serving 1 guilds and 34 channels.
+[05.03.2020 00:45] Default prefix: n!
+[05.03.2020 00:47] Connected to MongoDB Atlas at neptune!
+[05.03.2020 00:47] Connected to Discord as NeptuneTs#6220 - 695795584442957857
+[05.03.2020 00:47] Serving 1 guilds and 34 channels.
+[05.03.2020 00:47] Default prefix: n!
+[05.03.2020 00:48] Connected to MongoDB Atlas at neptune!
+[05.03.2020 00:48] Connected to Discord as NeptuneTs#6220 - 695795584442957857
+[05.03.2020 00:48] Serving 1 guilds and 34 channels.
+[05.03.2020 00:48] Default prefix: n!
+[05.03.2020 00:50] Connected to MongoDB Atlas at neptune!
+[05.03.2020 00:50] Connected to Discord as NeptuneTs#6220 - 695795584442957857
+[05.03.2020 00:50] Serving 1 guilds and 34 channels.
+[05.03.2020 00:50] Default prefix: n!
+[05.03.2020 00:50] Connected to MongoDB Atlas at neptune!
+[05.03.2020 00:50] Connected to Discord as NeptuneTs#6220 - 695795584442957857
+[05.03.2020 00:50] Serving 1 guilds and 34 channels.
+[05.03.2020 00:50] Default prefix: n!
