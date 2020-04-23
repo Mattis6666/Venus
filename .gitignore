@@ -1,4 +1,4 @@
 node_modules
 dist
-*.log
 src/config/development.ts
+yarn-error.log
