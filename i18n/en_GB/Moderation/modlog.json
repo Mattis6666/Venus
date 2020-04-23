@@ -13,6 +13,7 @@
     "NO_PERMS": "You require the `Manage Messages` Permission to see another users' Infractions!",
     "warn": "Warn",
     "mute": "Mute",
+    "unmute": "Unmute",
     "kick": "Kick",
     "ban": "Ban"
 }

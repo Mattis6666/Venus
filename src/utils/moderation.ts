@@ -25,7 +25,7 @@ export const logInfraction = async (message: Message, member: GuildMember, infra
 
     await member.user.send(output).catch(() => null);
     output.setDescription(replace(strings.GUILD_MESSAGE, { MEMBER: member.displayName, ACTION: strings[infraction.infractionType] }));
-    if (channel) (channel as TextChannel).send(output).catch(() => null);
+    if (channel && channel instanceof TextChannel) channel.send(output).catch(() => null);
     message.channel.send(output);
     return;
 };
