@@ -1,0 +1,37 @@
+[04.03.2020 23:43] Connected to MongoDB Atlas at neptune!
+[04.03.2020 23:43] Connected to Discord as NeptuneTs#6220 - 695795584442957857
+[04.03.2020 23:43] Serving 1 guilds and 34 channels.
+[04.03.2020 23:43] Default prefix: n!
+[04.03.2020 23:46] Connected to MongoDB Atlas at neptune!
+[04.03.2020 23:46] Connected to Discord as NeptuneTs#6220 - 695795584442957857
+[04.03.2020 23:46] Serving 1 guilds and 34 channels.
+[04.03.2020 23:46] Default prefix: n!
+[04.03.2020 23:48] Connected to MongoDB Atlas at neptune!
+[04.03.2020 23:48] Connected to Discord as NeptuneTs#6220 - 695795584442957857
+[04.03.2020 23:48] Serving 1 guilds and 34 channels.
+[04.03.2020 23:48] Default prefix: n!
+[04.03.2020 23:50] Connected to MongoDB Atlas at neptune!
+[04.03.2020 23:50] Connected to Discord as NeptuneTs#6220 - 695795584442957857
+[04.03.2020 23:50] Serving 1 guilds and 34 channels.
+[04.03.2020 23:50] Default prefix: n!
+[04.03.2020 23:51] Connected to MongoDB Atlas at neptune!
+[04.03.2020 23:51] Connected to Discord as NeptuneTs#6220 - 695795584442957857
+[04.03.2020 23:51] Serving 1 guilds and 34 channels.
+[04.03.2020 23:51] Default prefix: n!
+[04.03.2020 23:54] Connected to MongoDB Atlas at neptune!
+[04.03.2020 23:54] Connected to Discord as NeptuneTs#6220 - 695795584442957857
+[04.03.2020 23:54] Serving 1 guilds and 34 channels.
+[04.03.2020 23:54] Default prefix: n!
+[04.03.2020 23:54] Connected to MongoDB Atlas at neptune!
+[04.03.2020 23:54] Connected to Discord as NeptuneTs#6220 - 695795584442957857
+[04.03.2020 23:54] Serving 1 guilds and 34 channels.
+[04.03.2020 23:54] Default prefix: n!
+[04.03.2020 23:55] UnhandledPromiseRejectionWarning: Error: NO COMMAND STRINGS - INDEX - en_GB
+    at exports.default (/run/media/mahruan/Storage/Projects/VenusTs/Bot/dist/events/message.js:62:15)
+    at processTicksAndRejections (internal/process/task_queues.js:97:5)
+[04.03.2020 23:55] UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). To terminate the node process on unhandled promise rejection, use the CLI flag `--unhandled-rejections=strict` (see https://nodejs.org/api/cli.html#cli_unhandled_rejections_mode). (rejection id: 1)
+[04.03.2020 23:55] DeprecationWarning: Unhandled promise rejections are deprecated. In the future, promise rejections that are not handled will terminate the Node.js process with a non-zero exit code.
+[04.03.2020 23:55] Connected to MongoDB Atlas at neptune!
+[04.03.2020 23:55] Connected to Discord as NeptuneTs#6220 - 695795584442957857
+[04.03.2020 23:55] Serving 1 guilds and 34 channels.
+[04.03.2020 23:55] Default prefix: n!
