@@ -1,9 +1,12 @@
 import { Message } from 'discord.js';
-import { VenusCommand, VenusCommandStrings } from '../../interfaces/Client';
+import { VenusCommand, VenusCommandStrings, VenusClient } from '../../interfaces/Client';
 import ttt from 'tictactoejs';
 import { wrongSyntax, replace } from '../../utils/Util';
 
 const callback = async (message: Message, _args: string[], strings: VenusCommandStrings) => {
+    const client = message.client as VenusClient;
+    if (client.inhibitors.get('prompt')!(message, command)) return;
+
     const game = new ttt.TicTacToe();
     const board = await message.channel.send(`\`\`\`${game.ascii()}\n\n${replace(strings.RULES, { CANCEL_WORD: strings.CANCEL_WORD })}\`\`\``);
     const collector = message.channel.createMessageCollector(msg => msg.author === message.author, { time: 1000 * 60 * 5 });
@@ -46,6 +49,9 @@ const callback = async (message: Message, _args: string[], strings: VenusCommand
                 })}\`\`\``
             );
         return collector.stop();
+    });
+    collector.on('end', () => {
+        client.prompts.delete(message.author.id);
     });
 };
 

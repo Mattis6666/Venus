@@ -33,6 +33,7 @@
     ],
     "dependencies": {
         "@types/bluebird": "^3.5.30",
+        "@types/common-tags": "^1.8.0",
         "@types/config": "^0.0.36",
         "@types/got": "^9.6.9",
         "@types/mongoose": "^5.7.7",
@@ -43,6 +44,7 @@
         "bluebird": "^3.7.2",
         "canvas": "^2.6.1",
         "chalk": "^3.0.0",
+        "common-tags": "^1.8.0",
         "config": "^3.3.0",
         "discord.js": "^12.1.1",
         "discord.js-minesweeper": "^1.0.5",

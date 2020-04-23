@@ -1,14 +1,32 @@
-import { Collection, Client, PermissionString, Message } from 'discord.js';
+import { Collection, Client, PermissionString, Message, ClientOptions, Snowflake } from 'discord.js';
 import { Guild } from '../database/schemas/GuildSchema';
 import { database } from '../database';
 import { Tags } from '../database/schemas/TagSchema';
 import { config } from '../config';
 
+const clientOptions: ClientOptions = {
+    disableMentions: 'everyone',
+    presence: {
+        activity: {
+            name: `${config.defaultPrefix}help`,
+            type: 'LISTENING',
+            url: 'https://www.twitch.tv/.'
+        }
+    },
+    partials: ['MESSAGE', 'REACTION']
+};
+
 export class VenusClient extends Client {
+    constructor() {
+        super(clientOptions);
+    }
     commands: Collection<string, VenusCommand> = new Collection();
-    guildSettings: Collection<string, Guild> = new Collection();
+    prompts: Collection<Snowflake, string> = new Collection();
+    inhibitors: Collection<string, (message: Message, command: VenusCommand) => boolean> = new Collection();
+    cooldowns: Collection<Snowflake, number> = new Collection();
+    guildSettings: Collection<Snowflake, Guild> = new Collection();
     languages: Collection<string, VenusStrings[]> = new Collection();
-    tags: Collection<string, Tags> = new Collection();
+    tags: Collection<Snowflake, Tags> = new Collection();
     config = config;
     database = database;
 }
