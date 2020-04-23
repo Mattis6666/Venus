@@ -1,10 +1,11 @@
 import mongoose from 'mongoose';
 import { config } from '../config';
 import { logError, logInfo } from '../utils/winston';
-import Guilds from './schemas/GuildSchema';
-import Infractions from './schemas/InfractionSchema';
-import Tags from './schemas/TagSchema';
-import Intros from './schemas/IntroSchema';
+import { guildSettings } from './schemas/GuildSchema';
+import { infractions } from './schemas/InfractionSchema';
+import { tags } from './schemas/TagSchema';
+import { intros } from './schemas/IntroSchema';
+import { reactionRoles } from './schemas/ReactionRoles';
 
 mongoose.connect(config.mongoString, {
     useCreateIndex: true,
@@ -19,28 +20,29 @@ db.on('error', err => logError(err));
 db.once('open', () => logInfo(`Connected to MongoDB Atlas at ${db.name}!`));
 
 export const database = {
-    guildSettings: Guilds,
-    infractions: Infractions,
-    tags: Tags,
-    intros: Intros
+    guildSettings: guildSettings,
+    reactionRoles: reactionRoles,
+    infractions: infractions,
+    tags: tags,
+    intros: intros
 };
 
 export const getGuild = async (guildId: string) => {
-    return (await Guilds.findOne({ guild: guildId })) || (await Guilds.create({ guild: guildId }));
+    return (await guildSettings.findOne({ guild: guildId })) || (await guildSettings.create({ guild: guildId }));
 };
 
 export const resetGuild = async (guildId: string) => {
-    return await Guilds.findOneAndDelete({ guild: guildId });
+    return await guildSettings.findOneAndDelete({ guild: guildId });
 };
 
 export const getInfractions = async (guildId: string, userId: string) => {
-    return await Infractions.find({ guild: guildId, user: userId });
+    return await infractions.find({ guild: guildId, user: userId });
 };
 
 export const getTags = async (guildId: string) => {
-    return (await Tags.findOne({ guild: guildId })) || (await Tags.create({ guild: guildId }));
+    return (await tags.findOne({ guild: guildId })) || (await tags.create({ guild: guildId }));
 };
 
 export const getIntros = async (userId: string) => {
-    return (await Intros.findOne({ user: userId })) || (await Intros.create({ user: userId }));
+    return (await intros.findOne({ user: userId })) || (await intros.create({ user: userId }));
 };

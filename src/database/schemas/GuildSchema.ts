@@ -88,5 +88,4 @@ const GuildSchema: mongoose.Schema = new mongoose.Schema({
     }
 });
 
-const guild = mongoose.model<Guild>('Guilds', GuildSchema);
-export default guild;
+export const guildSettings = mongoose.model<Guild>('GuildSettings', GuildSchema);

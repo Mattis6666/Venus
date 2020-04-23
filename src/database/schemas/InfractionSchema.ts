@@ -33,9 +33,6 @@ const InfractionSchema: mongoose.Schema = new mongoose.Schema({
     case: Number
 });
 
-const infractions = mongoose.model<Infraction>('Infractions', InfractionSchema);
-export default infractions;
-
 export const createInfraction = async (message: Message, userId: string, infractionType: InfractionTypes, reason: string, duration?: number) => {
     if (!message.guild) throw new Error('USED IN A DM YOU MORON');
     const cases = (await infractions.find({ guild: message.guild.id })).map(i => i.case);
@@ -57,3 +54,5 @@ export const createInfraction = async (message: Message, userId: string, infract
     infraction.save();
     return infraction;
 };
+
+export const infractions = mongoose.model<Infraction>('Infractions', InfractionSchema);

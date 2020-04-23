@@ -1,6 +1,6 @@
 import mongoose from 'mongoose';
 
-export interface Intros extends mongoose.Document {
+export interface Intro extends mongoose.Document {
     user: string;
     intros: {
         message: string;
@@ -20,5 +20,4 @@ const IntroSchema = new mongoose.Schema({
     ]
 });
 
-const Intros = mongoose.model<Intros>('Intros', IntroSchema);
-export default Intros;
+export const intros = mongoose.model<Intro>('Intros', IntroSchema);

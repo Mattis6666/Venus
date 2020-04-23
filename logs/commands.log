@@ -30,3 +30,15 @@ Message: n!mines
 User: ⭐Ven#6666 (265560538937819137)
 Guild: VenusTs (609096347181776909)
 Message: n!gnomesweeper
+[05.03.2020 00:31] tagshow
+User: ⭐Ven#6666 (265560538937819137)
+Guild: VenusTs (609096347181776909)
+Message: n!tags
+[05.03.2020 00:31] tagcreate
+User: ⭐Ven#6666 (265560538937819137)
+Guild: VenusTs (609096347181776909)
+Message: n!createtag test abc
+[05.03.2020 00:31] tagdelete
+User: ⭐Ven#6666 (265560538937819137)
+Guild: VenusTs (609096347181776909)
+Message: n!tagdelete test

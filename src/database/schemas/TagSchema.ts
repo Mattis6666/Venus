@@ -1,6 +1,6 @@
 import mongoose from 'mongoose';
 
-export interface Tags extends mongoose.Document {
+export interface Tag extends mongoose.Document {
     guild: string;
     tags: {
         trigger: string;
@@ -25,5 +25,4 @@ const TagSchema: mongoose.Schema = new mongoose.Schema({
     ]
 });
 
-const Tags = mongoose.model<Tags>('Tags', TagSchema);
-export default Tags;
+export const tags = mongoose.model<Tag>('Tags', TagSchema);

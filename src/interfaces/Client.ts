@@ -1,7 +1,7 @@
 import { Collection, Client, PermissionString, Message, ClientOptions, Snowflake } from 'discord.js';
 import { Guild } from '../database/schemas/GuildSchema';
 import { database } from '../database';
-import { Tags } from '../database/schemas/TagSchema';
+import { Tag } from '../database/schemas/TagSchema';
 import { config } from '../config';
 
 const clientOptions: ClientOptions = {
@@ -26,7 +26,7 @@ export class VenusClient extends Client {
     cooldowns: Collection<string, string> = new Collection();
     guildSettings: Collection<Snowflake, Guild> = new Collection();
     languages: Collection<string, VenusStrings[]> = new Collection();
-    tags: Collection<Snowflake, Tags> = new Collection();
+    tags: Collection<Snowflake, Tag> = new Collection();
     config = config;
     database = database;
 }
