@@ -13,5 +13,6 @@
     "MULTIPLE_MEMBERS_FOUND": "I found multiple members matching your input",
     "MULTIPLE_ROLES_FOUND": "I found multiple roles matching your input",
     "PROMPT": "I found multiple matches. Please select one from below by typing ONLY the number!",
-    "PROMPT_TIMEOUT": "I found multiple matches but the prompt to select one ran out. Please run the command again!"
+    "PROMPT_TIMEOUT": "I found multiple matches but the prompt to select one ran out. Please run the command again!",
+    "INVALID_CHOICE": "That was not a valid choice! Please run the command again."
 }

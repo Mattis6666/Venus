@@ -24,6 +24,13 @@ export const getUser = async (message: VenusMessage, args: string[], spot?: numb
             return userSearch.first();
         case 2:
         case 3:
+        case 4:
+        case 5:
+        case 6:
+        case 7:
+        case 8:
+        case 9:
+        case 10:
             return (await chooseOne(message, userSearch, errors)) as User;
         default:
             return wrongSyntax(message, `${errors.MULTIPLE_USERS_FOUND}: ${userSearch.size}`, false);
@@ -36,9 +43,9 @@ export const getMember = async (message: VenusMessage, args: string[], spot?: nu
     const errors = (await getStrings(message))?.find(str => str.command === 'errors')?.strings;
     if (!errors) throw new Error('NO ERROR STRINGS - GETROLE');
 
-    const input = spot ? args[spot].toLowerCase() : args.join(' ').toLowerCase();
+    const input = spot || spot === 0 ? args[spot].toLowerCase() : args.join(' ').toLowerCase();
 
-    const member = message.mentions.members?.first() || message.guild.members.cache.get(input) || message.guild.members.fetch(input).catch(() => null);
+    const member = message.mentions.members?.first() || message.guild.members.cache.get(input) || (await message.guild.members.fetch(input).catch(() => null));
     if (member) return member;
 
     const memberSearch = message.guild.members.cache.filter(
@@ -53,6 +60,13 @@ export const getMember = async (message: VenusMessage, args: string[], spot?: nu
             return memberSearch.first();
         case 2:
         case 3:
+        case 4:
+        case 5:
+        case 6:
+        case 7:
+        case 8:
+        case 9:
+        case 10:
             return (await chooseOne(message, memberSearch, errors)) as GuildMember;
         default:
             wrongSyntax(message, `${errors.MULTIPLE_MEMBERS_FOUND}: ${memberSearch.size}`, false);
@@ -80,6 +94,13 @@ export const getRole = async (message: VenusMessage, args: string[], spot?: numb
             return roleSearch.first();
         case 2:
         case 3:
+        case 4:
+        case 5:
+        case 6:
+        case 7:
+        case 8:
+        case 9:
+        case 10:
             return (await chooseOne(message, roleSearch, errors)) as Role;
         default:
             return wrongSyntax(message, `${errors.MULTIPLE_ROLES_FOUND}: ${roleSearch.size}`, false);
@@ -94,13 +115,21 @@ export const chooseOne = async (message: VenusMessage, choices: Collection<Snowf
         return { index: ++i, choice: choice };
     });
 
-    await message.reply(`${strings.PROMPT}\n>>> ${options.map(o => `${o.index} | ${getName(o.choice)}`)}`);
+    const msg = await message.reply(`${strings.PROMPT}\`\`\`${options.map(o => `${o.index} | ${getName(o.choice)}`).join('\n')}\`\`\``);
 
-    const choice = await message.channel.awaitMessages(m => m.author.id === message.author.id, { time: 1000 * 30, errors: ['time'] }).catch(() => null);
+    const choice = (
+        await message.channel.awaitMessages(m => m.author.id === message.author.id, { max: 1, time: 1000 * 30, errors: ['time'] }).catch(() => null)
+    )?.first();
 
-    if (!choice || !choice.first()) return wrongSyntax(message, strings.PROMPT_TIMEOUT, false);
+    if (!choice) return wrongSyntax(message, strings.PROMPT_TIMEOUT, false);
 
-    return options.find(o => o.index === parseInt(choice.first()!.content))?.choice;
+    const result = options.find(o => o.index === parseInt(choice.content));
+    if (!result) wrongSyntax(message, strings.INVALID_CHOICE, false);
+
+    msg.delete().catch(() => null);
+    choice.delete().catch(() => null);
+
+    return result?.choice;
 };
 
 export const getPrefix = async (client: VenusClient, guildId: string) => {
