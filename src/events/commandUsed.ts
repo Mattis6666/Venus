@@ -1,7 +1,6 @@
-import { VenusClient, VenusCommand } from '../interfaces/Client';
-import { Message } from 'discord.js';
+import { VenusClient, VenusCommand, VenusMessage } from '../interfaces/Client';
 import { logCommands } from '../utils/winston';
 
-export default (_client: VenusClient, message: Message, command: VenusCommand) => {
+export default (_client: VenusClient, message: VenusMessage, command: VenusCommand) => {
     logCommands(message, command);
 };

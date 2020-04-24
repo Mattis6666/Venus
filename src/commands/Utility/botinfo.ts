@@ -1,10 +1,9 @@
-import { Message } from 'discord.js';
-import { VenusCommand, VenusCommandStrings } from '../../interfaces/Client';
+import { VenusCommand, VenusCommandStrings, VenusMessage } from '../../interfaces/Client';
 import { newEmbed } from '../../utils/Util';
 import { botInfo } from '../../constants/botInfo';
 import { emojis } from '../../constants/emojis';
 
-const callback = async (message: Message, _args: string[], strings: VenusCommandStrings) => {
+const callback = async (message: VenusMessage, _args: string[], strings: VenusCommandStrings) => {
     const output = newEmbed(true)
         .setAuthor(`About ${botInfo.name}`, message.client.user?.displayAvatarURL({ size: 256, dynamic: true }))
         .setDescription(`${emojis.crown} ${botInfo.developers.find(dev => dev.role.includes('Creator'))?.name}\n${emojis.date} ${botInfo.creationDate}`)

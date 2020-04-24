@@ -1,10 +1,9 @@
-import { Message } from 'discord.js';
-import { VenusCommand, VenusCommandStrings } from '../../interfaces/Client';
+import { VenusCommand, VenusCommandStrings, VenusMessage } from '../../interfaces/Client';
 import { getInfractions } from '../../database';
 import { getUser } from '../../utils/getters';
 import { newEmbed, nicerDates, trimString, wrongSyntax, replace } from '../../utils/Util';
 
-const callback = async (message: Message, args: string[], strings: VenusCommandStrings) => {
+const callback = async (message: VenusMessage, args: string[], strings: VenusCommandStrings) => {
     if (!message.guild) return;
     if (args.length && !message.member!.permissions.has('MANAGE_MESSAGES')) return wrongSyntax(message, strings.NO_PERMS);
 

@@ -1,9 +1,8 @@
-import { Message } from 'discord.js';
-import { VenusCommand, VenusCommandStrings } from '../../interfaces/Client';
+import { VenusCommand, VenusCommandStrings, VenusMessage } from '../../interfaces/Client';
 import { wrongSyntax, replace } from '../../utils/Util';
 import { emojis } from '../../constants/emojis';
 
-const callback = async (message: Message, args: string[], strings: VenusCommandStrings) => {
+const callback = async (message: VenusMessage, args: string[], strings: VenusCommandStrings) => {
     if (!message.guild) return;
 
     const regex = /<?(a)?:?(\w{2,32}):(\d{17,19})>?/g;

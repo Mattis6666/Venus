@@ -1,8 +1,7 @@
-import { Message } from 'discord.js';
-import { VenusCommand, VenusCommandStrings } from '../../interfaces/Client';
+import { VenusCommand, VenusCommandStrings, VenusMessage } from '../../interfaces/Client';
 import { wrongSyntax, replace } from '../../utils/Util';
 
-const callback = (message: Message, args: string[], strings: VenusCommandStrings) => {
+const callback = async (message: VenusMessage, args: string[], strings: VenusCommandStrings) => {
     if (!message.guild) return;
 
     const name = args[0].replace(/\W/g, '');

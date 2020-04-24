@@ -1,9 +1,8 @@
-import { Message } from 'discord.js';
-import { VenusCommand } from '../../interfaces/Client';
+import { VenusCommand, VenusMessage } from '../../interfaces/Client';
 import { eightball } from '../../utils/nekos';
 import { newEmbed } from '../../utils/Util';
 
-const callback = async (message: Message, _args: string[]) => {
+const callback = async (message: VenusMessage, _args: string[]) => {
     const fortune = await eightball();
     message.channel.send(message.author, {
         embed: fortune.url ? newEmbed(true).setImage(fortune.url) : newEmbed(true).setDescription('*' + fortune.response + '*')

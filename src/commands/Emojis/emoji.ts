@@ -1,9 +1,8 @@
-import { Message } from 'discord.js';
-import { VenusCommand, VenusCommandStrings } from '../../interfaces/Client';
+import { VenusCommand, VenusCommandStrings, VenusMessage } from '../../interfaces/Client';
 import { wrongSyntax } from '../../utils/Util';
 import { emoteRegex } from '../../constants/regex';
 
-const callback = (message: Message, args: string[], strings: VenusCommandStrings) => {
+const callback = (message: VenusMessage, args: string[], strings: VenusCommandStrings) => {
     const emotes = args.join(' ').match(emoteRegex);
     if (!emotes) return wrongSyntax(message, strings.NO_EMOJIS);
 

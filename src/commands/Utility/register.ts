@@ -1,12 +1,12 @@
 import { Message, TextChannel } from 'discord.js';
-import { VenusClient, VenusCommand, VenusCommandStrings } from '../../interfaces/Client';
+import { VenusClient, VenusCommand, VenusCommandStrings, VenusMessage } from '../../interfaces/Client';
 import { registerQuestions } from '../../constants/registerQuestions';
 import { newEmbed, wrongSyntax, replace } from '../../utils/Util';
 import { Promise } from 'bluebird';
 import { getGuild, getIntros } from '../../database';
 import { getPrefix } from '../../utils/getters';
 
-const callback = async (message: Message, _args: string[], strings: VenusCommandStrings) => {
+const callback = async (message: VenusMessage, _args: string[], strings: VenusCommandStrings) => {
     if (!message.guild) return;
 
     const guildSettings = await getGuild(message.guild.id);

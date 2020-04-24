@@ -1,9 +1,8 @@
-import { Message } from 'discord.js';
-import { VenusCommand, VenusCommandStrings, VenusClient } from '../../interfaces/Client';
+import { VenusCommand, VenusCommandStrings, VenusClient, VenusMessage } from '../../interfaces/Client';
 import { newEmbed, replace } from '../../utils/Util';
 import { botInfo } from '../../constants/botInfo';
 
-const callback = (message: Message, _args: string[], strings: VenusCommandStrings) => {
+const callback = (message: VenusMessage, _args: string[], strings: VenusCommandStrings) => {
     const client = message.client as VenusClient;
     const output = newEmbed(true)
         .setAuthor(strings.INVITE_ME, message.client.user?.displayAvatarURL({ size: 256, dynamic: true }))

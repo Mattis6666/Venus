@@ -1,9 +1,8 @@
-import { Message } from 'discord.js';
-import { VenusCommand, VenusCommandStrings, VenusClient } from '../../interfaces/Client';
+import { VenusCommand, VenusCommandStrings, VenusClient, VenusMessage } from '../../interfaces/Client';
 import ttt from 'tictactoejs';
 import { wrongSyntax, replace } from '../../utils/Util';
 
-const callback = async (message: Message, _args: string[], strings: VenusCommandStrings) => {
+const callback = async (message: VenusMessage, _args: string[], strings: VenusCommandStrings) => {
     const client = message.client as VenusClient;
     if (client.inhibitors.get('prompt')!(message, command)) return;
 

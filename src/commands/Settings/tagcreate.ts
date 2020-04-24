@@ -1,10 +1,9 @@
-import { Message } from 'discord.js';
-import { VenusCommand, VenusCommandStrings, VenusClient } from '../../interfaces/Client';
+import { VenusCommand, VenusCommandStrings, VenusClient, VenusMessage } from '../../interfaces/Client';
 import { getTags } from '../../database';
 import { wrongSyntax, replace } from '../../utils/Util';
 import { isImageUrl } from '../../utils/checks';
 
-const callback = async (message: Message, args: string[], strings: VenusCommandStrings) => {
+const callback = async (message: VenusMessage, args: string[], strings: VenusCommandStrings) => {
     if (!message.guild) return;
     const client = message.client as VenusClient;
     const [name, ...response] = args;

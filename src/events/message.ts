@@ -1,10 +1,9 @@
-import { Message } from 'discord.js';
 import { Guild } from '../database/schemas/GuildSchema';
 import { wrongSyntax, handleError, nicerPermissions, replace } from '../utils/Util';
-import { VenusClient, VenusLanguages } from '../interfaces/Client';
+import { VenusClient, VenusLanguages, VenusMessage } from '../interfaces/Client';
 
-export default async (VenusClient: VenusClient, message: Message) => {
-    if (message.partial) message = await message.fetch();
+export default async (VenusClient: VenusClient, message: VenusMessage) => {
+    if (message.partial) message = (await message.fetch()) as VenusMessage;
     if (message.author.bot || (message.guild && !message.member) || !message.client || !message.channel) return;
     if (
         message.channel.type === 'text' &&
@@ -101,10 +100,8 @@ export default async (VenusClient: VenusClient, message: Message) => {
             })
         );
 
-    try {
-        command.callback(message, args, commandStrings!);
-        VenusClient.emit('commandUsed', message, command);
-    } catch (err) {
-        handleError(VenusClient, err);
-    }
+    command
+        .callback(message, args, commandStrings!)
+        .then(cmd => VenusClient.emit('commandUsed', message, cmd))
+        .catch(err => handleError(VenusClient, err));
 };

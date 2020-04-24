@@ -1,8 +1,7 @@
-import { Message } from 'discord.js';
-import { VenusCommand } from '../../interfaces/Client';
+import { VenusCommand, VenusMessage } from '../../interfaces/Client';
 import { fact } from '../../utils/nekos';
 
-const callback = async (message: Message, _args: string[]) => {
+const callback = async (message: VenusMessage, _args: string[]) => {
     const result = await fact();
     return message.channel.send(`${result}, ${message.author.username}`);
 };

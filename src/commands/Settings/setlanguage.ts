@@ -1,9 +1,8 @@
-import { Message } from 'discord.js';
-import { VenusCommand, VenusCommandStrings, VenusClient, VenusLanguages } from '../../interfaces/Client';
+import { VenusCommand, VenusCommandStrings, VenusClient, VenusLanguages, VenusMessage } from '../../interfaces/Client';
 import { getGuild } from '../../database';
 import { replace, wrongSyntax } from '../../utils/Util';
 
-const callback = async (message: Message, args: string[], strings: VenusCommandStrings) => {
+const callback = async (message: VenusMessage, args: string[], strings: VenusCommandStrings) => {
     const client = message.client as VenusClient;
     if (!message.guild) return;
 

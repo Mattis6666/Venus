@@ -1,8 +1,7 @@
-import { Message } from 'discord.js';
-import { VenusCommand, VenusCommandStrings } from '../../interfaces/Client';
+import { VenusCommand, VenusCommandStrings, VenusMessage } from '../../interfaces/Client';
 import { newEmbed, fetch, trimString, nicerDates, wrongSyntax } from '../../utils/Util';
 
-const callback = (message: Message, args: string[], strings: VenusCommandStrings) => {
+const callback = (message: VenusMessage, args: string[], strings: VenusCommandStrings) => {
     if (message.channel.type === 'text' && !message.channel.nsfw) return wrongSyntax(message, strings.NSFW);
 
     return fetch('http://api.urbandictionary.com/v0/define?term=' + args.join('%20'))

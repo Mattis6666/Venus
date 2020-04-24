@@ -1,11 +1,10 @@
-import { Message } from 'discord.js';
-import { VenusCommand, VenusCommandStrings, VenusClient } from '../../interfaces/Client';
+import { VenusCommand, VenusCommandStrings, VenusClient, VenusMessage } from '../../interfaces/Client';
 import { getGuild } from '../../database';
 import { newEmbed } from '../../utils/Util';
 import { emojis } from '../../constants/emojis';
 import { GuildChannelSettings } from '../../database/schemas/GuildSchema';
 
-const callback = async (message: Message, _args: string[], strings: VenusCommandStrings) => {
+const callback = async (message: VenusMessage, _args: string[], strings: VenusCommandStrings) => {
     if (!message.guild) return;
     const client = message.client as VenusClient;
     const guildSettings = await getGuild(message.guild.id);

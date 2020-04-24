@@ -1,9 +1,8 @@
-import { Message } from 'discord.js';
-import { VenusCommand, VenusCommandStrings } from '../../interfaces/Client';
+import { VenusCommand, VenusCommandStrings, VenusMessage } from '../../interfaces/Client';
 import { resetGuild } from '../../database';
 import { wrongSyntax, replace } from '../../utils/Util';
 
-const callback = async (message: Message, _args: string[], strings: VenusCommandStrings) => {
+const callback = async (message: VenusMessage, _args: string[], strings: VenusCommandStrings) => {
     if (!message.guild) return;
 
     const guild = await resetGuild(message.guild.id);

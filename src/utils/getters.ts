@@ -1,10 +1,9 @@
 import { wrongSyntax } from './Util';
-import { Message } from 'discord.js';
-import { VenusClient } from '../interfaces/Client';
+import { VenusClient, VenusMessage } from '../interfaces/Client';
 import { getGuild } from '../database';
 import { Guild } from '../database/schemas/GuildSchema';
 
-export const getUser = async (message: Message, args: string[], spot?: number) => {
+export const getUser = async (message: VenusMessage, args: string[], spot?: number) => {
     const errors = (await getStrings(message))?.find(str => str.command === 'errors')?.strings;
     if (!errors) throw new Error('NO ERROR STRINGS - GETUSER');
 
@@ -30,7 +29,7 @@ export const getUser = async (message: Message, args: string[], spot?: number) =
     return (await getMember(message, args))?.user;
 };
 
-export const getMember = async (message: Message, args: string[], spot?: number) => {
+export const getMember = async (message: VenusMessage, args: string[], spot?: number) => {
     const errors = (await getStrings(message))?.find(str => str.command === 'errors')?.strings;
     if (!errors) throw new Error('NO ERROR STRINGS - GETMEMBER');
 
@@ -61,7 +60,7 @@ export const getMember = async (message: Message, args: string[], spot?: number)
     return null;
 };
 
-export const getRole = async (message: Message, args: string[], spot?: number) => {
+export const getRole = async (message: VenusMessage, args: string[], spot?: number) => {
     const errors = (await getStrings(message))?.find(str => str.command === 'errors')?.strings;
     if (!errors) throw new Error('NO ERROR STRINGS - GETROLE');
 
@@ -95,7 +94,7 @@ export const getPrefix = async (client: VenusClient, guildId: string) => {
     return guildEntry.settings.prefix || client.config.defaultPrefix;
 };
 
-export const getStrings = async (message: Message) => {
+export const getStrings = async (message: VenusMessage) => {
     const client = message.client as VenusClient;
     const guildSettings = message.guild ? await getGuild(message.guild.id) : null;
     const strings = client.languages.get(guildSettings?.settings.language || 'en_GB');

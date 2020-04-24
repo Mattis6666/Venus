@@ -1,7 +1,8 @@
 import NekoClient from 'nekos.life';
 import { NekoSfwImageOptions, NekoNsfwImageOptions } from '../interfaces/NekoOptions';
-import { Message, MessageEmbed, TextChannel } from 'discord.js';
+import { MessageEmbed, TextChannel } from 'discord.js';
 import { getUser } from './getters';
+import { VenusMessage } from '../interfaces/Client';
 const client = new NekoClient();
 
 export const getImage = async (type: NekoSfwImageOptions) => {
@@ -22,7 +23,7 @@ export const fact = async () => {
 export const spoiler = async (text: string) => {
     return await client.sfw.spoiler({ text: text });
 };
-export const sendImage = async (message: Message, args: string[], type: NekoSfwImageOptions, description: string) => {
+export const sendImage = async (message: VenusMessage, args: string[], type: NekoSfwImageOptions, description: string) => {
     let member;
     if (args.length) {
         member = await getUser(message, args);
@@ -43,7 +44,7 @@ export const sendImage = async (message: Message, args: string[], type: NekoSfwI
     return message.channel.send(output);
 };
 
-export const sendHentai = async (message: Message, type: NekoNsfwImageOptions) => {
+export const sendHentai = async (message: VenusMessage, type: NekoNsfwImageOptions) => {
     if (!message.guild || !(message.channel as TextChannel).nsfw) return;
 
     const url = await getHentai(type);

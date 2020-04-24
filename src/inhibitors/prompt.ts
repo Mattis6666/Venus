@@ -1,7 +1,6 @@
-import { Message } from 'discord.js';
-import { VenusCommand, VenusClient } from '../interfaces/Client';
+import { VenusCommand, VenusClient, VenusMessage } from '../interfaces/Client';
 
-export default (message: Message, command: VenusCommand) => {
+export default (message: VenusMessage, command: VenusCommand) => {
     const client = message.client as VenusClient;
     const prompt = client.prompts.get(message.author.id);
     const hasPrompt = prompt !== undefined;

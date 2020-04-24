@@ -22,13 +22,17 @@ export class VenusClient extends Client {
     }
     commands: Collection<string, VenusCommand> = new Collection();
     prompts: Collection<Snowflake, string> = new Collection();
-    inhibitors: Collection<string, (message: Message, command: VenusCommand) => boolean> = new Collection();
+    inhibitors: Collection<string, (message: VenusMessage, command: VenusCommand) => boolean> = new Collection();
     cooldowns: Collection<string, string> = new Collection();
     guildSettings: Collection<Snowflake, Guild> = new Collection();
     languages: Collection<string, VenusStrings[]> = new Collection();
     tags: Collection<Snowflake, Tag> = new Collection();
     config = config;
     database = database;
+}
+
+export interface VenusMessage extends Message {
+    client: VenusClient;
 }
 
 export interface VenusCommand {
@@ -43,7 +47,7 @@ export interface VenusCommand {
     cooldown?: number;
     userPermissions: PermissionString | '';
     botPermissions: PermissionString | '';
-    callback(message: Message, args: string[], language: VenusCommandStrings): Promise<Message | undefined | void> | void;
+    callback(message: VenusMessage, args: string[], language: VenusCommandStrings): Promise<Message | void>;
 }
 
 export interface VenusCommandStrings {

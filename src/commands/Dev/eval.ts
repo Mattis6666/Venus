@@ -1,25 +1,23 @@
-import { Message } from 'discord.js';
-import { VenusCommand, VenusClient } from '../../interfaces/Client';
+import { VenusCommand, VenusMessage } from '../../interfaces/Client';
 import * as Util from '../../utils/Util';
 import * as Getters from '../../utils/getters';
-import { getGuild, getInfractions, getTags } from '../../database';
+import { getGuild, getTags } from '../../database';
 import { uploadHaste } from '../../utils/hastebin';
 
-const callback = async (message: Message, args: string[]) => {
+const callback = async (message: VenusMessage, args: string[]) => {
     // @ts-ignore
-    const [client, commands, msg, guild, channel, getguild, getinfractions, util, getters] = [
+    const [client, commands, database, msg, guild, channel, util, getters] = [
         message.client,
-        (message.client as VenusClient).commands,
+        message.client.commands,
+        message.client.database,
         message,
         message.guild,
         message.channel,
-        getGuild,
-        getInfractions,
         Util,
         Getters
     ];
     // @ts-ignore
-    const [guildsettings, strings, tags] = message.guild
+    const [guildsettings, strings, tags, infractions] = message.guild
         ? [await getGuild(message.guild.id), await Getters.getStrings(message), await getTags(message.guild.id)]
         : [null, null, null];
 
@@ -35,13 +33,12 @@ const callback = async (message: Message, args: string[]) => {
         if (typeof output !== 'string') output = require('util').inspect(output);
         if (output.length > 2000) return message.channel.send(await uploadHaste(output));
 
-        message.channel.send(Util.clean(output), { code: 'xl' }).catch(err => {
+        return message.channel.send(Util.clean(output), { code: 'xl' }).catch(err => {
             message.channel.send(Util.clean(err), { code: 'xl' });
         });
     } catch (err) {
         message.channel.send(Util.clean(err), { code: 'xl' });
     }
-    return;
 };
 
 export const command: VenusCommand = {

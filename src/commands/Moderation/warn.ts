@@ -1,12 +1,11 @@
-import { Message } from 'discord.js';
-import { VenusCommand, VenusCommandStrings } from '../../interfaces/Client';
+import { VenusCommand, VenusCommandStrings, VenusMessage } from '../../interfaces/Client';
 import { wrongSyntax } from '../../utils/Util';
 import { getMember } from '../../utils/getters';
 import { isMemberHigher } from '../../utils/checks';
 import { createInfraction } from '../../database/schemas/InfractionSchema';
 import { logInfraction } from '../../utils/moderation';
 
-const callback = async (message: Message, args: string[], strings: VenusCommandStrings) => {
+const callback = async (message: VenusMessage, args: string[], strings: VenusCommandStrings) => {
     if (!message.guild) return;
 
     const member = await getMember(message, args, 0);

@@ -1,8 +1,7 @@
-import { Message } from 'discord.js';
-import { VenusCommand } from '../../interfaces/Client';
+import { VenusCommand, VenusMessage } from '../../interfaces/Client';
 import { sendHentai } from '../../utils/nekos';
 
-const callback = (message: Message, _args: string[]) => {
+const callback = async (message: VenusMessage, _args: string[]) => {
     return sendHentai(message, 'femdom');
 };
 

@@ -1,5 +1,5 @@
 import mongoose from 'mongoose';
-import { Message } from 'discord.js';
+import { VenusMessage } from '../../interfaces/Client';
 
 export type InfractionTypes = 'warn' | 'mute' | 'unmute' | 'kick' | 'ban';
 
@@ -33,7 +33,7 @@ const InfractionSchema: mongoose.Schema = new mongoose.Schema({
     case: Number
 });
 
-export const createInfraction = async (message: Message, userId: string, infractionType: InfractionTypes, reason: string, duration?: number) => {
+export const createInfraction = async (message: VenusMessage, userId: string, infractionType: InfractionTypes, reason: string, duration?: number) => {
     if (!message.guild) throw new Error('USED IN A DM YOU MORON');
     const cases = (await infractions.find({ guild: message.guild.id })).map(i => i.case);
     const end = duration ? message.createdTimestamp + duration : null;

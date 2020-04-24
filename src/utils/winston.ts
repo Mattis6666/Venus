@@ -1,8 +1,7 @@
 import winston from 'winston';
 import chalk from 'chalk';
 import { TransformableInfo } from 'logform';
-import { Message } from 'discord.js';
-import { VenusCommand } from '../interfaces/Client';
+import { VenusCommand, VenusMessage } from '../interfaces/Client';
 import { stripIndents } from 'common-tags';
 
 export const logger = winston.createLogger({
@@ -46,7 +45,7 @@ export const commandLogger = winston.createLogger({
     transports: [new winston.transports.File({ filename: 'logs/commands.log', format: winston.format.printf(log => `[${date()}] ${log.message}`) })]
 });
 
-export const logCommands = (message: Message, command: VenusCommand) => {
+export const logCommands = (message: VenusMessage, command: VenusCommand) => {
     commandLogger.log(
         'info',
         stripIndents`

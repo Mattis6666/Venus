@@ -1,11 +1,10 @@
-import { Message } from 'discord.js';
-import { VenusCommand, VenusCommandStrings } from '../../interfaces/Client';
+import { VenusCommand, VenusCommandStrings, VenusMessage } from '../../interfaces/Client';
 import { getUser } from '../../utils/getters';
 import { newEmbed, nicerDates, nicerPermissions, replace } from '../../utils/Util';
 import { statusIcons } from '../../constants/statusIcons';
 import { emojis } from '../../constants/emojis';
 
-const callback = async (message: Message, args: string[], strings: VenusCommandStrings) => {
+const callback = async (message: VenusMessage, args: string[], strings: VenusCommandStrings) => {
     const user = args.length ? await getUser(message, args) : message.author;
     if (!user) return;
 

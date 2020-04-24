@@ -18,13 +18,13 @@
     "Basic command structure": {
         "prefix": ["commandstrucure", "cmdstruct"],
         "body": [
-            "import { Message } from 'discord.js'; \nimport { VenusCommand, VenusCommandStrings } from '../../interfaces/Client';\n\n\nconst callback = (message: Message, args: string[], strings: VenusCommandStrings) => {\n\n};\n\nexport const command: VenusCommand = {\nname: '',\ncategory: '',\naliases: [],\ndeveloperOnly: false,\nnsfw: false,\nguildOnly: false,\ndmOnly: false,\nrequiresArgs: 0,\nuserPermissions: '',\nbotPermissions: '',\ncallback: callback\n};"
+            "import { Message } from 'discord.js'; \nimport { VenusCommand, VenusCommandStrings } from '../../interfaces/Client';\n\n\nconst callback = (message: VenusMessage, args: string[], strings: VenusCommandStrings) => {\n\n};\n\nexport const command: VenusCommand = {\nname: '',\ncategory: '',\naliases: [],\ndeveloperOnly: false,\nnsfw: false,\nguildOnly: false,\ndmOnly: false,\nrequiresArgs: 0,\nuserPermissions: '',\nbotPermissions: '',\ncallback: callback\n};"
         ],
         "description": "Create the basic command structure for Venus Commands"
     },
     "Basic JSON structure": {
         "prefix": ["strings"],
-        "body": [ "{\n\"category\": \"\",\n\"description\": \"\",\n\"extended\": \"\",\n \"usage\": \"\"\n}"],
+        "body": ["{\n\"category\": \"\",\n\"description\": \"\",\n\"extended\": \"\",\n \"usage\": \"\"\n}"],
         "description": "Create the basic JSON structure for Venus Command String"
     }
 }

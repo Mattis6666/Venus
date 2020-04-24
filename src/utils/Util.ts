@@ -1,10 +1,9 @@
-import { Message, TextChannel, MessageEmbed } from 'discord.js';
+import { TextChannel, MessageEmbed } from 'discord.js';
 import nodeFetch, { RequestInfo, RequestInit } from 'node-fetch';
 import ordinal from 'ordinal';
 import { logError } from './winston';
-import { inspect } from 'util';
 import { milliseconds } from '../constants/milliseconds';
-import { VenusClient } from '../interfaces/Client';
+import { VenusClient, VenusMessage } from '../interfaces/Client';
 
 export const replace = (str: string, obj: { [prop: string]: string }) => {
     for (const prop in obj) {
@@ -44,12 +43,12 @@ export const runSerial = (tasks: CallableFunction[]) => {
 
 export const handleError = async (client: VenusClient, err: Error) => {
     logError(err);
-    const errorChannel = client.channels.cache.get(client.config.errorChannel) || (await client.channels.fetch(client.config.errorChannel));
-    (errorChannel as TextChannel).send(
-        (await Promise.all(client.config.developers.map(dev => client.users.cache.get(dev) || client.users.fetch(dev)))).join(' ') +
-            '\n```' +
-            (err instanceof Error ? err.stack : inspect(err)) +
-            '```'
+
+    const errorChannel = client.channels.cache.get(client.config.errorChannel) || (await client.channels.fetch(client.config.errorChannel).catch(() => null));
+    if (!errorChannel || !(errorChannel instanceof TextChannel)) throw new Error('Invalid error-channel!');
+
+    errorChannel.send(
+        (await Promise.all(client.config.developers.map(dev => client.users.cache.get(dev) || client.users.fetch(dev)))).join(' ') + '\n```' + err.stack + '```'
     );
 };
 
@@ -64,7 +63,7 @@ export const fetch = async (requestInfo: RequestInfo, requestOptions?: RequestIn
     return result;
 };
 
-export const wrongSyntax = async (message: Message, text: string, del = true) => {
+export const wrongSyntax = async (message: VenusMessage, text: string, del = true) => {
     const msg = await message.channel.send(text);
     if (!message.guild) return;
     msg.delete({ timeout: 1000 * 10 }).catch(() => null);

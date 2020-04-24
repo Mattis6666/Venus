@@ -1,18 +1,18 @@
-import { Message } from 'discord.js';
-import { VenusCommand, VenusCommandStrings } from '../../interfaces/Client';
+import { VenusCommand, VenusCommandStrings, VenusMessage } from '../../interfaces/Client';
 import { linkRegex, inviteRegex, emoteRegex, emojiRegex } from '../../constants/regex';
 import { wrongSyntax, replace } from '../../utils/Util';
+import { Collection } from 'discord.js';
 
-const callback = async (message: Message, args: string[], strings: VenusCommandStrings) => {
+const callback = async (message: VenusMessage, args: string[], strings: VenusCommandStrings) => {
     if (!message.guild) return;
 
-    const filters: { [key: string]: (m: Message) => boolean } = {
-        LINKS: (m: Message) => m.content.match(linkRegex) !== null,
-        ATTACHMENTS: (m: Message) => m.attachments.size !== 0,
-        BOTS: (m: Message) => m.author.bot,
-        INVITES: (m: Message) => m.content.match(inviteRegex) !== null,
-        EMOJIS: (m: Message) => (m.content.match(emoteRegex) || m.content.match(emojiRegex)) !== null,
-        MENTIONS: (m: Message) => (m.mentions.users.size || m.mentions.roles.size) !== 0
+    const filters: { [key: string]: (m: VenusMessage) => boolean } = {
+        LINKS: (m: VenusMessage) => m.content.match(linkRegex) !== null,
+        ATTACHMENTS: (m: VenusMessage) => m.attachments.size !== 0,
+        BOTS: (m: VenusMessage) => m.author.bot,
+        INVITES: (m: VenusMessage) => m.content.match(inviteRegex) !== null,
+        EMOJIS: (m: VenusMessage) => (m.content.match(emoteRegex) || m.content.match(emojiRegex)) !== null,
+        MENTIONS: (m: VenusMessage) => (m.mentions.users.size || m.mentions.roles.size) !== 0
     };
 
     const amount = args.map(arg => parseInt(arg)).filter(arg => arg && arg > 0 && arg < 101)[0];
@@ -23,7 +23,7 @@ const callback = async (message: Message, args: string[], strings: VenusCommandS
 
     await message.delete();
 
-    let messages = await message.channel.messages.fetch({ limit: amount > 100 ? 100 : amount }).catch(() => null);
+    let messages = (await message.channel.messages.fetch({ limit: amount > 100 ? 100 : amount }).catch(() => null)) as Collection<string, VenusMessage>;
     if (!messages || !messages.size) return;
 
     Object.keys(filters)

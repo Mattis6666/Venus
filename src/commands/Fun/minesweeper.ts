@@ -1,9 +1,8 @@
-import { Message } from 'discord.js';
-import { VenusCommand, VenusCommandStrings } from '../../interfaces/Client';
+import { VenusCommand, VenusCommandStrings, VenusMessage } from '../../interfaces/Client';
 import Minesweeper from 'discord.js-minesweeper';
 import { wrongSyntax } from '../../utils/Util';
 
-const callback = (message: Message, args: string[], strings: VenusCommandStrings) => {
+const callback = async (message: VenusMessage, args: string[], strings: VenusCommandStrings) => {
     const [cols, rows, mines] = args.map(x => parseInt(x));
 
     let game = new Minesweeper({

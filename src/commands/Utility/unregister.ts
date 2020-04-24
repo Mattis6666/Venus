@@ -1,9 +1,9 @@
-import { Message, TextChannel } from 'discord.js';
-import { VenusCommand, VenusCommandStrings } from '../../interfaces/Client';
+import { TextChannel } from 'discord.js';
+import { VenusCommand, VenusCommandStrings, VenusMessage } from '../../interfaces/Client';
 import { getIntros } from '../../database';
 import { wrongSyntax } from '../../utils/Util';
 
-const callback = async (message: Message, _args: string[], strings: VenusCommandStrings) => {
+const callback = async (message: VenusMessage, _args: string[], strings: VenusCommandStrings) => {
     if (!message.guild) return;
     const introEntry = await getIntros(message.author.id);
     const intro = introEntry.intros.find(intro => intro.guild === message.guild!.id);

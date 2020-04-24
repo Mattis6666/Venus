@@ -1,7 +1,6 @@
-import { Message } from 'discord.js';
-import { VenusCommand } from '../../interfaces/Client';
+import { VenusCommand, VenusMessage } from '../../interfaces/Client';
 
-const callback = async (message: Message, _args: string[]) => {
+const callback = async (message: VenusMessage, _args: string[]) => {
     const msg = await message.channel.send('Pinging...');
     return msg.edit(`🏓 Pong! \`${msg.createdTimestamp - message.createdTimestamp}ms\``);
 };
