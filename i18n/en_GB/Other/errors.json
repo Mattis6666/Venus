@@ -11,5 +11,7 @@
     "NO_ROLE_FOUND": "You did not provide a valid role. Please run the command again and provide one.",
     "MULTIPLE_USERS_FOUND": "I found multiple users matching your input",
     "MULTIPLE_MEMBERS_FOUND": "I found multiple members matching your input",
-    "MULTIPLE_ROLES_FOUND": "I found multiple roles matching your input"
+    "MULTIPLE_ROLES_FOUND": "I found multiple roles matching your input",
+    "PROMPT": "I found multiple matches. Please select one from below by typing ONLY the number!",
+    "PROMPT_TIMEOUT": "I found multiple matches but the prompt to select one ran out. Please run the command again!"
 }
