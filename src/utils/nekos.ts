@@ -1,7 +1,7 @@
 import NekoClient from 'nekos.life';
 import { NekoSfwImageOptions, NekoNsfwImageOptions } from '../interfaces/NekoOptions';
 import { MessageEmbed, TextChannel } from 'discord.js';
-import { getUser } from './getters';
+import { getMember } from './getters';
 import { VenusMessage } from '../interfaces/Client';
 const client = new NekoClient();
 
@@ -25,13 +25,13 @@ export const spoiler = async (text: string) => {
 };
 export const sendImage = async (message: VenusMessage, args: string[], type: NekoSfwImageOptions, description: string) => {
     let member;
-    if (args.length) {
-        member = await getUser(message, args);
+    if (args.length && message.guild) {
+        member = await getMember(message, args);
         if (!member) return;
     }
 
     const url = await getImage(type);
-    if (!url) return; // ERROR HERE
+    if (!url) return; // TODO ERROR HERE
 
     const output = new MessageEmbed()
         .setTimestamp()
@@ -40,7 +40,8 @@ export const sendImage = async (message: VenusMessage, args: string[], type: Nek
         .setAuthor(message.author.tag, message.author.displayAvatarURL({ size: 256, dynamic: true }));
 
     if (!member) return message.channel.send(output);
-    output.setDescription(description.replace('{{USER}}', message.author.toString()).replace('{{MEMBER}}', member.toString()));
+
+    output.setDescription(`*${description.replace('{{USER}}', message.member!.displayName).replace('{{MEMBER}}', member.displayName)}*`);
     return message.channel.send(output);
 };
 
