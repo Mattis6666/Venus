@@ -41,7 +41,7 @@ export const sendImage = async (message: VenusMessage, args: string[], type: Nek
 
     if (!member) return message.channel.send(output);
 
-    output.setDescription(`*${description.replace('{{USER}}', message.member!.displayName).replace('{{MEMBER}}', member.displayName)}*`);
+    output.setDescription(`*${description.replace('{{USER}}', `**${message.member!.displayName}**`).replace('{{MEMBER}}', `**${member.displayName}**`)}*`);
     return message.channel.send(output);
 };
 
