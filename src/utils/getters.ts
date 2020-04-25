@@ -17,23 +17,16 @@ export const getUser = async (message: VenusMessage, args: string[], spot?: numb
 
     const userSearch = message.client.users.cache.filter(user => user.tag.toLowerCase().includes(input));
 
-    switch (userSearch.size) {
-        case 0:
-            return wrongSyntax(message, errors.NO_USER_FOUND);
-        case 1:
-            return userSearch.first();
-        case 2:
-        case 3:
-        case 4:
-        case 5:
-        case 6:
-        case 7:
-        case 8:
-        case 9:
-        case 10:
-            return (await chooseOne(message, userSearch, errors)) as User;
-        default:
-            return wrongSyntax(message, `${errors.MULTIPLE_USERS_FOUND}: ${userSearch.size}`, false);
+    if (userSearch.size === 0) {
+        wrongSyntax(message, errors.NO_USER_FOUND);
+        return null;
+    } else if (userSearch.size === 1) {
+        return userSearch.first();
+    } else if (userSearch.size < 11) {
+        return (await chooseOne(message, userSearch, errors)) as User;
+    } else {
+        wrongSyntax(message, `${errors.MULTIPLE_USERS_FOUND}: ${userSearch.size}`, false);
+        return null;
     }
 };
 
@@ -52,25 +45,16 @@ export const getMember = async (message: VenusMessage, args: string[], spot?: nu
         member => member.displayName.toLowerCase().includes(input) || member.user.tag.toLowerCase().includes(input)
     );
 
-    switch (memberSearch.size) {
-        case 0:
-            wrongSyntax(message, errors.NO_MEMBER_FOUND);
-            return null;
-        case 1:
-            return memberSearch.first();
-        case 2:
-        case 3:
-        case 4:
-        case 5:
-        case 6:
-        case 7:
-        case 8:
-        case 9:
-        case 10:
-            return (await chooseOne(message, memberSearch, errors)) as GuildMember;
-        default:
-            wrongSyntax(message, `${errors.MULTIPLE_MEMBERS_FOUND}: ${memberSearch.size}`, false);
-            return null;
+    if (memberSearch.size === 0) {
+        wrongSyntax(message, errors.NO_MEMBER_FOUND);
+        return null;
+    } else if (memberSearch.size === 1) {
+        return memberSearch.first();
+    } else if (memberSearch.size < 11) {
+        return (await chooseOne(message, memberSearch, errors)) as GuildMember;
+    } else {
+        wrongSyntax(message, `${errors.MULTIPLE_MEMBERS_FOUND}: ${memberSearch.size}`, false);
+        return null;
     }
 };
 
@@ -87,23 +71,16 @@ export const getRole = async (message: VenusMessage, args: string[], spot?: numb
 
     const roleSearch = message.guild.roles.cache.filter(role => role.name.toLowerCase().includes(input));
 
-    switch (roleSearch.size) {
-        case 0:
-            return wrongSyntax(message, errors.NO_ROLE_FOUND);
-        case 1:
-            return roleSearch.first();
-        case 2:
-        case 3:
-        case 4:
-        case 5:
-        case 6:
-        case 7:
-        case 8:
-        case 9:
-        case 10:
-            return (await chooseOne(message, roleSearch, errors)) as Role;
-        default:
-            return wrongSyntax(message, `${errors.MULTIPLE_ROLES_FOUND}: ${roleSearch.size}`, false);
+    if (roleSearch.size === 0) {
+        wrongSyntax(message, errors.NO_ROLE_FOUND);
+        return null;
+    } else if (roleSearch.size === 1) {
+        return roleSearch.first();
+    } else if (roleSearch.size < 11) {
+        return (await chooseOne(message, roleSearch, errors)) as Role;
+    } else {
+        wrongSyntax(message, `${errors.MULTIPLE_ROLES_FOUND}: ${roleSearch.size}`, false);
+        return null;
     }
 };
 
@@ -141,8 +118,7 @@ export const getPrefix = async (client: VenusClient, guildId: string) => {
 };
 
 export const getStrings = async (message: VenusMessage) => {
-    const client = message.client as VenusClient;
     const guildSettings = message.guild ? await getGuild(message.guild.id) : null;
-    const strings = client.languages.get(guildSettings?.settings.language || 'en_GB');
+    const strings = message.client.languages.get(guildSettings?.settings.language || 'en_GB');
     return strings;
 };

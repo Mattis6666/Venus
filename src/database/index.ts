@@ -5,7 +5,7 @@ import { guildSettings } from './schemas/GuildSchema';
 import { infractions } from './schemas/InfractionSchema';
 import { tags } from './schemas/TagSchema';
 import { intros } from './schemas/IntroSchema';
-import { reactionRoles } from './schemas/ReactionRoles';
+import { reactionRoles } from './schemas/ReactionRoleSchema';
 
 mongoose.connect(config.mongoString, {
     useCreateIndex: true,

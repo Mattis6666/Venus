@@ -35,7 +35,7 @@ export const botInfo = {
     github: 'https://github.com/VenusTs/VenusTs',
     issues: 'https://github.com/VenusTs/VenusTs/issues',
     botInvite: 'https://discordapp.com/oauth2/authorize?client_id=692452667183726684&permissions=1580592383&scope=bot',
-    supportServer: 'https://discord.gg/gTd7kfy',
+    supportServer: 'https://discord.gg/p8SqcaD',
     developers: [
         { name: 'Ven', role: 'Creator, Lead Developer', github: 'https://github.com/Mattis6666', discord: '265560538937819137' },
         { name: 'Awakai', role: 'Design, Ideas', github: 'https://github.com/pixache', discord: '361059389731373066' }
