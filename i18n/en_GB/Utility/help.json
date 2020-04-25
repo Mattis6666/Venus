@@ -5,7 +5,7 @@
     "usage": "[command name | command alias]",
     "INVALID": "That's not a command or category!",
     "HEADER": "Help menu",
-    "MENU_DESCRIPTION": "For more info on a specific category or command, use `{PREFIX}help category` or `{PREFIX}help command}`",
+    "MENU_DESCRIPTION": "For more info on a specific category or command, use `{PREFIX}help category` or `{PREFIX}help command`",
     "FOOTER": "For more info on a command, use `{PREFIX}help command`",
     "VIEW_NSFW_COMMAND": "To view this, make sure the server has NSFW enabled and run the command in a NSFW channel!",
     "VIEW_NSFW_MENU": "To view these, run `{PREFIX}help nsfw` in a NSFW channel!",
