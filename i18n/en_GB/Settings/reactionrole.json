@@ -1,0 +1,13 @@
+{
+    "category": "Settings",
+    "description": "Create a reaction role",
+    "extended": "I need access to the provided emoji or it already has to be a reaction on the reaction role message.\nIf the message this should be on is in a different channel, you need to provide a #channel at the end of the command.",
+    "usage": "<Message ID> <Emoji> <Role> [#Channel]",
+    "NO_MESSAGE": "You did not provide a valid message. If the message is in another channel, add a #Channel to the end of the command.",
+    "NO_ROLE": "You did not provide a valid role.",
+    "NO_EMOJI": "You did not provide a valid emoji.",
+    "EMOJI_INACCESSIBLE": "You provided an emoji, which I do not have access to. Either react to the target message yourself, or add it to a server I am on.",
+    "EMOJI_TAKEN": "This emoji is already in use for another reaction role on the target message.",
+    "REACT_FAILED": "I was unable to react to the target message. Please react to it yourself or give me the necessary permissions.",
+    "SUCCESS": "Reaction Role successfully created!"
+}

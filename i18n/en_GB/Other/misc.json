@@ -3,6 +3,8 @@
     "WELCOME": "",
     "AUTO_ROLE_REASON": "Auto-role. You can change this behaviour via setautorole",
     "WELCOME_MESSAGE": "Welcome to {GUILD}, {MEMBER}!",
+    "REACTION_ROLE_ADD": "Successfully added the role `{ROLE}` on `{GUILD}`!",
+    "REACTION_ROLE_REMOVE": "Successfully removed the role `{ROLE}` on `{GUILD}`!",
     "MEMBER": "Member",
     "MODERATOR": "Moderator",
     "REASON": "Reason",

@@ -21,7 +21,7 @@ export default async (client: VenusClient, reaction: MessageReaction, user: User
     if (!strings) return;
     return guild
         .member(user)
-        ?.roles.add(role)
-        .then(member => member.send(replace(strings.REACTION_ROLE_ADD, { ROLE: role.name, GUILD: guild.name })).catch(() => null))
+        ?.roles.remove(role)
+        .then(member => member.send(replace(strings.REACTION_ROLE_REMOVE, { ROLE: role.name, GUILD: guild.name })).catch(() => null))
         .catch(() => null);
 };
