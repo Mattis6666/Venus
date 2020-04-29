@@ -5,6 +5,8 @@
     "usage": "<Message ID> <Emoji> <Role> [#Channel]",
     "NO_MESSAGE": "You did not provide a valid message. If the message is in another channel, add a #Channel to the end of the command.",
     "NO_ROLE": "You did not provide a valid role.",
+    "ROLE_TOO_HIGH": "This role is higher than my role, so I cannot manage it!",
+    "ROLE_MANAGED": "This role is managed by an external application, so I cannot manage it!",
     "NO_EMOJI": "You did not provide a valid emoji.",
     "EMOJI_INACCESSIBLE": "You provided an emoji, which I do not have access to. Either react to the target message yourself, or add it to a server I am on.",
     "EMOJI_TAKEN": "This emoji is already in use for another reaction role on the target message.",
