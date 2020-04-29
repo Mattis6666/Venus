@@ -8,7 +8,6 @@
         "production": "npm run build && export NODE_ENV=production && npm run start",
         "test": "tsc -p tsconfig.test.json && npm run lint",
         "lint": "eslint ./src/**/*.ts",
-        "push": "npm run gitAdd && npm run gitCommit && git push",
         "clean": "rm -rf dist/*",
         "reinstall": "npm run cleanCache && npm run deleteModules && npm run deleteLock && npm run installModules",
         "build": "tsc",
@@ -16,9 +15,7 @@
         "cleanCache": "npm cache clean --force",
         "deleteModules": "rm -rf node_modules/*",
         "deleteLock": "rm yarn.lock",
-        "installModules": "yarn install",
-        "gitAdd": "git add .",
-        "gitCommit": "git commit -m 'new commit'"
+        "installModules": "yarn install"
     },
     "author": "VenNeptury",
     "license": "MIT",
