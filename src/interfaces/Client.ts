@@ -68,6 +68,7 @@ export type VenusLanguages = 'en_GB' | 'de_DE' | 'nl_NL' | 'tr_TR';
 export type VenusCommandCategories = 'DEVELOPMENT' | 'MODERATION' | 'SETTINGS' | 'UTILITY' | 'MISC' | 'FUN' | 'ANIME' | 'NSFW';
 
 export type ClientEventTypes =
+    | 'commandUsed'
     | 'channelCreate'
     | 'channelDelete'
     | 'channelPinsUpdate'

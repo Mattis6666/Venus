@@ -136,3 +136,11 @@
 [06.03.2020 18:07] Connected to Discord as NeptuneTs#6220 - 695795584442957857
 [06.03.2020 18:07] Serving 1 guilds and 34 channels.
 [06.03.2020 18:07] Default prefix: n!
+[03.03.2020 02:08] Warning: Accessing non-existent property 'count' of module exports inside circular dependency
+[03.03.2020 02:08] Warning: Accessing non-existent property 'findOne' of module exports inside circular dependency
+[03.03.2020 02:08] Warning: Accessing non-existent property 'remove' of module exports inside circular dependency
+[03.03.2020 02:08] Warning: Accessing non-existent property 'updateOne' of module exports inside circular dependency
+[03.03.2020 02:08] Connected to MongoDB Atlas at neptune!
+[03.03.2020 02:08] Connected to Discord as NeptuneTs#6220 - 695795584442957857
+[03.03.2020 02:08] Serving 1 guilds and 35 channels.
+[03.03.2020 02:08] Default prefix: n!

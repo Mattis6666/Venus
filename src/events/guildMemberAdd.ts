@@ -25,7 +25,7 @@ export default async (client: VenusClient, member: GuildMember) => {
         const channel = member.guild.channels.cache.get(guildSettings.channels.welcomeChannel);
         if (!channel) return;
 
-        if (!background) background = await Canvas.loadImage(path.join(__dirname, '../../../assets/images/welcome.jpg'));
+        if (!background) background = await Canvas.loadImage(path.join(__dirname, '../../assets/images/welcome.jpg'));
         const avatar = await Canvas.loadImage(member.user.displayAvatarURL({ size: 256, format: 'png' }));
         const guild = member.guild.name;
         const name = member.user.tag;

@@ -1,6 +1,6 @@
 import { readdirSync } from 'fs';
 import { join } from 'path';
-import { VenusClient as Client, ClientEventTypes, VenusCommand, VenusCommandStrings } from './interfaces/Client';
+import { VenusClient as Client, VenusCommand, VenusCommandStrings } from './interfaces/Client';
 import { logError, logWarn } from './utils/winston';
 
 export const VenusClient = new Client();
@@ -12,7 +12,7 @@ const languagePath = join(__dirname, '../i18n'),
 
 readdirSync(listenerPath).forEach(file => {
     const event = require(`${listenerPath}/${file}`).default;
-    const eventName = file.replace('.js', '') as ClientEventTypes;
+    const eventName: any = file.replace('.js', '');
     VenusClient.on(eventName, event.bind(null, VenusClient));
 });
 

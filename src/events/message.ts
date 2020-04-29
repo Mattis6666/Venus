@@ -102,6 +102,7 @@ export default async (VenusClient: VenusClient, message: VenusMessage) => {
 
     command
         .callback(message, args, commandStrings!)
+        // @ts-ignore
         .then(() => VenusClient.emit('commandUsed', message, command))
         .catch(err => handleError(VenusClient, err));
 };
