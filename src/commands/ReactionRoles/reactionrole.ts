@@ -10,26 +10,26 @@ const callback = async (message: VenusMessage, args: string[], strings: VenusCom
     const [msgID, emojiRaw, ...roleRaw] = args;
 
     const msg = await channel.messages.fetch(msgID).catch(() => null);
-    if (!msg) return wrongSyntax(message, strings.NO_MESSAGE);
+    if (!msg) return wrongSyntax(message, strings.NO_MESSAGE, false);
 
     if (!emoteRegex.test(emojiRaw)) return wrongSyntax(message, strings.NO_EMOJI);
     const emojiID = emojiRaw.slice(emojiRaw.lastIndexOf(':') + 1, emojiRaw.lastIndexOf('>'));
     const emoji = message.client.emojis.cache.get(emojiID);
-    if (!emoji && !msg.reactions.cache.has(emojiID)) return wrongSyntax(message, strings.EMOJI_INACCESSIBLE);
+    if (!emoji && !msg.reactions.cache.has(emojiID)) return wrongSyntax(message, strings.EMOJI_INACCESSIBLE, false);
 
     const role = await getRole(
         message,
         roleRaw.filter(val => !channelRegex.test(val))
     );
-    if (!role) return wrongSyntax(message, strings.NO_ROLE);
+    if (!role) return wrongSyntax(message, strings.NO_ROLE, false);
 
     const reacted = emoji ? await msg.react(emoji).catch(() => 'fail') : null;
-    if (reacted === 'fail') return wrongSyntax(message, strings.REACT_FAILED);
+    if (reacted === 'fail') return wrongSyntax(message, strings.REACT_FAILED, false);
 
     const reactionRole =
         (await message.client.database.reactionRoles.findOne({ guild: message.guild.id, channel: channel.id, message: msg.id })) ||
         (await message.client.database.reactionRoles.create({ guild: message.guild.id, channel: channel.id, message: msg.id }));
-    if (reactionRole.emojis.some(reaction => reaction.emoji === emojiID)) return wrongSyntax(message, strings.EMOJI_TAKEN);
+    if (reactionRole.emojis.some(reaction => reaction.emoji === emojiID)) return wrongSyntax(message, strings.EMOJI_TAKEN, false);
     reactionRole.emojis.push({ emoji: emojiID, role: role.id });
     reactionRole.save();
     return message.channel.send(strings.SUCCESS);
