@@ -27,7 +27,7 @@ export default async (VenusClient: VenusClient, message: VenusMessage) => {
     const prefix = matched ? matched[0] : null;
     if (!prefix || !message.content.startsWith(prefix)) return;
 
-    const args = message.content.slice(prefix.length).trim().split(' ');
+    const args = message.content.slice(prefix.length).trim().split(/ +/);
     const commandName = args.shift()?.toLowerCase();
     if (!commandName) {
         if (message.mentions.users?.has(VenusClient.user!.id) && message.guild) {
