@@ -49,7 +49,7 @@ export default async (VenusClient: VenusClient, message: VenusMessage) => {
         const tags = VenusClient.tags.get(message.guild.id) || (await VenusClient.database.tags.findOne({ guild: message.guild.id }));
         if (!tags) return;
         VenusClient.tags.set(message.guild.id, tags);
-        const tag = tags.tags.find(tag => tag.trigger === commandName);
+        const tag = tags.tags.find(tag => message.content.match(new RegExp(tag.trigger, 'i')));
         if (!tag) return;
         return message.channel.send(tag.embed ? { embed: tag.response } : tag.response);
     }

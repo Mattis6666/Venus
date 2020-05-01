@@ -294,3 +294,23 @@ Message: n!rr 705132398911946934 <:gnome:685350884506599500> Tatsumaki
 User: VenTails#6666 (265560538937819137)
 Guild: VenusTs (609096347181776909)
 Message: n!rr 705132398911946934 <:gnome:702997891744268288> Tatsumaki
+[05.04.2020 01:25] tagcreate
+User: VenTails#6666 (265560538937819137)
+Guild: VenusTs (609096347181776909)
+Message: n!createtag test? It works!
+[05.04.2020 01:27] tagcreate
+User: VenTails#6666 (265560538937819137)
+Guild: VenusTs (609096347181776909)
+Message: n!createtag (epic|cool|kool)(command|cmd) This is epic
+[05.04.2020 01:29] tagcreate
+User: VenTails#6666 (265560538937819137)
+Guild: VenusTs (609096347181776909)
+Message: n!createtag (contact|need).*(support|help) Contact support via this form: https://support.discordapp.com/hc/en-us
+[05.04.2020 01:36] prune
+User: VenTails#6666 (265560538937819137)
+Guild: VenusTs (609096347181776909)
+Message: n!prune 4
+[05.04.2020 01:49] tagcreate
+User: VenTails#6666 (265560538937819137)
+Guild: VenusTs (609096347181776909)
+Message: n!tagcreate ((brokenregex) test

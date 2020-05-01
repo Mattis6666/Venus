@@ -173,3 +173,40 @@
 [03.03.2020 21:04] Connected to Discord as NeptuneTs#6220 - 695795584442957857
 [03.03.2020 21:04] Serving 1 guilds and 35 channels.
 [03.03.2020 21:04] Default prefix: n!
+[05.04.2020 01:25] Connected to MongoDB Atlas at neptune!
+[05.04.2020 01:25] Connected to Discord as NeptuneTs#6220 - 695795584442957857
+[05.04.2020 01:25] Serving 1 guilds and 35 channels.
+[05.04.2020 01:25] Default prefix: n!
+[05.04.2020 01:36] Connected to Discord as NeptuneTs#6220 - 695795584442957857
+[05.04.2020 01:36] Serving 1 guilds and 35 channels.
+[05.04.2020 01:36] Default prefix: n!
+[05.04.2020 01:36] Connected to MongoDB Atlas at neptune!
+[05.04.2020 01:48] Connected to MongoDB Atlas at neptune!
+[05.04.2020 01:48] Connected to Discord as NeptuneTs#6220 - 695795584442957857
+[05.04.2020 01:48] Serving 1 guilds and 35 channels.
+[05.04.2020 01:48] Default prefix: n!
+[05.04.2020 01:49] UnhandledPromiseRejectionWarning: SyntaxError: Invalid regular expression: /((brokenregex)/: Unterminated group
+    at new RegExp (<anonymous>)
+    at /media/Storage/Projects/VenusTs/Bot/dist/events/message.js:48:65
+    at CoreDocumentArray.find (<anonymous>)
+    at exports.default (/media/Storage/Projects/VenusTs/Bot/dist/events/message.js:48:31)
+    at VenusClient.emit (events.js:321:20)
+    at MessageCreateAction.handle (/media/Storage/Projects/VenusTs/Bot/node_modules/discord.js/src/client/actions/MessageCreate.js:31:14)
+    at Object.module.exports [as MESSAGE_CREATE] (/media/Storage/Projects/VenusTs/Bot/node_modules/discord.js/src/client/websocket/handlers/MESSAGE_CREATE.js:4:32)
+    at WebSocketManager.handlePacket (/media/Storage/Projects/VenusTs/Bot/node_modules/discord.js/src/client/websocket/WebSocketManager.js:386:31)
+    at WebSocketShard.onPacket (/media/Storage/Projects/VenusTs/Bot/node_modules/discord.js/src/client/websocket/WebSocketShard.js:436:22)
+    at WebSocketShard.onMessage (/media/Storage/Projects/VenusTs/Bot/node_modules/discord.js/src/client/websocket/WebSocketShard.js:293:10)
+    at WebSocket.onMessage (/media/Storage/Projects/VenusTs/Bot/node_modules/ws/lib/event-target.js:120:16)
+    at WebSocket.emit (events.js:321:20)
+    at Receiver.receiverOnMessage (/media/Storage/Projects/VenusTs/Bot/node_modules/ws/lib/websocket.js:800:20)
+    at Receiver.emit (events.js:321:20)
+    at Receiver.dataMessage (/media/Storage/Projects/VenusTs/Bot/node_modules/ws/lib/receiver.js:436:14)
+    at Receiver.getData (/media/Storage/Projects/VenusTs/Bot/node_modules/ws/lib/receiver.js:366:17)
+    at Receiver.startLoop (/media/Storage/Projects/VenusTs/Bot/node_modules/ws/lib/receiver.js:142:22)
+    at Receiver._write (/media/Storage/Projects/VenusTs/Bot/node_modules/ws/lib/receiver.js:77:10)
+    at doWrite (_stream_writable.js:453:12)
+    at writeOrBuffer (_stream_writable.js:435:5)
+    at Receiver.Writable.write (_stream_writable.js:326:11)
+    at TLSSocket.socketOnData (/media/Storage/Projects/VenusTs/Bot/node_modules/ws/lib/websocket.js:875:35)
+[05.04.2020 01:49] UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). To terminate the node process on unhandled promise rejection, use the CLI flag `--unhandled-rejections=strict` (see https://nodejs.org/api/cli.html#cli_unhandled_rejections_mode). (rejection id: 1)
+[05.04.2020 01:49] DeprecationWarning: Unhandled promise rejections are deprecated. In the future, promise rejections that are not handled will terminate the Node.js process with a non-zero exit code.
