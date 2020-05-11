@@ -1,7 +1,7 @@
 import { VenusCommand, VenusMessage } from '../../interfaces/Client';
 import * as Util from '../../utils/Util';
 import * as Getters from '../../utils/getters';
-import { getGuild, getTags } from '../../database';
+import { getTags } from '../../database';
 import { uploadHaste } from '../../utils/hastebin';
 
 const callback = async (message: VenusMessage, args: string[]) => {
@@ -18,7 +18,7 @@ const callback = async (message: VenusMessage, args: string[]) => {
     ];
     // @ts-ignore
     const [guildsettings, strings, tags, infractions] = message.guild
-        ? [await getGuild(message.guild.id), await Getters.getStrings(message), await getTags(message.guild.id)]
+        ? [await client.getSettings(message), await Getters.getStrings(message), await getTags(message.guild.id)]
         : [null, null, null];
 
     try {

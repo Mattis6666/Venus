@@ -1,7 +1,5 @@
 import { wrongSyntax } from './Util';
-import { VenusClient, VenusMessage, VenusCommandStrings } from '../interfaces/Client';
-import { getGuild } from '../database';
-import { Guild } from '../database/schemas/GuildSchema';
+import { VenusMessage, VenusCommandStrings } from '../interfaces/Client';
 import { Collection, Snowflake, Role, User, GuildMember } from 'discord.js';
 
 export const getUser = async (message: VenusMessage, args: string[], spot?: number) => {
@@ -109,16 +107,8 @@ export const chooseOne = async (message: VenusMessage, choices: Collection<Snowf
     return result?.choice;
 };
 
-export const getPrefix = async (client: VenusClient, guildId: string) => {
-    const guildEntry: Guild = client.guildSettings.get(guildId) || (await getGuild(guildId));
-    if (guildEntry && !client.guildSettings.get(guildId)) {
-        client.guildSettings.set(guildId, guildEntry);
-    }
-    return guildEntry.settings.prefix || client.config.defaultPrefix;
-};
-
 export const getStrings = async (message: VenusMessage) => {
-    const guildSettings = message.guild ? await getGuild(message.guild.id) : null;
+    const guildSettings = await message.client.getSettings(message);
     const strings = message.client.languages.get(guildSettings?.settings.language || 'en_GB');
     return strings;
 };

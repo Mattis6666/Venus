@@ -3,6 +3,7 @@
     "description": "Create a tag (custom command)",
     "extended": "You can provide JSON Embed code too!",
     "usage": "<Tag Trigger> <Tag Response>",
+    "INVALID_TRIGGER": "The provided tag trigger is invalid. Please provide another one.",
     "NAME_TAKEN": "You cannot use this tag trigger, because it is a trigger for {COMMAND}!",
     "TAG_TAKEN": "This tag trigger is already taken!",
     "SUCCESS": "Successfully created your tag {NAME}!",

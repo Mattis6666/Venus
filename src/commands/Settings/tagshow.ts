@@ -1,12 +1,12 @@
-import { VenusCommand, VenusCommandStrings, VenusClient, VenusMessage } from '../../interfaces/Client';
+import { VenusCommand, VenusCommandStrings, VenusMessage } from '../../interfaces/Client';
 import { getTags } from '../../database';
 import { wrongSyntax, newEmbed, replace } from '../../utils/Util';
 import util from 'util';
 
 const callback = async (message: VenusMessage, args: string[], strings: VenusCommandStrings) => {
     if (!message.guild) return;
-    const client = message.client as VenusClient;
-    const tagEntry = client.tags.get(message.guild.id) || (await getTags(message.guild.id));
+
+    const tagEntry = await getTags(message.guild.id);
     if (!args.length)
         return message.channel.send(
             newEmbed(true)

@@ -1,5 +1,4 @@
 import { VenusCommand, VenusCommandStrings, VenusMessage } from '../../interfaces/Client';
-import { getGuild } from '../../database';
 import { emojis } from '../../constants/emojis';
 import { getMember } from '../../utils/getters';
 import { wrongSyntax } from '../../utils/Util';
@@ -7,12 +6,12 @@ import { createInfraction } from '../../database/schemas/InfractionSchema';
 import { logInfraction } from '../../utils/moderation';
 
 const callback = async (message: VenusMessage, args: string[], strings: VenusCommandStrings) => {
-    if (!message.guild) return;
+    const settings = await message.client.getSettings(message);
+    if (!settings || !message.guild) return;
 
     const member = await getMember(message, args, 0);
     if (!member) return;
 
-    const settings = await getGuild(message.guild.id);
     if (!settings.roles.muted) {
         const msg = await message.channel.send(`${emojis.loading} ${strings.ROLE_CREATE}`);
         const role = await message.guild.roles.create({ data: { name: 'venus-mute' } }).catch(() => null);

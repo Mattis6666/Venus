@@ -1,24 +1,12 @@
-import { Guild } from '../database/schemas/GuildSchema';
 import { wrongSyntax, handleError, nicerPermissions, replace } from '../utils/Util';
 import { VenusClient, VenusLanguages, VenusMessage } from '../interfaces/Client';
 
 export default async (VenusClient: VenusClient, message: VenusMessage) => {
     if (message.partial) message = (await message.fetch()) as VenusMessage;
     if (message.author.bot || (message.guild && !message.member) || !message.client || !message.channel) return;
-    if (
-        message.channel.type === 'text' &&
-        message.guild &&
-        (!message.channel.permissionsFor(message.guild.me!)?.has('VIEW_CHANNEL') || !message.channel.permissionsFor(message.guild.me!)?.has('SEND_MESSAGES'))
-    )
-        return;
+    if (!VenusClient.checkPermissions(message.channel)) return;
 
-    const guildSettings: Guild | null = message.guild
-        ? VenusClient.guildSettings.get(message.guild.id) || (await VenusClient.database.guildSettings.findOne({ guild: message.guild.id }))
-        : null;
-    if (message.guild && guildSettings && !VenusClient.guildSettings.has(message.guild.id)) {
-        VenusClient.guildSettings.set(message.guild.id, guildSettings);
-    }
-    const guildPrefix = guildSettings?.settings.prefix || VenusClient.config.defaultPrefix;
+    const guildPrefix = await VenusClient.getPrefix(message);
 
     const prefixRegex = new RegExp(`^(<@!?${VenusClient.user?.id}>|${guildPrefix.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')})\\s*`);
     if (!prefixRegex.test(message.content)) return;
@@ -26,6 +14,7 @@ export default async (VenusClient: VenusClient, message: VenusMessage) => {
     const matched = message.content.match(prefixRegex);
     const prefix = matched ? matched[0] : null;
     if (!prefix || !message.content.startsWith(prefix)) return;
+    const guildSettings = await VenusClient.getSettings(message);
 
     const args = message.content.slice(prefix.length).trim().split(/ +/);
     const commandName = args.shift()?.toLowerCase();
@@ -46,10 +35,8 @@ export default async (VenusClient: VenusClient, message: VenusMessage) => {
     if (!command) {
         if (!message.guild) return;
 
-        const tags = VenusClient.tags.get(message.guild.id) || (await VenusClient.database.tags.findOne({ guild: message.guild.id }));
-        if (!tags) return;
-        VenusClient.tags.set(message.guild.id, tags);
-        const tag = tags.tags.find(tag => message.content.match(new RegExp(tag.trigger, 'i')));
+        const tags = await VenusClient.database.tags.findOne({ guild: message.guild.id });
+        const tag = tags?.tags.find(tag => message.content.match(new RegExp(tag.trigger, 'i')));
         if (!tag) return;
         return message.channel.send(tag.embed ? { embed: tag.response } : tag.response);
     }

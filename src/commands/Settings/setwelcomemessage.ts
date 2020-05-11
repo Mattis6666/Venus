@@ -1,19 +1,16 @@
-import { VenusCommand, VenusCommandStrings, VenusClient, VenusMessage } from '../../interfaces/Client';
-import { getGuild } from '../../database';
+import { VenusCommand, VenusCommandStrings, VenusMessage } from '../../interfaces/Client';
 
 const callback = async (message: VenusMessage, args: string[], strings: VenusCommandStrings) => {
-    const client = message.client as VenusClient;
+    const guildSettings = await message.client.getSettings(message);
+    if (!guildSettings) return;
 
-    const guildSettings = await getGuild(message.guild!.id);
     if (!args.length) {
         guildSettings.welcome.message = '';
-        client.guildSettings.set(message.guild!.id, guildSettings);
-        await guildSettings.save();
+        guildSettings.save();
         return message.channel.send(strings.RESET);
     }
 
     guildSettings.welcome.message = args.join(' ');
-    client.guildSettings.set(message.guild!.id, guildSettings);
     await guildSettings.save();
 
     return message.channel.send(strings.SUCCESS);

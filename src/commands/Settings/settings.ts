@@ -1,24 +1,23 @@
-import { VenusCommand, VenusCommandStrings, VenusClient, VenusMessage } from '../../interfaces/Client';
-import { getGuild } from '../../database';
+import { VenusCommand, VenusCommandStrings, VenusMessage } from '../../interfaces/Client';
 import { newEmbed } from '../../utils/Util';
 import { emojis } from '../../constants/emojis';
 import { GuildChannelSettings } from '../../database/schemas/GuildSchema';
 
 const callback = async (message: VenusMessage, _args: string[], strings: VenusCommandStrings) => {
-    if (!message.guild) return;
-    const client = message.client as VenusClient;
-    const guildSettings = await getGuild(message.guild.id);
+    const guildSettings = await message.client.getSettings(message);
+    if (!guildSettings) return;
+
     const gs = guildSettings.settings;
     const gc = guildSettings.channels;
     const disabledCommands = gs.disabledCommands.join(', ');
 
     const settings = [
-        { name: strings.PREFIX, value: gs.prefix || client.config.defaultPrefix },
+        { name: strings.PREFIX, value: await message.client.getPrefix(message) },
         { name: strings.LANGUAGE, value: gs.language || 'en_GB' },
         { name: strings.NSFW, value: gs.nsfw ? emojis.success : emojis.fail },
         {
             name: strings.AUTO_ROLE,
-            value: guildSettings.welcome.autoRole ? message.guild.roles.cache.get(guildSettings.welcome.autoRole) || emojis.fail : emojis.fail
+            value: guildSettings.welcome.autoRole ? message.guild!.roles.cache.get(guildSettings.welcome.autoRole) || emojis.fail : emojis.fail
         }
     ];
 
@@ -33,7 +32,7 @@ const callback = async (message: VenusMessage, _args: string[], strings: VenusCo
 
     const settingsEmbed = newEmbed(true)
         .setTitle(strings.TITLE)
-        .setThumbnail(message.guild.iconURL({ size: 256, dynamic: true })!)
+        .setThumbnail(message.guild!.iconURL({ size: 256, dynamic: true })!)
         .addFields([
             { name: strings.SETTINGS, value: settings.map(s => `**${s.name}:** ${s.value}`).join('\n') },
             { name: strings.CHANNELS, value: channels.map(c => `**${c.name}:** ${c.value}`).join('\n') }

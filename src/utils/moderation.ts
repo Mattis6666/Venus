@@ -2,7 +2,6 @@ import { GuildMember, TextChannel } from 'discord.js';
 import { Infraction } from '../database/schemas/InfractionSchema';
 import { newEmbed, replace } from './Util';
 import { VenusCommandStrings, VenusMessage } from '../interfaces/Client';
-import { getGuild } from '../database';
 import { getStrings } from './getters';
 
 export const logInfraction = async (message: VenusMessage, member: GuildMember, infraction: Infraction, strings: VenusCommandStrings) => {
@@ -10,8 +9,9 @@ export const logInfraction = async (message: VenusMessage, member: GuildMember, 
     if (!miscStrings) throw new Error('NO MISC STRINGS');
 
     if (!message.guild) throw new Error('THIS A DM RETARD');
-    const settings = await getGuild(message.guild.id);
-    const channel = settings.channels.modLogChannel ? message.guild.channels.cache.get(settings.channels.modLogChannel) : null;
+    const settings = await message.client.getSettings(message);
+
+    const channel = settings?.channels.modLogChannel ? message.guild.channels.cache.get(settings.channels.modLogChannel) : null;
     const output = newEmbed()
         .setTitle(miscStrings[infraction.infractionType])
         .setDescription(replace(strings.DM_MESSAGE, { GUILD: message.guild.name, ACTION: strings[infraction.infractionType] }))

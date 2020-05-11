@@ -1,14 +1,12 @@
-import { VenusCommand, VenusCommandStrings, VenusClient, VenusMessage } from '../../interfaces/Client';
-import { getGuild } from '../../database';
+import { VenusCommand, VenusCommandStrings, VenusMessage } from '../../interfaces/Client';
 import { replace, wrongSyntax } from '../../utils/Util';
 
 const callback = async (message: VenusMessage, args: string[], strings: VenusCommandStrings) => {
-    const client = message.client as VenusClient;
+    const guildSettings = await message.client.getSettings(message);
+    if (!guildSettings) return;
 
-    const guildSettings = await getGuild(message.guild!.id);
     if (!args.length) {
         guildSettings.channels.introChannel = '';
-        client.guildSettings.set(message.guild!.id, guildSettings);
         await guildSettings.save();
         return message.channel.send(strings.RESET);
     }
@@ -17,8 +15,7 @@ const callback = async (message: VenusMessage, args: string[], strings: VenusCom
     if (channel.type !== 'text') return wrongSyntax(message, strings.VERY_FUNNY);
 
     guildSettings.channels.introChannel = channel.id;
-    client.guildSettings.set(message.guild!.id, guildSettings);
-    await guildSettings.save();
+    guildSettings.save();
 
     return message.channel.send(
         replace(strings.SUCCESS, {

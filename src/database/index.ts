@@ -27,10 +27,6 @@ export const database = {
     intros: intros
 };
 
-export const getGuild = async (guildId: string) => {
-    return (await guildSettings.findOne({ guild: guildId })) || (await guildSettings.create({ guild: guildId }));
-};
-
 export const resetGuild = async (guildId: string) => {
     return await guildSettings.findOneAndDelete({ guild: guildId });
 };

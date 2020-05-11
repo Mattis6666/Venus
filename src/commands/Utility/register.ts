@@ -1,19 +1,19 @@
 import { Message, TextChannel } from 'discord.js';
-import { VenusClient, VenusCommand, VenusCommandStrings, VenusMessage } from '../../interfaces/Client';
+import { VenusCommand, VenusCommandStrings, VenusMessage } from '../../interfaces/Client';
 import { registerQuestions } from '../../constants/registerQuestions';
 import { newEmbed, wrongSyntax, replace } from '../../utils/Util';
 import { Promise } from 'bluebird';
-import { getGuild, getIntros } from '../../database';
-import { getPrefix } from '../../utils/getters';
+import { getIntros } from '../../database';
 
 const callback = async (message: VenusMessage, _args: string[], strings: VenusCommandStrings) => {
     if (!message.guild) return;
 
-    const guildSettings = await getGuild(message.guild.id);
+    const guildSettings = await message.client.getSettings(message);
+    if (!guildSettings) return wrongSyntax(message, strings.INTROS_DISABLED);
 
     const introChannel = message.guild.channels.cache.get(guildSettings.channels.introChannel);
     if (!introChannel) return wrongSyntax(message, strings.INTROS_DISABLED);
-    const prefix = await getPrefix(message.client as VenusClient, message.guild.id);
+    const prefix = await message.client.getPrefix(message);
 
     const introEntry = await getIntros(message.author.id);
     if (introEntry.intros.some(intro => intro.guild === message.guild!.id))

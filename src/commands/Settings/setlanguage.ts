@@ -1,11 +1,7 @@
-import { VenusCommand, VenusCommandStrings, VenusClient, VenusLanguages, VenusMessage } from '../../interfaces/Client';
-import { getGuild } from '../../database';
+import { VenusCommand, VenusCommandStrings, VenusLanguages, VenusMessage } from '../../interfaces/Client';
 import { replace, wrongSyntax } from '../../utils/Util';
 
 const callback = async (message: VenusMessage, args: string[], strings: VenusCommandStrings) => {
-    const client = message.client as VenusClient;
-    if (!message.guild) return;
-
     const languages = [
         {
             code: 'en_GB',
@@ -25,6 +21,9 @@ const callback = async (message: VenusMessage, args: string[], strings: VenusCom
         }
     ];
 
+    const guildSettings = await message.client.getSettings(message);
+    if (!guildSettings) return;
+
     const input = args.join(' ').toLowerCase();
     const language = languages.find(lang => lang.code.toLowerCase() === input || lang.aliases.includes(input));
     if (!language)
@@ -35,13 +34,8 @@ const callback = async (message: VenusMessage, args: string[], strings: VenusCom
             })
         );
 
-    const guildSettings = await getGuild(message.guild.id);
-    if (!guildSettings) return;
-
     guildSettings.settings.language = language.code as VenusLanguages;
-    await guildSettings.save();
-
-    client.guildSettings.set(message.guild.id, guildSettings);
+    guildSettings.save();
 
     return message.channel.send(
         replace(strings.SUCCESS, {

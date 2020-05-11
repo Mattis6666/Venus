@@ -1,24 +1,18 @@
-import { VenusCommand, VenusCommandStrings, VenusClient, VenusMessage } from '../../interfaces/Client';
-import { getGuild } from '../../database';
+import { VenusCommand, VenusCommandStrings, VenusMessage } from '../../interfaces/Client';
 import { wrongSyntax, replace } from '../../utils/Util';
 
 const callback = async (message: VenusMessage, args: string[], strings: VenusCommandStrings) => {
-    const client = message.client as VenusClient;
-    if (!message.guild) return;
-
-    const guildSettings = await getGuild(message.guild.id);
+    const guildSettings = await message.client.getSettings(message);
     if (!guildSettings) return;
 
-    const commands = args.map(cmd => client.commands.find(command => command.name === cmd || command.aliases.includes(cmd))?.name).filter(cmd => cmd);
+    const commands = args.map(cmd => message.client.commands.find(command => command.name === cmd || command.aliases.includes(cmd))?.name).filter(cmd => cmd);
 
     commands.forEach(command => {
         if (command && !guildSettings.settings.disabledCommands.includes(command)) guildSettings.settings.disabledCommands.push(command);
     });
     if (!commands.length) return wrongSyntax(message, strings.NO_COMMAND);
 
-    await guildSettings.save();
-
-    client.guildSettings.set(message.guild.id, guildSettings);
+    guildSettings.save();
 
     return message.channel.send(
         replace(strings.SUCCESS, {

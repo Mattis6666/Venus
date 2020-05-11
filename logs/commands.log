@@ -314,3 +314,47 @@ Message: n!prune 4
 User: VenTails#6666 (265560538937819137)
 Guild: VenusTs (609096347181776909)
 Message: n!tagcreate ((brokenregex) test
+[05.04.2020 15:38] help
+User: Venitals#6666 (265560538937819137)
+Guild: VenusTs (609096347181776909)
+Message: n!h
+[01.04.2020 17:39] help
+User: Venitals#6666 (265560538937819137)
+Guild: VenusTs (609096347181776909)
+Message: n!help
+[01.04.2020 17:39] setwelcomechannel
+User: Venitals#6666 (265560538937819137)
+Guild: VenusTs (609096347181776909)
+Message: n!setwelcomechannel <#696020170870882325>
+[01.04.2020 17:40] tagcreate
+User: Venitals#6666 (265560538937819137)
+Guild: VenusTs (609096347181776909)
+Message: n!tagcreate (some|test|regex) It works!
+[01.04.2020 17:40] tagcreate
+User: Venitals#6666 (265560538937819137)
+Guild: VenusTs (609096347181776909)
+Message: n!tagcreate (broken|regex lol
+[01.04.2020 17:42] eval
+User: Venitals#6666 (265560538937819137)
+Guild: VenusTs (609096347181776909)
+Message: n!eval client.getSettings(message)
+[01.04.2020 17:42] eval
+User: Venitals#6666 (265560538937819137)
+Guild: VenusTs (609096347181776909)
+Message: n!eval tags
+[01.04.2020 17:42] eval
+User: Venitals#6666 (265560538937819137)
+Guild: VenusTs (609096347181776909)
+Message: n!eval tags.remove()
+[01.04.2020 17:42] eval
+User: Venitals#6666 (265560538937819137)
+Guild: VenusTs (609096347181776909)
+Message: n!eval tags
+[01.04.2020 17:43] tagcreate
+User: Venitals#6666 (265560538937819137)
+Guild: VenusTs (609096347181776909)
+Message: n!createtag (this|should|work) it works!
+[01.04.2020 17:43] tagcreate
+User: Venitals#6666 (265560538937819137)
+Guild: VenusTs (609096347181776909)
+Message: n!createtag (this|should|error okay

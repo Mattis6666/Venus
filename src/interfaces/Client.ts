@@ -1,7 +1,5 @@
-import { Collection, Client, PermissionString, Message, ClientOptions } from 'discord.js';
-import { Guild } from '../database/schemas/GuildSchema';
+import { Collection, Client, PermissionString, Message, ClientOptions, TextChannel, DMChannel, MessageEmbed, NewsChannel, GuildMember } from 'discord.js';
 import { database } from '../database';
-import { Tag } from '../database/schemas/TagSchema';
 import { config } from '../config';
 
 const clientOptions: ClientOptions = {
@@ -24,11 +22,29 @@ export class VenusClient extends Client {
     prompts: Collection<string, string> = new Collection();
     inhibitors: Collection<string, (message: VenusMessage, command: VenusCommand) => boolean> = new Collection(); // TODO
     // TODO cooldowns: Collection<string, string> = new Collection();
-    guildSettings: Collection<string, Guild> = new Collection();
     languages: Collection<string, VenusStrings[]> = new Collection();
-    tags: Collection<string, Tag> = new Collection();
     config = config;
     database = database;
+    async getPrefix(guildThing: VenusMessage | GuildMember) {
+        return (await this.getSettings(guildThing))?.settings.prefix || this.config.defaultPrefix;
+    }
+    async getSettings(guildThing: VenusMessage | GuildMember) {
+        return guildThing.guild
+            ? (await this.database.guildSettings.findOne({ guild: guildThing.guild.id })) ||
+                  (await this.database.guildSettings.create({ guild: guildThing.guild.id }))
+            : null;
+    }
+    checkPermissions(channel: TextChannel | DMChannel | NewsChannel, Permissions: PermissionString[] = ['SEND_MESSAGES', 'EMBED_LINKS', 'VIEW_CHANNEL']) {
+        if (channel instanceof DMChannel) return true;
+        if (channel.permissionsFor(channel.guild.me!)?.has(Permissions)) return true;
+        return false;
+    }
+    embed(message: VenusMessage) {
+        return new MessageEmbed()
+            .setColor('RANDOM')
+            .setTimestamp()
+            .setAuthor(message.member?.displayName || message.author.username, message.author.displayAvatarURL({ size: 256, dynamic: true }));
+    }
 }
 
 export interface VenusMessage extends Message {

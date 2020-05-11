@@ -1,16 +1,14 @@
 import { TextChannel } from 'discord.js';
-import { VenusClient, VenusCommand, VenusCommandStrings, VenusCommandCategories, VenusMessage } from '../../interfaces/Client';
+import { VenusCommand, VenusCommandStrings, VenusCommandCategories, VenusMessage } from '../../interfaces/Client';
 import { wrongSyntax, newEmbed, replace, nicerPermissions } from '../../utils/Util';
-import { getPrefix } from '../../utils/getters';
 import { HelpCategories, HelpCommands } from '../../interfaces/HelpCategories';
-import { getGuild } from '../../database';
 import { emojis } from '../../constants/emojis';
 
 const callback = async (message: VenusMessage, args: string[], strings: VenusCommandStrings) => {
-    const client = message.client as VenusClient;
-    const prefix = message.guild ? await getPrefix(client, message.guild.id) : client.config.defaultPrefix;
+    const client = message.client;
+    const prefix = await client.getPrefix(message);
     const output = newEmbed(true);
-    const guildSettings = message.guild ? await getGuild(message.guild.id) : null;
+    const guildSettings = await client.getSettings(message);
     const helpStrings = client.languages.get(guildSettings?.settings.language || 'en_GB');
     const input = args[0]?.toLowerCase();
     if (!helpStrings) return;

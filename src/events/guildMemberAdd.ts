@@ -2,13 +2,14 @@ import Canvas from 'canvas';
 import { VenusClient } from '../interfaces/Client';
 import { GuildMember, TextChannel } from 'discord.js';
 import path from 'path';
-import { getGuild } from '../database';
 import { replace } from '../utils/Util';
 let background: Canvas.Image;
 
 export default async (client: VenusClient, member: GuildMember) => {
-    const guildSettings = await getGuild(member.guild.id);
-    const strings = client.languages.get(guildSettings.settings.language || 'en_GB')?.find(str => str.command === 'misc')?.strings;
+    const guildSettings = await client.getSettings(member);
+    if (!guildSettings) return;
+
+    const strings = client.languages.get(guildSettings?.settings.language || 'en_GB')?.find(str => str.command === 'misc')?.strings;
     if (!strings) throw new Error('NO STRINGS - GUILDMEMBERADD');
 
     if (guildSettings.welcome.autoRole) {

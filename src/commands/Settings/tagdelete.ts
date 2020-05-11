@@ -1,17 +1,15 @@
-import { VenusCommand, VenusCommandStrings, VenusClient, VenusMessage } from '../../interfaces/Client';
+import { VenusCommand, VenusCommandStrings, VenusMessage } from '../../interfaces/Client';
 import { getTags } from '../../database';
 import { wrongSyntax, replace } from '../../utils/Util';
 
 const callback = async (message: VenusMessage, args: string[], strings: VenusCommandStrings) => {
     if (!message.guild) return;
-    const client = message.client as VenusClient;
     const trigger = args[0].toLowerCase();
 
     const tagEntry = await getTags(message.guild.id);
     if (['*', 'all', 'everything'].includes(trigger)) {
         tagEntry.tags = [];
         tagEntry.save();
-        client.tags.set(message.guild.id, tagEntry);
         return message.channel.send(strings.DELETE_ALL);
     }
     const tag = tagEntry.tags.find(tag => tag.trigger === trigger);
@@ -19,7 +17,6 @@ const callback = async (message: VenusMessage, args: string[], strings: VenusCom
 
     tagEntry.tags.splice(tagEntry.tags.indexOf(tag), 1);
     tagEntry.save();
-    client.tags.set(message.guild.id, tagEntry);
 
     return message.channel.send(
         replace(strings.SUCCESS, {

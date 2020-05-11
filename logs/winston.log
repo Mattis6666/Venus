@@ -210,3 +210,44 @@
     at TLSSocket.socketOnData (/media/Storage/Projects/VenusTs/Bot/node_modules/ws/lib/websocket.js:875:35)
 [05.04.2020 01:49] UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). To terminate the node process on unhandled promise rejection, use the CLI flag `--unhandled-rejections=strict` (see https://nodejs.org/api/cli.html#cli_unhandled_rejections_mode). (rejection id: 1)
 [05.04.2020 01:49] DeprecationWarning: Unhandled promise rejections are deprecated. In the future, promise rejections that are not handled will terminate the Node.js process with a non-zero exit code.
+[00.04.2020 23:54] Warning: Setting the NODE_DEBUG environment variable to 'http' can expose sensitive data (such as passwords, tokens and authentication headers) in the resulting log.
+[00.04.2020 23:54] Connected to MongoDB Atlas at neptune!
+[00.04.2020 23:54] Connected to Discord as NeptuneTs#6220 - 695795584442957857
+[00.04.2020 23:54] Serving 1 guilds and 35 channels.
+[00.04.2020 23:54] Default prefix: n!
+[05.04.2020 15:37] Connected to MongoDB Atlas at neptune!
+[05.04.2020 15:37] Connected to Discord as NeptuneTs#6220 - 695795584442957857
+[05.04.2020 15:37] Serving 1 guilds and 35 channels.
+[05.04.2020 15:37] Default prefix: n!
+[01.04.2020 17:39] Connected to MongoDB Atlas at neptune!
+[01.04.2020 17:39] Connected to Discord as NeptuneTs#6220 - 695795584442957857
+[01.04.2020 17:39] Serving 1 guilds and 35 channels.
+[01.04.2020 17:39] Default prefix: n!
+[01.04.2020 17:39] Connected to MongoDB Atlas at neptune!
+[01.04.2020 17:39] Connected to Discord as NeptuneTs#6220 - 695795584442957857
+[01.04.2020 17:39] Serving 1 guilds and 35 channels.
+[01.04.2020 17:39] Default prefix: n!
+[01.04.2020 17:40] UnhandledPromiseRejectionWarning: SyntaxError: Invalid regular expression: /((brokenregex)/: Unterminated group
+    at new RegExp (<anonymous>)
+    at /media/Storage/Projects/VenusTs/Bot/dist/events/message.js:38:109
+    at CoreDocumentArray.find (<anonymous>)
+    at exports.default (/media/Storage/Projects/VenusTs/Bot/dist/events/message.js:38:75)
+    at processTicksAndRejections (internal/process/task_queues.js:97:5)
+[01.04.2020 17:40] UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). To terminate the node process on unhandled promise rejection, use the CLI flag `--unhandled-rejections=strict` (see https://nodejs.org/api/cli.html#cli_unhandled_rejections_mode). (rejection id: 1)
+[01.04.2020 17:40] DeprecationWarning: Unhandled promise rejections are deprecated. In the future, promise rejections that are not handled will terminate the Node.js process with a non-zero exit code.
+[01.04.2020 17:41] Connected to MongoDB Atlas at neptune!
+[01.04.2020 17:41] Connected to Discord as NeptuneTs#6220 - 695795584442957857
+[01.04.2020 17:41] Serving 1 guilds and 35 channels.
+[01.04.2020 17:41] Default prefix: n!
+[01.04.2020 17:41] UnhandledPromiseRejectionWarning: SyntaxError: Invalid regular expression: /((brokenregex)/: Unterminated group
+    at new RegExp (<anonymous>)
+    at /media/Storage/Projects/VenusTs/Bot/dist/events/message.js:38:109
+    at CoreDocumentArray.find (<anonymous>)
+    at exports.default (/media/Storage/Projects/VenusTs/Bot/dist/events/message.js:38:75)
+    at processTicksAndRejections (internal/process/task_queues.js:97:5)
+[01.04.2020 17:41] UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). To terminate the node process on unhandled promise rejection, use the CLI flag `--unhandled-rejections=strict` (see https://nodejs.org/api/cli.html#cli_unhandled_rejections_mode). (rejection id: 1)
+[01.04.2020 17:41] DeprecationWarning: Unhandled promise rejections are deprecated. In the future, promise rejections that are not handled will terminate the Node.js process with a non-zero exit code.
+[01.04.2020 17:42] Connected to MongoDB Atlas at neptune!
+[01.04.2020 17:42] Connected to Discord as NeptuneTs#6220 - 695795584442957857
+[01.04.2020 17:42] Serving 1 guilds and 35 channels.
+[01.04.2020 17:42] Default prefix: n!

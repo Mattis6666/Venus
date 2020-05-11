@@ -45,5 +45,5 @@ readdirSync(languagePath).forEach(folder => {
 
 VenusClient.login(VenusClient.config.token);
 
-process.on('uncaughtException', error => logError(error));
-process.on('warning', warn => logWarn(warn));
+process.on('uncaughtException', logError);
+process.on('warning', logWarn);

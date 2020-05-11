@@ -8,6 +8,13 @@ const callback = async (message: VenusMessage, args: string[], strings: VenusCom
     const client = message.client as VenusClient;
     const [name, ...response] = args;
     const trigger = name.toLowerCase();
+
+    try {
+        new RegExp(trigger);
+    } catch {
+        return wrongSyntax(message, strings.INVALID_TRIGGER);
+    }
+
     const command = client.commands.get(trigger) || client.commands.find(cmd => cmd.aliases.includes(trigger));
     if (command) return wrongSyntax(message, replace(strings.NAME_TAKEN, { COMMAND: command.name }), false);
 
@@ -27,7 +34,6 @@ const callback = async (message: VenusMessage, args: string[], strings: VenusCom
         tagEntry.tags.push({ trigger: trigger, response: response.join(' '), embed: false, author: { id: message.author.id, tag: message.author.tag } });
     }
     tagEntry.save();
-    client.tags.set(message.guild.id, tagEntry);
 
     return message.channel.send(
         replace(strings.SUCCESS, {
