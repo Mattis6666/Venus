@@ -358,3 +358,19 @@ Message: n!createtag (this|should|work) it works!
 User: Venitals#6666 (265560538937819137)
 Guild: VenusTs (609096347181776909)
 Message: n!createtag (this|should|error okay
+[02.04.2020 01:34] execute
+User: Venitals#6666 (265560538937819137)
+Guild: VenusTs (609096347181776909)
+Message: n!exec curl https://www.wikipedia.org
+[02.04.2020 01:35] execute
+User: Venitals#6666 (265560538937819137)
+Guild: VenusTs (609096347181776909)
+Message: n!exec wget https://www.wikipedia.org
+[02.04.2020 01:35] execute
+User: Venitals#6666 (265560538937819137)
+Guild: VenusTs (609096347181776909)
+Message: n!exec curl https://www.wikipedia.org
+[02.04.2020 01:35] execute
+User: Venitals#6666 (265560538937819137)
+Guild: VenusTs (609096347181776909)
+Message: n!exec touch dummy.txt && echo "lol" > dummy.txt

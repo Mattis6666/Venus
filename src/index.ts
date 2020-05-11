@@ -47,3 +47,4 @@ VenusClient.login(VenusClient.config.token);
 
 process.on('uncaughtException', logError);
 process.on('warning', logWarn);
+process.on('unhandledRejection', console.log);
