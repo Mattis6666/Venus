@@ -4,9 +4,9 @@ import { uploadHaste } from '../../utils/hastebin';
 
 const callback = async (message: VenusMessage, args: string[], _strings: VenusCommandStrings) => {
     exec(args.join(' '), async (err, stdout, stderr) => {
-        if (err) message.channel.send(await sendLongText(err.stack!));
-        if (stderr) message.channel.send(await sendLongText(stderr));
-        return message.channel.send((await sendLongText(stdout)) || 'No output!');
+        if (err) message.channel.send(await sendLongText(err.stack!), { code: 'xl' });
+        if (stderr) message.channel.send(await sendLongText(stderr), { code: 'xl' });
+        return message.channel.send((await sendLongText(stdout)) || 'No output!', { code: 'xl' });
     });
 };
 
