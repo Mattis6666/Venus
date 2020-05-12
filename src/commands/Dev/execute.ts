@@ -13,7 +13,7 @@ const callback = async (message: VenusMessage, args: string[], _strings: VenusCo
 export const command: VenusCommand = {
     name: 'execute',
     category: 'DEVELOPMENT',
-    aliases: ['exec', 'exe'],
+    aliases: ['exec', 'exe', 'exc'],
     developerOnly: true,
     nsfw: false,
     guildOnly: false,
