@@ -7,10 +7,15 @@ const callback = async (message: VenusMessage, args: string[], strings: VenusCom
     );
     if (!result || !result.length) return wrongSyntax(message, strings.NO_RESULT);
 
-    const url = result[Math.floor(Math.random() * result.length)].jpeg_url;
+    const res = result[Math.floor(Math.random() * result.length)];
+    const url = res.sample_url;
     if (!url) return wrongSyntax(message, strings.NO_RESULT);
 
-    const output = newEmbed(true).setImage(url).setDescription(`[Click me if the image doesn't show.](${url})`);
+    const output = newEmbed(true)
+        .setImage(url)
+        .setDescription(`[Source](${res.source || `https://yande.re/post/show/${res.id}`})`)
+        .setFooter(`Author: ${res.author || 'Unknown'}`)
+        .setTimestamp(res.created_at);
 
     return message.channel.send(output);
 };

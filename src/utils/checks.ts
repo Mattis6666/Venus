@@ -7,7 +7,7 @@ export const isMemberHigher = (member1: GuildMember, member2: GuildMember) => {
 export const isImageUrl = (url: unknown) => {
     return (
         typeof url === 'string' &&
-        ['.png', '.gif', '.webp', '.jpg', '.jpeg'].map(ext => url.includes(ext)).includes(true) &&
+        ['.png', '.gif', '.webp', '.jpg', '.jpeg'].some(ext => url.includes(ext)) &&
         (url.startsWith('https') || url.startsWith('http'))
     );
 };
