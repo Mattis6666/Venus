@@ -1,0 +1,8 @@
+{
+    "category": "Animé",
+    "description": "Cherchez votre manga ou animé favori!",
+    "extended": "",
+    "usage": "[Nom de l'animé]",
+    "NO_MATCH": "Désoler, je n'ai pas pus trouver d'animé correspond a votre recherche.",
+    "NSFW": "Désoler, je ne peu pas vous montrez cette animé, il est NSFW!"
+}

@@ -1,0 +1,10 @@
+{
+    "category": "Paramètres",
+    "description": "Choisissez le channel où sera envoyé les présentations des membres.",
+    "extended": "Éxécuter la commande sans préciser de channel désactivera les présentations!",
+    "usage": "<Channel>",
+    "RESET": "Les présentation on bien été désactivées! Les membres seront donc incapable d'en faire d'autres.",
+    "NO_CHANNEL": "Vous n'avez pas fournie un channel valide!",
+    "SUCCESS": "Le channel de présentation est maintenant `{CHANNEL}`! Les présentations seront envoyer làs-ba.",
+    "VERY_FUNNY": "Trés marrant. Préciser un channel textuel 😉"
+}

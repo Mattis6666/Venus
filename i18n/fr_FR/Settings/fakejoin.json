@@ -1,0 +1,7 @@
+{
+    "category": "Paramètres",
+    "description": "Créer un faux nouveau membre",
+    "extended": "Utile pour tester votre configuration pour les messages de bienvenue",
+    "usage": "[membre·e] (par default c'est vous même)",
+    "SUCCESS": "Crée avec succés le faux nouveau membre `{MEMBER}`"
+}

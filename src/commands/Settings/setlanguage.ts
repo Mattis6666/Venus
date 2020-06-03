@@ -18,6 +18,10 @@ const callback = async (message: VenusMessage, args: string[], strings: VenusCom
         {
             code: 'tr_TR',
             aliases: ['turkish', 'tr', 'türkçe']
+        },
+        {
+            code: 'fr_FR',
+            aliases: ['français', 'fancais', 'fr']
         }
     ];
 

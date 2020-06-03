@@ -1,0 +1,7 @@
+{
+    "category": "Animé",
+    "description": "Montre une image aléatoire de gros câllin",
+    "extended": "Pour serrer fort dans tes bras un·e de tes ami·e·s, écrivez leur nom ou mentionner les!",
+    "usage": "[utilisateur·trice·s]",
+    "MESSAGE": "{{USER}} fait un gros câllin à {{MEMBER}}!"
+}

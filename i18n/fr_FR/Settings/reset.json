@@ -1,0 +1,8 @@
+{
+    "category": "Paramètres",
+    "description": "Réinitialise tous les paramétres de mon serveur",
+    "extended": "ATTENTION, CELA VAS REMETTRE TOUS LES PARAMÈTRES PAR DEFAULT! Cela inclus *pour citer qu'eux* préfixe, commandes désactiver, channels bloquer, les paramétres de bienvenue...",
+    "usage": "",
+    "NO_DB": "Je suis dans l'incapacité de trouver le serveur `{GUILD}` dans la base de données.",
+    "SUCCESS": "Les paramètres de votre serveurs on bien été réinitialisé!"
+}

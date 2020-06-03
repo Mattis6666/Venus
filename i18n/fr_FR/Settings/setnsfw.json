@@ -1,0 +1,8 @@
+{
+    "category": "Paramètres",
+    "description": "Activer/Désactiver les commandes NSFW",
+    "extended": "Même activé, les commandes NSFW ne peuvent être utilisées que dans un channel NSFW.",
+    "usage": "",
+    "ENABLE": "Les commandes NSFW sont maintenant utilisable sur ce serveur!",
+    "DISABLE": "Les commandes NSFW ne sont plus utilisable  sur ce serveur!"
+}

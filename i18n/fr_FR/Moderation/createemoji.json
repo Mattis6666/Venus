@@ -1,0 +1,11 @@
+{
+    "category": "Modération",
+    "description": "Crée un emote",
+    "extended": "Vous pouvez aussi uploader une image au lieux d'utiliser une adresse url",
+    "usage": "<nom> <url>",
+    "INVALID_NAME": "Vous n'avez pas proposer un nom valide ( au moins 2 caractères, uniquement alphanumériques, ou des underscores (tiret du 8/tiret du bas)",
+    "NO_URL": "Vous n'avez pas fournie une image valide",
+    "REASON": "Créée par {MEMBER} via la commande createemote.",
+    "SUCCESS": "Votre emote {NAME} a bien etait créée ( {EMOJI} )",
+    "FAILURE": "Impossible de créer une emote. Cela peut être dus a un manque d'espace pour emote ou parce que l'image fournie est trop lourde (pas plus de 256 kO)"
+}

@@ -1,0 +1,15 @@
+{
+    "category": "Paramètres",
+    "description": "Créer une reaction permetant d'ajouter un role.",
+    "extended": "J'ai besoins d'avoir accés a l'emote (être sur le serveur il provient) ou l'emote doit déjà être une reaction sur le message.\nSi le message que vous voulez ajouter la reaction vient d'un autre channel que celui ou vous tapez la commande, bous devez préciser un #channel a la fin de la commande.",
+    "usage": "<ID du message> <Emote> <Role> [#Channel]",
+    "NO_MESSAGE": "Vous n'avez pas fournie un message valide. Si le message ce situe dans un autre channel, preciser le à la fin de la commande.",
+    "NO_ROLE": "Vous n'avez pas fournie un role valide.",
+    "ROLE_TOO_HIGH": "Ce role est supérieur au miens, je ne peu donc pas le gérer!",
+    "ROLE_MANAGED": "Ce role est gérer par une application tierce, je ne peu donc pas le gérer!",
+    "NO_EMOJI": "Vous n'avez pas fournie un emote valide.",
+    "EMOJI_INACCESSIBLE": "Je n'ai pas accés à l'emote que vous avez fournie. Réagisser vous même au message, ou ajoutez cette emote sur un serveur ou je suis.",
+    "EMOJI_TAKEN": "Cette emote est déjà utilisé pour un autre role sur le message que vous avez indiqué.",
+    "REACT_FAILED": "J'ai été incapable de réagir au message. Réagissez vous même ou donnez moi les permissions pour.",
+    "SUCCESS": "Votre reaction role a bien été crée!"
+}

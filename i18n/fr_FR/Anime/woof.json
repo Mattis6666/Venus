@@ -1,0 +1,7 @@
+{
+    "category": "Animé",
+    "description": "Montre une image aléatoire d'un chien",
+    "extended": "",
+    "usage": "[utilisateur·trice·s]",
+    "MESSAGE": "{{USER}} voulait te montrer ce chien tous mimi {{MEMBER}}!"
+}

@@ -1,0 +1,11 @@
+{
+    "category": "Paramètres",
+    "description": "Créer un tag (une commande personnalisée)",
+    "extended": "Vous pouvez aussi utiliser un JSON object embed pour repondreavec une embed!",
+    "usage": "<le trigger du tag> <la réponse du tag>",
+    "INVALID_TRIGGER": "Le trigger que vous souhaitez utiliser n'est pas valide, essayez s'en un autre.",
+    "NAME_TAKEN": "Vous ne pouvez  pas utliser ce trigger, la commande {COMMAND} s'en sert déjà!",
+    "TAG_TAKEN": "Çe trigger est déjà utiliser!",
+    "SUCCESS": "Votre tag a bien été crée : {NAME}!",
+    "FAILURE": "Cette embed semble invalide!"
+}

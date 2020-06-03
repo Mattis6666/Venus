@@ -1,0 +1,17 @@
+{
+    "PREFIX": "Mon préfixe sur ce serveur est `{PREFIX}`\nPour avoir une liste des commandes, taper `{PREFIX}help`",
+    "WELCOME": "Bienvenue",
+    "AUTO_ROLE_REASON": "Auto-role. Vous pouvez changer ce comportement grace à setautorole",
+    "WELCOME_MESSAGE": "Bienvenue dans {GUILD}, {MEMBER}!",
+    "REACTION_ROLE_ADD": "Le role `{ROLE}` a bien été créé sur `{GUILD}`!",
+    "REACTION_ROLE_REMOVE": "Le role `{ROLE}` a bien été éfacé sur `{GUILD}`!",
+    "MEMBER": "Membre",
+    "MODERATOR": "Moderateur·trice",
+    "REASON": "Motif",
+    "CASE": "Cas",
+    "warn": "Avertissement",
+    "mute": "Muet",
+    "unmute": "demute",
+    "kick": "Expulser",
+    "ban": "Bannir"
+}

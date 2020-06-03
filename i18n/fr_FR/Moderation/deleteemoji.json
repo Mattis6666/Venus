@@ -1,0 +1,13 @@
+{
+    "category": "Modération",
+    "description": "supprime un emote",
+    "extended": "Vous pouvez supprimer autant d'emote a la fois que vous le souhaitez.",
+    "usage": "<emote>",
+    "NO_EMOJIS": "Vous n'avez pas fourni d'emote :/",
+    "NO_GUILD_EMOJIS": "Aucun des emote fourni ne viennent de ce serveur",
+    "INITIAL": "{EMOJI} 0/{TOTAL} emote on bien etait effacé!",
+    "PROGRESS": "{EMOJI} {COUNT}/{TOTAL} emote on bien etait effacé!",
+    "REASON": "Supprimé par {MEMBER} via la commande deleteemoji",
+    "SUCCESS": "{EMOJI} J'ai reussie à supprimé tous vos emote ( {COUNT} )!",
+    "FAILURE": "{EMOJI} J'ai reussie qu'à suprimé {COUNT}/{TOTAL} emote!"
+}

@@ -1,0 +1,9 @@
+{
+    "category": "Paramètres",
+    "description": "Efface un tag (une commande personnalisée)",
+    "extended": "",
+    "usage": "<le trigger du tag>",
+    "NOT_A_TAG": "Vous n'avez pas fournie un tag valide à effacer!",
+    "SUCCESS": "Le tag `{NAME}` créé par `{AUTHOR}` a bien été éffacé!",
+    "DELETE_ALL": "Tous les tags de ce serveurs ont été supprimé!"
+}

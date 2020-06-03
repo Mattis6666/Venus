@@ -1,0 +1,8 @@
+{
+    "category": "Paramètres",
+    "description": "Définie ma langue dans votre serveur",
+    "extended": "",
+    "usage": "<langue>",
+    "NO_LANGUAGE": "Vous n'avez pas indiqué une langue valide. Les langues disponibles sont : `{LANGUAGES}`",
+    "SUCCESS": "La langue a bien été changé en {LANGUAGE}!"
+}

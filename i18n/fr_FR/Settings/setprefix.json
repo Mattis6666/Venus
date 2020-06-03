@@ -1,0 +1,7 @@
+{
+    "category": "Paramètres",
+    "description": "Définir le préfixe de ce serveur",
+    "extended": "",
+    "usage": "<nouveau préfixe>",
+    "SUCCESS": "Le préfixe de ce serveur a été modifié en `{PREFIX}`"
+}

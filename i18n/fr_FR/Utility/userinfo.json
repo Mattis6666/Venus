@@ -1,0 +1,8 @@
+{
+    "category": "Utilitaire",
+    "description": "Affiche des informations sur un·e utilisateur·trice·s.",
+    "extended": "",
+    "usage": "[utilisateur·trice·s] (par default vous même)",
+    "PERMISSIONS": "Permissions",
+    "SINCE": "Depuis {DATE}"
+}

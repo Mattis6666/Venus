@@ -1,0 +1,9 @@
+{
+    "category": "Paramètres",
+    "description": "Voire un tag (une commande personnalisée)",
+    "extended": "Si vous ne précisez aucun tag, je vous montrerais une liste des tag du serveur",
+    "usage": "<le trigger du tag>",
+    "TAGS": "Tags / commande personnalisée",
+    "NOT_A_TAG": "Vous n'avez pas indiqué un tag valide!",
+    "CREATED_BY": "Tag créé par {AUTHOR}"
+}

@@ -1,0 +1,7 @@
+{
+    "category": "Fun",
+    "description": "Jouer une partie de démineur",
+    "extended": "Le but du jeu est de réveller le contenue des cases du plateau. Mais vous devez pas clicker sur les cases contenant des bombes!\nChaque cases ne contenant pas de bombes que vous clickez vous indiquera le nombre total de bombes dans les huit cases voisines..",
+    "usage": "[collones] [lignes] [mines] (par default: 10x10 avec 10 bombes/mines)",
+    "TOO_LONG": "Ce plateau compte plus de 2000 caractères, je ne peux donc pas l'envoyer ! Choisissez des nombres plus petits."
+}

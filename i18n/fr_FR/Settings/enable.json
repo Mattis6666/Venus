@@ -1,0 +1,9 @@
+{
+    "category": "Paramètres",
+    "description": "Active une voire plusieurs commandes",
+    "extended": "",
+    "usage": "<nom de la commandes | aliase de la commandes>",
+    "NO_COMMAND": "Vous n'avez pas fournie de commande valide à activer!",
+    "ENABLE_ALL": "Toute les commandes ont bien été activée!",
+    "SUCCESS": "Les commandes suivantes on bien été désactivée : `{COMMANDS}`"
+}

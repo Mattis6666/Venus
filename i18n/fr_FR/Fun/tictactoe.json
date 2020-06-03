@@ -1,0 +1,13 @@
+{
+    "category": "Fun",
+    "description": "Jouer une partie de morpion contre l'ordinateur",
+    "extended": "Vous aurez la possibiliter de jouer contre d'autres joueurs. Cette fonction n'est cependant pas encore implémenter",
+    "usage": "",
+    "RULES": "X est le joueur, O l'ordinateur.\nPour jouer un coup, il suffit de taper [numéro de la rangée] [numéro de la ligne] en comptant à partir du coin inférieur gauche.\nExemple: Le coin inférieur droit serait 3 1, le coin supérieur droit 3 3 etc...\nEnvoie `{CANCEL_WORD}` pour arrêter de jouer à tout moment.",
+    "CANCEL_WORD": "stop",
+    "QUIT": "la partie a bien etait annuler",
+    "INVALID_MOVE": "Vous ne pouvez pas faire ce coup",
+    "DRAW": "Egualitée!",
+    "WIN": "{PLAYER} à gagné!",
+    "LOSS": "{BOT} à gagné!"
+}

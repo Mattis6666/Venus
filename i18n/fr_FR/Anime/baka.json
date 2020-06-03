@@ -1,0 +1,7 @@
+{
+    "category": "Animé",
+    "description": "Montre une image aléatoire de baka.",
+    "extended": "Si un·e de vos ami·e·s est un·e baka, écrivez leur nom ou mentionner les!",
+    "usage": "[utilisateur·trice·s]",
+    "MESSAGE": "{{USER}} trouve que tu es un baka {{MEMBER}}!"
+}

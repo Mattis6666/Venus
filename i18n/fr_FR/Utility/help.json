@@ -1,0 +1,19 @@
+{
+    "category": "Utilitaire",
+    "description": "A-attend quoi?!\n Que faites vous ici?!\nd-(O.O)-b",
+    "extended": "",
+    "usage": "[nom de la commande | aliase de la commande]",
+    "INVALID": "Ce n'est pas une commande ou une catégorie!",
+    "HEADER": "Menu d'aide",
+    "MENU_DESCRIPTION": "Pour plus d'info sur une commande voire une catégorie, utiliser `{PREFIX}help categorie` or `{PREFIX}help commande`",
+    "FOOTER": "Pour plus d'info sur une commande, utilser `{PREFIX}help commande`",
+    "VIEW_NSFW_COMMAND": "Pour voire ces commandes, soyez sure que vous êtes dans un channel NSFW et que les commande NSFW sont activer sur çe serveur!",
+    "VIEW_NSFW_MENU": "Pour voire ces commandes, éxécuter `{PREFIX}help nsfw` dans un channel NSFW!",
+    "DESCRIPTION": "Description",
+    "USAGE": "Usage",
+    "ALIASES": "Alias",
+    "GUILD_ONLY": "Serveur uniquement",
+    "NSFW": "NSFW",
+    "REQUIRES_ARGS": "Des arguments sont requis",
+    "REQUIRES_PERMISSION": "Des permissions spécifique sont requise"
+}

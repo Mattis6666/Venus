@@ -1,0 +1,10 @@
+{
+    "category": "Paramètres",
+    "description": "Définir le channel où sera envoyer les logs de modération",
+    "extended": "Éxécuter la commande sans préciser de channel désactivera les logs de modérations!",
+    "usage": "<Channel>",
+    "RESET": "Les logs de modération on bien été désactivé!",
+    "NO_CHANNEL": "Vous n'avez pas fournie un channel valide!",
+    "SUCCESS": "Les logs seront maintenant envoyer dans `{CHANNEL}`!",
+    "VERY_FUNNY": "Trés marrant. Préciser un channel textuel 😉"
+}

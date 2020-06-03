@@ -1,0 +1,15 @@
+{
+    "category": "Modération",
+    "description": "Efface 1-100 messages. Vous pouvez utilisez des filtres.",
+    "extended": "Les filtres disponible sont:\n`@Mention/ID de·s l'utilisateur·trice·s` - Efface uniquement les message de les dits membres\n`Liens` - Efface uniquement les messages contenant des liens.\n`fichiers` - Efface uniquement les messages contenant des pièces jointes\n`Bots` - Efface uniquement les messages envoyer par des bots.\n`Invitations` - Efface uniquement les messages contenant des liens d'invitation Discord.\n`Emotes` - Efface uniquement les messages contenant des emotes.\n`Mentions` - Efface uniquement les messages contenant une mention (pingant quelqu'un)",
+    "usage": "<Quantité (de msg a effacer)> [@Mention | ID de·s l'utilisateur·trice·s | Liens | Fichiers | Bots | Invitations | Emotes | Mentions]",
+    "LINKS": "Links",
+    "ATTACHMENTS": "Fichiers",
+    "BOTS": "Bots",
+    "INVITES": "Invitations",
+    "EMOJIS": "Emotes",
+    "MENTIONS": "Mentions",
+    "NO_AMOUNT": "Veuillez precisez une valeur entre 1 et 100.",
+    "NO_MESSAGES": "Je n'ai pus lire aucun messages. Veuillez verifier que j'ai les permission nécessaire (lire l'historique des messages)!",
+    "SUCCESS": "J'ai éffacé {AMOUNT} messages en prennant en comptes vos filtres!"
+}

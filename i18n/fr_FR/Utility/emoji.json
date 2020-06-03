@@ -1,0 +1,7 @@
+{
+    "category": "Utilitaire",
+    "description": "Vous donne le lien de n'importe quelle emote",
+    "extended": "",
+    "usage": "<emote> (vous pouvez en précisez autant que vous voulez)",
+    "NO_EMOJIS": "Vous n'avez pas indiqué d'emote!"
+}

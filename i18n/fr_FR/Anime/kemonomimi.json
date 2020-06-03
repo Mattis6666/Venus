@@ -1,0 +1,7 @@
+{
+    "category": "Animé",
+    "description": "Montre une image aléatoire de komomimi (plus communement appeler catgirl)",
+    "extended": "",
+    "usage": "[utilisateur·trice·s]",
+    "MESSAGE": "{{USER}} voulait te montrer cette magnifique catgirl {{MEMBER}}!"
+}

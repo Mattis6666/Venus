@@ -1,0 +1,7 @@
+{
+    "category": "Animé",
+    "description": "Faire des chatouilles",
+    "extended": "Pour chatouiller quelqu'un, écrivez leur nom ou mentionner les!",
+    "usage": "[utilisateur·trice·s]",
+    "MESSAGE": "{{USER}} te chatouilles {{MEMBER}}!"
+}

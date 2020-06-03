@@ -1,0 +1,8 @@
+{
+    "category": "Paramètres",
+    "description": "Désactive une voire plusieurs commandes",
+    "extended": "",
+    "usage": "<nom de la commandes | aliase de la commandes>",
+    "NO_COMMAND": "Vous n'avez pas fournie de commande valide à désactiver!",
+    "SUCCESS": "Les commandes suivantes on bien été désactivée : `{COMMANDS}`"
+}
