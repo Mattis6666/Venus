@@ -1,0 +1,16 @@
+{
+    "category": "Utilitaire",
+    "description": "Faire une introduction",
+    "extended": "Je vais te posais des question en DM. t'es reponse seront réécrite dans le channel des présentations. Tu peux configurer ce channel avec `setintrochannel`",
+    "usage": "",
+    "INTROS_DISABLED": "Les présentations sont désactiver dans ce serveur",
+    "ALREADY_REGISTERED": "Vous avez déjà une présentation. Utilisé `{PREFIX}unregister` pour l'effacé!",
+    "PRIVATE_MESSAGE": "Je vais t'envoyé un DM. Soiyez sure qu'ils sont ouvert!",
+    "START": "Je vais maintenant te poser quelque questions. Reponds uniquement avec les choix proposé si il y en as. Garde tes réponse en dessous de 300 caractères.",
+    "DM_FAILED": "Je suis incapable de vous envoyer un message privé, {USER}. Soyez sure que vos DM sont ouvert. Vous pouvez bien sure les refermez après que je vous ai contacté!",
+    "INVALID_RESPONSE": "Ce n'est pas une réponse valide!",
+    "TOO_LONG": "Votre réponse dépassse les 300 caractères!",
+    "FAILURE": "Vous avez répondue trop de fois avec des répose fausse, ou pris trop de temps pour répondre. Éxécuter la commande de nouveau si vous voulez réessayer.",
+    "SUCCESS": "Merci bien, votre présentation est completée! Vous pouvez l'effacez a tous moment avec `{PREFIX}unregister`",
+    "ERROR": "Je suis désolé, une erreur c'est produite. Essayez de contacter un admin de votre serveur."
+}

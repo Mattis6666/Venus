@@ -1,0 +1,7 @@
+{
+    "category": "Animé",
+    "description": "Montre une image aléatoire de foxgirl.",
+    "extended": "",
+    "usage": "[utilisateur·trice·s]",
+    "MESSAGE": "{{USER}} voulais te montrer cette jolie foxgirl {{MEMBER}}!"
+}

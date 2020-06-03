@@ -10,6 +10,7 @@ Venus aims to be a bot that combines the features of all big bots into one singl
 
 This means however, that she will receive many many updates adding more and more features.
 You can find the current features below
+
 <center> <h2> Features </h2> </center>
 
 |            |                                                                                                                                        |
@@ -22,11 +23,12 @@ You can find the current features below
 | Welcome    | Welcome messages, neat welcome cards and auto-role                                                                                     |
 
 You can customise many of her settings:
-- Prefix
-- Disabled commands
-- Disabled channels
-- Language ~ Current options are English, German, Turkish and Dutch. More languages soon to be added!
-- And many more
+
+-   Prefix
+-   Disabled commands
+-   Disabled channels
+-   Language ~ Current options are English, German, Turkish and Dutch. More languages soon to be added!
+-   And many more
 
 ## Set up your own Venus Instance
 
@@ -43,7 +45,9 @@ You can customise many of her settings:
 ## Translate Venus
 
 -   Clone the repo
--   Create a copy of `/i18n/en_GB` to `/i18n/yourlanguage_YOURCOUNTRY` and add your folder's name to `/src/interfaces/Languages.ts`
+-   Create a copy of `/i18n/en_GB` to `/i18n/yourlanguage_YOURCOUNTRY`.
+-   Modify `/src/interfaces/Client.ts` (add your folder name on the line 82)
+    and modify `/src/commands/Settings/setlanguage.ts` (the const languages line 5, code is equal to your folder name, you can put as many aliases)
 -   Simply change all the strings in all command files.\
     DO NOT replace `{TEXT}` or Text inside ``.You can move them around, but do not change or remove them.
 -   Create a pull request with your changes.

@@ -1,0 +1,7 @@
+{
+    "category": "Animé",
+    "description": "Poke quelqu'un",
+    "extended": "Pour poke un·e ami·e·s, écrivez leur nom ou mentionner les!",
+    "usage": "[utilisateur·trice·s]",
+    "MESSAGE": "{{USER}} poke {{MEMBER}}!"
+}

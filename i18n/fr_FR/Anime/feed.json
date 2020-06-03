@@ -1,0 +1,7 @@
+{
+    "category": "Animé",
+    "description": "Montre une image aléatoire de nourrisage",
+    "extended": "Pour nourrir vos ami·e·s, écrivez leur nom ou mentionner les!",
+    "usage": "[utilisateur·trice·s]",
+    "MESSAGE": "{{USER}} est entrain de nourrir {{MEMBER}}!"
+}

@@ -1,0 +1,14 @@
+{
+    "category": "Modération",
+    "description": "Donne un avertissement a un·e membre·e·s",
+    "extended": "",
+    "usage": "<utilisateur·trice·s (mention, nom de utilisateur·trice·s ou ID)> [motif]",
+    "NOT_HIGHER": "Vous ne pouvez pas donner d'avertissement a ce membres, votre role le plus élever n'est pas au dessus d'eux!",
+    "NO_REASON": "Vous n'avez pas préciser de motif",
+    "DM_MESSAGE": "Vous venez de vous prendre un avertissement sur {GUILD}!",
+    "GUILD_MESSAGE": "Un avertissement a bien été donné à {MEMBER}",
+    "MEMBER": "Membre",
+    "MOD": "Modérateur·trice·s",
+    "REASON": "Motif",
+    "CASE": "Cas"
+}

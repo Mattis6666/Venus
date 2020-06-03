@@ -1,0 +1,7 @@
+{
+    "category": "NSFW",
+    "description": "Montre une image aléatoire provenant de yande.re",
+    "extended": "",
+    "usage": "<tags>",
+    "NO_RESULT": "J'ai été incapable de trouvé quelconque resultat pour vos tags"
+}

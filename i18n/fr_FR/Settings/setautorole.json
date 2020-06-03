@@ -1,0 +1,8 @@
+{
+    "category": "Paramètres",
+    "description": "Définie le role attribué aux nouveaux membres.",
+    "extended": "Éxécuter la commande sans préciser de role désactivera l'autorole!",
+    "usage": "<Role (mention, ID, ou nom)>",
+    "RESET": "L'autorole a bien été désactivé! Les nouveaux membres n'auront plus de role attribué.",
+    "SUCCESS": "L'autorole a bien était configuré en : `{AUTOROLE}`! Çe role sera donné au nouveau membre."
+}

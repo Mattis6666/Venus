@@ -1,0 +1,10 @@
+{
+    "category": "Paramètres",
+    "description": "Définir le channel auquel sera envoyer les carte de bienvenue",
+    "extended": "Éxécuter la commande sans préciser de channel désactivera les carte de bienvenue!",
+    "usage": "<Channel>",
+    "RESET": "Les cartes de bienvenue ont bien était désactivé! Les nouveaux membres n'en recevront donc pas.",
+    "NO_CHANNEL": "Vous n'avez pas fournie un channel valide!",
+    "SUCCESS": "Les cartes de bienvenue seront maintenant envoyer dans `{CHANNEL}`",
+    "VERY_FUNNY": "Trés marrant. Préciser un channel textuel 😉"
+}

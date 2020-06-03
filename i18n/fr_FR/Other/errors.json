@@ -1,0 +1,18 @@
+{
+    "SERVER_ONLY": "Cette commande peut uniquement être utilisé dans un serveur!",
+    "DM_ONLY": "Cette commande peut uniquement être utilisé en DM!",
+    "NSFW_CHANNEL_ONLY": "Cette commande peut uniquement être utilisé dans un channel tagger NSFW!",
+    "NSFW_DISABLED": "Ce serveur a les commandes NSFW de désactiver! Contacté un·e administrateur·trice·s si vous pensez que cela est une erreur, et que ça doit être modifier.",
+    "USER_MISSING_PERMISSION": "Vous avez besoins des permission suivantes : `{PERMISSION}` pour utiliser cette commande!",
+    "BOT_MISSING_PERMISSION": "j'ai besoins des permissions : `{PERMISSION}` pour que je puisse éxécuter votre commande!",
+    "WRONG_USAGE": "Vous n'avez pas bien utilisé la commande. L'usage correct est : `{USAGE}`.",
+    "NO_USER_FOUND": "Vous n'avez pas fournie un·e utilisateur·trice·s valide·s. Rééssayez en préçisant un·e·s valide·s.",
+    "NO_MEMBER_FOUND": "Vous n'avez pas fournie un·e membre·e·s valide·s. Rééssayez en préçisant un·e·s valide·s.",
+    "NO_ROLE_FOUND": "Vous n'avez pas fournie un role valide. Rééssayez en préçisant un·e·s valide·s.",
+    "MULTIPLE_USERS_FOUND": "J'ai trouvé plusieurs utilisateurs correspond a votre saisie",
+    "MULTIPLE_MEMBERS_FOUND": "J'ai trouvé plusieurs membres correspond a votre saisie",
+    "MULTIPLE_ROLES_FOUND": "J'ai trouvé plusieurs roles correspond a votre saisie",
+    "PROMPT": "J'ai trouvé plusieur résultats. Séléctionnez en un en tapant uniquement le nombres!",
+    "PROMPT_TIMEOUT": "J'ai trouvé plusieurs résultats, mais vous n'en avez pas sélectionner un a temps.  Rééssayez la commande!",
+    "INVALID_CHOICE": "Ce n'est pas un choix valide! Rééssayez la commande!"
+}

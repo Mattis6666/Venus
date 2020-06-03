@@ -1,0 +1,8 @@
+{
+    "category": "Animé",
+    "description": "OwOifie votre texte ",
+    "extended": "",
+    "usage": "<text>",
+    "FAILURE": "Désoler, je n'ai pas pus owofier ton texte",
+    "SUCCESS": "{USER}, votre message owofier:"
+}

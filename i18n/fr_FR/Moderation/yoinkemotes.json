@@ -1,0 +1,10 @@
+{
+    "category": "Modération",
+    "description": "Télécharger des émotes d'autres serveurs vers votre propre serveur",
+    "extended": "Les emotes garderons leur noms original",
+    "usage": "<emote> (Vous pouvez en indiquer autant que vous souhaitez)",
+    "NO_EMOJIS": "Vous n'avez pas fournie d'emote!",
+    "FAILURE": "J'ai été dans l'incapacité a yoink ces emotes. Il ya des chances que le serveurs n'est plus d'espaces libres!",
+    "SUCCESS": "j'ai réussi à yoinker {AMOUNT} emotes: {EMOJIS}",
+    "REASON": "Crée via {COMMAND} par {USER}"
+}

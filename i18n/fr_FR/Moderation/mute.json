@@ -1,0 +1,17 @@
+{
+    "category": "Modération",
+    "description": "Muter ou demuter un·e·des membre·e·s",
+    "extended": "Lors de la première utilisation, Venus créera automatiquement un rôle muet. N'hésitez pas à le modifier, mais ne le supprimez pas. Utilisez la commande tempmute pour une mise muter temporairement !",
+    "usage": "<Membre·e·s> [Motif]",
+    "ROLE_CREATE": "Je vais maintenant créer un rôle qui sera utilisé pour les futurs mute. Veuillez être patient, car cela pourrait prendre un certain temps. Je dois modifier les permissions de chaque channel !",
+    "ROLE_CREATE_FAILURE": "J'ai été dans l'incapaciter de créer le roles.",
+    "ROLE_CREATE_SUCCESS": "Le role muter a bien était configuré. Vous pouvez le modifier a votre guise, mais ne l'effacer pas",
+    "INVALID_ROLE": "J'ai été incapable de trouver le role des muter. La prochaine fois que vous éxecuterai cette commande, j'en configuerai un nouveau. S'il-vous-plait n'effacer pas ce role!",
+    "UNMUTE_FAILURE": "Je suis incapable de muter ce membre. Soyez sur que mon role est au dessus du role muet!",
+    "MUTE_FAILURE": "Je suis incapable de muter ce membre. Soyez sur que mon role est au dessus du role muet!",
+    "NO_REASON": "Vous n'avez pas préciser de motif",
+    "DM_MESSAGE": "Vous êtes {ACTION} sur {GUILD}",
+    "GUILD_MESSAGE": "{MEMBER} a bien été {ACTION}.",
+    "mute": "muter",
+    "unmute": "demuter"
+}

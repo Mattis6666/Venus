@@ -1,0 +1,10 @@
+{
+    "category": "Utilitaire",
+    "description": "Inviter Venus dans votre serveur!",
+    "extended": "",
+    "usage": "",
+    "INVITE_ME": "Invite moi! :3",
+    "CLICK_HERE": "Appuyez ici pour m'inviter dans votre serveur! :D",
+    "SET_PREFIX": "Pour configurer mon prefix a mon arrivé, utilisé `{PREFIX}setprefix` ( et `{PREFIX}setlang fr` pour me mettre en français )",
+    "SUPPORT_SERVER": "Vous avez besoins d'aide? Rejoingnez le serveur officiel en cliquant ici!"
+}

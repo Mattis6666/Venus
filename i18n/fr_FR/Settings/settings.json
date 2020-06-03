@@ -1,0 +1,22 @@
+{
+    "category": "Paramètres",
+    "description": "",
+    "extended": "",
+    "usage": "",
+    "TITLE": "Paramètres du serveur",
+    "SETTINGS": "Paramètres",
+    "CHANNELS": "Channels",
+    "PREFIX": "Préfixe",
+    "LANGUAGE": "Langue",
+    "NSFW": "NSFW",
+    "DISABLED_COMMANDS": "Commandes désactiver",
+    "WELCOME_MESSAGE": "Message de bienvenue",
+    "AUTO_ROLE": "Auto-Role",
+    "welcomeChannel": "Channel de bienvenue",
+    "introChannel": "Channel de présentation",
+    "modLogChannel": "Log de modérations",
+    "messageLogChannel": "Log des messages",
+    "memberLogChannel": "Log des membres",
+    "automodLogChannel": "Log de l'auto-modérateur",
+    "serverLogChannel": "Log du serveur"
+}

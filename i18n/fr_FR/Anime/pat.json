@@ -1,0 +1,7 @@
+{
+    "category": "Animé",
+    "description": "Montre une image aléatoire de pat.",
+    "extended": "Pour pat vos ami·e·s, écrivez leur nom ou mentionner les!",
+    "usage": "[utilisateur·trice·s]",
+    "MESSAGE": "{{USER}} donne des pat à {{MEMBER}}!"
+}

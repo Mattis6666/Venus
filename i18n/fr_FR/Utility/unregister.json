@@ -1,0 +1,9 @@
+{
+    "category": "Utilitaire",
+    "description": "Effacer votre présentation",
+    "extended": "Cella effacera votre introduction. Vous permettant dans faire une autre!",
+    "usage": "",
+    "NOT_REGISTERED": "Vous n'avez pas de présentation sur ce serveur!",
+    "SUCCESS": "Votre intro a bien été éffacé!",
+    "REASON": "Un·e utilisateur·trice a éffacé ca présentation"
+}

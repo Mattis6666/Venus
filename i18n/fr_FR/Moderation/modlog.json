@@ -1,0 +1,19 @@
+{
+    "category": "Modération",
+    "description": "Consultez le log de modération d'un·e membre·e·s ou le vôtre.",
+    "extended": "",
+    "usage": "[utilisateur·trice·s (mention, pseudonyme or ID)]",
+    "USER_NO_INFRACTIONS": "Vous n'avez aucune infraction, {USER}.",
+    "MEMBER_NO_INFRACTIONS": "{AUTHOR}, {MEMBER} a aucune infraction.",
+    "MODLOG": "Log de modération pour {MEMBER}",
+    "MODERATOR": "Moderator",
+    "DATE": "Date",
+    "REASON": "Motif",
+    "CASE": "Cas",
+    "NO_PERMS": "Vous avez besoins de la permission `Manage Messages` pour voire le log d'un·e autre membre·e·s",
+    "warn": "Avertissement",
+    "mute": "Mute",
+    "unmute": "demute",
+    "kick": "Expulsion",
+    "ban": "Bannisement"
+}

@@ -1,0 +1,8 @@
+{
+    "category": "Paramètres",
+    "description": "Définir le message à envoyer au nouveaux membres",
+    "extended": "Éxécuter la commande sans préciser de message désactivera ces derniers!",
+    "usage": "<message>",
+    "RESET": "Les messages de bienvenue ont bien été désactivés!",
+    "SUCCESS": "Les messages de bienvenue ont bien été mis à jour!"
+}

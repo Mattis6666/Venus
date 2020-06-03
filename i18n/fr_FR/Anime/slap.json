@@ -1,0 +1,7 @@
+{
+    "category": "Animé",
+    "description": "Mets une claque a quelqu'un",
+    "extended": "Pour mettre une claque a une mechante personne, écrivez leur nom ou mentionner les!",
+    "usage": "[utilisateur·trice·s]",
+    "MESSAGE": "{{USER}} mets des claque à {{MEMBER}}!"
+}

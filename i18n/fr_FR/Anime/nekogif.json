@@ -1,0 +1,7 @@
+{
+    "category": "Animé",
+    "description": "Montre un gif aléatoire de neko",
+    "extended": "",
+    "usage": "[utilisateur·trice·s]",
+    "MESSAGE": "{{USER}} voulait te montrer ce neko tous mimi {{MEMBER}}!"
+}

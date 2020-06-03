@@ -1,0 +1,7 @@
+{
+    "category": "Animé",
+    "description": "Montre une image aléatoire de lézard",
+    "extended": "",
+    "usage": "[utilisateur·trice·s]",
+    "message": "{{USER}} voulait te montrer ce joli lézard {{MEMBER}}!"
+}

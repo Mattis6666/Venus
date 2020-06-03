@@ -1,0 +1,21 @@
+{
+    "category": "Modération",
+    "description": "Expulser un·e·des utilisateur·trice·s",
+    "extended": "",
+    "usage": "<utilisateur·trice·s (Mention, ID or nom)> [motif]",
+    "YES": "oui",
+    "NO": "non",
+    "NOT_HIGHER": "Parce que un de leur role est plus élever que votre role le plus élever, vous ne pouvez pas expulser cette utilisateur·trice·s",
+    "CANT_KICK": "Je suis dans l'incapacité d'expulser ce·tte·s membre·e·s. Il ya des grandes chances qu'ils ont un role supérieure aux miens",
+    "CONFIRM": "Souhaitez-vous réellement expulser {MEMBER}?\nS'il-vous-plait repondez part `{YES}` ou `{NO}`.",
+    "NO_REASON": "Vous n'avez pas préciser de motif",
+    "DM_MESSAGE": "Vous venez de vous faire expulser de {GUILD}!",
+    "GUILD_MESSAGE": "{MEMBER} a bien été expulser.",
+    "KICK_CANCEL": "Vous avez annuler l'expulsion",
+    "INVALID_RESPONSE": "Réponse non valide! S'il-vous-plait répondez uniqement avec `{YES}` oui `{NO}`!",
+    "TOO_SLOW": "Vous n'avez pas repondue a temps!",
+    "KICK": "Expulser",
+    "MEMBER": "Membre",
+    "MOD": "Modérateur·trice·s",
+    "REASON": "Motif"
+}

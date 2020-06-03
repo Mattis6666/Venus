@@ -1,0 +1,8 @@
+{
+    "category": "Utility",
+    "description": "Cherche une définition urbandictionary.com",
+    "extended": "**C'est un dictionnaire anglais!**",
+    "usage": "<le mot a rechercher>",
+    "NSFW": "Certaines définition peuvent êtres NSFW. Ce qui limite cette commande au channel NSFW!",
+    "NO_MATCH": "Désolé, je n'ai pas trouvé de définission sur votre recherche."
+}

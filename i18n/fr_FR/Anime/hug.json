@@ -1,0 +1,8 @@
+{
+    "category": "Animé",
+    "aliases": [],
+    "description": "Prends dans tes bras quelqu'un.",
+    "extended": "Pour prendre dans tes bras un·e de tes ami·e·s, écrivez leur nom ou mentionner les!",
+    "usage": "[utilisateur·trice·s]",
+    "MESSAGE": "{{USER}} fait un câllin a {{MEMBER}}!"
+}

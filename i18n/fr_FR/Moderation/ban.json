@@ -1,0 +1,21 @@
+{
+    "category": "Modération",
+    "description": "bannir un·e·des utilisateur·trice·s",
+    "extended": "",
+    "usage": "<utilisateur·trice·s (Mention, ID or nom)> [motif]",
+    "YES": "oui",
+    "NO": "non",
+    "NOT_HIGHER": "Parce que un de leur role est plus élever que votre role le plus élever, vous ne pouvez pas bannir cette utilisateur·trice·s",
+    "CANT_BAN": "Je suis dans l'incapacité de bannir ce·tte·s membre·e·s. Il ya des grandes chances qu'ils ont un role supérieure aux miens",
+    "CONFIRM": "Souhaitez-vous réellement bannir {MEMBER}?\nS'il-vous-plait repondez part `{YES}` ou `{NO}`.",
+    "NO_REASON": "Vous n'avez pas préciser de motif",
+    "DM_MESSAGE": "Vous venez de vous faire bannir de {GUILD}!",
+    "GUILD_MESSAGE": "{MEMBER} a bien été banni",
+    "BAN_CANCEL": "Le ban a été annulé",
+    "INVALID_RESPONSE": "Réponse non valide! S'il-vous-plait répondez uniqement avec `{YES}` ou `{NO}`!",
+    "TOO_SLOW": "Vous n'avez pas repondue a temps!",
+    "BAN": "Ban",
+    "MEMBER": "Membre",
+    "MOD": "Modérateur·trice·s",
+    "REASON": "Motif"
+}

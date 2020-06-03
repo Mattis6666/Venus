@@ -1,0 +1,12 @@
+{
+    "category": "Utilitaire",
+    "description": "Affiche des information sur ce serveurs.",
+    "extended": "",
+    "usage": "",
+    "NO_DESCRIPTION": "Pas de descriptions de disponible.",
+    "BOOST_LEVEL": "Level {LEVEL}",
+    "ROLES": "Roles",
+    "CHANNELS": "Channels",
+    "TOO_MANY_ROLES": "Désolé, il ya trop de roles, je ne peu donc pas les affiché ici.",
+    "TOO_MANY_CHANNELS": "Désolé, il ya trop de channels, je ne peu donc pas les affiché ici."
+}
